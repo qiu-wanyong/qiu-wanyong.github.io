@@ -1,0 +1,357 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141256821-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141256821-1');
+</script>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
+<link rel="stylesheet" href="./HaoranYu_home/jemdoc.css" type="text/css">
+<title>Haoran Yu's Homepage</title>
+<style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}</style></head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tbody><tr valign="top">
+<td id="layout-menu">
+<div class="menu-category">Haoran Yu</div>
+<div class="menu-item"><a href="index.html" class="current">Home</a></div>
+<div class="menu-item"><a href="Publications.html">Publications</a></div>
+<div class="menu-item"><a href="Articles.html">Articles/Videos (Chinese)</a></div>
+<div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
+<div class="menu-item"><a href="Resources.html">Resources (Chinese)</a></div>	
+</td>
+<td id="layout-content">
+<p><br></p>
+
+<h2><b>Publications</b></h2>
+
+
+
+
+
+
+<h3><b>Conference Papers</b></h3>
+
+<ol>
+<li><p>
+	<font color="RoyalBlue">[AAAI]</font> Lvye Cui and <b>Haoran Yu</b>, "Data-Driven Knowledge-Aware Inference of Private Information in Continuous Double Auctions," AAAI Conference on Artificial Intelligence, Vancouver, Canada, February 2024 (Acceptance Rate: 23%, <font color="red"><b>CCF A</b></font>).
+	<a class="badge badge-info" href="https://ojs.aaai.org/index.php/AAAI/article/view/28864">PDF</a>
+	<a class="badge badge-light" onclick="show('AAAI24CDA')">show/hide abstract</a>
+<div id="AAAI24CDA" style="display:none; color:#4FA1EA; font-style:italic"> 
+Inferring the private information of humans from their strategic behavioral data is crucial and challenging. The main approach is first obtaining human behavior functions (which map public information and human private information to behavior), enabling subsequent inference of private information from observed behavior. Most existing studies rely on strong equilibrium assumptions to obtain behavior functions. Our work focuses on continuous double auctions, where multiple traders with heterogeneous rationalities and beliefs dynamically trade commodities and deriving equilibria is generally intractable. We develop a knowledge-aware machine learning-based framework to infer each trader's private cost vectors for producing different units of its commodity. Our key idea is to learn behavior functions by incorporating the statistical knowledge about private costs given the observed trader asking behavior across the population. Specifically, we first use a neural network to characterize each trader's behavior function. Second, we leverage the statistical knowledge to derive the posterior distribution of each trader's private costs given its observed asks. Third, through designing a novel loss function, we utilize the knowledge-based posterior distributions to guide the learning of the neural network. We conduct extensive experiments on a large experimental dataset, and demonstrate the superior performance of our framework over baselines in inferring the private information of humans.
+</div>
+        </p></li>
+<li><p>
+	<font color="RoyalBlue">[AAAI]</font> Yujia Wang and <b>Haoran Yu</b>, "Predicting Real-World Penny Auction Durations by Integrating Game Theory and Machine Learning," AAAI Conference on Artificial Intelligence, Vancouver, Canada, February 2024 (Acceptance Rate: 23%, <font color="red"><b>CCF A</b></font>).
+	<a class="badge badge-info" href="https://ojs.aaai.org/index.php/AAAI/article/view/28854">PDF</a>
+	<a class="badge badge-danger" href="./HaoranYu_home/AAAI24PennyAuction.pdf">Slides (by Yujia)</a>
+	<a class="badge badge-light" onclick="show('AAAI24PAuction')">show/hide abstract</a>
+<div id="AAAI24PAuction" style="display:none; color:#4FA1EA; font-style:italic"> 
+Game theory and machine learning are two widely used techniques for predicting the outcomes of strategic interactions among humans. However, the game theory-based approach often relies on strong rationality and informational assumptions, while the machine learning-based approach typically requires the testing data to come from the same distribution as the training data. Our work studies how to integrate the two techniques to address these weaknesses. We focus on the interactions among real bidders in penny auctions, and develop a three-stage framework to predict the distributions of auction durations, which indicate the numbers of bids and auctioneer revenues. Specifically, we first leverage a pre-trained neural network to encode the descriptions of products in auctions into embeddings. Second, we apply game theory models to make preliminary predictions of auction durations. In particular, we tackle the challenge of accurately inferring parameters in game theory models. Third, we develop a Multi-Branch Mixture Density Network to learn the mapping from product embeddings and game-theoretic predictions to the distributions of actual auction durations. Experiments on real-world penny auction data demonstrate that our framework outperforms both game theory-based and machine learning-based prediction approaches.
+</div>
+        </p></li>	
+<li><p>
+	<font color="RoyalBlue">[INFOCOM]</font> <b>Haoran Yu</b> and Fan Li, "Personalized Prediction of Bounded-Rational Bargaining Behavior in Network Resource Sharing," IEEE International Conference on Computer Communications, Vancouver, Canada, May 2024 (Acceptance Rate: 19%, <font color="red"><b>CCF A</b></font>).
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/10621429">PDF</a>
+	<a class="badge badge-danger" href="./HaoranYu_home/INFOCOM24PBP.pdf">Slides</a>
+	<a class="badge badge-light" onclick="show('INFOCOM24')">show/hide abstract</a>
+<div id="INFOCOM24" style="display:none; color:#4FA1EA; font-style:italic"> 
+There have been many studies leveraging bargaining to incentivize the sharing of network resources between resource owners and seekers. They predicted bargaining behavior and outcomes mainly by assuming that bargainers are fully rational and possess sufficient knowledge about their opponents. Our work addresses the prediction of bargaining behavior in network resource sharing scenarios where these assumptions do not hold, i.e., bargainers are bounded-rational and have heterogeneous knowledge. Our first key idea is using a multi-output Long Short-Term Memory (LSTM) neural network to learn bargainers’ behavior patterns and predict both their discrete and continuous decisions. Our second key idea is assigning a unique latent vector to each bargainer, characterizing the heterogeneity among bargainers. We propose a scheme to jointly learn the LSTM weights and latent vectors from real bargaining data, and utilize them to achieve a personalized behavior prediction. We prove that estimating our LSTM weights corresponds to a special design of LSTM training, and also theoretically characterize the performance of our scheme. To deal with large-scale datasets in practice, we further propose a variant of our scheme to accelerate the LSTM training. Experiments on a large real-world bargaining dataset demonstrate that our schemes achieve more accurate personalized predictions than baselines.
+</div>	
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[IJCAI]</font> Lvye Cui and <b>Haoran Yu</b>, "Inferring Private Valuations from Behavioral Data in Bilateral Sequential Bargaining," International Joint Conference on Artificial Intelligence, Macao, China, August 2023 (Acceptance Rate: 14%, <font color="red"><b>CCF A</b></font>).
+	<a class="badge badge-info" href="https://www.ijcai.org/proceedings/2023/0292.pdf">PDF</a>
+	<a class="badge badge-primary" href="./HaoranYu_home/IJCAI23poster.pdf">Poster (by Lvye)</a>
+	<a class="badge badge-danger" href="./HaoranYu_home/IJCAI23Inferring_Complete.pdf">Slides</a>
+	<a class="badge badge-light" onclick="show('IJCAI23')">show/hide abstract</a>
+<div id="IJCAI23" style="display:none; color:#4FA1EA; font-style:italic"> 
+Inferring bargainers’ private valuations on items from their decisions is crucial for analyzing their strategic behaviors in bilateral sequential bargaining. Most existing approaches that infer agents’ private information from observable data either rely on strong equilibrium assumptions or require a careful design of agents’ behavior models. To overcome these weaknesses, we propose a Bayesian Learning-based Valuation Inference (BLUE) framework. Our key idea is to derive feasible intervals of bargainers’ private valuations from their behavior data, using the fact that most bargainers do not choose strictly dominated strategies. We leverage these feasible intervals to guide our inference. Specifically, we first model each bargainer’s behavior function (which maps his valuation and bargaining history to decisions) via a recurrent neural network. Second, we learn these behavior functions by utilizing a novel loss function defined based on feasible intervals. Third, we derive the posterior distributions of bargainers’ valuations according to their behavior data and learned behavior functions. Moreover, we account for the heterogeneity of bargainer behaviors, and propose a clustering algorithm (K-Loss) to improve the efficiency of learning these behaviors. Experiments on both synthetic and real bargaining data show that our inference approach outperforms baselines.
+</div>
+	</p></li>	
+<li><p>
+	<font color="RoyalBlue">[INFOCOM]</font> Chao Huang, <b>Haoran Yu</b>, Jianwei Huang, and Randall Berry, "Strategic Information Revelation in Crowdsourcing Systems Without Verification," IEEE International Conference on Computer Communications, Online, May 2021 (Acceptance Rate: 20%, <font color="red"><b>CCF A</b></font>).
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[MobiHoc]</font> <b>Haoran Yu</b>, Ermin Wei, and Randall Berry, "Learning to Price Vehicle Service with Unknown Demand," ACM International Symposium on Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing, Online, October 2020 (Acceptance Rate: 15%, <font color="red"><b>CCF B</b></font>).
+	<a class="badge badge-info" href="https://dl.acm.org/doi/abs/10.1145/3397166.3409129">PDF</a>
+	<a class="badge badge-success" href="https://arxiv.org/pdf/2007.03205v1.pdf">Technical Report</a>
+	<a class="badge badge-danger" href="./HaoranYu_home/MobiHoc20Pricing.pdf">Slides</a>
+ <a class="badge badge-light" onclick="show('Mobihoc20')">show/hide abstract</a>
+<div id="Mobihoc20" style="display:none; color:#4FA1EA; font-style:italic"> 
+It can be profitable for vehicle service providers to set service prices based on users' travel demand on different origin-destination pairs. The prior studies on the spatial pricing of vehicle service rely on the assumption that providers know users' demand. In this paper, we study a monopolistic provider who initially does not know users' demand and needs to learn it over time by observing the users' responses to the service prices. We design a pricing and vehicle supply policy, considering the tradeoff between exploration (i.e., learning the demand) and exploitation (i.e., maximizing the provider's short-term payoff). Considering that the provider needs to ensure the vehicle flow balance at each location, its pricing and supply decisions for different origin-destination pairs are tightly coupled. This makes it challenging to theoretically analyze the performance of our policy. We analyze the gap between the provider's expected time-average payoffs under our policy and a clairvoyant policy, which makes decisions based on complete information of the demand. We prove that after running our policy for D days, the loss in the expected time-average payoff can be at most O((ln D)^0.5 D^(-0.25)), which decays to zero as D approaches infinity.
+</div>	
+	</p></li>		
+<li><p>
+	<font color="RoyalBlue">[WiOpt]</font> Chao Huang, <b>Haoran Yu</b>, Jianwei Huang, and Randall Berry, "Online Crowd Learning with Heterogeneous Workers via Majority Voting," International Symposium on Modeling and Optimization in Mobile, Ad Hoc and Wireless Networks, Volos, Greece, June 2020. 
+</p></li>
+<li><p>
+	<font color="RoyalBlue">[GLOBECOM]</font> Chao Huang, <b>Haoran Yu</b>, Jianwei Huang, and Randall Berry, "Crowdsourcing with Heterogeneous Workers in Social Networks," IEEE Global Communications Conference, Waikoloa, HI, USA, December 2019. 
+        </p></li>
+<li><p>
+	<font color="RoyalBlue">[GlobalSIP]</font> Chao Huang, <b>Haoran Yu</b>, Jianwei Huang, and Randall Berry, "Incentivizing Crowdsourced Workers via Truth Detection," IEEE Global Conference on Signal and Information Processing, Ottawa, Canada, November 2019. 
+        </p></li>
+<li><p>
+	<font color="RoyalBlue">[SIGMETRICS]</font> <b>Haoran Yu</b>, Ermin Wei, and Randall Berry, "Analyzing Location-Based Advertising for Vehicle Service Providers Using Effective Resistances," ACM International Conference on Measurement and Modeling of Computer Systems, Phoenix, Arizona, USA, June 2019 (Acceptance Rate: 17%, <font color="red"><b>CCF B</b></font>).
+	<a class="badge badge-info" href="https://dl.acm.org/citation.cfm?id=3311077">Complete Version</a>	
+	<a class="badge badge-danger" href="./HaoranYu_home/Sigmetrics19Complete.pdf">Slides</a>
+ <a class="badge badge-light" onclick="show('Sigmetrics19')">show/hide abstract</a>
+<div id="Sigmetrics19" style="display:none; color:#4FA1EA; font-style:italic"> 
+Vehicle service providers can display commercial ads in their vehicles based on passengers' origins and destinations to create a new revenue stream. We study a vehicle service provider who can generate different ad revenues when displaying ads on different arcs (i.e., origin-destination pairs). The provider needs to ensure the vehicle flow balance at each location, which makes it challenging to analyze the provider's vehicle assignment and pricing decisions for different arcs. To tackle the problem, we show that certain properties of the traffic network can be captured by a corresponding electrical network. When the effective resistance between two locations is small, there are many paths between the two locations and the provider can easily route vehicles between them. We derive the provider's optimal vehicle assignment and pricing decisions based on effective resistances.
+</div>
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[WiOpt]</font> Yining Zhu, <b>Haoran Yu</b>, and Randall Berry, "The Cooperation and Competition Between an Added Value MVNO and an MNO Allowing Secondary Access," International Symposium on Modeling and Optimization in Mobile, Ad Hoc and Wireless Networks, Avignon, France, June 2019.	
+	</p></li>		
+<li><p>
+	<font color="RoyalBlue">[INFOCOM]</font> <b>Haoran Yu</b>, Ermin Wei, and Randall Berry, "A Business Model Analysis of Mobile Data Rewards," IEEE International Conference on Computer Communications, Paris, France, April 2019 (Acceptance Rate: 20%, <font color="red"><b>CCF A</b></font>).
+	<a class="badge badge-info" href="./HaoranYu_home/RewardsInfocom.pdf">PDF</a>
+	<a class="badge badge-danger" href="./HaoranYu_home/Infocom19Rewards.pdf">Slides</a>
+ <a class="badge badge-light" onclick="show('INFOCOM19')">show/hide abstract</a>
+<div id="INFOCOM19" style="display:none; color:#4FA1EA; font-style:italic"> 
+Conventionally, mobile network operators charge users for data plan subscriptions. To create new revenue streams, some operators now also incentivize users to watch ads with data rewards and collect payments from advertisers. In this work, we study two such rewarding schemes: a Subscription-Aware Rewarding (SAR) scheme and a Subscription-Unaware Rewarding (SUR) scheme. Under the SAR scheme, only the subscribers of the operators' existing data plans are eligible for the rewards; under the SUR scheme, all users are eligible for the rewards (e.g., the users who do not subscribe to the data plans can still get SIM cards and receive data rewards by watching ads). We model the interactions among a capacity-constrained operator, users, and advertisers by a two-stage Stackelberg game, and characterize their equilibrium strategies under both the SAR and SUR schemes. We show that the SAR scheme can lead to more subscriptions and a higher operator revenue from the data market, while the SUR scheme can lead to better ad viewership and a higher operator revenue from the ad market. We provide some counter-intuitive insights for the design of data rewards. For example, the operator's optimal choice between the two schemes is sensitive to the users' data consumption utility function. When each user has a logarithmic utility function, the operator should apply the SUR scheme (i.e., reward both subscribers and non-subscribers) if and only if it has a small network capacity.
+</div>	
+	</p></li>	
+<li><p>
+	<font color="RoyalBlue">[INFOCOM]</font> Yining Zhu, <b>Haoran Yu</b>, Randall Berry, and Chang Liu, "Cross-Network Prioritized Sharing: An Added Value MVNO's Perspective," IEEE International Conference on Computer Communications, Paris, France, April 2019 (Acceptance Rate: 20%, <font color="red"><b>CCF A</b></font>).
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[GameNets]</font> Yining Zhu, <b>Haoran Yu</b>, and Randall Berry, "The Economics of Bundling Content with Unlicensed Wireless Service," EAI International Conference on Game Theory for Networks, Paris, France, April 2019.
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[NetEcon]</font> <b>Haoran Yu</b>, Ermin Wei, and Randall Berry, "Watch Ads, Earn Data: Economics of Mobile Data Rewards," ACM Workshop on the Economics of Networks, Systems and Computation, Irvine, CA, USA, June 2018 (in conjunction with ACM SIGMETRICS 2018).
+	</p></li>		
+<li><p>
+	<font color="RoyalBlue">[INFOCOM]</font> <b>Haoran Yu</b>, George Iosifidis, Biying Shou, and Jianwei Huang,
+	"Market Your Venue with Mobile Applications: Collaboration of Online and Offline Businesses," 
+	IEEE International Conference on Computer Communications, Honolulu, HI, USA, April 2018 (Acceptance Rate: 19%, <font color="red"><b>CCF A</b></font>).
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/8486019">PDF</a>
+	<a class="badge badge-danger" href="./HaoranYu_home/INFOCOM18onlineoffline.pdf">Slides</a>
+ <a class="badge badge-light" onclick="show('INFOCOM18')">show/hide abstract</a>
+<div id="INFOCOM18" style="display:none; color:#4FA1EA; font-style:italic"> 
+Many mobile applications (abbrev. apps) reward the users who physically visit some locations tagged as POIs (places-of-interest) by the apps. In this paper, we study the POI-based collaboration between apps and venues (e.g., restaurants and cafes). On the one hand, an app charges a venue and tags the venue as a POI, which attracts users to visit the venue and potentially increases the venue's sales. On the other hand, the venue can invest in the app-related infrastructure (e.g., Wi-Fi networks and smartphone chargers), which enhances the users' experience of using the app. However, the existing POI pricing schemes of the apps (e.g., Pokemon Go and Snapchat) cannot incentivize the venue's infrastructure investment, and hence cannot achieve the most effective app-venue collaboration. We model the interactions among an app, a venue, and users by a three-stage Stackelberg game, and design an optimal two-part pricing scheme for the app. This scheme has a charge-with-subsidy structure: the app first charges the venue for becoming a POI, and then subsidizes the venue every time a user interacts with the POI. Compared with the existing pricing schemes, our two-part pricing better incentivizes the venue's investment, attracts more users to interact with the POI, and achieves a much larger app revenue. We analyze the impacts of the app's and venue's characteristics on the app's optimal revenue, and show that the apps with small and large congestion effects should collaborate with opposite types of venues.
+</div>	
+	</p></li>	
+<li><p>
+	<font color="RoyalBlue">[WiOpt]</font> <b>Haoran Yu</b>, George Iosifidis, Jianwei Huang, and Leandros Tassiulas,
+	"Coopetition between LTE Unlicensed and Wi-Fi: A Reverse Auction with Allocative Externalities," 
+	International Symposium on Modeling and Optimization in Mobile, Ad Hoc and Wireless Networks, Tempe, AZ, USA, May 2016.
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/7492949">PDF</a>
+	<a class="badge badge-danger" href="./HaoranYu_home/WiOpt16LTEU.pdf">Slides</a>
+ <a class="badge badge-light" onclick="show('WiOpt16')">show/hide abstract</a>
+<div id="WiOpt16" style="display:none; color:#4FA1EA; font-style:italic"> 
+Motivated by the recent efforts in extending LTE to the unlicensed spectrum, we propose a novel spectrum sharing framework for the coopetition (i.e., cooperation and competition) between LTE and Wi-Fi in the unlicensed band. Basically, the LTE network chooses to work in one of the two modes: in the competition mode, it randomly accesses an unlicensed channel, and interferes with a Wi-Fi access point; in the cooperation mode, it onloads a Wi-Fi access point's traffic in exchange for the full access of the corresponding channel. Because the LTE network works in an interference-free manner in the cooperation mode, it can achieve a much larger total data rate (comparing to the competition mode) to serve both its own users and the Wi-Fi users under proper channel conditions. To achieve the maximum potential of this novel coopetition framework, we design a reverse auction mechanism, where the LTE provider is the auctioneer (buyer), and the Wi-Fi access point owners (APOs) are the bidders who compete to sell their channels to the LTE provider. An APO's bid indicates the data rate that it would like the LTE provider to offer in the cooperation mode. We show that the auction involves the allocative externalities, i.e., the cooperation between the LTE provider and an APO benefits other APOs who are not directly involved in this cooperation. As a result, a particular APO's bidding strategy is affected by its belief about other APOs' bidding strategies. This makes our analysis much more challenging than that of the standard second-price auction, where bidding truthfully is a weakly dominant strategy. We characterize the APOs' unique equilibrium bidding strategies, and analyze the LTE provider's optimal reserve rate that maximizes its payoff for a general APO type distribution. Our analysis shows that only when the LTE throughput exceeds a threshold, the LTE provider will choose a reasonably large reserve rate to cooperate with the APOs; otherwise, it will restrict the reserve rate to a small value and work in the competition mode.
+</div>	
+	</p></li>		
+<li><p>
+	<font color="RoyalBlue">[INFOCOM]</font> <b>Haoran Yu</b>, Man Hon Cheung, Lin Gao, and Jianwei Huang,
+	"Economics of Public Wi-Fi Monetization and Advertising," 
+	IEEE International Conference on Computer Communications, San Francisco, CA, USA, April 2016 (<font color="red"><b>Best Paper Award finalist and one of top 5 papers from 1600+ submissions</b></font>) (Acceptance Rate: 18%, <font color="red"><b>CCF A</b></font>).
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/7524558">PDF</a>
+	<a class="badge badge-danger" href="./HaoranYu_home/INFOCOM2016WiFiad.pdf">Slides</a>
+ <a class="badge badge-light" onclick="show('INFOCOM16')">show/hide abstract</a>
+<div id="INFOCOM16" style="display:none; color:#4FA1EA; font-style:italic"> 
+There has been a proliferation of public Wi-Fi hotspots that serve a significant amount of global mobile traffic today. In this paper, we propose a general Wi-Fi monetization model for public Wi-Fi hotspots deployed by venue owners (VOs), where VOs generate revenue from providing both the premium Wi-Fi access and the advertising sponsored Wi-Fi access to mobile users (MUs). With the premium access, MUs directly pay VOs for their Wi-Fi usage; while with the advertising sponsored access, MUs watch advertisements for the free usage of Wi-Fi. VOs sell their ad spaces to advertisers (ADs) via an ad platform, and share a proportion of the revenue with the ad platform. We formulate the economic interactions among the ad platform, VOs, MUs, and ADs as a three-stage Stackelberg game. By analyzing the equilibrium, we show that the ad platform's advertising revenue sharing policy affects a VO's Wi-Fi price but not the VO's advertising price. Moreover, we prove that a single term called equilibrium indicator determines whether a VO will fully rely on the premium access, or fully rely on the advertising sponsored access, or obtain revenue from both types of access. Numerical results show that the VO obtains a large revenue under a large advertising concentration level and a medium MU visiting frequency. 
+</div>	
+	</p></li>		
+<li><p>
+	<font color="RoyalBlue">[WiOpt]</font> <b>Haoran Yu</b>, Man Hon Cheung, and Jianwei Huang, 
+	"Cooperative Wi-Fi Deployment: A One-to-Many Bargaining Framework," 
+	International Symposium on Modeling and Optimization in Mobile, Ad Hoc and Wireless Networks, Mumbai, India, May 2015.
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/7151092">PDF</a>
+	<a class="badge badge-danger" href="./HaoranYu_home/WiOpt15bargaining.pdf">Slides</a>
+<a class="badge badge-light" onclick="show('WiOpt15')">show/hide abstract</a>
+<div id="WiOpt15" style="display:none; color:#4FA1EA; font-style:italic"> 
+In this paper, we study the cooperative Wi-Fi deployment problem, where the mobile network operator (MNO) cooperates with some venue owners (VOs) to deploy public Wi-Fi networks. The MNO negotiates with the VOs to determine where to deploy Wi-Fi and how much to pay. The MNO's objective is to maximize its payoff, which depends on the payments to VOs, the benefits due to data offloading and mobile advertising, and the costs due to deploying and operating Wi-Fi. We analyze the interactions among the MNO and VOs under the one-to-many bargaining framework, where the MNO bargains with VOs sequentially, taking into account the externalities among different steps of bargaining. We apply the Nash bargaining theory to analyze the cases with exogenous and endogenous bargaining sequences. For the former case, the bargaining sequence is predetermined, and we apply backward induction to compute the optimal bargaining solution related to the cooperation decisions and payments. For the latter case, the MNO can decide the bargaining sequence to maximize its payoff. We explore the structural property of the one-to-many bargaining, and design an Optimal VO Bargaining Sequencing (OVBS) algorithm that computes the optimal bargaining sequence. More precisely, we categorize VOs into three types based on the impact of the Wi-Fi deployment at their venues, and show that it is optimal for the MNO to bargain with these three types of VOs sequentially. Numerical results show that the optimal bargaining sequence improves the MNO's payoff over the random and worst bargaining sequences by up to 14.7% and 45.8%, respectively.
+</div>
+</p></li>	
+<li><p>
+	<font color="RoyalBlue">[GLOBECOM]</font> <b>Haoran Yu</b>, Man Hon Cheung, Longbo Huang, and Jianwei Huang, 
+	"Predictive Delay-Aware Network Selection in Data Offloading," 
+	IEEE Global Communications Conference, Austin, TX, USA, December 2014. 
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/7037000">PDF</a>
+	<a class="badge badge-danger" href="./HaoranYu_home/Globecom2014predictive.pdf">Slides</a>
+ <a class="badge badge-light" onclick="show('Globecom14')">show/hide abstract</a>
+<div id="Globecom14" style="display:none; color:#4FA1EA; font-style:italic"> 
+To address the increasingly severe congestion problem in cellular networks, mobile operators are actively considering offloading the cellular traffic to other complementary networks. In this paper, we study the online network selection problem in operator-initiated data offloading with multiple mobile users, taking into account the operation cost, queueing delay, and traffic load in different access networks (e.g., cellular macrocell, femtocell, and Wi-Fi networks). We first design a Delay-Aware Network Selection (DNS) algorithm based on the Lyapunov optimization technique. The DNS algorithm yields an operation cost within O(1/V) bound of the optimal value, and guarantees an O(V) traffic delay for any control parameter V>0. Next, we incorporate the prediction of users' mobilities and traffic arrivals into the network selection. Specifically, we assume that the users' locations and traffic arrivals in the next few time slots can be estimated accurately, and propose a Predictive Delay-Aware Network Selection (P-DNS) algorithm to utilize this information based on a novel frame-based design. We characterize the performance bounds of P-DNS in terms of cost-delay tradeoff theoretically. To further reduce the computational complexity, we propose a Greedy Predictive Delay-Aware Network Selection (GP-DNS) algorithm, where the operator solves the network selection problem approximately and iteratively. Numerical results show that GP-DNS improves the cost-delay performance over DNS, and reduces the queueing delay by roughly 40% with the same operation cost.
+</div>
+</p></li>
+<li><p>
+	<b>Haoran Yu</b>, Man Hon Cheung, Longbo Huang, and Jianwei Huang,
+	"Delay-Aware Predictive Network Selection in Data Offloading," 
+	IEEE International Conference on Computer Communications (INFOCOM) Student Poster Session, Toronto, Canada, April 2014.
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/6849211">PDF</a>
+</p></li>
+</ol>
+
+	
+
+<h3><b>Book Chapter</b></h3>
+
+<ol>
+<li><p>
+	Chao Huang, <b>Haoran Yu</b>, Jianwei Huang, and Randall Berry, "Incentive Mechanism Design for Mobile Crowdsourcing Without Verification," chapter in Mobile Crowdsourcing: From Theory to Practice, J. Wu and E. Wang (editors), Springer, July 2023.
+	</p></li>
+<li><p>
+	Man Hon Cheung, <b>Haoran Yu</b>, and Jianwei Huang, "Mobile Data Offloading for Heterogeneous Wireless Networks," chapter in Key Technologies for 5G Wireless Systems, V. W. S. Wong, R. Schober, D. W. K. Ng, and L. C. Wang (editors), Cambridge University Press, April 2017.
+	</p></li>
+</ol>
+
+
+<h3><b>Journal Papers (published/accepted)</b></h3>
+
+<ol>
+<li><p>
+	<font color="RoyalBlue">[TMC]</font> Chao Huang, <b>Haoran Yu</b>, Jianwei Huang, and Randall Berry,
+	"Online Crowd Learning Through Strategic Worker Reports," IEEE Transactions on Mobile Computing, vol. 22, no. 9, September 2023 (<font color="red"><b>CCF A</b></font>).  	
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[JSAC]</font> Chao Huang, <b>Haoran Yu</b>, Jianwei Huang, and Randall Berry,
+	"An Online Inference-Aided Incentive Framework for Information Elicitation Without Verification," IEEE Journal on Selected Areas in Communications, vol. 41, no. 4, April 2023 (<font color="red"><b>CCF A</b></font>).  	
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[TMC]</font> Chao Huang, <b>Haoran Yu</b>, Jianwei Huang, and Randall Berry,
+	"Strategic Information Revelation Mechanism in Crowdsourcing Applications Without Verification," IEEE Transactions on Mobile Computing, vol. 22, no. 5, May 2023 (<font color="red"><b>CCF A</b></font>).  	
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[TMC]</font> Chao Huang, <b>Haoran Yu</b>, Jianwei Huang, and Randall Berry,
+	"Eliciting Information from Heterogeneous Mobile Crowdsourced Workers Without Verification," IEEE Transactions on Mobile Computing, vol. 21, no. 10, October 2022 (<font color="red"><b>CCF A</b></font>).  	
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[TMC]</font> Chao Huang, <b>Haoran Yu</b>, Randall Berry, and Jianwei Huang,
+	"Using Truth Detection to Incentivize Workers in Mobile Crowdsourcing," IEEE Transactions on Mobile Computing, vol. 21, no. 6, June 2022 (<font color="red"><b>CCF A</b></font>).  	
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[TMC]</font> <b>Haoran Yu</b>, George Iosifidis, Biying Shou, and Jianwei Huang,
+	"Pricing for Collaboration Between Online Apps and Offline Venues," IEEE Transactions on Mobile Computing, vol. 19, no. 6, pp. 1420--1433, June 2020 (<font color="red"><b>CCF A</b></font>). 
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/8685197">PDF</a>	 
+	<a class="badge badge-success" href="https://arxiv.org/pdf/1903.10917.pdf">Technical Report</a>
+<a class="badge badge-light" onclick="show('TMC19')">show/hide abstract</a>
+<div id="TMC19" style="display:none; color:#4FA1EA; font-style:italic"> 
+An increasing number of mobile applications (abbrev. apps), like Pokemon Go and Snapchat, reward the users who physically visit some locations tagged as POIs (places-of-interest) by the apps. We study the novel POI-based collaboration between apps and venues (e.g., restaurants). On the one hand, an app charges a venue and tags the venue as a POI. The POI tag motivates users to visit the venue, which potentially increases the venue's sales. On the other hand, the venue can invest in the app-related infrastructure, which enables more users to use the app and further benefits the app's business. The apps' existing POI tariffs cannot fully incentivize the venue's infrastructure investment, and hence cannot lead to the most effective app-venue collaboration. We design an optimal two-part tariff, which charges the venue for becoming a POI, and subsidizes the venue every time a user interacts with the POI. The subsidy design efficiently incentivizes the venue's infrastructure investment, and we prove that our tariff achieves the highest app's revenue among a general class of tariffs. Furthermore, we derive some counter-intuitive guidelines for the POI-based collaboration. For example, a bandwidth-consuming app should collaborate with a low-quality venue (users have low utilities when consuming the venue's products).
+</div>	
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[JSAC]</font> <b>Haoran Yu</b>, Ermin Wei, and Randall Berry, "Monetizing Mobile Data via Data Rewards," IEEE Journal on Selected Areas in Communications, vol. 38, no. 4, pp. 782--792, April 2020 (<font color="red"><b>CCF A</b></font>).
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/8984312">PDF</a>
+	<a class="badge badge-success" href="https://arxiv.org/pdf/1911.12023.pdf">Technical Report</a>	
+<a class="badge badge-light" onclick="show('JSAC20')">show/hide abstract</a>
+<div id="JSAC20" style="display:none; color:#4FA1EA; font-style:italic"> 
+Most mobile network operators generate revenues by directly charging users for data plan subscriptions. Some operators now also offer users data rewards to incentivize them to watch mobile ads, which enables the operators to collect payments from advertisers and create new revenue streams. In this work, we analyze and compare two data rewarding schemes: a Subscription-Aware Rewarding (SAR) scheme and a Subscription-Unaware Rewarding (SUR) scheme. Under the SAR scheme, only the subscribers of the operators' data plans are eligible for the rewards; under the SUR scheme, all users are eligible for the rewards (e.g., the users who do not subscribe to the data plans can still get SIM cards and receive data rewards by watching ads). We model the interactions among an operator, users, and advertisers by a two-stage Stackelberg game, and characterize their equilibrium strategies under both the SAR and SUR schemes. We show that the SAR scheme can lead to more subscriptions and a higher operator revenue from the data market, while the SUR scheme can lead to better ad viewership and a higher operator revenue from the ad market. We further show that the operator's optimal choice between the two schemes is sensitive to the users' data consumption utility function and the operator's network capacity. We provide some counter-intuitive insights. For example, when each user has a logarithmic utility function, the operator should apply the SUR scheme (i.e., reward both subscribers and non-subscribers) if and only if it has a small network capacity.
+</div>  	
+	</p></li>	
+<li><p>
+    <font color="RoyalBlue">[POMACS]</font> <b>Haoran Yu</b>, Ermin Wei, and Randall Berry, "Analyzing Location-Based Advertising for Vehicle Service Providers Using Effective Resistances," Proceedings of the ACM on Measurement and Analysis of Computing Systems, vol. 3, no. 1, March 2019.
+	<a class="badge badge-info" href="https://dl.acm.org/citation.cfm?id=3311077">PDF</a>
+    <a class="badge badge-success" href="https://arxiv.org/pdf/1902.02429.pdf">Technical Report</a>
+<a class="badge badge-light" onclick="show('POMACS19')">show/hide abstract</a>
+<div id="POMACS19" style="display:none; color:#4FA1EA; font-style:italic"> 
+Vehicle service providers can display commercial ads in their vehicles based on passengers' origins and destinations to create a new revenue stream. In this work, we study a vehicle service provider who can generate different ad revenues when displaying ads on different arcs (i.e., origin-destination pairs). The provider needs to ensure the vehicle flow balance at each location, which makes it challenging to analyze the provider's vehicle assignment and pricing decisions for different arcs. For example, the provider's price for its service on an arc depends on the ad revenues on other arcs as well as on the arc in question. To tackle the problem, we show that the traffic network corresponds to an electrical network. When the effective resistance between two locations is small, there are many paths between the two locations and the provider can easily route vehicles between them. We characterize the dependence of an arc's optimal price on any other arc's ad revenue using the effective resistances between these two arcs' origins and destinations. Furthermore, we study the provider's optimal selection of advertisers when it can only display ads for a limited number of advertisers. If each advertiser has one target arc for advertising, the provider should display ads for the advertiser whose target arc has a small effective resistance. We investigate the performance of our advertiser selection strategy based on a real-world dataset.
+</div>   
+	</p></li>		
+<li><p>
+    <b>Haoran Yu</b>, Man Hon Cheung, George Iosifidis, Lin Gao, Leandros Tassiulas, and Jianwei Huang, 
+	"Mobile Data Offloading for Green Wireless Networks,"
+	IEEE Wireless Communications, vol. 24, no. 4, pp. 31--37, August 2017.
+    <a class="badge badge-info" href="http://ieeexplore.ieee.org/document/8014290">PDF</a>
+ <a class="badge badge-light" onclick="show('magazine')">show/hide abstract</a>
+<div id="magazine" style="display:none; color:#4FA1EA; font-style:italic"> 
+The explosive growth in mobile data traffic has resulted in unprecedented energy consumption in cellular networks, and has also induced huge operational expenditure for mobile network operators. A promising solution to address this problem in 5G systems is to use complementary technologies, such as Wi-Fi, to offload the traffic originally targeted towards the cellular networks. In this article, we discuss the recent advances in the technologies and economics of two types of mobile data offloading: operator-initiated offloading and user-initiated offloading. In the operator-initiated offloading, the mobile operators offload the cellular traffic to Wi-Fi networks, which may belong to the mobile operators, mobile operators' residential subscribers, and third party Wi-Fi owners. In the user-initiated offloading, the users decide how to offload traffic with or without the mobile operators' coordination. We present a taxonomy of various data offloading models, discuss various technical and economic challenges, and summarize the algorithms and mechanisms that we design to address these challenges. Finally, we outline some open problems that require further investigations.
+</div>   
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[TON]</font> <b>Haoran Yu</b>, Man Hon Cheung, Lin Gao, and Jianwei Huang, 
+	"Public Wi-Fi Monetization via Advertising,"
+	IEEE/ACM Transactions on Networking, vol. 25, no. 4, pp. 2110--2121, August 2017 (<font color="red"><b>CCF A</b></font>).
+	<a class="badge badge-info" href="http://ieeexplore.ieee.org/document/7879333">PDF</a>
+	<a class="badge badge-success" href="http://arxiv.org/pdf/1609.01951.pdf">Technical Report</a>
+ <a class="badge badge-light" onclick="show('TON17')">show/hide abstract</a>
+<div id="TON17" style="display:none; color:#4FA1EA; font-style:italic"> 
+The proliferation of public Wi-Fi hotspots has brought new business potentials for Wi-Fi networks, which carry a significant amount of global mobile data traffic today. In this paper, we propose a novel Wi-Fi monetization model for venue owners (VOs) deploying public Wi-Fi hotspots, where the VOs can generate revenue by providing two different Wi-Fi access schemes for mobile users (MUs): (i) the premium access, in which MUs directly pay VOs for their Wi-Fi usage, and (ii) the advertising sponsored access, in which MUs watch advertisements in exchange of the free usage of Wi-Fi. VOs sell their ad spaces to advertisers (ADs) via an ad platform, and share the ADs' payments with the ad platform. We formulate the economic interactions among the ad platform, VOs, MUs, and ADs as a three-stage Stackelberg game. In Stage I, the ad platform announces its advertising revenue sharing policy. In Stage II, VOs determine the Wi-Fi prices (for MUs) and advertising prices (for ADs). In Stage III, MUs make access choices and ADs purchase advertising spaces. We analyze the sub-game perfect equilibrium (SPE) of the proposed game systematically, and our analysis shows the following useful observations. First, the ad platform's advertising revenue sharing policy in Stage I will affect only the VOs' Wi-Fi prices but not the VOs' advertising prices in Stage II. Second, both the VOs' Wi-Fi prices and advertising prices are non-decreasing in the advertising concentration level and non-increasing in the MU visiting frequency. Numerical results further show that the VOs are capable of generating large revenues through mainly providing one type of Wi-Fi access (the premium access or advertising sponsored access), depending on their advertising concentration levels and MU visiting frequencies.
+</div>	
+	</p></li>		
+<li><p>
+	<font color="RoyalBlue">[TMC]</font> <b>Haoran Yu</b>, Man Hon Cheung, and Jianwei Huang, 
+	"Cooperative Wi-Fi Deployment: A One-to-Many Bargaining Framework,"
+	IEEE Transactions on Mobile Computing, vol. 16, no. 6, pp. 1559--1572, June 2017 (<font color="red"><b>CCF A</b></font>). 
+	<a class="badge badge-info" href="http://ieeexplore.ieee.org/document/7539609">PDF</a>
+    <a class="badge badge-success" href="http://arxiv.org/pdf/1608.01827v1.pdf">Technical Report</a>
+ <a class="badge badge-light" onclick="show('TMC17')">show/hide abstract</a>
+<div id="TMC17" style="display:none; color:#4FA1EA; font-style:italic"> 
+We study the cooperation of the mobile network operator (MNO) and the venue owners (VOs) on the public Wi-Fi deployment. We consider a one-to-many bargaining framework, where the MNO bargains with VOs sequentially to determine where to deploy Wi-Fi and how much to pay. Taking into account the negative externalities among different steps of bargaining, we analyze the following two cases: for the exogenous bargaining sequence case, we compute the optimal bargaining solution on the cooperation decisions and payments under a predetermined bargaining sequence; for the endogenous bargaining sequence case, the MNO decides the bargaining sequence to maximize its payoff. Through exploring the structural property of the optimal bargaining sequence, we design a low-complexity Optimal VO Bargaining Sequencing (OVBS) algorithm to search the optimal sequence. More specifically, we categorize the VOs into three types based on the impact of the Wi-Fi deployment at their venues, and show that it is optimal for the MNO to bargain with these three types of VOs sequentially. Numerical results show that compared with the random and worst bargaining sequences, the optimal bargaining sequence improves the MNO's payoff by up to 14.8% and 45.3%, respectively.
+</div>   
+	</p></li>
+<li><p>
+	<font color="RoyalBlue">[JSAC]</font> <b>Haoran Yu</b>, George Iosifidis, Jianwei Huang, and Leandros Tassiulas, 
+	"Auction-Based Coopetition Between LTE Unlicensed and Wi-Fi,"
+	IEEE Journal on Selected Areas in Communications, vol. 35, no. 1, pp. 79--90, January 2017 (<font color="red"><b>CCF A</b></font>).
+	<a class="badge badge-info" href="http://ieeexplore.ieee.org/document/7756317">PDF</a>
+	<a class="badge badge-success" href="http://arxiv.org/pdf/1609.01961v2.pdf">Technical Report</a>
+ <a class="badge badge-light" onclick="show('JSAC17')">show/hide abstract</a>
+<div id="JSAC17" style="display:none; color:#4FA1EA; font-style:italic"> 
+Motivated by the recent efforts in extending LTE to the unlicensed spectrum, we propose a novel spectrum sharing framework for the coopetition (i.e., cooperation and competition) between LTE and Wi-Fi in the unlicensed band. Basically, the LTE network can choose to work in one of the two modes: in the competition mode, it randomly accesses an unlicensed channel, and interferes with the Wi-Fi access point using the same channel; in the cooperation mode, it onloads the Wi-Fi users' traffic in exchange for the exclusive access of the corresponding channel. We design a second-price reverse auction mechanism, which enables the LTE provider and the Wi-Fi access point owners (APOs) to effectively negotiate the operation mode. Specifically, the LTE provider is the auctioneer (buyer), and the APOs are the bidders (sellers) who compete to sell the rights of onloading the APOs' traffic to the LTE provider. In Stage I of the auction, the LTE provider announces a reserve rate, which is the maximum data rate that it is willing to allocate to the APOs in the cooperation mode. In Stage II of the auction, the APOs submit their bids, which indicate the data rates that they would like the LTE provider to offer in the cooperation mode. We show that the auction involves allocative externalities, i.e., the cooperation between the LTE provider and one APO benefits other APOs who are not directly involved in this cooperation.  We characterize the APOs' unique equilibrium bidding strategies in Stage II, and analyze the LTE provider's optimal reserve rate in Stage I. Numerical results show that our framework improves the payoffs of both the LTE provider and the APOs comparing with a benchmark scheme. In particular, our framework increases the LTE provider's payoff by 70% on average when the LTE provider has a large throughput and a small data rate discounting factor. Moreover, our framework leads to a close-to-optimal social welfare under a large LTE throughput.
+</div>	
+	</p></li>			
+<li><p>
+	<font color="RoyalBlue">[JSAC]</font> <b>Haoran Yu</b>, Man Hon Cheung, Longbo Huang, and Jianwei Huang, 
+	"Power-Delay Tradeoff With Predictive Scheduling in Integrated Cellular and Wi-Fi Networks,"
+	IEEE Journal on Selected Areas in Communications, vol. 34, no. 4, pp. 735--742, April 2016 (<font color="red"><b>CCF A</b></font>). 
+  <a class="badge badge-info" href="https://ieeexplore.ieee.org/document/7437421">PDF</a>
+  <a class="badge badge-success" href="http://arxiv.org/pdf/1512.06428v2.pdf">Technical Report</a>
+   <a class="badge badge-light" onclick="show('JSAC16')">show/hide abstract</a>
+<div id="JSAC16" style="display:none; color:#4FA1EA; font-style:italic"> 
+The explosive growth of global mobile traffic has lead to a rapid growth in the energy consumption in communication networks. In this paper, we focus on the energy-aware design of the network selection, subchannel, and power allocation in cellular and Wi-Fi networks, while taking into account the traffic delay of mobile users. Based on the two-timescale Lyapunov optimization technique, we first design an online Energy-Aware Network Selection and Resource Allocation (ENSRA) algorithm, which yields a power consumption within O(1/V) bound of the optimal value, and guarantees an O(V) traffic delay for any positive control parameter V. Motivated by the recent advancement in the accurate estimation and prediction of user mobility, channel conditions, and traffic demands, we further develop a novel predictive Lyapunov optimization technique to utilize the predictive information, and propose a Predictive Energy-Aware Network Selection and Resource Allocation (P-ENSRA) algorithm. We characterize the performance bounds of P-ENSRA in terms of the power-delay tradeoff theoretically. To reduce the computational complexity, we finally propose a Greedy Predictive Energy-Aware Network Selection and Resource Allocation (GP-ENSRA) algorithm, where the operator solves the problem in P-ENSRA approximately and iteratively. Numerical results show that GP-ENSRA significantly improves the power-delay performance over ENSRA in the large delay regime. For a wide range of system parameters, GP-ENSRA reduces the traffic delay over ENSRA by 20~30% under the same power consumption.
+</div>
+	</p></li>	
+</ol>
+
+
+
+
+
+
+
+	
+<div id="footer">
+<div id="footer-text">Copyright (c) 2016 Haoran Yu. All rights reserved.</div>
+</div>
+
+</td>
+</tr>
+</tbody></table>
+
+
+<style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	 display: none !important;}</style> </body></html>
+
+<script language="javascript" type="text/javascript">
+function showHide(obj) {
+	var el = document.getElementById(obj);
+	if ( el.style.display != 'block' ) {
+		el.style.display = 'block';
+	}
+	else {
+		el.style.display = 'none';
+	}
+}
+</script>
+
+<script  type="text/javascript">
+function show(obj){
+ if(document.getElementById(obj).style.display=="block"){
+  document.getElementById(obj).style.display="none";
+ }else{
+  document.getElementById(obj).style.display="block";
+ }
+}
+</script>

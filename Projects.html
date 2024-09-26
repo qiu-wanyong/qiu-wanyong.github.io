@@ -54,7 +54,6 @@
 <td id="layout-content">
 <p><br></p>
 
-	
 
 <h2><b>Projects</b></h2>
 
@@ -63,38 +62,35 @@
 <head>
   <title>循环向上滚动的设置</title>
   <style>
-    /* 设置滚动区域的宽度和高度，并隐藏超出部分 */
     .scroll-container {
-      width: 500px;   /* 滚动栏的宽度 */
-      height: 30px;   /* 只显示一行内容 */
-      margin: 0 auto; /* 水平居中 */
-      overflow: hidden; /* 隐藏超出部分 */
+      width: 500px;   
+      height: 30px;   
+      margin: 0 auto; 
+      overflow: hidden; 
       display: flex;
-      align-items: center; /* 垂直居中对齐 */
-      justify-content: center; /* 水平居中 */
-      position: relative; /* 允许内部元素绝对定位 */
+      align-items: center; 
+      justify-content: center; 
+      position: relative; 
     }
 
-    /* 滚动内容的样式 */
     .scroll-content {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      transition: transform 0.5s ease-in-out; /* 滚动时的动画效果 */
+      transition: transform 0.5s ease-in-out; 
     }
 
     .scroll-text {
-      height: 30px; /* 每行的高度要与滚动容器高度一致 */
-      line-height: 30px; /* 使文字垂直居中 */
-      text-align: center; /* 文本居中对齐 */
+      height: 30px; 
+      line-height: 30px; 
+      text-align: center; 
     }
   </style>
 </head>
 <body>
   <div class="scroll-container">
     <div class="scroll-content">
-      <!-- 三行文字 -->
       <div class="scroll-text">上联：自然科学基金权当寒假作业，莫说科研知音少</div>
       <div class="scroll-text">下联：重点研发计划充实春节生活，谁道学术不风情</div>
       <div class="scroll-text">横批：人艰不拆</div>
@@ -102,48 +98,31 @@
   </div>
 
   <script>
-    // 获取滚动内容容器
     const scrollContent = document.querySelector('.scroll-content');
-    // 获取所有文本元素
     const texts = document.querySelectorAll('.scroll-text');
     let currentIndex = 0;
     const totalItems = texts.length;
-    const itemHeight = 30; // 每行的高度，需与CSS中保持一致
+    const itemHeight = 30; 
 
     function scrollToNext() {
-      // 计算下一个要显示的索引
       currentIndex = (currentIndex + 1) % totalItems;
-
-      // 计算当前内容要向上滚动的距离
       const translateY = -currentIndex * itemHeight;
-
-      // 使用 transform 移动内容实现滚动效果
       scrollContent.style.transform = `translateY(${translateY}px)`;
-
-      // 当滚动到最后一行时，将索引重置为第一行
       if (currentIndex === totalItems - 1) {
         setTimeout(() => {
-          // 临时移除过渡效果，立即跳回第一行
           scrollContent.style.transition = 'none';
           scrollContent.style.transform = 'translateY(0px)';
-          currentIndex = -1; // 下次调用 scrollToNext 时，回到第一行
-          // 确保下一次滚动时重新启用过渡效果
+          currentIndex = -1; 
           setTimeout(() => {
             scrollContent.style.transition = 'transform 0.5s ease-in-out';
           }, 50);
-        }, 3000); // 在最后一行停留 3 秒后重置
+        }, 3000); 
       }
     }
-
-    // 每隔3秒执行一次滚动
     setInterval(scrollToNext, 3000);
   </script>
 </body>
 </html>
-
-
-
-
 
 
 <h2><b>2023</b></h2>

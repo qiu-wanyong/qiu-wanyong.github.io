@@ -54,7 +54,32 @@
 <td id="layout-content">
 <p><br></p>
 
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+ 
+.marquee p {
+  display: inline;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+}
+ 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+	
+
 <h2><b>Activity</b></h2>
+
+<div class="marquee">
+  <p>热烈庆祝香山科学会议第735次：新型精神健康诊疗技术的挑战与机遇学术讨论会在北京成功召开</p>
+</div>
 
 <h2><b>2024</b></h2>
 <h3><b>Academic</b></h3>

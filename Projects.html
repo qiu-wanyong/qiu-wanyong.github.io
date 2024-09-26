@@ -58,32 +58,64 @@
 
 <h2><b>Projects</b></h2>
 
+<!DOCTYPE html>
 <html>
 <head>
-  <title>纵向文字滚动的设置</title>
+  <title>弹窗式纵向滚动的设置</title>
   <style>
-    .centered-marquee {
-      width: 500px;   
-      height: 30px;  
-      margin: 0 auto; 
-      overflow: hidden; 
+    /* 设置滚动区域的宽度和高度，并隐藏超出部分 */
+    .scroll-container {
+      width: 500px;   /* 滚动栏的宽度 */
+      height: 30px;   /* 只显示一行内容 */
+      margin: 0 auto; /* 水平居中 */
+      overflow: hidden; /* 隐藏超出部分 */
+      border: 1px solid #000; /* 添加边框让滚动框更明显 */
       display: flex;
-      align-items: center; 
+      align-items: center; /* 垂直居中对齐 */
+      justify-content: center; /* 水平居中 */
+    }
+
+    .scroll-text {
+      display: none; /* 默认隐藏每行内容 */
+      text-align: center; /* 文本居中对齐 */
+    }
+
+    /* 设置当前显示的内容 */
+    .scroll-text.active {
+      display: block; /* 仅显示当前活动内容 */
     }
   </style>
 </head>
 <body>
-  <font size="3" color="#000000">
-    <div class="centered-marquee">
-      <marquee behavior="scroll" direction="up" scrollamount="2"> 
-      上联：自然科学基金权当寒假作业，莫说科研知音少<br>
-      下联：重点研发计划充实春节生活，谁道学术不风情<br>
-      横批：人艰不拆
-      </marquee>
-    </div>
-  </font>
+  <div class="scroll-container">
+    <!-- 三行文字 -->
+    <div class="scroll-text active">上联：自然科学基金权当寒假作业，莫说科研知音少</div>
+    <div class="scroll-text">下联：重点研发计划充实春节生活，谁道学术不风情</div>
+    <div class="scroll-text">横批：人艰不拆</div>
+  </div>
+
+  <script>
+    // 获取所有滚动的文本元素
+    const texts = document.querySelectorAll('.scroll-text');
+    let currentIndex = 0;
+
+    function showNextText() {
+      // 隐藏当前显示的文字
+      texts[currentIndex].classList.remove('active');
+
+      // 计算下一个要显示的文字的索引
+      currentIndex = (currentIndex + 1) % texts.length;
+
+      // 显示下一个文字
+      texts[currentIndex].classList.add('active');
+    }
+
+    // 每隔3秒切换一次文字
+    setInterval(showNextText, 3000);
+  </script>
 </body>
 </html>
+
 
 
 

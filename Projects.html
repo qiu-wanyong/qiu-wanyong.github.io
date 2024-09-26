@@ -61,51 +61,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>弹窗式纵向滚动的设置</title>
+  <title>弹窗式纵向向上滚动的设置</title>
   <style>
     .scroll-container {
       width: 500px;  
-      height: 30px;   
+      height: 30px;  
       margin: 0 auto; 
       overflow: hidden; 
       display: flex;
       align-items: center; 
-      justify-content: center;
+      justify-content: center; 
+      position: relative;
+    }
+
+    .scroll-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.5s ease-in-out; 
     }
 
     .scroll-text {
-      display: none; 
+      height: 30px; 
+      line-height: 30px; 
       text-align: center; 
-    }
-
-    .scroll-text.active {
-      display: block; 
     }
   </style>
 </head>
 <body>
   <div class="scroll-container">
-    <div class="scroll-text active">上联：自然科学基金权当寒假作业，莫说科研知音少</div>
-    <div class="scroll-text">下联：重点研发计划充实春节生活，谁道学术不风情</div>
-    <div class="scroll-text">横批：人艰不拆</div>
+    <div class="scroll-content">
+      <!-- 三行文字 -->
+      <div class="scroll-text">上联：自然科学基金权当寒假作业，莫说科研知音少</div>
+      <div class="scroll-text">下联：重点研发计划充实春节生活，谁道学术不风情</div>
+      <div class="scroll-text">横批：人艰不拆</div>
+    </div>
   </div>
-
   <script>
+    const scrollContent = document.querySelector('.scroll-content');
     const texts = document.querySelectorAll('.scroll-text');
     let currentIndex = 0;
+    const totalItems = texts.length;
+    const itemHeight = 30;
 
-    function showNextText() {
-      texts[currentIndex].classList.remove('active');
-
-      currentIndex = (currentIndex + 1) % texts.length;
-
-      texts[currentIndex].classList.add('active');
+    function scrollToNext() {
+      currentIndex = (currentIndex + 1) % totalItems;
+      const translateY = -currentIndex * itemHeight;
+      scrollContent.style.transform = `translateY(${translateY}px)`;
     }
 
-    setInterval(showNextText, 2000);
+    setInterval(scrollToNext, 3000);
   </script>
 </body>
 </html>
+
 
 
 

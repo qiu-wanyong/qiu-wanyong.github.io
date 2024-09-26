@@ -17,49 +17,127 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
-<link rel="stylesheet" href="./HaoranYu_home/jemdoc.css" type="text/css">
-<title>Haoran Yu's Homepage</title>
+<link rel="stylesheet" href="./WanyongQiu_home/jemdoc.css" type="text/css">
+<title>Wanyong Qiu's Homepage</title>
 <style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}</style></head>
 <body>
 <table summary="Table for page layout." id="tlayout">
 <tbody><tr valign="top">
 <td id="layout-menu">
-<div class="menu-category">Haoran Yu</div>
+<div class="menu-category">Wanyong Qiu</div>
+
+	
 <div class="menu-item"><a href="index.html" class="current">Home</a></div>
+  
+  
 <div class="menu-item"><a href="Publications.html">Publications</a></div>
-<div class="menu-item"><a href="Articles.html">Articles/Videos (Chinese)</a></div>
+
+  
+<div class="menu-item"><a href="Activity.html">Activity</a></div>
+
+  
+<div class="menu-item"><a href="Projects.html">Projects</a></div>
+
+
+<div class="menu-item"><a href="Prizes.html">Prizes</a></div>
+  
+
+<div class="menu-item"><a href="Library.html">Library</a></div>
+
+  
 <div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
-<div class="menu-item"><a href="Resources.html">Resources (Chinese)</a></div>
+  
+  
+<div class="menu-item"><a href="Resources.html">Blog (Chinese)</a></div>
+	
 </td>
 <td id="layout-content">
 <p><br></p>
 
-<h2><b>Articles</b></h2>
 
-I plan to write some articles about our research and share them here.
+<h2><b>Prizes</b></h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>循环向上滚动的设置</title>
+  <style>
+    .scroll-container {
+      width: 500px;   
+      height: 30px;   
+      margin: 0 auto; 
+      overflow: hidden; 
+      display: flex;
+      align-items: center; 
+      justify-content: center; 
+      position: relative; 
+    }
+
+    .scroll-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.5s ease-in-out; 
+    }
+
+    .scroll-text {
+      height: 30px; 
+      line-height: 30px; 
+      text-align: center; 
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-container">
+    <div class="scroll-content">
+      <div class="scroll-text">上联：学的多秃的快，累觉不爱</div>
+      <div class="scroll-text">下联：拼期刊比系数，人艰不拆</div>
+      <div class="scroll-text">横批：读了个博</div>
+    </div>
+  </div>
+
+  <script>
+    const scrollContent = document.querySelector('.scroll-content');
+    const texts = document.querySelectorAll('.scroll-text');
+    let currentIndex = 0;
+    const totalItems = texts.length;
+    const itemHeight = 30; 
+
+    function scrollToNext() {
+      currentIndex = (currentIndex + 1) % totalItems;
+      const translateY = -currentIndex * itemHeight;
+      scrollContent.style.transform = `translateY(${translateY}px)`;
+      if (currentIndex === totalItems - 1) {
+        setTimeout(() => {
+          scrollContent.style.transition = 'none';
+          scrollContent.style.transform = 'translateY(0px)';
+          currentIndex = -1; 
+          setTimeout(() => {
+            scrollContent.style.transition = 'transform 0.5s ease-in-out';
+          }, 50);
+        }, 3000); 
+      }
+    }
+    setInterval(scrollToNext, 3000);
+  </script>
+</body>
+</html>
+
 
 <ol>
-<li><p>
-<a href="./HaoranYu_home/IJCAI23BargainingStory.pdf" target="blank">IJCAI23论⽂发表小记</a>
+<li><p> 联邦医疗作品在“第九届全国大学生生物医学工程创新设计竞赛”中获三等奖！作品名称：“面向联邦医疗物联网的智能体音感知边缘设备及系统” ，参赛团队：赵中豪、邱万勇、孙孟恺、张昊杰、周久皓，指导老师：钱昆教授、胡斌教授，2024年7月.
+</p></li>
+<li><p> 荣获第九届中国国际“互联网+”大学生创新创业大赛校级奖项！项目名称：“健康聆听者-联邦医疗下新型智能体音感知新纪元”，推荐单位：医学技术学院，计算机学院 （研究生创意组-新医科类 ），参赛团队：邱万勇（组长）、鲍志浩、于永孜、胡奕铮、周子恺、李昱莹、韦秋宁、刘海乐，指导老师：钱昆教授、胡斌教授，2023年8月.
+</p></li>
+<li><p> 荣获“2022FinTechathon深圳国际金融科技大赛” -人工智能赛道一等奖，“面向智能体音感知的联邦学习系统——基于FATE平台”，参赛队伍：邱万勇、全晨，指导老师：胡斌教授、钱昆教授，2024年1 月至 2022年2月.
 </p></li>
 </ol>
 
-<h2><b>Videos</b></h2>
 
-Here are some video recordings that introduce our work.
-	
-<ol>
-<li><p>
-<a href="https://www.bilibili.com/video/BV1Fz421d74y/?spm_id_from=333.337.search-card.all.click&vd_source=7294e0c0bf0b164c9a3a3e9be0a3d070" target="blank">IJCAI 2023 | 双边议价中基于行为数据的私有估价推断</a>
-</p></li>
-
-<li><p>
-<a href="https://www.bilibili.com/video/BV1Km421n7jc/?spm_id_from=333.337.search-card.all.click" target="blank">AAAI 2024 | 融合博弈论与机器学习的便士拍卖时长预测</a>
-</p></li>
-</ol>
 	
 <div id="footer">
-<div id="footer-text">Copyright (c) 2016 Haoran Yu. All rights reserved.</div>
+<div id="footer-text">Copyright (c) 2021 Wanyong Qiu. All rights reserved.</div>
 </div>
 
 </td>

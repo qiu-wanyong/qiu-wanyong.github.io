@@ -1,0 +1,17 @@
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+ 
+.marquee p {
+  display: inline;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+}
+ 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}

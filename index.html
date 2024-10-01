@@ -1,53 +1,88 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141256821-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-141256821-1');
-</script>
-
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
-<link rel="stylesheet" href="./WanyongQiu_home/jemdoc.css" type="text/css">
-<title>Wanyong Qiu's Homepage</title>
-<style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}</style></head>
-<body>
-<table summary="Table for page layout." id="tlayout">
-<tbody><tr valign="top">
-<td id="layout-menu">
-
 <style>
-    .menu-item {
-        margin: 10px; 
-    }
+  /* 定义整体布局 */
+  #tlayout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* 左侧菜单栏 */
+  #layout-menu {
+    width: 20%; /* 设置左侧栏宽度 */
+  }
+
+  /* 中间内容 */
+  #layout-content {
+    width: 55%; /* 设置主内容宽度 */
+  }
+
+  /* 右侧栏样式 */
+  #right-sidebar {
+    width: 25%; /* 设置右侧栏宽度 */
+    padding-left: 20px;
+  }
+
+  /* 右侧栏模块样式 */
+  .sidebar-module {
+    margin-bottom: 20px;
+  }
+
+  .sidebar-module h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .sidebar-module p {
+    font-size: 14px;
+  }
 </style>
-  
-<div class="menu-category">Wanyong Qiu</div>
-  
-  
-<div class="menu-item"><a href="index.html" class="current">Home</a></div>
-  
-  
-<div class="menu-item"><a href="Publications.html">Publications</a></div>
 
-  
-<div class="menu-item"><a href="Activity.html">Activity</a></div>
+<table summary="Table for page layout." id="tlayout">
+  <tr valign="top">
+    <!-- 左侧菜单栏 -->
+    <td id="layout-menu">
+      <!-- 左侧菜单栏内容保留不变 -->
+      <div class="menu-category">Wanyong Qiu</div>
+      <div class="menu-item"><a href="index.html" class="current">Home</a></div>
+      <div class="menu-item"><a href="Publications.html">Publications</a></div>
+      <div class="menu-item"><a href="Activity.html">Activity</a></div>
+      <div class="menu-item"><a href="Projects.html">Projects</a></div>
+      <div class="menu-item"><a href="Prizes.html">Prizes</a></div>
+      <div class="menu-item"><a href="Library.html">Library</a></div>
+      <div class="menu-item"><a href="People.html">People</a></div>
+      <div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
+      <div class="menu-item"><a href="Blog.html">Blog (Chinese)</a></div>
+    </td>
 
-  
-<div class="menu-item"><a href="Projects.html">Projects</a></div>
+    <!-- 中间内容 -->
+    <td id="layout-content">
+      <div id="toptitle">
+        <h1><b>Wanyong Qiu</b></h1>
+      </div>
+      <!-- 其他内容不变 -->
+      <p>Here goes the main content of the page...</p>
+    </td>
 
+    <!-- 右侧栏 -->
+    <td id="right-sidebar">
+      <!-- Latest News 模块 -->
+      <div class="sidebar-module">
+        <h3>Latest News</h3>
+        <p>News item 1</p>
+        <p>News item 2</p>
+        <p>News item 3</p>
+      </div>
 
-<div class="menu-item"><a href="Prizes.html">Prizes</a></div>
-  
+      <!-- KeyWords 模块 -->
+      <div class="sidebar-module">
+        <h3>KeyWords</h3>
+        <p>Keyword 1</p>
+        <p>Keyword 2</p>
+        <p>Keyword 3</p>
+      </div>
 
+<<<<<<< HEAD
 <div class="menu-item"><a href="Library.html">Library</a></div>
 
   
@@ -182,3 +217,15 @@ function show(){
 </script>
 
 <style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	 display: none !important;}</style> </body></html>
+=======
+      <!-- Service 模块 -->
+      <div class="sidebar-module">
+        <h3>Service</h3>
+        <p>Service 1</p>
+        <p>Service 2</p>
+        <p>Service 3</p>
+      </div>
+    </td>
+  </tr>
+</table>
+>>>>>>> c1408a62baac1566a17d8089dcb93d2bd38728ba

@@ -1,0 +1,26 @@
+/* style.css */
+#layout-content {
+  display: flex;
+  justify-content: space-between;
+}
+#main-content {
+  width: 70%;
+}
+#sidebar {
+  width: 25%;
+  padding-left: 20px;
+}
+.sidebar-section {
+  margin-bottom: 20px;
+}
+.sidebar-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.sidebar-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.sidebar-section li {
+  margin-bottom: 5px;
+}

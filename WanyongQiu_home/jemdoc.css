@@ -31,7 +31,10 @@ body {
     vertical-align: top;
 }
 
+/* 调整页面布局 */
 #layout-content {
+	display: flex;
+        justify-content: space-between;
 	padding-top: 0.0em;
 	padding-left: 1.0em;
 	padding-right: 1.0em;
@@ -39,6 +42,42 @@ body {
     background: white;
     text-align: left;
     vertical-align: top;
+}
+
+/* 主内容区域宽度调整 */
+#main-content {
+    width: 70%;  /* 主内容占页面70%的宽度 */
+}
+
+/* 右侧单栏样式 */
+#sidebar {
+    width: 25%;  /* 单栏占页面25%的宽度 */
+    padding-left: 20px;
+    background-color: #f9f9f9;  /* 设置一个浅灰色背景 */
+    border-left: 1px solid #dddddd; /* 添加左侧边框 */
+}
+
+/* 单栏模块的样式 */
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+/* 每个模块的标题样式 */
+.sidebar-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #527bbd;
+}
+
+/* 列表样式 */
+.sidebar-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+/* 列表项样式 */
+.sidebar-section li {
+    margin-bottom: 5px;
 }
 
 #layout-menu a {

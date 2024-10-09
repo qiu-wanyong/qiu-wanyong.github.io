@@ -56,8 +56,8 @@ body {
 #layout-sidebar {
     width: 25%;  /* 侧边栏占页面25%的宽度 */
     padding-left: 20px;
-    background-color: #f9f9f9;  /* 设置一个浅灰色背景 */
-    border-left: 1px solid #dddddd;  /* 添加一个左侧边框 */
+    background-color: white;
+    border: none;
 }
 
 /* 侧边栏中每个模块的样式 */
@@ -65,8 +65,6 @@ body {
     margin-bottom: 20px;
     font-size: 14px;
     text-align: left;
-    background-color: white;
-    border: none;
 }
 
 /* 模块标题样式 */

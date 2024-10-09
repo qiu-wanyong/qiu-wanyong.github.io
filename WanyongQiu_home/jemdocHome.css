@@ -65,6 +65,8 @@ body {
     margin-bottom: 20px;
     font-size: 14px;
     text-align: left;
+    background-color: white;
+    border: none;
 }
 
 /* 模块标题样式 */

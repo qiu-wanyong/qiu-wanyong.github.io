@@ -63,6 +63,8 @@ body {
 /* 侧边栏中每个模块的样式 */
 .sidebar-section {
     margin-bottom: 20px;
+    font-size: 14px;
+    text-align: left;
 }
 
 /* 模块标题样式 */
@@ -74,8 +76,8 @@ body {
 
 /* 列表样式 */
 .sidebar-section ul {
-    list-style-type: none;
-    padding-left: 0;
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
 /* 列表项样式 */

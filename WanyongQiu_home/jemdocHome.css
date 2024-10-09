@@ -54,8 +54,9 @@ body {
 
 /* 侧边栏样式 */
 #layout-sidebar {
-    width: 25%;  /* 侧边栏占页面25%的宽度 */
-    padding-left: 20px;
+    width: 30%;  /* 侧边栏占页面25%的宽度 */
+    padding-left: 15px;
+    padding-right: 15px;
     background-color: white;
     border: none;
 }

@@ -160,28 +160,12 @@
 
     <div class="sidebar-section">
       <h2>Latest News 🔥</h2>
-      <!-- 轮播图部分 -->
-    <div class="slideshow-container">
-      <!-- 图片1 -->
-      <div class="mySlides fade">
-        <img src="./WanyongQiu_home/qwy.jpg" style="width:60%; height:150px;">
+      <div id="carousel-container">
+        <div id="carousel">
+          <img src="./WanyongQiu_home/qwy.jpg" alt="Image 1">
+          <img src="./WanyongQiu_home/bhe.jpg" alt="Image 2">
+        </div>
       </div>
-      
-      <!-- 图片2 -->
-      <div class="mySlides fade">
-        <img src="./WanyongQiu_home/bhe.jpg" style="width:60%; height:150px;">
-      </div>
-
-      <!-- 左右箭头 -->
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-
-    <!-- 小圆点 -->
-    <div style="text-align:center">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-    </div>
       
       <ul>
         <li>[10/2024] 🎉A patent has been granted, "A heart sound monitoring system based on federated learning"</li>
@@ -224,106 +208,38 @@
   
 </tr>
 
-<script>
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// 下一张/上一张
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+#carousel-container {
+  max-width: calc(100% - 100px); /* 左右边距各50px */
+  margin: 0 auto; /* 居中 */
+  overflow: hidden; /* 隐藏超出部分 */
+  padding: 0 50px; /* 设置左右边距 */
 }
 
-// 当前的图片
-function currentSlide(n) {
-  showSlides(slideIndex = n);
+#carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 200%; /* 设置宽度为两个图片的宽度 */
 }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+#carousel img {
+  width: 50%; /* 每个图片占一半的宽度 */
+  object-fit: cover;
 }
-</script>
+
+let currentIndex = 0;
+const images = document.querySelectorAll('#carousel img');
+const totalImages = images.length;
+
+function showNextImage() {
+  currentIndex = (currentIndex + 1) % totalImages;
+  document.getElementById('carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+setInterval(showNextImage, 2000); // 每3秒自动切换
+
 
 </tbody>
 </table>
-
-
-<style>
-/* 轮播图容器样式 */
-.slideshow-container {
-  position: relative;
-  max-width: 60%;
-  margin: auto;
-  overflow: hidden;
-}
-
-/* 图片渐变效果 */
-.mySlides {
-  display: none;
-}
-
-/* 左右箭头样式 */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* 小圆点样式 */
-.dot {
-  cursor: pointer;
-  height: 10px;
-  width: 10px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* 图片淡入效果 */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-</style>
-
-
-
 
 
 

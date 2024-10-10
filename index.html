@@ -211,30 +211,45 @@
 </tbody>
 </table>
 
-  <style>
-    #latest-news {
-      padding: 0 20px;
-    }
+<style>
+#latest-news {
+    padding: 0 20px;
+}
 
-    #carousel-container {
-      max-width: calc(100% - 40px);
-      margin: 0 auto;
-      overflow: hidden;
-      padding: 0 20px;
-    }
+#carousel-container {
+    max-width: calc(100% - 40px); /* 留出左右20px的边距 */
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
 
-    #carousel {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: 200%;
-    }
+#carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 200%; /* 根据图片数量调整宽度 */
+}
 
-    #carousel img {
-      width: 50%;
-      object-fit: cover;
-    }
-  </style>
+#carousel img {
+    width: 50%; /* 两张图片占据整个容器 */
+    object-fit: cover;
+}
 
+</style>
+
+<script>
+let currentIndex = 0;
+const carousel = document.getElementById('carousel');
+const images = document.querySelectorAll('#carousel img');
+const totalImages = images.length;
+
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    const offset = -currentIndex * 100 / totalImages;
+    carousel.style.transform = `translateX(${offset}%)`;
+}
+
+setInterval(showNextImage, 3000); // 每3秒切换图片
+</script>
 
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">
   var _gaq = _gaq || [];

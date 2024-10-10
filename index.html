@@ -137,7 +137,7 @@
 <body>
 <font size="3" color="#000000">
   <div class="centered-marquee">
-    <marquee behavior="scroll" direction="left" scrollamount="6">👋 Please feel free to email me, I look forward to communicate with you.</marquee>
+    <marquee behavior="scroll" direction="left" scrollamount="6">👋 If you are seeking any form of academic cooperation, please feel free to email me.</marquee>
   </div>
 </font>
 </body>
@@ -160,6 +160,18 @@
 
     <div class="sidebar-section">
       <h2>Latest News 🔥</h2>
+      <div id="carousel-container">
+        <div id="carousel">
+          <img src="./WanyongQiu_home/qwy.jpg" alt="Image 1">
+          <img src="./WanyongQiu_home/bhe.jpg" alt="Image 2">
+        </div>
+        <!-- 小圆点 -->
+        <div id="carousel-indicators">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+        </div>
+      </div>
+      
       <ul>
         <li>[10/2024] 🎉A patent has been granted, "A heart sound monitoring system based on federated learning"</li>
         <li>[09/2024] 🎉A New Paper has been Published by AAAS CBS!</li>
@@ -200,11 +212,83 @@
 </td>
   
 </tr>
+
 </tbody>
 </table>
 
+<style>
+#carousel-container {
+    position: relative;
+    width: 50%; 
+    margin: 0 auto;
+    overflow: hidden;
+}
 
+#carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 200%; /* 两张图片，宽度为容器的两倍 */
+}
 
+#carousel img {
+    width: 50%;
+    object-fit: cover;
+}
+
+#carousel-indicators {
+    text-align: center;
+    position: relative;
+    margin-top: 10px; 
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.active-dot {
+    background-color: #717171;
+}
+</style>
+
+<script>
+let currentIndex = 0;
+const carousel = document.getElementById('carousel');
+const dots = document.querySelectorAll('.dot');
+const totalImages = document.querySelectorAll('#carousel img').length;
+
+function showSlide(index) {
+    currentIndex = index;
+    const offset = -currentIndex * 100 / totalImages;
+    carousel.style.transform = `translateX(${offset}%)`;
+    updateDots();
+}
+
+function updateDots() {
+    dots.forEach(dot => dot.classList.remove('active-dot'));
+    dots[currentIndex].classList.add('active-dot');
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    showSlide(currentIndex);
+}
+
+function currentSlide(index) {
+    showSlide(index);
+}
+
+setInterval(nextSlide, 3000); // 每3秒切换一次图片
+
+window.onload = () => {
+    showSlide(0); // 初始显示第一张图片
+};
+</script>
 
 
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">

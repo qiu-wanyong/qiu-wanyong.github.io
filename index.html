@@ -166,6 +166,29 @@
           <img src="./WanyongQiu_home/bhe.jpg" alt="Image 2">
         </div>
       </div>
+
+      #latest-news {
+  padding: 0 20px; /* Latest News模块的左右边距 */
+}
+
+#carousel-container {
+  max-width: calc(100% - 40px); /* 设置左右边距20px，总宽度减去40px */
+  margin: 0 auto; /* 使轮播图居中 */
+  overflow: hidden; /* 隐藏超出部分 */
+  padding: 0 20px; /* 轮播图的左右边距 */
+}
+
+#carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 200%; /* 设置宽度为两个图片的宽度 */
+}
+
+#carousel img {
+  width: 50%; /* 每个图片占一半的宽度 */
+  object-fit: cover;
+}
+
       
       <ul>
         <li>[10/2024] 🎉A patent has been granted, "A heart sound monitoring system based on federated learning"</li>
@@ -208,24 +231,6 @@
   
 </tr>
 
-#carousel-container {
-  max-width: calc(100% - 100px); /* 左右边距各50px */
-  margin: 0 auto; /* 居中 */
-  overflow: hidden; /* 隐藏超出部分 */
-  padding: 0 50px; /* 设置左右边距 */
-}
-
-#carousel {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 200%; /* 设置宽度为两个图片的宽度 */
-}
-
-#carousel img {
-  width: 50%; /* 每个图片占一半的宽度 */
-  object-fit: cover;
-}
-
 let currentIndex = 0;
 const images = document.querySelectorAll('#carousel img');
 const totalImages = images.length;
@@ -235,7 +240,8 @@ function showNextImage() {
   document.getElementById('carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-setInterval(showNextImage, 2000); // 每3秒自动切换
+setInterval(showNextImage, 3000); // 每3秒自动切换
+
 
 
 </tbody>

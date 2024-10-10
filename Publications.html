@@ -78,20 +78,22 @@
 <ol>
 	
 <li>
-	<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2019</div><img src='./WanyongQiu_home/qwy.jpg' alt="sym" width="100%"></div></div>
-        <div class='paper-box-text' markdown="1">
+	<div class="li-content">
+	<img src="./WanyongQiu_home/qwy.jpg" class="li-img" alt="IEEE JBHI">
+	<div class="li-text">
 	<p>
 	<font color="RoyalBlue">[IEEE JBHI]</font> <b>Wanyong Qiu</b>, Yifan Feng, Yuying Li, Yi Chang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller,
 	"Fed-MStacking: Heterogeneous Federated Learning with Stacking Misaligned Labels for Abnormal Heart Sound Detection," IEEE Journal of Biomedical and Health Informatics (IF-2023: 6.7), vol. 28, no. 9, July 2024 (<font color="red"><b>SCI 1区 Top</b></font>). 
 	<a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/10599790">PDF</a>	 
 	<a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10599790">Technical Report</a>
 <a class="badge badge-light" onclick="show('JBHI')">show/hide abstract</a>
+	</p>
 <div id="JBHI" style="display:none; color:#4FA1EA; font-style:italic"> 
 Ubiquitous sensing has been widely applied in smart healthcare, providing an opportunity for intelligent heart sound auscultation. However, smart devices contain sensitive information, raising user privacy concerns. To this end, federated learning (FL) has been adopted as an effective solution, enabling decentralised learning without data sharing, thus preserving data privacy in the Internet of Health Things (IoHT). Nevertheless, traditional FL requires the same architectural models to be trained across local clients and global servers, leading to a lack of model heterogeneity and client personalisation. For medical institutions with private data clients, this study proposes Fed-MStacking, a heterogeneous FL framework that incorporates a stacking ensemble learning strategy to support clients in building their own models. The secondary objective of this study is to address scenarios involving local clients with data characterised by inconsistent labelling. Specifically, the local client contains only one case type, and the data cannot be shared within or outside the institution. To train a global multi-class classifier, we aggregate missing class information from all clients at each institution and build meta-data, which then participates in FL training via a meta-learner. We apply the proposed framework to a multi-institutional heart sound database. The experiments utilise random forests (RFs), feedforward neural networks (FNNs), and convolutional neural networks (CNNs) as base classifiers. The results show that the heterogeneous stacking of local models performs better compared to homogeneous stacking.
 </div>	
 </div>
 </div>
-	</p></li>
+	</li>
 	
 <li>
 	<img src="./WanyongQiu_home/qwy.jpg" class="li-img" alt="IEEE TBME">
@@ -214,28 +216,43 @@ Cardiovascular diseases (CVDs) have been ranked as the leading cause for deaths.
 </tbody></table>
 
 <style>
+/* 调整列表样式 */
+ol {
+    list-style: none; /* 去掉列表符号 */
+    padding: 0;
+    margin: 0;
+}
+
+/* 控制每个li的内容布局 */
 li {
-    display: flex;
-    align-items: flex-start;
     margin-bottom: 15px;
+}
+
+/* 图片与文本的布局容器 */
+.li-content {
+    display: flex;
+    align-items: flex-start; /* 使图片和文本顶部对齐 */
     padding-left: 10px; /* 保持缩进 */
+    max-width: 100%; /* 确保内容不超出容器 */
 }
 
+/* 图片样式 */
 .li-img {
-    width: 80px; /* 调整图片大小 */
+    width: 100px; /* 缩小图片大小 */
     height: auto;
-    margin-right: 15px; /* 控制图片与文本的距离 */
-    object-fit: cover;
+    margin-right: 15px; /* 控制图片和文本之间的间距 */
+    object-fit: cover; /* 确保图片保持比例 */
 }
 
+/* 文本样式 */
+.li-text {
+    flex-grow: 1; /* 使文本占据剩余空间 */
+    max-width: calc(100% - 115px); /* 防止文本超出图片和父容器 */
+}
+
+/* 确保段落格式不被破坏 */
 li p {
     margin: 0;
-    flex: 1;
-}
-
-ol {
-    list-style: none; /* 去掉原始的列表编号样式 */
-    padding: 0;
 }
 
 </style>

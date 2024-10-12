@@ -359,23 +359,6 @@ window.onload = () => {
   
     </style>
 
-<div id="toptitle">
-    <h1><b>Wanyong Qiu</b></h1>
-    
-    <!-- Watch 和 Star 功能 -->
-    <div class="btn-container">
-        <!-- Watch 按钮 -->
-        <button class="watch-btn">👁 Watch 
-            <span id="watch-count">0</span>
-        </button>
-
-        <!-- Star 按钮 -->
-        <button id="subscribe-btn">⭐ Star 
-            <span id="subscription-count">0</span>
-        </button>
-    </div>
-</div>
-
 <script>
     // 处理 Watch 功能（模拟在线人数）
     let watchCount = localStorage.getItem('watchCount') ? parseInt(localStorage.getItem('watchCount')) : 0;

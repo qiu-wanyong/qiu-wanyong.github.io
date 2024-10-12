@@ -314,37 +314,73 @@ window.onload = () => {
             align-items: center;
             padding: 10px;
         }
+  
+        .btn-container {
+            display: flex;
+            align-items: center;
+        }
 
-        #subscribe-btn {
+        .watch-btn, #subscribe-btn {
             background-color: #f8f9fa;
             border: 1px solid #dcdcdc;
             border-radius: 5px;
-            padding: 4px 10px; /* 调整按钮大小 */
+            padding: 4px 10px;
             cursor: pointer;
             font-size: 14px;
             color: #333;
             display: inline-flex;
-            align-items: center; /* 保持文字和统计数字垂直居中 */
+            align-items: center;
+            margin-right: 10px; /* 给两个按钮之间添加间距 */
         }
 
-        #subscribe-btn:hover {
-            background-color: #e2e6ea;
-        }
-
-        #subscription-count {
-            margin-left: 10px; /* 让统计数与按钮内的星号分开 */
+        #watch-count, #subscription-count {
+            margin-left: 10px;
             font-weight: bold;
             font-size: 14px;
             padding: 2px 8px;
-            border-radius: 50%; /* 设置圆形效果 */
-            background-color: #f8f9fa; /* 背景色 */
-            border: 1px solid #d1d5da; /* 边框颜色 */
+            border-radius: 50%;
+            background-color: #e1e4e8;
+            border: 1px solid #d1d5da;
             display: inline-block;
         }
+
+
+        #subscribe-btn[disabled] {
+            background-color: #e2e6ea;
+            cursor: not-allowed; /* 禁用按钮时的样式 */
+        }
+  
     </style>
 
+<div id="toptitle">
+    <h1><b>Wanyong Qiu</b></h1>
+    
+    <!-- Watch 和 Star 功能 -->
+    <div class="btn-container">
+        <!-- Watch 按钮 -->
+        <button class="watch-btn">👁 Watch 
+            <span id="watch-count">0</span>
+        </button>
+
+        <!-- Star 按钮 -->
+        <button id="subscribe-btn">⭐ Star 
+            <span id="subscription-count">0</span>
+        </button>
+    </div>
+</div>
+
 <script>
-    // 检查 localStorage 中是否已经有订阅数和用户订阅状态
+    // 处理 Watch 功能（模拟在线人数）
+    let watchCount = localStorage.getItem('watchCount') ? parseInt(localStorage.getItem('watchCount')) : 0;
+
+    // 页面每次加载时，增加模拟的在线人数
+    watchCount++;
+    localStorage.setItem('watchCount', watchCount);
+
+    // 显示在线人数
+    document.getElementById('watch-count').innerText = watchCount;
+
+    // 处理 Star 功能
     let subscriptionCount = localStorage.getItem('subscriptionCount') ? parseInt(localStorage.getItem('subscriptionCount')) : 0;
     let hasSubscribed = localStorage.getItem('hasSubscribed') === 'true'; // 用户是否已经订阅
 
@@ -354,14 +390,12 @@ window.onload = () => {
     // 如果用户已经订阅，禁用按钮
     if (hasSubscribed) {
         document.getElementById('subscribe-btn').disabled = true;
-        document.getElementById('subscribe-btn').innerText = `⭐ Subscribed`;
-        document.getElementById('subscribe-btn').innerHTML += `<span id="subscription-count">${subscriptionCount}</span>`;
+        document.getElementById('subscribe-btn').innerHTML = `⭐ Subscribed <span id="subscription-count">${subscriptionCount}</span>`;
     } else {
-        // 更新按钮文本，显示订阅数量
         document.getElementById('subscribe-btn').innerHTML = `⭐ Star <span id="subscription-count">${subscriptionCount}</span>`;
     }
 
-    // 监听点击事件
+    // 监听点击订阅事件
     document.getElementById('subscribe-btn').addEventListener('click', function () {
         if (!hasSubscribed) {
             // 订阅数增加

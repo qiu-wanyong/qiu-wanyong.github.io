@@ -71,8 +71,9 @@
     
     <!-- GitHub Star 功能 -->
     <div class="subscription-container">
-        <button id="subscribe-btn">⭐ Star</button>
-        <span id="subscription-count">0</span> stars
+        <button id="subscribe-btn">⭐ Star 
+            <span id="subscription-count">0</span> 
+        </button>
     </div>
 </div>
 
@@ -318,10 +319,12 @@ window.onload = () => {
             background-color: #f8f9fa;
             border: 1px solid #dcdcdc;
             border-radius: 5px;
-            padding: 10px 20px;
+            padding: 10px 25px; /* 调整按钮大小 */
             cursor: pointer;
             font-size: 16px;
             color: #333;
+            display: inline-flex;
+            align-items: center; /* 保持文字和统计数字垂直居中 */
         }
 
         #subscribe-btn:hover {
@@ -329,9 +332,9 @@ window.onload = () => {
         }
 
         #subscription-count {
-            margin-left: 10px;
+            margin-left: 10px; /* 让统计数与按钮内的星号分开 */
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px;
         }
     </style>
 

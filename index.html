@@ -354,43 +354,43 @@ window.onload = () => {
     </style>
 
 <script>
-    // 处理 Watch 功能（模拟在线人数）
+    // Watch 功能
+    let isWatching = localStorage.getItem('isWatching') === 'true'; 
     let watchCount = localStorage.getItem('watchCount') ? parseInt(localStorage.getItem('watchCount')) : 0;
 
-    // 页面每次加载时，增加模拟的在线人数
-    watchCount++;
-    localStorage.setItem('watchCount', watchCount);
+    if (!isWatching) {
+        // 用户第一次访问，增加在线人数
+        watchCount++;
+        localStorage.setItem('watchCount', watchCount);
+        localStorage.setItem('isWatching', 'true');
+    }
 
     // 显示在线人数
     document.getElementById('watch-count').innerText = watchCount;
 
-    // 处理 Star 功能
-    let subscriptionCount = localStorage.getItem('subscriptionCount') ? parseInt(localStorage.getItem('subscriptionCount')) : 0;
-    let hasSubscribed = localStorage.getItem('hasSubscribed') === 'true'; // 用户是否已经订阅
+    // 当用户关闭页面时，减少在线人数
+    window.addEventListener('beforeunload', function () {
+        if (localStorage.getItem('isWatching') === 'true') {
+            watchCount--;
+            localStorage.setItem('watchCount', watchCount);
+            localStorage.removeItem('isWatching');  // 清除用户状态
+        }
+    });
 
-    // 更新页面上的订阅数
+    // 订阅功能
+    let subscriptionCount = localStorage.getItem('subscriptionCount') ? parseInt(localStorage.getItem('subscriptionCount')) : 0;
+    let hasSubscribed = localStorage.getItem('hasSubscribed') === 'true';
+
     document.getElementById('subscription-count').innerText = subscriptionCount;
 
-    // 如果用户已经订阅，禁用按钮
-    if (hasSubscribed) {
-        document.getElementById('subscribe-btn').disabled = true;
-        document.getElementById('subscribe-btn').innerHTML = `⭐ Subscribed <span id="subscription-count">${subscriptionCount}</span>`;
-    } else {
-        document.getElementById('subscribe-btn').innerHTML = `⭐ Star <span id="subscription-count">${subscriptionCount}</span>`;
-    }
-
-    // 监听点击订阅事件
     document.getElementById('subscribe-btn').addEventListener('click', function () {
         if (!hasSubscribed) {
-            // 订阅数增加
             subscriptionCount++;
             localStorage.setItem('subscriptionCount', subscriptionCount);
-            localStorage.setItem('hasSubscribed', 'true'); // 标记用户已订阅
-
-            // 更新页面显示的订阅数
+            localStorage.setItem('hasSubscribed', 'true');
             document.getElementById('subscription-count').innerText = subscriptionCount;
-            document.getElementById('subscribe-btn').disabled = true; // 禁用按钮
-            document.getElementById('subscribe-btn').innerHTML = `⭐ Subscribed <span id="subscription-count">${subscriptionCount}</span>`; // 修改按钮文本
+        } else {
+            alert("You have already subscribed!");
         }
     });
 </script>

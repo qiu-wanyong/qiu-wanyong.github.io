@@ -67,11 +67,13 @@
 <p><br></p>
   
 <div id="toptitle">
-<h1><b>Wanyong Qiu</b></h1>
-</div>
-<div class="subscription-container">
-    <button id="subscribe-btn">⭐ Subscribe</button>
-    <span id="subscription-count">0</span> people have subscribed
+    <h1><b>Wanyong Qiu</b></h1>
+    
+    <!-- GitHub Star 功能 -->
+    <div class="subscription-container">
+        <button id="subscribe-btn">⭐ Star</button>
+        <span id="subscription-count">0</span> stars
+    </div>
 </div>
 
 <table class="imgtable"><tbody><tr><td>
@@ -305,43 +307,49 @@ window.onload = () => {
 </script>
 
 <style>
-.subscription-container {
-    text-align: center;
-    margin-top: 20px;
-    font-family: Arial, sans-serif;
-}
+        #toptitle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
 
-#subscribe-btn {
-    background-color: #f8f9fa;
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-}
+        #subscribe-btn {
+            background-color: #f8f9fa;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+        }
 
-#subscribe-btn:hover {
-    background-color: #e2e6ea;
-}
+        #subscribe-btn:hover {
+            background-color: #e2e6ea;
+        }
 
-#subscription-count {
-    margin-left: 10px;
-    font-weight: bold;
-    font-size: 18px;
-}
-  
-</style>
+        #subscription-count {
+            margin-left: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
 
 <script>
-    // 初始订阅数
-    let subscriptionCount = 0;
+    // 检查 localStorage 中是否已经有订阅数
+    let subscriptionCount = localStorage.getItem('subscriptionCount') ? parseInt(localStorage.getItem('subscriptionCount')) : 0;
+
+    // 更新页面上的订阅数
+    document.getElementById('subscription-count').innerText = subscriptionCount;
 
     // 监听点击事件
     document.getElementById('subscribe-btn').addEventListener('click', function () {
         // 每次点击增加订阅数
         subscriptionCount++;
         
+        // 将订阅数保存到 localStorage
+        localStorage.setItem('subscriptionCount', subscriptionCount);
+
         // 更新页面显示的订阅数
         document.getElementById('subscription-count').innerText = subscriptionCount;
     });

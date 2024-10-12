@@ -354,7 +354,11 @@ window.onload = () => {
     // 如果用户已经订阅，禁用按钮
     if (hasSubscribed) {
         document.getElementById('subscribe-btn').disabled = true;
-        document.getElementById('subscribe-btn').innerText = "⭐ Subscribed";
+        document.getElementById('subscribe-btn').innerText = `⭐ Subscribed`;
+        document.getElementById('subscribe-btn').innerHTML += `<span id="subscription-count">${subscriptionCount}</span>`;
+    } else {
+        // 更新按钮文本，显示订阅数量
+        document.getElementById('subscribe-btn').innerHTML = `⭐ Star <span id="subscription-count">${subscriptionCount}</span>`;
     }
 
     // 监听点击事件
@@ -368,7 +372,7 @@ window.onload = () => {
             // 更新页面显示的订阅数
             document.getElementById('subscription-count').innerText = subscriptionCount;
             document.getElementById('subscribe-btn').disabled = true; // 禁用按钮
-            document.getElementById('subscribe-btn').innerText = "⭐ Subscribed"; // 修改按钮文本
+            document.getElementById('subscribe-btn').innerHTML = `⭐ Subscribed <span id="subscription-count">${subscriptionCount}</span>`; // 修改按钮文本
         }
     });
 </script>

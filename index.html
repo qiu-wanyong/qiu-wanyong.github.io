@@ -73,13 +73,13 @@
     <!-- Watch 和 Star 功能 -->
     <div class="btn-container">
         <!-- Watch 按钮 -->
-        <button class="online-count-btn">👀 Watch 
+        <button id="online-btn">👀 Watch 
             <span id="online-count">0</span>
         </button>
 
         <!-- Star 按钮 -->
         <button id="subscribe-btn">⭐ Star 
-            <span id="subscription-count">0</span>
+            <span id="subscription-count" class="badge">0</span>
         </button>
     </div>
 </div>
@@ -380,56 +380,67 @@ window.onload = () => {
 
 
 <script>
-  // 订阅按钮点击事件
-  document.getElementById('subscribe-btn').addEventListener('click', () => {
-    db.collection('subscriptions').add({
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    })
-    .then(() => {
-      console.log('订阅成功！');
-    })
-    .catch((error) => {
-      console.error('订阅失败: ', error);
-    });
-  });
-</script>
+// 初始化 Firebase
+// 确保您已经添加 Firebase SDK 并进行了初始化
+const db = firebase.firestore();
 
+// 获取在线人数和订阅计数文档
+const onlineDoc = db.collection('statistics').doc('online-count');
+const subscriptionDoc = db.collection('statistics').doc('subscription-count');
 
-<script>
-const onlineUsersBtn = document.getElementById('online-users-btn');
-const onlineCount = document.getElementById('online-count');
-
-// 监控在线用户
-function updateOnlineCount() {
-    db.collection('onlineUsers').doc('count').get().then(doc => {
+// 显示初始值
+function updateCounts() {
+    onlineDoc.get().then(doc => {
         if (doc.exists) {
-            onlineCount.textContent = doc.data().count;
+            document.getElementById('online-count').innerText = doc.data().value;
         }
+    }).catch(error => {
+        console.error("获取在线人数失败: ", error);
+    });
+
+    subscriptionDoc.get().then(doc => {
+        if (doc.exists) {
+            document.getElementById('subscription-count').innerText = doc.data().value;
+        }
+    }).catch(error => {
+        console.error("获取订阅计数失败: ", error);
     });
 }
 
-// 模拟用户进入页面时增加在线人数
-db.collection('onlineUsers').doc('count').update({
-    count: firebase.firestore.FieldValue.increment(1)
-});
-
-// 监听页面关闭时减少在线人数
-window.addEventListener('beforeunload', () => {
-    db.collection('onlineUsers').doc('count').update({
-        count: firebase.firestore.FieldValue.increment(-1)
+// 在线人数增加
+document.getElementById('online-btn').addEventListener('click', () => {
+    onlineDoc.update({
+        value: firebase.firestore.FieldValue.increment(1) // 在线人数增加1
+    }).then(() => {
+        console.log("在线人数增加成功");
+        updateCounts(); // 更新显示
+    }).catch(error => {
+        console.error("更新在线人数失败: ", error);
     });
 });
 
-// 页面加载时显示在线人数
-updateOnlineCount();
+// 订阅计数增加
+document.getElementById('subscribe-btn').addEventListener('click', () => {
+    subscriptionDoc.update({
+        value: firebase.firestore.FieldValue.increment(1) // 订阅计数增加1
+    }).then(() => {
+        console.log("订阅计数增加成功");
+        updateCounts(); // 更新显示
+    }).catch(error => {
+        console.error("更新订阅计数失败: ", error);
+    });
+});
+
+// 页面加载时更新显示
+updateCounts();
 
 </script>
   
 <script>
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write: if true;
+    match /statistics/{document=**} {
+      allow read, update: if true;
     }
   }
 }

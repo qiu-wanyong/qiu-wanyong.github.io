@@ -73,7 +73,7 @@
     <!-- Watch 和 Star 功能 -->
     <div class="btn-container">
         <!-- Watch 按钮 -->
-        <button class="online-count-btn">👁 Watch 
+        <button class="online-count-btn">👀 Watch 
             <span id="online-count">0</span>
         </button>
 
@@ -354,10 +354,15 @@ window.onload = () => {
     </style>
 
 
-  <script src= "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
-  <script src= "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  <script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
     apiKey: "AIzaSyBXfACNSbdMzlwgteN1m4BHbVjDCxOGdIM",
     authDomain: "githubdb-ef933.firebaseapp.com",
@@ -369,55 +374,88 @@ window.onload = () => {
   };
 
   // Initialize Firebase
-  const app = firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
+  const app = initializeApp(firebaseConfig);
+  const db = getAnalytics(app);
+</script>
+
+<script>
+// 引用 Firestore 数据库
+const db = firebase.firestore();
+const subscribeBtn = document.getElementById('subscribe-btn');
+const subscriptionCount = document.getElementById('subscription-count');
+
+// 获取订阅数据
+function getSubscriptionCount() {
+    db.collection('subscriptions').doc('count').get().then(doc => {
+        if (doc.exists) {
+            subscriptionCount.textContent = doc.data().count;
+        }
+    });
+}
+
+// 检查用户是否已订阅
+function isSubscribed() {
+    return localStorage.getItem('subscribed') === 'true';
+}
+
+// 订阅功能
+subscribeBtn.addEventListener('click', () => {
+    if (!isSubscribed()) {
+        db.collection('subscriptions').doc('count').update({
+            count: firebase.firestore.FieldValue.increment(1)
+        }).then(() => {
+            localStorage.setItem('subscribed', 'true');
+            getSubscriptionCount(); // 更新订阅数
+        });
+    } else {
+        alert("你已经订阅过了！");
+    }
+});
+
+// 页面加载时显示订阅数
+getSubscriptionCount();
+</script>
+
+<script>
+const onlineUsersBtn = document.getElementById('online-users-btn');
+const onlineCount = document.getElementById('online-count');
+
+// 监控在线用户
+function updateOnlineCount() {
+    db.collection('onlineUsers').doc('count').get().then(doc => {
+        if (doc.exists) {
+            onlineCount.textContent = doc.data().count;
+        }
+    });
+}
+
+// 模拟用户进入页面时增加在线人数
+db.collection('onlineUsers').doc('count').update({
+    count: firebase.firestore.FieldValue.increment(1)
+});
+
+// 监听页面关闭时减少在线人数
+window.addEventListener('beforeunload', () => {
+    db.collection('onlineUsers').doc('count').update({
+        count: firebase.firestore.FieldValue.increment(-1)
+    });
+});
+
+// 页面加载时显示在线人数
+updateOnlineCount();
+
 </script>
   
 <script>
-  // 获取订阅计数的引用
-  const subscribeRef = db.collection('statistics').doc('subscription-count');
-
-  // 监听订阅数的变化并更新到页面
-  subscribeRef.onSnapshot((doc) => {
-    document.getElementById('subscription-count').textContent = doc.data().value;
-  });
-
-  // 订阅按钮点击事件
-  document.getElementById('subscribe-btn').addEventListener('click', () => {
-    subscribeRef.update({ value: firebase.firestore.FieldValue.increment(1) });
-  });
-</script>
-
-<script>
-  // 获取在线人数计数的引用
-  const onlineRef = db.collection('statistics').doc('online-count');
-
-  // 监听在线人数变化并更新到页面
-  onlineRef.onSnapshot((doc) => {
-    document.getElementById('online-count').textContent = doc.data().value;
-  });
-
-  // 页面加载时增加在线人数
-  window.addEventListener('load', () => {
-    onlineRef.update({ value: firebase.firestore.FieldValue.increment(1) });
-  });
-
-  // 页面关闭时减少在线人数
-  window.addEventListener('beforeunload', () => {
-    onlineRef.update({ value: firebase.firestore.FieldValue.increment(-1) });
-  });
-</script>
-
-<script>
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /statistics/{document=**} {
-      allow read, write: if true;  // 测试模式，允许所有人读写
+    match /{document=**} {
+      allow read, write: if true;
     }
   }
 }
 </script>
-
+        
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-24986751-1']);

@@ -356,7 +356,7 @@ window.onload = () => {
 
 <script "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
 <script "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js"></script>
-
+<script>
   const firebaseConfig = {
     apiKey: "AIzaSyBXfACNSbdMzlwgteN1m4BHbVjDCxOGdIM",
     authDomain: "githubdb-ef933.firebaseapp.com",
@@ -364,7 +364,6 @@ window.onload = () => {
     storageBucket: "githubdb-ef933.appspot.com",
     messagingSenderId: "566693839345",
     appId: "1:566693839345:web:87de73057240e6fc0f0450",
-    measurementId: "G-CDW4L2PX04"
   };
 
   // Initialize Firebase
@@ -374,42 +373,56 @@ window.onload = () => {
 
 
 <script>
-// 引用 Firestore 数据库
-const db = firebase.firestore();
-const subscribeBtn = document.getElementById('subscribe-btn');
-const subscriptionCount = document.getElementById('subscription-count');
+// 获取在线人数和订阅计数文档
+const onlineDoc = db.collection('statistics').doc('online-count');
+const subscriptionDoc = db.collection('statistics').doc('subscription-count');
 
-// 获取订阅数据
-function getSubscriptionCount() {
-    db.collection('subscriptions').doc('count').get().then(doc => {
+// 显示初始值
+function updateCounts() {
+    onlineDoc.get().then(doc => {
         if (doc.exists) {
-            subscriptionCount.textContent = doc.data().count;
+            document.getElementById('online-count').innerText = doc.data().value;
         }
+    }).catch(error => {
+        console.error("获取在线人数失败: ", error);
+    });
+
+    subscriptionDoc.get().then(doc => {
+        if (doc.exists) {
+            document.getElementById('subscription-count').innerText = doc.data().value;
+        }
+    }).catch(error => {
+        console.error("获取订阅计数失败: ", error);
     });
 }
 
-// 检查用户是否已订阅
-function isSubscribed() {
-    return localStorage.getItem('subscribed') === 'true';
-}
-
-// 订阅功能
-subscribeBtn.addEventListener('click', () => {
-    if (!isSubscribed()) {
-        db.collection('subscriptions').doc('count').update({
-            count: firebase.firestore.FieldValue.increment(1)
-        }).then(() => {
-            localStorage.setItem('subscribed', 'true');
-            getSubscriptionCount(); // 更新订阅数
-        });
-    } else {
-        alert("你已经订阅过了！");
-    }
+// 在线人数增加
+document.getElementById('online-btn').addEventListener('click', () => {
+    onlineDoc.update({
+        value: firebase.firestore.FieldValue.increment(1) // 在线人数增加1
+    }).then(() => {
+        console.log("在线人数增加成功");
+        updateCounts(); // 更新显示
+    }).catch(error => {
+        console.error("更新在线人数失败: ", error);
+    });
 });
 
-// 页面加载时显示订阅数
-getSubscriptionCount();
-</script>
+// 订阅计数增加
+document.getElementById('subscribe-btn').addEventListener('click', () => {
+    subscriptionDoc.update({
+        value: firebase.firestore.FieldValue.increment(1) // 订阅计数增加1
+    }).then(() => {
+        console.log("订阅计数增加成功");
+        updateCounts(); // 更新显示
+    }).catch(error => {
+        console.error("更新订阅计数失败: ", error);
+    });
+});
+
+// 页面加载时更新显示
+updateCounts();
+
   
 <script>
 service cloud.firestore {

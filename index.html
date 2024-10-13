@@ -70,18 +70,75 @@
 <div id="toptitle">
     <h1><b>Wanyong Qiu</b></h1>
     
-    <!-- Watch 和 Star 功能 -->
     <div class="btn-container">
-        <!-- Watch 按钮 -->
         <button id="online-btn" class="online-btn">👀 Watch 
             <span id="online-count">0</span>
         </button>
-
-        <!-- Star 按钮 -->
         <button id="subscribe-btn">⭐ Star 
             <span id="subscription-count">0</span>
         </button>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const firebaseConfig = {
+                apiKey: "YOUR_API_KEY",
+                authDomain: "YOUR_AUTH_DOMAIN",
+                projectId: "YOUR_PROJECT_ID",
+                storageBucket: "YOUR_STORAGE_BUCKET",
+                messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+                appId: "YOUR_APP_ID",
+            };
+
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+
+            const onlineDoc = db.collection('statistics').doc('online-count');
+            const subscriptionDoc = db.collection('statistics').doc('subscription-count');
+
+            function updateCounts() {
+                onlineDoc.get().then(doc => {
+                    if (doc.exists) {
+                        document.getElementById('online-count').innerText = doc.data().value;
+                    }
+                }).catch(error => {
+                    console.error("获取在线人数失败: ", error);
+                });
+
+                subscriptionDoc.get().then(doc => {
+                    if (doc.exists) {
+                        document.getElementById('subscription-count').innerText = doc.data().value;
+                    }
+                }).catch(error => {
+                    console.error("获取订阅计数失败: ", error);
+                });
+            }
+
+            document.getElementById('online-btn').addEventListener('click', () => {
+                onlineDoc.update({
+                    value: firebase.firestore.FieldValue.increment(1)
+                }).then(() => {
+                    updateCounts();
+                }).catch(error => {
+                    console.error("更新在线人数失败: ", error);
+                });
+            });
+
+            document.getElementById('subscribe-btn').addEventListener('click', () => {
+                subscriptionDoc.update({
+                    value: firebase.firestore.FieldValue.increment(1)
+                }).then(() => {
+                    updateCounts();
+                }).catch(error => {
+                    console.error("更新订阅计数失败: ", error);
+                });
+            });
+
+            updateCounts();
+        });
+    </script>
 </div>
 
 <table class="imgtable"><tbody><tr><td>
@@ -354,84 +411,7 @@ window.onload = () => {
     </style>
 
 
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js"></script>
 
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyBXfACNSbdMzlwgteN1m4BHbVjDCxOGdIM",
-    authDomain: "githubdb-ef933.firebaseapp.com",
-    projectId: "githubdb-ef933",
-    storageBucket: "githubdb-ef933.appspot.com",
-    messagingSenderId: "566693839345",
-    appId: "1:566693839345:web:87de73057240e6fc0f0450",
-  };
-
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-
-// 获取在线人数和订阅计数文档
-const onlineDoc = db.collection('statistics').doc('online-count');
-const subscriptionDoc = db.collection('statistics').doc('subscription-count');
-
-// 显示初始值
-function updateCounts() {
-    onlineDoc.get().then(doc => {
-        if (doc.exists) {
-            document.getElementById('online-count').innerText = doc.data().value;
-        }
-    }).catch(error => {
-        console.error("获取在线人数失败: ", error);
-    });
-
-    subscriptionDoc.get().then(doc => {
-        if (doc.exists) {
-            document.getElementById('subscription-count').innerText = doc.data().value;
-        }
-    }).catch(error => {
-        console.error("获取订阅计数失败: ", error);
-    });
-}
-  
-document.addEventListener('DOMContentLoaded', function() {
-    // 在这里初始化 Firebase 和其他功能
-    updateCounts();
-
-    // 在线人数增加
-    document.getElementById('online-btn').addEventListener('click', () => {
-        onlineDoc.update({
-            value: firebase.firestore.FieldValue.increment(1)
-        }).then(() => {
-            console.log("在线人数增加成功");
-            updateCounts();
-        }).catch(error => {
-            console.error("更新在线人数失败: ", error);
-        });
-    });
-
-    // 订阅计数增加
-    document.getElementById('subscribe-btn').addEventListener('click', () => {
-        subscriptionDoc.update({
-            value: firebase.firestore.FieldValue.increment(1)
-        }).then(() => {
-            console.log("订阅计数增加成功");
-            updateCounts();
-        }).catch(error => {
-            console.error("更新订阅计数失败: ", error);
-        });
-    });
-});
-
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /statistics/{document=**} {
-      allow read, update: if true;
-    }
-  }
-}
-</script>
         
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">
   var _gaq = _gaq || [];

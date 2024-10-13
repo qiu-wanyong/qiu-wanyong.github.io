@@ -371,43 +371,51 @@ window.onload = () => {
   // Initialize Firebase
   const app = firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
+</script>
+  
+<script>
+  // 获取订阅计数的引用
+  const subscribeRef = db.collection('statistics').doc('subscription-count');
 
-// 订阅数引用
-    const subscribeRef = db.collection('subscriptions').doc('count');
-    const onlineRef = db.collection('online').doc('count');
+  // 监听订阅数的变化并更新到页面
+  subscribeRef.onSnapshot((doc) => {
+    document.getElementById('subscription-count').textContent = doc.data().value;
+  });
 
-    // 监听订阅数并更新到页面
-    subscribeRef.onSnapshot((doc) => {
-      document.getElementById('subscription-count').textContent = doc.data().value;
-    });
+  // 订阅按钮点击事件
+  document.getElementById('subscribe-btn').addEventListener('click', () => {
+    subscribeRef.update({ value: firebase.firestore.FieldValue.increment(1) });
+  });
+</script>
 
-    // 订阅按钮点击事件
-    document.getElementById('subscribe-btn').addEventListener('click', () => {
-      subscribeRef.update({ value: firebase.firestore.FieldValue.increment(1) });
-    });
+<script>
+  // 获取在线人数计数的引用
+  const onlineRef = db.collection('statistics').doc('online-count');
 
-    // 在线人数
-    function updateOnlineCount() {
-      onlineRef.get().then((doc) => {
-        document.getElementById('online-count').textContent = doc.data().value;
-      });
+  // 监听在线人数变化并更新到页面
+  onlineRef.onSnapshot((doc) => {
+    document.getElementById('online-count').textContent = doc.data().value;
+  });
+
+  // 页面加载时增加在线人数
+  window.addEventListener('load', () => {
+    onlineRef.update({ value: firebase.firestore.FieldValue.increment(1) });
+  });
+
+  // 页面关闭时减少在线人数
+  window.addEventListener('beforeunload', () => {
+    onlineRef.update({ value: firebase.firestore.FieldValue.increment(-1) });
+  });
+</script>
+
+<script>
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /statistics/{document=**} {
+      allow read, write: if true;  // 测试模式，允许所有人读写
     }
-
-    // 在线人数实时更新
-    onlineRef.onSnapshot((doc) => {
-      document.getElementById('online-count').textContent = doc.data().value;
-    });
-
-    // 页面加载时更新在线人数
-    window.addEventListener('load', () => {
-      updateOnlineCount();
-      onlineRef.update({ value: firebase.firestore.FieldValue.increment(1) });
-    });
-
-    // 离开页面时减少在线人数
-    window.addEventListener('beforeunload', () => {
-      onlineRef.update({ value: firebase.firestore.FieldValue.increment(-1) });
-    });
+  }
+}
 </script>
 
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">

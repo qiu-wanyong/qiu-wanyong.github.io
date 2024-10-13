@@ -353,50 +353,67 @@ window.onload = () => {
   
     </style>
 
-<script>
-    // Watch 功能
-    let isWatching = localStorage.getItem('isWatching') === 'true'; 
-    let watchCount = localStorage.getItem('watchCount') ? parseInt(localStorage.getItem('watchCount')) : 0;
 
-    if (!isWatching) {
-        // 用户第一次访问，增加在线人数
-        watchCount++;
-        localStorage.setItem('watchCount', watchCount);
-        localStorage.setItem('isWatching', 'true');
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBXfACNSbdMzlwgteN1m4BHbVjDCxOGdIM",
+    authDomain: "githubdb-ef933.firebaseapp.com",
+    projectId: "githubdb-ef933",
+    storageBucket: "githubdb-ef933.appspot.com",
+    messagingSenderId: "566693839345",
+    appId: "1:566693839345:web:87de73057240e6fc0f0450",
+    measurementId: "G-CDW4L2PX04"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+
+// 订阅数引用
+    const subscribeRef = db.collection('subscriptions').doc('count');
+    const onlineRef = db.collection('online').doc('count');
+
+    // 监听订阅数并更新到页面
+    subscribeRef.onSnapshot((doc) => {
+      document.getElementById('subscription-count').textContent = doc.data().value;
+    });
+
+    // 订阅按钮点击事件
+    document.getElementById('subscribe-btn').addEventListener('click', () => {
+      subscribeRef.update({ value: firebase.firestore.FieldValue.increment(1) });
+    });
+
+    // 在线人数
+    function updateOnlineCount() {
+      onlineRef.get().then((doc) => {
+        document.getElementById('online-count').textContent = doc.data().value;
+      });
     }
 
-    // 显示在线人数
-    document.getElementById('watch-count').innerText = watchCount;
-
-    // 当用户关闭页面时，减少在线人数
-    window.addEventListener('beforeunload', function () {
-        if (localStorage.getItem('isWatching') === 'true') {
-            watchCount--;
-            localStorage.setItem('watchCount', watchCount);
-            localStorage.removeItem('isWatching');  // 清除用户状态
-        }
+    // 在线人数实时更新
+    onlineRef.onSnapshot((doc) => {
+      document.getElementById('online-count').textContent = doc.data().value;
     });
 
-    // 订阅功能
-    let subscriptionCount = localStorage.getItem('subscriptionCount') ? parseInt(localStorage.getItem('subscriptionCount')) : 0;
-    let hasSubscribed = localStorage.getItem('hasSubscribed') === 'true';
-
-    document.getElementById('subscription-count').innerText = subscriptionCount;
-
-    document.getElementById('subscribe-btn').addEventListener('click', function () {
-        if (!hasSubscribed) {
-            subscriptionCount++;
-            localStorage.setItem('subscriptionCount', subscriptionCount);
-            localStorage.setItem('hasSubscribed', 'true');
-            document.getElementById('subscription-count').innerText = subscriptionCount;
-        } else {
-            alert("You have already subscribed!");
-        }
+    // 页面加载时更新在线人数
+    window.addEventListener('load', () => {
+      updateOnlineCount();
+      onlineRef.update({ value: firebase.firestore.FieldValue.increment(1) });
     });
 
+    // 离开页面时减少在线人数
+    window.addEventListener('beforeunload', () => {
+      onlineRef.update({ value: firebase.firestore.FieldValue.increment(-1) });
+    });
 </script>
-
-
 
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">
   var _gaq = _gaq || [];

@@ -378,43 +378,22 @@ window.onload = () => {
   const db = getAnalytics(app);
 </script>
 
+
 <script>
-// 引用 Firestore 数据库
-const db = firebase.firestore();
-const subscribeBtn = document.getElementById('subscribe-btn');
-const subscriptionCount = document.getElementById('subscription-count');
-
-// 获取订阅数据
-function getSubscriptionCount() {
-    db.collection('subscriptions').doc('count').get().then(doc => {
-        if (doc.exists) {
-            subscriptionCount.textContent = doc.data().count;
-        }
+  // 订阅按钮点击事件
+  document.getElementById('subscribe-btn').addEventListener('click', () => {
+    db.collection('subscriptions').add({
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    })
+    .then(() => {
+      console.log('订阅成功！');
+    })
+    .catch((error) => {
+      console.error('订阅失败: ', error);
     });
-}
-
-// 检查用户是否已订阅
-function isSubscribed() {
-    return localStorage.getItem('subscribed') === 'true';
-}
-
-// 订阅功能
-subscribeBtn.addEventListener('click', () => {
-    if (!isSubscribed()) {
-        db.collection('subscriptions').doc('count').update({
-            count: firebase.firestore.FieldValue.increment(1)
-        }).then(() => {
-            localStorage.setItem('subscribed', 'true');
-            getSubscriptionCount(); // 更新订阅数
-        });
-    } else {
-        alert("你已经订阅过了！");
-    }
-});
-
-// 页面加载时显示订阅数
-getSubscriptionCount();
+  });
 </script>
+
 
 <script>
 const onlineUsersBtn = document.getElementById('online-users-btn');

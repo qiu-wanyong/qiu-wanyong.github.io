@@ -73,7 +73,7 @@
     <!-- Watch 和 Star 功能 -->
     <div class="btn-container">
         <!-- Watch 按钮 -->
-        <button class="online-btn">👀 Watch 
+        <button id="online-btn" class="online-btn">👀 Watch 
             <span id="online-count">0</span>
         </button>
 
@@ -354,8 +354,8 @@ window.onload = () => {
     </style>
 
 
-<script "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
-<script "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js"></script>
+<script src= "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+<script src= "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js"></script>
 <script>
   const firebaseConfig = {
     apiKey: "AIzaSyBXfACNSbdMzlwgteN1m4BHbVjDCxOGdIM",
@@ -396,32 +396,35 @@ function updateCounts() {
     });
 }
 
-// 在线人数增加
-document.getElementById('online-btn').addEventListener('click', () => {
-    onlineDoc.update({
-        value: firebase.firestore.FieldValue.increment(1) // 在线人数增加1
-    }).then(() => {
-        console.log("在线人数增加成功");
-        updateCounts(); // 更新显示
-    }).catch(error => {
-        console.error("更新在线人数失败: ", error);
+document.addEventListener('DOMContentLoaded', function() {
+    // 在这里初始化 Firebase 和其他功能
+    updateCounts();
+
+    // 在线人数增加
+    document.getElementById('online-btn').addEventListener('click', () => {
+        onlineDoc.update({
+            value: firebase.firestore.FieldValue.increment(1)
+        }).then(() => {
+            console.log("在线人数增加成功");
+            updateCounts();
+        }).catch(error => {
+            console.error("更新在线人数失败: ", error);
+        });
+    });
+
+    // 订阅计数增加
+    document.getElementById('subscribe-btn').addEventListener('click', () => {
+        subscriptionDoc.update({
+            value: firebase.firestore.FieldValue.increment(1)
+        }).then(() => {
+            console.log("订阅计数增加成功");
+            updateCounts();
+        }).catch(error => {
+            console.error("更新订阅计数失败: ", error);
+        });
     });
 });
-
-// 订阅计数增加
-document.getElementById('subscribe-btn').addEventListener('click', () => {
-    subscriptionDoc.update({
-        value: firebase.firestore.FieldValue.increment(1) // 订阅计数增加1
-    }).then(() => {
-        console.log("订阅计数增加成功");
-        updateCounts(); // 更新显示
-    }).catch(error => {
-        console.error("更新订阅计数失败: ", error);
-    });
-});
-
-// 页面加载时更新显示
-updateCounts();
+</script>
 
   
 <script>

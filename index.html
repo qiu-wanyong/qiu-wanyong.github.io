@@ -72,7 +72,7 @@
     
     <div class="btn-container">
         <button id="online-btn" class="online-btn">👀 Watch 
-            <span id="online-count">1</span>
+            <span id="online-count">0</span>
         </button>
         <button id="subscribe-btn">⭐ Star 
             <span id="subscription-count">22</span>
@@ -350,50 +350,42 @@ window.onload = () => {
     </style>
   
 <script>
-// 模拟在线人数的逻辑
 let isOnline = sessionStorage.getItem('isOnline');
 
-// 在线人数初始化
 function updateOnlineCount() {
-    let onlineCount = localStorage.getItem('onlineCount') || 1;  // 初始值设置为 1
+    let onlineCount = localStorage.getItem('onlineCount') || 0;  
     document.getElementById('online-count').innerText = onlineCount;
 }
 
-// 当用户首次访问或刷新页面时
 if (!isOnline) {
-    let onlineCount = localStorage.getItem('onlineCount') || 1;  // 确保最小值为 1
+    let onlineCount = localStorage.getItem('onlineCount') || 0;  
     onlineCount++;
     localStorage.setItem('onlineCount', onlineCount);
-    sessionStorage.setItem('isOnline', 'true');  // 使用 sessionStorage 来表示当前会话在线状态
+    sessionStorage.setItem('isOnline', 'true'); 
     updateOnlineCount();
 }
 
-// 当用户关闭页面时，减少在线人数
 window.addEventListener('beforeunload', function () {
     let onlineCount = localStorage.getItem('onlineCount') || 1;
     onlineCount--;
-    if (onlineCount < 1) onlineCount = 1;  // 确保在线人数不会低于 1
+    if (onlineCount < 1) onlineCount = 1; 
     localStorage.setItem('onlineCount', onlineCount);
-    sessionStorage.removeItem('isOnline');  // 用户离线
+    sessionStorage.removeItem('isOnline'); 
 });
 
-// 订阅功能的初始值为 22
 let subscriptionCount = localStorage.getItem('subscriptionCount') || 22;
 
-// 显示初始订阅值
 document.getElementById('subscription-count').innerText = subscriptionCount;
 
-// 订阅计数增加
 document.getElementById('subscribe-btn').addEventListener('click', () => {
-    // 如果用户已经订阅过，则不允许再次订阅
     if (localStorage.getItem('subscribed') === 'true') {
         alert("You have already subscribed!");
         return;
     }
     
     subscriptionCount++;
-    localStorage.setItem('subscriptionCount', subscriptionCount);  // 更新本地存储的订阅数
-    localStorage.setItem('subscribed', 'true');  // 标记用户已订阅
+    localStorage.setItem('subscriptionCount', subscriptionCount);
+    localStorage.setItem('subscribed', 'true'); 
     document.getElementById('subscription-count').innerText = subscriptionCount;
 });
 </script>

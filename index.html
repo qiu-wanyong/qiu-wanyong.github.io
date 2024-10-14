@@ -373,19 +373,26 @@ window.onload = () => {
         }
     });
 
-    // 订阅功能
+// 处理 Star 功能
     let subscriptionCount = localStorage.getItem('subscriptionCount') ? parseInt(localStorage.getItem('subscriptionCount')) : 0;
-    let hasSubscribed = localStorage.getItem('hasSubscribed') === 'true';
+    let hasSubscribed = localStorage.getItem('hasSubscribed') === 'true'; // 用户是否已经订阅
 
+    // 更新页面上的订阅数
     document.getElementById('subscription-count').innerText = subscriptionCount;
 
+    // 监听点击订阅事件
     document.getElementById('subscribe-btn').addEventListener('click', function () {
         if (!hasSubscribed) {
+            // 订阅数增加
             subscriptionCount++;
             localStorage.setItem('subscriptionCount', subscriptionCount);
-            localStorage.setItem('hasSubscribed', 'true');
+            localStorage.setItem('hasSubscribed', 'true'); // 标记用户已订阅
+
+            // 更新页面显示的订阅数
             document.getElementById('subscription-count').innerText = subscriptionCount;
+            document.getElementById('subscribe-btn').innerHTML = `⭐ Subscribed <span id="subscription-count">${subscriptionCount}</span>`;
         } else {
+            // 用户已经订阅过，提示已订阅
             alert("You have already subscribed!");
         }
     });

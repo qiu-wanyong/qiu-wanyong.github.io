@@ -350,44 +350,66 @@ window.onload = () => {
     </style>
   
 <script>
-let isOnline = sessionStorage.getItem('isOnline');
+  // 读取 JSON 文件数据
+  function fetchData() {
+    return fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('subscription-count').innerText = data.subscriptionCount;
+        document.getElementById('online-count').innerText = data.onlineCount;
+        return data;
+      })
+      .catch(error => console.error('读取数据失败:', error));
+  }
 
-function updateOnlineCount() {
-    let onlineCount = localStorage.getItem('onlineCount') || 0;  
-    document.getElementById('online-count').innerText = onlineCount;
-}
-
-if (!isOnline) {
-    let onlineCount = localStorage.getItem('onlineCount') || 0;  
-    onlineCount++;
-    localStorage.setItem('onlineCount', onlineCount);
-    sessionStorage.setItem('isOnline', 'true'); 
-    updateOnlineCount();
-}
-
-window.addEventListener('beforeunload', function () {
-    let onlineCount = localStorage.getItem('onlineCount') || 1;
-    onlineCount--;
-    if (onlineCount < 1) onlineCount = 1; 
-    localStorage.setItem('onlineCount', onlineCount);
-    sessionStorage.removeItem('isOnline'); 
-});
-
-let subscriptionCount = localStorage.getItem('subscriptionCount') || 22;
-
-document.getElementById('subscription-count').innerText = subscriptionCount;
-
-document.getElementById('subscribe-btn').addEventListener('click', () => {
-    if (localStorage.getItem('subscribed') === 'true') {
+  // 订阅功能：增加订阅人数
+  document.getElementById('subscribe-btn').addEventListener('click', () => {
+    fetchData().then(data => {
+      if (localStorage.getItem('subscribed') === 'true') {
         alert("You have already subscribed!");
         return;
-    }
-    
-    subscriptionCount++;
-    localStorage.setItem('subscriptionCount', subscriptionCount);
-    localStorage.setItem('subscribed', 'true'); 
-    document.getElementById('subscription-count').innerText = subscriptionCount;
-});
+      }
+      
+      // 增加订阅数
+      data.subscriptionCount++;
+      localStorage.setItem('subscribed', 'true');
+      
+      // 更新页面显示
+      document.getElementById('subscription-count').innerText = data.subscriptionCount;
+      
+      // 模拟保存到 JSON 文件 (GitHub Pages 上无法动态保存，只做演示)
+      console.log('更新后的数据:', data);
+    });
+  });
+
+  // 在线人数统计功能
+  function updateOnlineCount() {
+    fetchData().then(data => {
+      let onlineCount = data.onlineCount || 0;
+
+      // 模拟用户进入页面
+      onlineCount++;
+      localStorage.setItem('online', 'true'); // 本地记录用户在线
+      
+      // 更新页面显示
+      document.getElementById('online-count').innerText = onlineCount;
+
+      // 模拟保存在线人数 (无法保存到 JSON 文件，需服务器支持)
+      console.log('更新后的在线人数:', onlineCount);
+
+      // 当用户关闭页面时，减少在线人数
+      window.addEventListener('beforeunload', function() {
+        let onlineCount = localStorage.getItem('onlineCount') || onlineCount;
+        onlineCount--;
+        localStorage.removeItem('online'); // 用户离线
+        console.log('用户离开后在线人数:', onlineCount);
+      });
+    });
+  }
+
+  // 页面加载时执行
+  fetchData();
+  updateOnlineCount();
 </script>
 
         

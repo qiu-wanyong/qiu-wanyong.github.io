@@ -65,9 +65,19 @@
   
 <td id="layout-content">
 <p><br></p>
-  
+
+
 <div id="toptitle">
-<h1><b>Wanyong Qiu</b></h1>
+    <h1><b>Wanyong Qiu</b></h1>
+    
+    <div class="btn-container">
+        <button id="online-btn" class="online-btn">👀 Watch 
+            <span id="online-count">0</span>
+        </button>
+        <button id="subscribe-btn">⭐ Star 
+            <span id="subscription-count">22</span>
+        </button>
+    </div>
 </div>
 
 <table class="imgtable"><tbody><tr><td>
@@ -300,7 +310,109 @@ window.onload = () => {
 };
 </script>
 
+<style>
+        #toptitle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+  
+        .btn-container {
+            display: flex;
+            align-items: center;
+        }
 
+        .online-btn, #subscribe-btn {
+            background-color: #f8f9fa;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            padding: 4px 10px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #333;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+        #online-count, #subscription-count {
+            margin-left: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 2px 8px;
+            border-radius: 50%;
+            background-color: #e1e4e8;
+            border: 1px solid #d1d5da;
+            display: inline-block;
+        }
+  
+    </style>
+  
+<script>
+  // 读取 JSON 文件数据
+  function fetchData() {
+    return fetch('data.json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('subscription-count').innerText = data.subscriptionCount;
+        document.getElementById('online-count').innerText = data.onlineCount;
+        return data;
+      })
+      .catch(error => console.error('读取数据失败:', error));
+  }
+
+  // 订阅功能：增加订阅人数
+  document.getElementById('subscribe-btn').addEventListener('click', () => {
+    fetchData().then(data => {
+      if (localStorage.getItem('subscribed') === 'true') {
+        alert("You have already subscribed!");
+        return;
+      }
+      
+      // 增加订阅数
+      data.subscriptionCount++;
+      localStorage.setItem('subscribed', 'true');
+      
+      // 更新页面显示
+      document.getElementById('subscription-count').innerText = data.subscriptionCount;
+      
+      // 模拟保存到 JSON 文件 (GitHub Pages 上无法动态保存，只做演示)
+      console.log('更新后的数据:', data);
+    });
+  });
+
+  // 在线人数统计功能
+  function updateOnlineCount() {
+    fetchData().then(data => {
+      let onlineCount = data.onlineCount || 0;
+
+      // 模拟用户进入页面
+      onlineCount++;
+      localStorage.setItem('online', 'true'); // 本地记录用户在线
+      
+      // 更新页面显示
+      document.getElementById('online-count').innerText = onlineCount;
+
+      // 模拟保存在线人数 (无法保存到 JSON 文件，需服务器支持)
+      console.log('更新后的在线人数:', onlineCount);
+
+      // 当用户关闭页面时，减少在线人数
+      window.addEventListener('beforeunload', function() {
+        let onlineCount = localStorage.getItem('onlineCount') || onlineCount;
+        onlineCount--;
+        localStorage.removeItem('online'); // 用户离线
+        console.log('用户离开后在线人数:', onlineCount);
+      });
+    });
+  }
+
+  // 页面加载时执行
+  fetchData();
+  updateOnlineCount();
+</script>
+
+        
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-24986751-1']);

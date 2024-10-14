@@ -75,7 +75,7 @@
             <span id="online-count">0</span>
         </button>
         <button id="subscribe-btn">⭐ Star 
-            <span id="subscription-count">22</span>
+            <span id="subscription-count">23</span>
         </button>
     </div>
 </div>
@@ -385,7 +385,7 @@ window.onload = () => {
   // 在线人数统计功能
   function updateOnlineCount() {
     fetchData().then(data => {
-      let onlineCount = data.onlineCount || 0;
+      let onlineCount = data.onlineCount || 1;
 
       // 模拟用户进入页面
       onlineCount++;

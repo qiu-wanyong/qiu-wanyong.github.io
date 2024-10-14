@@ -387,7 +387,7 @@ document.getElementById('subscription-count').innerText = subscriptionCount;
 document.getElementById('subscribe-btn').addEventListener('click', () => {
     // 如果用户已经订阅过，则不允许再次订阅
     if (localStorage.getItem('subscribed') === 'true') {
-        alert("您已经订阅过了！");
+        alert("You have already subscribed!");
         return;
     }
     

@@ -350,19 +350,28 @@ window.onload = () => {
     </style>
   
     <script>
-        // 在线人数统计逻辑 (基于 sessionStorage 模拟在线人数)
-        function updateOnlineCount() {
-            // 检查是否已存储在线人数，默认设置为1
-            let onlineCount = sessionStorage.getItem('onlineCount') || 0;
-            onlineCount++;
-            sessionStorage.setItem('onlineCount', onlineCount);
+// Watch 功能
+    let isWatching = localStorage.getItem('isWatching') === 'true'; 
+    let watchCount = localStorage.getItem('watchCount') ? parseInt(localStorage.getItem('watchCount')) : 0;
 
-            // 更新在线人数显示
-            document.getElementById('online-count').innerText = onlineCount;
+    if (!isWatching) {
+        // 用户第一次访问，增加在线人数
+        watchCount++;
+        localStorage.setItem('watchCount', watchCount);
+        localStorage.setItem('isWatching', 'true');
+    }
+
+    // 显示在线人数
+    document.getElementById('watch-count').innerText = watchCount;
+
+    // 当用户关闭页面时，减少在线人数
+    window.addEventListener('beforeunload', function () {
+        if (localStorage.getItem('isWatching') === 'true') {
+            watchCount--;
+            localStorage.setItem('watchCount', watchCount);
+            localStorage.removeItem('isWatching');  // 清除用户状态
         }
-
-        // 初始化页面时调用
-        updateOnlineCount();
+    });
 
         // 订阅功能逻辑 (基于 localStorage 存储订阅计数)
         function updateSubscriptionCount() {

@@ -394,10 +394,10 @@ window.addEventListener('beforeunload', function () {
             const subscribeBtn = document.getElementById('subscribe-btn');
             if (checkIfSubscribed()) {
                 subscribeBtn.classList.add('disabled');  // 禁用按钮
-                subscribeBtn.innerHTML = '⭐ Starred <span id="subscription-count" class="badge">0</span>';
+                subscribeBtn.innerHTML = '⭐ Starred <span id="subscription-count" class="badge">22</span>';
             } else {
                 subscribeBtn.classList.remove('disabled');
-                subscribeBtn.innerHTML = '⭐ Star <span id="subscription-count" class="badge">0</span>';
+                subscribeBtn.innerHTML = '⭐ Star <span id="subscription-count" class="badge">22</span>';
             }
             updateSubscriptionCount();  // 更新订阅数显示
         }
@@ -419,6 +419,7 @@ window.addEventListener('beforeunload', function () {
 
         // 初始化页面时检查并设置按钮状态
         setSubscribeButtonState();
+
     </script>
 
         

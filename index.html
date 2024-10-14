@@ -376,51 +376,26 @@ window.addEventListener('beforeunload', function () {
     localStorage.removeItem('isOnline'); // 用户离线
 });
 
+let subscriptionCount = localStorage.getItem('subscriptionCount') || 22;  // 初始值为22
 
-        // 订阅功能逻辑 (基于 localStorage 存储订阅计数)
-        function updateSubscriptionCount() {
-            // 获取当前的订阅数
-            let subscriptionCount = localStorage.getItem('subscriptionCount') || 22;
-            document.getElementById('subscription-count').innerText = subscriptionCount;
-        }
+// 显示初始值
+document.getElementById('subscription-count').innerText = subscriptionCount;
 
-        // 检查用户是否已经订阅
-        function checkIfSubscribed() {
-            return localStorage.getItem('isSubscribed') === 'true';
-        }
-
-        // 设置订阅按钮的状态
-        function setSubscribeButtonState() {
-            const subscribeBtn = document.getElementById('subscribe-btn');
-            if (checkIfSubscribed()) {
-                subscribeBtn.classList.add('disabled');  // 禁用按钮
-                subscribeBtn.innerHTML = '⭐ Starred <span id="subscription-count" class="badge">22</span>';
-            } else {
-                subscribeBtn.classList.remove('disabled');
-                subscribeBtn.innerHTML = '⭐ Star <span id="subscription-count" class="badge">22</span>';
-            }
-            updateSubscriptionCount();  // 更新订阅数显示
-        }
-
-        // 当用户点击“Star”按钮时，订阅数增加
-        document.getElementById('subscribe-btn').addEventListener('click', () => {
-            if (checkIfSubscribed()) {
+// 订阅计数增加
+document.getElementById('subscribe-btn').addEventListener('click', () => {
+    // 如果订阅过，就不再允许订阅
+    if (localStorage.getItem('subscribed') === 'true') {
             alert("You have already subscribed!");
-                return;  // 如果已订阅，直接返回，不执行后续代码
-            }
+        return;
+    }
+    
+    subscriptionCount++;
+    localStorage.setItem('subscriptionCount', subscriptionCount);  // 更新本地存储的订阅数
+    localStorage.setItem('subscribed', 'true');  // 标记用户已订阅
+    document.getElementById('subscription-count').innerText = subscriptionCount;
+});
 
-            let subscriptionCount = localStorage.getItem('subscriptionCount') || 22;
-            subscriptionCount++;
-            localStorage.setItem('subscriptionCount', subscriptionCount);
-            localStorage.setItem('isSubscribed', 'true');  // 设置已订阅标记
-
-            setSubscribeButtonState();  // 更新按钮状态和订阅数显示
-        });
-
-        // 初始化页面时检查并设置按钮状态
-        setSubscribeButtonState();
-
-    </script>
+</script>
 
         
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">

@@ -404,7 +404,7 @@ window.onload = () => {
                 return;  // 如果已订阅，直接返回，不执行后续代码
             }
 
-            let subscriptionCount = localStorage.getItem('subscriptionCount') || 0;
+            let subscriptionCount = localStorage.getItem('subscriptionCount') || 22;
             subscriptionCount++;
             localStorage.setItem('subscriptionCount', subscriptionCount);
             localStorage.setItem('isSubscribed', 'true');  // 设置已订阅标记

@@ -349,64 +349,47 @@ window.onload = () => {
   
     </style>
 
-    <script>
-        // 在线人数统计逻辑 (基于 sessionStorage 模拟在线人数)
-        function updateOnlineCount() {
-            // 检查是否已存储在线人数，默认设置为1
-            let onlineCount = sessionStorage.getItem('onlineCount') || 0;
-            onlineCount++;
-            sessionStorage.setItem('onlineCount', onlineCount);
+<script>
+    // Watch 功能
+    let isWatching = localStorage.getItem('isWatching') === 'true'; 
+    let watchCount = localStorage.getItem('watchCount') ? parseInt(localStorage.getItem('watchCount')) : 0;
 
-            // 更新在线人数显示
-            document.getElementById('online-count').innerText = onlineCount;
+    if (!isWatching) {
+        // 用户第一次访问，增加在线人数
+        watchCount++;
+        localStorage.setItem('watchCount', watchCount);
+        localStorage.setItem('isWatching', 'true');
+    }
+
+    // 显示在线人数
+    document.getElementById('watch-count').innerText = watchCount;
+
+    // 当用户关闭页面时，减少在线人数
+    window.addEventListener('beforeunload', function () {
+        if (localStorage.getItem('isWatching') === 'true') {
+            watchCount--;
+            localStorage.setItem('watchCount', watchCount);
+            localStorage.removeItem('isWatching');  // 清除用户状态
         }
+    });
 
-        // 初始化页面时调用
-        updateOnlineCount();
+    // 订阅功能
+    let subscriptionCount = localStorage.getItem('subscriptionCount') ? parseInt(localStorage.getItem('subscriptionCount')) : 0;
+    let hasSubscribed = localStorage.getItem('hasSubscribed') === 'true';
 
-        // 订阅功能逻辑 (基于 localStorage 存储订阅计数)
-        function updateSubscriptionCount() {
-            // 获取当前的订阅数，默认值为0
-            let subscriptionCount = localStorage.getItem('subscriptionCount') || 0;
-            document.getElementById('subscription-count').innerText = subscriptionCount;
-        }
+    document.getElementById('subscription-count').innerText = subscriptionCount;
 
-        // 检查用户是否已经订阅
-        function checkIfSubscribed() {
-            return localStorage.getItem('isSubscribed') === 'true';
-        }
-
-        // 设置订阅按钮的状态
-        function setSubscribeButtonState() {
-            const subscribeBtn = document.getElementById('subscribe-btn');
-            if (checkIfSubscribed()) {
-                subscribeBtn.classList.add('disabled');  // 禁用按钮
-                subscribeBtn.innerHTML = '⭐ 已订阅 <span id="subscription-count" class="badge">0</span>';
-            } else {
-                subscribeBtn.classList.remove('disabled');
-                subscribeBtn.innerHTML = '⭐ Star <span id="subscription-count" class="badge">0</span>';
-            }
-            updateSubscriptionCount();  // 更新订阅数显示
-        }
-
-        // 当用户点击“Star”按钮时，订阅数增加
-        document.getElementById('subscribe-btn').addEventListener('click', () => {
-            if (checkIfSubscribed()) {
-                alert('您已经订阅过了！');
-                return;  // 如果已订阅，直接返回，不执行后续代码
-            }
-
-            let subscriptionCount = localStorage.getItem('subscriptionCount') || 0;
+    document.getElementById('subscribe-btn').addEventListener('click', function () {
+        if (!hasSubscribed) {
             subscriptionCount++;
             localStorage.setItem('subscriptionCount', subscriptionCount);
-            localStorage.setItem('isSubscribed', 'true');  // 设置已订阅标记
-
-            setSubscribeButtonState();  // 更新按钮状态和订阅数显示
-        });
-
-        // 初始化页面时检查并设置按钮状态
-        setSubscribeButtonState();
-    </script>
+            localStorage.setItem('hasSubscribed', 'true');
+            document.getElementById('subscription-count').innerText = subscriptionCount;
+        } else {
+            alert("You have already subscribed!");
+        }
+    });
+</script>
         
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">
   var _gaq = _gaq || [];

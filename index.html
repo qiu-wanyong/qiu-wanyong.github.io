@@ -349,8 +349,39 @@ window.onload = () => {
   
     </style>
 
+    <script>
+        // 在线人数统计逻辑 (基于 sessionStorage 模拟在线人数)
+        function updateOnlineCount() {
+            // 检查是否已存储在线人数，默认设置为1
+            let onlineCount = sessionStorage.getItem('onlineCount') || 0;
+            onlineCount++;
+            sessionStorage.setItem('onlineCount', onlineCount);
 
+            // 更新在线人数显示
+            document.getElementById('online-count').innerText = onlineCount;
+        }
 
+        // 初始化页面时调用
+        updateOnlineCount();
+
+        // 订阅功能逻辑 (基于 localStorage 存储订阅计数)
+        function updateSubscriptionCount() {
+            // 获取当前的订阅数，默认值为0
+            let subscriptionCount = localStorage.getItem('subscriptionCount') || 0;
+            document.getElementById('subscription-count').innerText = subscriptionCount;
+        }
+
+        // 当用户点击“Star”按钮时，订阅数增加
+        document.getElementById('subscribe-btn').addEventListener('click', () => {
+            let subscriptionCount = localStorage.getItem('subscriptionCount') || 0;
+            subscriptionCount++;
+            localStorage.setItem('subscriptionCount', subscriptionCount);
+            document.getElementById('subscription-count').innerText = subscriptionCount;
+        });
+
+        // 初始化页面时更新订阅计数
+        updateSubscriptionCount();
+    </script>
         
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">
   var _gaq = _gaq || [];

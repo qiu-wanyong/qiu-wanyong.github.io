@@ -371,16 +371,41 @@ window.onload = () => {
             document.getElementById('subscription-count').innerText = subscriptionCount;
         }
 
+        // 检查用户是否已经订阅
+        function checkIfSubscribed() {
+            return localStorage.getItem('isSubscribed') === 'true';
+        }
+
+        // 设置订阅按钮的状态
+        function setSubscribeButtonState() {
+            const subscribeBtn = document.getElementById('subscribe-btn');
+            if (checkIfSubscribed()) {
+                subscribeBtn.classList.add('disabled');  // 禁用按钮
+                subscribeBtn.innerHTML = '⭐ 已订阅 <span id="subscription-count" class="badge">0</span>';
+            } else {
+                subscribeBtn.classList.remove('disabled');
+                subscribeBtn.innerHTML = '⭐ Star <span id="subscription-count" class="badge">0</span>';
+            }
+            updateSubscriptionCount();  // 更新订阅数显示
+        }
+
         // 当用户点击“Star”按钮时，订阅数增加
         document.getElementById('subscribe-btn').addEventListener('click', () => {
+            if (checkIfSubscribed()) {
+                alert('您已经订阅过了！');
+                return;  // 如果已订阅，直接返回，不执行后续代码
+            }
+
             let subscriptionCount = localStorage.getItem('subscriptionCount') || 0;
             subscriptionCount++;
             localStorage.setItem('subscriptionCount', subscriptionCount);
-            document.getElementById('subscription-count').innerText = subscriptionCount;
+            localStorage.setItem('isSubscribed', 'true');  // 设置已订阅标记
+
+            setSubscribeButtonState();  // 更新按钮状态和订阅数显示
         });
 
-        // 初始化页面时更新订阅计数
-        updateSubscriptionCount();
+        // 初始化页面时检查并设置按钮状态
+        setSubscribeButtonState();
     </script>
         
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">

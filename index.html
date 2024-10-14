@@ -349,29 +349,33 @@ window.onload = () => {
   
     </style>
   
-    <script>
-// Watch 功能
-    let isWatching = localStorage.getItem('isWatching') === 'true'; 
-    let watchCount = localStorage.getItem('watchCount') ? parseInt(localStorage.getItem('watchCount')) : 0;
+<script>
+// 模拟在线人数的逻辑
+let isOnline = localStorage.getItem('isOnline');
 
-    if (!isWatching) {
-        // 用户第一次访问，增加在线人数
-        watchCount++;
-        localStorage.setItem('watchCount', watchCount);
-        localStorage.setItem('isWatching', 'true');
-    }
+// 在线人数初始化
+function updateOnlineCount() {
+    let onlineCount = localStorage.getItem('onlineCount') || 0;
+    document.getElementById('online-count').innerText = onlineCount;
+}
 
-    // 显示在线人数
-    document.getElementById('watch-count').innerText = watchCount;
+// 当用户首次访问或刷新页面时
+if (!isOnline) {
+    let onlineCount = localStorage.getItem('onlineCount') || 0;
+    onlineCount++;
+    localStorage.setItem('onlineCount', onlineCount);
+    localStorage.setItem('isOnline', 'true');
+    updateOnlineCount();
+}
 
-    // 当用户关闭页面时，减少在线人数
-    window.addEventListener('beforeunload', function () {
-        if (localStorage.getItem('isWatching') === 'true') {
-            watchCount--;
-            localStorage.setItem('watchCount', watchCount);
-            localStorage.removeItem('isWatching');  // 清除用户状态
-        }
-    });
+// 当用户关闭页面时，减少在线人数
+window.addEventListener('beforeunload', function () {
+    let onlineCount = localStorage.getItem('onlineCount') || 0;
+    onlineCount--;
+    localStorage.setItem('onlineCount', onlineCount);
+    localStorage.removeItem('isOnline'); // 用户离线
+});
+
 
         // 订阅功能逻辑 (基于 localStorage 存储订阅计数)
         function updateSubscriptionCount() {

@@ -75,7 +75,7 @@
             <span id="online-count">0</span>
         </button>
         <button id="subscribe-btn">⭐ Star 
-            <span id="subscription-count">0</span>
+            <span id="subscription-count">22</span>
         </button>
     </div>
 </div>
@@ -379,8 +379,8 @@ window.addEventListener('beforeunload', function () {
 
         // 订阅功能逻辑 (基于 localStorage 存储订阅计数)
         function updateSubscriptionCount() {
-            // 获取当前的订阅数，默认值为0
-            let subscriptionCount = localStorage.getItem('subscriptionCount') || 0;
+            // 获取当前的订阅数
+            let subscriptionCount = localStorage.getItem('subscriptionCount') || 22;
             document.getElementById('subscription-count').innerText = subscriptionCount;
         }
 
@@ -409,7 +409,7 @@ window.addEventListener('beforeunload', function () {
                 return;  // 如果已订阅，直接返回，不执行后续代码
             }
 
-            let subscriptionCount = localStorage.getItem('subscriptionCount') || 0;
+            let subscriptionCount = localStorage.getItem('subscriptionCount') || 22;
             subscriptionCount++;
             localStorage.setItem('subscriptionCount', subscriptionCount);
             localStorage.setItem('isSubscribed', 'true');  // 设置已订阅标记

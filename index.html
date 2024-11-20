@@ -72,10 +72,10 @@
     
     <div class="btn-container">
         <button id="online-btn" class="online-btn">👀 Watch 
-            <span id="online-count">0</span>
+            <span id="online-count">1</span>
         </button>
         <button id="subscribe-btn">⭐ Star 
-            <span id="subscription-count">22</span>
+            <span id="subscription-count">23</span>
         </button>
     </div>
 </div>
@@ -83,8 +83,8 @@
 <table class="imgtable"><tbody><tr><td>
 <a href="./WanyongQiu_home/Assets/photo.jpg"><img src="./WanyongQiu_home/Assets/photo.jpg" alt="alt text" width="150px&quot;"></a>&nbsp;</td>
 <td align="left"> <b>Wanyong Qiu (邱万勇)</b>. <span class="small-text">PhD candidate (2021)</span><br>
-<br>I am from the <a href="https://bhe-lab.org/" target="blank">Key Laboratory of Brain Health Intelligent Evaluation and Intervention (BIT)</a>, Ministry of Education, P. R. China<span style="display: block;"><em>Advisor</em>: Prof. <a href="https://bhe-lab.org/%E8%83%A1%E6%96%8C/" target="blank">Bin Hu</a> (Fellow, IEEE), Prof. <a href="https://bhe-lab.org/%E9%92%B1%E6%98%86/" target="blank">Kun Qian</a> and Prof. <a href="https://bhe-lab.org/%E8%91%A3%E7%BE%A4%E5%96%9C/" target="blank">QunXi Dong</a></span>
-<br><em>Address</em>: <a href="https://cs.bit.edu.cn/" target="blank">School of Computer Science</a>, <a href="http://www.bit.edu.cn/" target="blank">Beijing Institute of Technology</a>, <a href="https://map.baidu.com/poi/%E5%8C%97%E4%BA%AC%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/@12949064.405926608,4837765.696375777,11.78z?uid=679a1d3e81e0ad58ab0dd8ce&ugc_type=3&ugc_ver=1&device_ratio=2&compat=1&pcevaname=pc4.1&querytype=detailConInfo&da_src=shareurl/" target="blank">No. 5 Zhongguancun South Street, Haidian District, Beijing, 100081</a><br>
+<br>I am from the <a href="https://bhe-lab.org/" target="blank">Key Laboratory of Brain Health Intelligent Evaluation and Intervention (BIT)</a>, Ministry of Education, P. R. China<span style="display: block;"><em>Advisor</em>: Prof. <a href="https://bhe-lab.org/%E8%83%A1%E6%96%8C/" target="blank">Bin Hu</a> (Fellow, IEEE), Prof. <a href="https://bhe-lab.org/%E9%92%B1%E6%98%86/" target="blank">Kun Qian</a> and Prof. <a href="https://bhe-lab.org/%E8%91%A3%E7%BE%A4%E5%96%9C/" target="blank">QunXi Dong</a></span><br>
+<em>Address</em>: <a href="https://cs.bit.edu.cn/" target="blank">School of Computer Science</a>, <a href="http://www.bit.edu.cn/" target="blank">Beijing Institute of Technology</a>, <a href="https://map.baidu.com/poi/%E5%8C%97%E4%BA%AC%E7%90%86%E5%B7%A5%E5%A4%A7%E5%AD%A6/@12949064.405926608,4837765.696375777,11.78z?uid=679a1d3e81e0ad58ab0dd8ce&ugc_type=3&ugc_ver=1&device_ratio=2&compat=1&pcevaname=pc4.1&querytype=detailConInfo&da_src=shareurl/" target="blank">No. 5 Zhongguancun South Street, Haidian District, Beijing, 100081</a>
 <br><em>Email</em>: <a href="mailto:qiuwy@bit.ecu.cn/" target="blank">qiuwy@bit.ecu.cn</a><br>
   
 <br>
@@ -115,7 +115,7 @@
   <p>Due to smart healthcare system is highly connected to advanced wearable devices, IoHT and mobile internet, valuable patient information and other significant medical records are stored in wearable smart terminals. Ensuring data security and privacy while maintaining data availability for smart terminals is crucial. Therefore, proper medical information security is becoming equally important in smart healthcare. Motivated by these facts, <span style="color: #00008B;">we explore and share novel ideas, methods, theories and practices with focus on information security and privacy solutions for the computational psychophysiology smart healthcare industry.</span></p>
 <div class="infoblock">
 <div class="blockcontent">
-<p>🤹‍♀️ The lab is looking for PhD, MPhil, and undergraduate students with strong background to work together on the interdisciplinary area of brain health.</p>
+<p>🤹‍♀️ The lab is looking for PhD, master, and undergraduate students with strong background to work together on the interdisciplinary area of brain health.</p>
 <p>📫 Please see <a href="https://bhe-lab.org/" target="blank">BHE-Lab</a> for more details.</p>
 </div>
 </div>
@@ -193,9 +193,9 @@
       </div>
       
       <ul>
-        <li>[10/2024] 🎉A patent has been granted, "A heart sound monitoring system based on federated learning"</li>
+        <li>[11/2024] 🎉I was awarded the school honorary title of Outstanding Student of 2023-2024 from the School of Computer Science, Beijing Institute of Technology. </li>
+        <li>[10/2024] 🎉A patent has been granted, "A heart sound monitoring system based on federated learning".</li>
         <li>[09/2024] 🎉A New Paper has been Published by AAAS CBS!</li>
-        <li>[06/2024] 🎉A New Paper has been Published by IEEE J-BHI!</li>
       </ul>
     </div>
 
@@ -385,7 +385,7 @@ window.onload = () => {
   // 在线人数统计功能
   function updateOnlineCount() {
     fetchData().then(data => {
-      let onlineCount = data.onlineCount || 0;
+      let onlineCount = data.onlineCount || 1;
 
       // 模拟用户进入页面
       onlineCount++;

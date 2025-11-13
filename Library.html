@@ -94,24 +94,101 @@
 
 
 	
-<details>
-<summary><b>[IEEE JBHI]</b> Conference (<font color="red"><b>SCI 1区 Top</b></font>)  
-<a href="https://ieeexplore.ieee.org/abstract/document/10599790">PDF</a> | 
-<a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10599790">Technical Report</a> | 
-<font color="RoyalBlue">show/hide abstract</font></summary>
+<li>
+  <font color="RoyalBlue">[IEEE JBHI]</font> Conference (<font color="red"><b>SCI</b></font>).
+  <a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/10599790" target="_blank">PDF</a>
+  <a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10599790" target="_blank">Technical Report</a>
 
-#### 一、AI / ML 方向（含 AAAI 的“通用顶会”）
+  <!-- show/hide 按钮 -->
+  <a class="badge badge-light" id="JBHI-toggle" href="javascript:void(0)"
+     onclick="toggleAbstract('JBHI-contents','JBHI-toggle')" aria-expanded="false">
+     show abstract
+  </a>
 
-| 会议 | 全称 | 官网 | 投稿截止日期（示例） | CCF分区 |
-|:----:|:------|:------|:----------------------|:-------:|
-| **NeurIPS** | Conference on Neural Information Processing Systems | [neurips.cc](https://neurips.cc) | 摘要：2025-05-11；全文：2025-05-15 | A |
-| **ICML** | International Conference on Machine Learning | [icml.cc](https://icml.cc) | 摘要：2026-01-23；全文：2026-01-28 | A |
-| **ICLR** | International Conference on Learning Representations | [iclr.cc](https://iclr.cc) | 摘要：2025-09-19；全文：2025-09-24 | A |
-| **CVPR** | IEEE/CVF Conference on Computer Vision and Pattern Recognition | [cvpr.thecvf.com](https://cvpr.thecvf.com) | 全文：2025-11-13 | A |
-| **AAAI** | AAAI Conference on Artificial Intelligence | [aaai.org](https://aaai.org) | 摘要：2025-07-25；全文：2025-08-01 | A |
-| **IJCAI** | International Joint Conference on Artificial Intelligence | [ijcai.org](https://ijcai.org) | 约 2025-01 中旬（示例） | A |
+  <!-- 下面是要显示/隐藏的完整会议列表（初始隐藏） -->
+  <div id="JBHI-contents" style="display:none; margin-top:10px; color:#333; font-style:normal;">
+    <h4 style="color:#4FA1EA; margin:0 0 8px 0;">一、AI / ML 方向（含 AAAI 的“通用顶会”）</h4>
 
-</details>
+    <table border="1" cellspacing="0" cellpadding="6"
+           style="border-collapse:collapse; width:100%; font-size:14px;">
+      <thead style="background-color:#E6F0FA; text-align:left;">
+        <tr>
+          <th style="width:12%;">会议</th>
+          <th style="width:38%;">全称</th>
+          <th style="width:30%;">官网</th>
+          <th style="width:20%;">最近投稿截止日期（示例）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>NeurIPS</b></td>
+          <td>Conference on Neural Information Processing Systems</td>
+          <td><a href="https://neurips.cc" target="_blank">https://neurips.cc</a></td>
+          <td>摘要：2025-05-11；全文：2025-05-15</td>
+        </tr>
+        <tr>
+          <td><b>ICML</b></td>
+          <td>International Conference on Machine Learning</td>
+          <td><a href="https://icml.cc" target="_blank">https://icml.cc</a></td>
+          <td>摘要：2026-01-23；全文：2026-01-28</td>
+        </tr>
+        <tr>
+          <td><b>ICLR</b></td>
+          <td>International Conference on Learning Representations</td>
+          <td><a href="https://iclr.cc" target="_blank">https://iclr.cc</a></td>
+          <td>摘要：2025-09-19；全文：2025-09-24</td>
+        </tr>
+        <tr>
+          <td><b>CVPR</b></td>
+          <td>IEEE/CVF Conference on Computer Vision and Pattern Recognition</td>
+          <td><a href="https://cvpr.thecvf.com" target="_blank">https://cvpr.thecvf.com</a></td>
+          <td>全文：2025-11-13</td>
+        </tr>
+        <tr>
+          <td><b>AAAI</b></td>
+          <td>AAAI Conference on Artificial Intelligence</td>
+          <td><a href="https://aaai.org" target="_blank">https://aaai.org</a></td>
+          <td>摘要：2025-07-25；全文：2025-08-01</td>
+        </tr>
+        <tr>
+          <td><b>IJCAI</b></td>
+          <td>International Joint Conference on Artificial Intelligence</td>
+          <td><a href="https://ijcai.org" target="_blank">https://ijcai.org</a></td>
+          <td>约 2025-01 中旬（示例）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</li>
+
+<script>
+/**
+ * toggleAbstract(contentId, toggleBtnId)
+ * - contentId: 要显示/隐藏的元素 id（如 'JBHI-contents'）
+ * - toggleBtnId: 按钮元素 id（可用于更新按钮文字与 aria-expanded）
+ */
+function toggleAbstract(contentId, toggleBtnId) {
+  var content = document.getElementById(contentId);
+  var btn = document.getElementById(toggleBtnId);
+  if (!content) return;
+
+  var isHidden = (content.style.display === "none" || content.style.display === "");
+  if (isHidden) {
+    content.style.display = "block";
+    if (btn) {
+      btn.setAttribute("aria-expanded", "true");
+      btn.innerText = "hide abstract";
+    }
+  } else {
+    content.style.display = "none";
+    if (btn) {
+      btn.setAttribute("aria-expanded", "false");
+      btn.innerText = "show abstract";
+    }
+  }
+}
+</script>
+
 
 
 

@@ -96,220 +96,75 @@
 
 	
 <li>
-	<font color="RoyalBlue">[IEEE TBME]</font> 期刊推荐  (<font color="red"><b>SCI</b></font>).
-    <a class="badge badge-light" onclick="show('Journal')">show/hide abstract</a>
-<div id="Journal" style="display:none; color:#4FA1EA; font-style:italic"> 
-	
-<tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">期刊名称（官网）</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">期刊简称</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IF:2023</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">中科院</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">目标与领域</th>
+  <font color="RoyalBlue">[IEEE JBHI]</font> Conference (<font color="red"><b>SCI 1区 Top</b></font>).
+  <a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/10599790">PDF</a>
+  <a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10599790">Technical Report</a>
+  <a class="badge badge-light" onclick="toggleAbstract('JBHI')">show/hide abstract</a>
 
-  </tr>
+  <div id="JBHI" style="display:none; color:#333; font-style:normal; margin-top:10px;">
+    <h4 style="color:#4FA1EA;">一、AI / ML 方向（含 AAAI 的“通用顶会”）</h4>
+    <table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse; width:100%; font-size:14px;">
+      <thead style="background-color:#E6F0FA; text-align:left;">
+        <tr>
+          <th>会议</th>
+          <th>全称</th>
+          <th>官网</th>
+          <th>最近投稿截止日期</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>NeurIPS</b></td>
+          <td>Conference on Neural Information Processing Systems</td>
+          <td><a href="https://neurips.cc" target="_blank">neurips.cc</a></td>
+          <td>摘要：2025-05-11；全文：2025-05-15</td>
+        </tr>
+        <tr>
+          <td><b>ICML</b></td>
+          <td>International Conference on Machine Learning</td>
+          <td><a href="https://icml.cc" target="_blank">icml.cc</a></td>
+          <td>摘要：2026-01-23；全文：2026-01-28</td>
+        </tr>
+        <tr>
+          <td><b>ICLR</b></td>
+          <td>International Conference on Learning Representations</td>
+          <td><a href="https://iclr.cc" target="_blank">iclr.cc</a></td>
+          <td>摘要：2025-09-19；全文：2025-09-24</td>
+        </tr>
+        <tr>
+          <td><b>CVPR</b></td>
+          <td>IEEE/CVF Conference on Computer Vision and Pattern Recognition</td>
+          <td><a href="https://cvpr.thecvf.com" target="_blank">cvpr.thecvf.com</a></td>
+          <td>全文：2025-11-13</td>
+        </tr>
+        <tr>
+          <td><b>AAAI</b></td>
+          <td>AAAI Conference on Artificial Intelligence</td>
+          <td><a href="https://aaai.org" target="_blank">aaai.org</a></td>
+          <td>摘要：2025-07-25；全文：2025-08-01</td>
+        </tr>
+        <tr>
+          <td><b>IJCAI</b></td>
+          <td>International Joint Conference on Artificial Intelligence</td>
+          <td><a href="https://ijcai.org" target="_blank">ijcai.org</a></td>
+          <td>约 2025-01 中旬</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</li>
 
-<tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">期刊名称（官网）</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">期刊简称</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IF:2023</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">中科院</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">目标与领域</th>
+<script>
+function toggleAbstract(id) {
+  var element = document.getElementById(id);
+  if (element.style.display === "none" || element.style.display === "") {
+    element.style.display = "block";
+  } else {
+    element.style.display = "none";
+  }
+}
+</script>
 
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://www.nature.com/nm/" target="blank">Nature Medicine</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">NM</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">58.7</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">医学 1区 Top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> Health informatics, Computer Science</th>
-  </tr>
-	
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://www.nature.com/natmachintell/" target="blank">Nature Machine Intelligence</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">NMI</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">18.8 </th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">计算机 1区 Top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> Health informatics, Computer Science</th>
-  </tr>
-	
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://www.embs.org/jbhi/" target="blank">Nature Communication</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">NC</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">14.7</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">综合性期刊 1区 Top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> Health informatics, Healthcare, Computer Science</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://www.embs.org/jbhi/" target="blank">IEEE Journal of Biomedical and Health Informatics</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE JBHI</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">5.6</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">生物健康信息 1区 Top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">Computer Science Applications, Health Informatics</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://www.embs.org/tbme/" target="blank">IEEE Transactions on Bio-medical Engineering</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE TBME</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">4.7</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">工程：生物医学 2区</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">Biomedical Engineering, applications, Clinical investigations</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8858/" target="blank">IEEE Transactions on Dependable and Secure Computing</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">TEEE TDSC</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">7</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">计算机科学 1区 Top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">Methodologies, Mechanisms, Modeling, Dependable and secure</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=19/" target="blank">IEEE Transactions on Instrumentation & Measurement</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE TIM</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">5.6</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">硬件：电子与电气 2区 Top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">Electrical and electronic instruments and equipment</th>
-
-  </tr
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://www.nature.com/npjdigitalmed/" target="blank">npj Digital Medicine</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">npj DM</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">12.4</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">数字医学 1区 Top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">Digital medicine, Clinical application, Virtual healthcare</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://www.nature.com/npjdigitalmed/" target="blank">IEEE Internet of Things Journal</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE IoTJ</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">8.2</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">计算机科学 1区 Top </th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">Review articles, Various aspects of IoT. </th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="http://cis.ieee.org/ieee-transactions-on-neural-networks-and-learning-systems.html/" target="blank">IEEE Transactions on Neural Networks and Learning Systems</a> </th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE TNNLS</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">10.2</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">计算机科学 1区 Top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">Neural networks, Learning systems.</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7333/" target="blank">IEEE Transactions on Neural Systems and Rehabilitation Engineering</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE TNSRE</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">4.8</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">工程：生物医学 2区 Top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">Rehabilitative and neural, Biomedical engineering, Hardware and software applications</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7333/" target="blank">IEEE Transactions on Cloud Computing</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE TCC</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">5.3</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">计算机科学 2区 </th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">Cloud computing, Innovative research ideas, Case studies</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="http://www.comsoc.org/tnsm/" target="blank">IEEE Transactions on Network and Service Management</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE TNSM</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">4.7</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">计算机科学 2区</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> Network and service management, Presenting new concepts and techniques</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7755/" target="blank">IEEE Transactions on Mobile Computing</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE TMC</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">7.7</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">计算机科学 2区 Top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> Algorithm/protocol design and analysis, Mobile environments, Emerging technologies</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="http://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71/" target="blank">IEEE Transactions on Parallel and Distributed Systems</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE TPDS</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">5.6</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">计算机科学 1区 Top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> Parallel and distributed systems, Survey articles</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=7433297" target="blank">IEEE Transactions on Emerging Topics in Computational Intelligence</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE TETCI</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">5.3</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">计算机科学 2区</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> Computer Science, Artificial Intelligence</th>
-
-  </tr>
-	
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69" target="blank">IEEE Transactions on Knowledge and Data Engineering</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE TKDE</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">8.9</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">计算机科学 2区 CCF A</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> Computer Science, Artificial Intelligence</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="http://tois.acm.org/" target="blank">ACM Transactions on Information Systems</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">ACM TOIS</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">5.4</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">计算机科学 2区 CCF A</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> Computer Science, Artificial Intelligence</th>
-
-  </tr>
-
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://spj.science.org/journal/cbsystems" target="blank">Cyborg and Bionic Systems</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">AAAS CBS</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">10.5</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">机器人医疗、生物技术</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> robotics、cybernetics、bionics</th>
-
-  </tr>
-	
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://www.computer.org/web/tac" target="blank">IEEE Transactions on Affective Computing</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">IEEE TAFFC</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">9.8</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">2区top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> 情感计算</th>
-
-  </tr>
-	
-  <tr>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"><a href="https://www.springer.com/10462" target="blank">Artificial Intelligence Review</a></th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">AIR</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">13.9</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;">2区top</th>
-    <th style="border: 1px dashed lightgray; padding: 10px; font-size: 12px; font-weight: normal;"> 人工智能、综述期刊</th>
-
-  </tr>
-	
-	
-</div>	
-	</p></li>
-
-</table>
 
 
 

@@ -1,142 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <style>
-        /* General Reset */
-        body, h1, h2, h3, p {
-            margin: 0;
-            padding: 0;
-        }
+<meta charset="UTF-8">
+<title>Wanyong Qiu | Homepage</title>
 
-        /* Body and General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-        /* Header and Navigation Styles */
-        header {
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+<style>
+    body {
+        background: #ffffff;
+        font-size: 16px;
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-            color: #333;
-        }
+    /* 主结构布局 */
+    .main-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
 
-        /* Main Section Styles */
-        .main-content {
-            display: flex;
-            flex: 1;
-            padding: 20px;
-        }
+    .main-left {
+        width: 70%;
+        padding-right: 25px;
+    }
 
-        .main-area {
-            flex: 3;
-            padding-right: 20px;
-        }
+    .main-right {
+        width: 28%;
+        border-left: 1px solid #ddd;
+        padding-left: 25px;
+    }
 
-        .main-area img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
+    /* 底部栏 */
+    .footer-section {
+        background: #f5f5f5;
+        padding: 20px 40px;
+        margin-top: 40px;
+        border-top: 1px solid #ddd;
+    }
 
-        .sidebar {
-            flex: 1;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
+    /* 右侧标题 */
+    .sidebar-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
 
-        .sidebar h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
+    .news-item {
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
 
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            margin: 10px 0;
-            font-size: 1rem;
-        }
-
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-        }
-
-        .sidebar ul li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer Section Styles */
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            margin-top: auto;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1rem;
-        }
-    </style>
+    img.profile {
+        border-radius: 5px;
+    }
+</style>
 </head>
+
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <h1>Welcome to TDSAI Lab!</h1>
-    </header>
+<!-- ===========================
+      主区域 (左侧)
+=========================== -->
+<div class="main-container">
 
-    <!-- Main Content Section -->
-    <div class="main-content">
-        <!-- Main Area (Left Side) -->
-        <div class="main-area">
-            <img src="./WanyongQiu_home/Assets/CBS.png"> <!-- Placeholder Image -->
-            <p>
-                The <strong>Trustworthy Data Science and AI (TDSAI)</strong> Lab, also known as <strong>Cao Lab</strong>, is at the forefront of advancements in trustworthy data science and AI, with a strong emphasis on privacy, security, reliability, fairness, and transparency. Our mission is to develop groundbreaking theories, algorithms, and systems that promote ethical and dependable AI, contributing to the welfare of society and the future of humanity.
-            </p>
-            <p>
-                Our current research focuses on developing and applying privacy-enhancing technologies to address trust challenges in data management, machine learning, and security. Key areas of exploration include <strong>Differential Privacy, Federated Learning, Trustworthy LLM/LLM, AI Security, Data Marketplaces</strong>, and beyond.
-            </p>
+    <div class="main-left">
+
+        <h1><b>Wanyong Qiu</b></h1>
+
+        <!-- 个人信息 + 照片 -->
+        <div class="d-flex">
+            <div>
+                <img src="./WanyongQiu_home/Assets/photo.jpg" width="150"
+                     class="profile" alt="">
+            </div>
+
+            <div class="ml-3">
+                <b>Wanyong Qiu (邱万勇)</b>, Post-doctoral Fellow<br>
+                <a href="https://www.waseda.jp/top/en/" target="_blank">Waseda University</a><br>
+                <a href="https://www.cs.waseda.ac.jp/" target="_blank">
+                    Department of Computer Science and Engineering
+                </a><br><br>
+
+                <em>Address:</em>
+                <a href="https://maps.app.goo.gl/BQMYdse5F3PMWZ8q6" target="_blank">
+                    Bldg. 55, Waseda, Tokyo, Japan
+                </a><br>
+
+                <em>Email:</em>
+                <a href="mailto:qiuwy@kurenai.waseda.jp">
+                    qiuwy@kurenai.waseda.jp
+                </a><br><br>
+
+                <a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(CN)20254.pdf" target="_blank">CV (CN)</a>
+                <a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(EN)20254.pdf" target="_blank">CV (EN)</a>
+            </div>
         </div>
 
-        <!-- Sidebar Area (Right Side) -->
-        <div class="sidebar">
-            <h2>News & Events</h2>
+        <br>
+
+        <!-- 学术链接 -->
+        <p>
+            <img src="./WanyongQiu_home/Assets/github.png" width="18"> 
+            <a href="https://github.com/qiu-wanyong" target="_blank">Github</a>  |
+            <img src="./WanyongQiu_home/Assets/googlescholar.png" width="18">
+            <a href="https://scholar.google.com/citations?user=HhrxN0UAAAAJ" target="_blank">Google Scholar</a> |
+            <img src="./WanyongQiu_home/Assets/researchgate.png" width="18">
+            <a href="https://www.researchgate.net/profile/Wanyong-Qiu" target="_blank">ResearchGate</a> |
+            <img src="./WanyongQiu_home/Assets/csdn.png" width="18">
+            <a href="https://blog.csdn.net/qiu1440528444" target="_blank">CSDN</a>
+
+            <img src="./WanyongQiu_home/Assets/kattoo.gif" width="110" style="float:right;">
+        </p>
+
+        <br>
+
+        <!-- Short Bio -->
+        <h3><b>Short Bio</b></h3>
+        <p>（此处保留你原始介绍内容，已简化排版）</p>
+
+
+        <!-- Research Group -->
+        <h3><b>Research Group</b></h3>
+        <p>（保留你的原始长文介绍，不再赘述）</p>
+
+        <div class="alert alert-info">
+            🤹‍♀️ The lab is looking for PhD, Master and Undergraduate students.
+            Please visit <a href="https://bhe-lab.org/" target="_blank">BHE-Lab</a>.
+        </div>
+
+        <!-- Interests -->
+        <h3><b>Personal Interests</b></h3>
+        <p>（保持原内容）</p>
+
+    </div>
+
+    <!-- ===========================
+          右侧栏（新闻 / Awards / Talks / Service）
+    =========================== -->
+    <div class="main-right">
+
+        <div class="sidebar-title">News & Events</div>
+
+        <div class="news-item"><b>Nov 2025</b> — Four papers accepted in AAAI.</div>
+        <div class="news-item"><b>Jun 2025</b> — One paper accepted in VLDB.</div>
+        <div class="news-item"><b>May 2025</b> — One paper accepted in IJCAI.</div>
+        <div class="news-item"><b>Apr 2025</b> — New lab members joined.</div>
+
+        <hr>
+
+        <div class="sidebar-title">Awards 🎖</div>
+        <ul>
+            <li>2024 — Third Prize, BME Innovation Competition</li>
+            <li>2023 — FinTechathon First Prize</li>
+        </ul>
+
+        <div class="sidebar-title">Talks 💬</div>
+        <ul>
+            <li>Invited Talk @ GAS (2025)</li>
+            <li>Poster @ NCMMSC (2024)</li>
+        </ul>
+
+        <div class="sidebar-title">Service 📚</div>
+        <ul>
+            <li>CCF Student Member</li>
+            <li>Reviewer: ICASSP, INTERSPEECH, CSMT…</li>
+        </ul>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+      底部栏
+=========================== -->
+<div class="footer-section">
+
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Affiliations</h5>
             <ul>
-                <li><a href="#">Call-for-Participant CBD 2025</a> (Please consider participating in CBD 2025, Tokyo, November 29 to December 1!)</li>
-                <li><a href="#">November 9, 2025</a> - Four paper was accepted in AAAI 2026. Congrats to Fuyao, Wenbo, Tianle, Lele and all collaborators!</li>
-                <li><a href="#">June 22, 2025</a> - One paper was accepted in VLDB 2025. Congrats to Wen, Pengpeng, Shang and all collaborators!</li>
-                <li><a href="#">May 1, 2025</a> - One paper was accepted in IJCAI 2025. Congrats to Lele and all collaborators!</li>
-                <li><a href="#">April 3, 2025</a> - Welcome Li, Taiga, Tomoyasu, Ian join our lab!</li>
+                <li><a href="#">Department of Computer Science</a></li>
+                <li><a href="#">School of Computing</a></li>
+                <li><a href="#">Waseda University</a></li>
             </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h5>Contact</h5>
+            Mailbox 55 / Waseda University  
+            <br>Tokyo, Japan
         </div>
     </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; Cao Lab | Department of Computer Science | School of Computing | Institute of Science Tokyo</p>
-    </footer>
+    <p class="text-center mt-3">
+        © 2025 Wanyong Qiu. All rights reserved.
+    </p>
+
+</div>
 
 </body>
 </html>

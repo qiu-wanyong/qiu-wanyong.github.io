@@ -111,7 +111,7 @@
     <div class="main-content">
         <!-- Main Area (Left Side) -->
         <div class="main-area">
-            <img src=".homepage/CBS.png"> <!-- Placeholder Image -->
+            <img src="./WanyongQiu_home/Assets/CBS.png"> <!-- Placeholder Image -->
             <p>
                 The <strong>Trustworthy Data Science and AI (TDSAI)</strong> Lab, also known as <strong>Cao Lab</strong>, is at the forefront of advancements in trustworthy data science and AI, with a strong emphasis on privacy, security, reliability, fairness, and transparency. Our mission is to develop groundbreaking theories, algorithms, and systems that promote ethical and dependable AI, contributing to the welfare of society and the future of humanity.
             </p>

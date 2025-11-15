@@ -70,13 +70,14 @@
     }
 
     /* ← 新的可自定义图片大小 */
-    img.lab-photo { 
-        width: 600px;   /* 你可以自由调整大小 */
-        height: auto; 
-        border-radius: 10px; 
-        margin: 10px 0; 
-        display: block;
-    }
+img.lab-photo { 
+    width: 600px;     /* ← 你可以自由修改尺寸 */
+    height: 400px;
+    border-radius: 10px;
+    margin: 10px auto;     /* ← 这里的 auto 就能让图片居中 */
+    display: block;        /* ← 防止影响文本布局 */
+}
+
 </style>
 
 </head>

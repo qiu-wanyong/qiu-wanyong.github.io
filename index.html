@@ -72,7 +72,7 @@
     /* ← 新的可自定义图片大小 */
 img.lab-photo { 
     width: 600px;     /* ← 你可以自由修改尺寸 */
-    height: 400px;
+    height: 300px;
     border-radius: 10px;
     margin: 10px auto;     /* ← 这里的 auto 就能让图片居中 */
     display: block;        /* ← 防止影响文本布局 */
@@ -116,8 +116,21 @@ img.lab-photo {
 
 <h2>Welcome</h2>
 
-<!-- 修复路径错误 -->
-<img src="./WanyongQiu_home/Assets/waseda.jpg" alt="Lab Photo" class="lab-photo">
+
+<!-- IMAGE SLIDER START -->
+<div class="slider-container">
+  <div class="slider-wrapper" id="slider">
+    <img src="./WanyongQiu_home/Assets/waseda.jpg" class="slide-img" alt="">
+    <img src="./WanyongQiu_home/Assets/waseda.jpg" class="slide-img" alt="">
+    <img src="./WanyongQiu_home/Assets/waseda.jpg" class="slide-img" alt="">
+  </div>
+
+  <!-- Navigation buttons -->
+  <button class="slider-btn prev" onclick="prevSlide()">❮</button>
+  <button class="slider-btn next" onclick="nextSlide()">❯</button>
+</div>
+<!-- IMAGE SLIDER END -->
+
 
 <p>
 <b>The Trustworthy Data Science and AI (TDSAI) Lab</b>, also known as Cao Lab, is at the

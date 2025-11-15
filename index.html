@@ -72,13 +72,13 @@
     /* ← 新的可自定义图片大小 */
 img.lab-photo { 
     width: 600px;     /* ← 你可以自由修改尺寸 */
-    height: 100px;
+    height: 200px;
     border-radius: 10px;
     margin: 10px auto;     /* ← 这里的 auto 就能让图片居中 */
     display: block;        /* ← 防止影响文本布局 */
 }
 
-  /* ==== IMAGE SLIDER ==== */
+/* ==== IMAGE SLIDER ==== */ 
 .slider-container {
   position: relative;
   width: 80%;              /* 轮播图宽度，可调整 */
@@ -86,19 +86,22 @@ img.lab-photo {
   margin: 20px auto;       /* 居中显示 */
   overflow: hidden;
   border-radius: 10px;
+  height: 300px;           /* 设置轮播图固定高度，可根据需要调整 */
 }
 
 .slider-wrapper {
   display: flex;
-  width: 300%;        /* 三张图 → 3 × 100% */
+  width: 300%;             /* 三张图 → 3 × 100% */
   transition: transform 0.6s ease;
 }
 
 .slide-img {
   width: 100%;
+  height: 100%;            /* 高度填满容器 */
   flex-shrink: 0;
   display: block;
   border-radius: 10px;
+  object-fit: cover;       /* 保持图片比例裁剪，避免拉伸 */
 }
 
 /* Buttons */
@@ -120,6 +123,7 @@ img.lab-photo {
 
 .prev { left: 10px; }
 .next { right: 10px; }
+
 
 
 </style>

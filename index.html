@@ -81,30 +81,28 @@ img.lab-photo {
 /* ==== IMAGE SLIDER ==== */ 
 .slider-container {
   position: relative;
-  width: 80%;              /* 轮播图宽度，可调整 */
-  max-width: 700px;        /* 最大宽度 */
-  margin: 20px auto;       /* 居中显示 */
+  width: 80%;
+  max-width: 700px;
+  margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
-  height: 400px;           /* 轮播图高度，可调整 */
-  background: #f0f0f0;     /* 补充背景色，图片未填充的部分可显示 */
+  background: #f0f0f0; /* 补充空白背景 */
+  height: auto;         /* 容器高度自适应 */
 }
 
 .slider-wrapper {
   display: flex;
-  width: 300%;             /* 三张图 → 3 × 100% */
   transition: transform 0.6s ease;
 }
 
 .slide-img {
   width: 100%;
-  height: 100%;            /* 高度填满容器 */
+  height: auto;         /* 高度随图片自适应 */
   flex-shrink: 0;
   display: block;
   border-radius: 10px;
-  object-fit: contain;     /* 完整显示图片内容，不裁剪 */
-  object-position: center; /* 居中显示 */
-  background: #f0f0f0;     /* 未覆盖区域背景色 */
+  object-fit: contain;  /* 保持比例显示完整图片 */
+  object-position: center;
 }
 
 /* Buttons */

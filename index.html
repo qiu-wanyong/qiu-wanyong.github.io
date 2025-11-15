@@ -85,12 +85,13 @@ img.lab-photo {
   position: relative;
   width: 80%;
   max-width: 700px;
+  height: 250px;  /* ← 自定义高度 */
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
   background: #f0f0f0;
-  transition: height 0.5s ease; /* 平滑过渡高度变化 */
 }
+
 
 /* 图片行 */
 .slider-wrapper {
@@ -102,7 +103,7 @@ img.lab-photo {
 .slide-img {
   flex: 0 0 100%;
   width: 100%;
-  height: auto;           /* 高度自适应 */
+  height: 100%;           /* 高度自适应 */
   object-fit: contain;    /* 保持比例完整显示图片 */
   object-position: center;
   display: block;
@@ -179,9 +180,9 @@ img.lab-photo {
 <!-- IMAGE SLIDER START -->
 <div class="slider-container" id="slider-container">
   <div class="slider-wrapper" id="slider">
-    <img src="./WanyongQiu_home/Assets/waseda.jpg" class="slide-img" alt="">
-    <img src="./WanyongQiu_home/Assets/waseda.jpg" class="slide-img" alt="">
-    <img src="./WanyongQiu_home/Assets/waseda.jpg" class="slide-img" alt="">
+    <img src="./WanyongQiu_home/Assets/waseda1.jpg" class="slide-img" alt="">
+    <img src="./WanyongQiu_home/Assets/waseda2.jpg" class="slide-img" alt="">
+    <img src="./WanyongQiu_home/Assets/waseda3.jpg" class="slide-img" alt="">
   </div>
 
   <!-- Navigation buttons -->
@@ -240,23 +241,23 @@ Welcome Li, Taiga, Tomoyasu, Ian join our lab!</p>
 <div class="footer-columns">
 
 <div class="footer-col">
-© Cao Lab<br>
-<a href="#">Department of Computer Science</a><br>
-<a href="#">School of Computing</a><br>
-<a href="#">Institute of Science Tokyo</a>
+© QIU Wanyong<br>
+  <a href="https://www.waseda.jp/top/" target="blank">Waseda University</a><br>
+  <a href="https://www.waseda.jp/top/" target="blank">Faculty of Science and Engineering</a><br>
+  <a href="https://www.cs.waseda.ac.jp/" target="blank">Department of Computer Science and Engineering</a><br>
+
+
 </div>
 
 <div class="footer-col">
 <b>Contact:</b><br>
-Mailbox W8-62, West Building 8E,<br>
-Ookayama Campus<br>
-2-chōme-12-1 Ookayama, Meguro City,<br>
-Tokyo 152-855<br>
-<a href="#">(Google Map, Picture of West Building 8E)</a>
+Bldg. No. 55, 3-4-1 Okubo,<br>
+Shinjuku, Tokyo, 169-8555 Japan<br>
+<a href="https://maps.app.goo.gl/BQMYdse5F3PMWZ8q6" target="blank">(Google Map, Nishi-Waseda Campus)</a>
 </div>
 
 <div class="footer-col" style="text-align:right;">
-<img src=".WanyongQiu_home/Assets/wasedaLOGO.jpg" style="width:160px;">
+<img src=".WanyongQiu_home/Assets/waseda_logo.jpg" style="width:160px;">
 </div>
 
 </div>

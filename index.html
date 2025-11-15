@@ -22,14 +22,61 @@
 
 <style>
     .menu-item { margin: 10px; }
-    #layout-content { width: 100%; padding: 20px; }
-    .content-wrapper { display: flex; width: 100%; }
-    .main-area { flex: 3; padding-right: 30px; }
-    .sidebar { flex: 1.2; background: #f8f9fa; padding: 20px; border-radius: 8px; }
-    .footer-box { background: #f8f9fa; padding: 20px; margin-top: 30px; border-radius: 8px; }
-    .footer-columns { display: flex; justify-content: space-between; }
-    .footer-col { flex: 1; padding: 10px; }
-    img.lab-photo { width: 100%; border-radius: 10px; margin: 10px 0; }
+
+    /* 修复：让 layout-content 自动适配高度 */
+    #layout-content { 
+        width: 100%; 
+        padding: 20px; 
+        display: block;
+    }
+
+    /* 主要修复：避免内容溢出覆盖 footer */
+    .content-wrapper { 
+        display: flex; 
+        width: 100%;
+        flex-wrap: wrap; /* 必须：保证 sidebar 不会推到 footer 上 */
+    }
+
+    .main-area { 
+        flex: 3; 
+        padding-right: 30px; 
+        min-width: 320px; 
+    }
+
+    .sidebar { 
+        flex: 1.2; 
+        background: #f8f9fa; 
+        padding: 20px; 
+        border-radius: 8px;
+        min-width: 220px;
+    }
+
+    /* 保证 footer 永远在最下方排版 */
+    .footer-box { 
+        background: #f8f9fa; 
+        padding: 20px; 
+        margin-top: 30px; 
+        border-radius: 8px; 
+        clear: both; /* 避免被重叠 */
+    }
+
+    .footer-columns { 
+        display: flex; 
+        justify-content: space-between; 
+        flex-wrap: wrap;
+    }
+
+    .footer-col { 
+        flex: 1; 
+        padding: 10px; 
+        min-width: 200px;
+    }
+
+    img.lab-photo { 
+        width: 100%; 
+        border-radius: 10px; 
+        margin: 10px 0; 
+    }
 </style>
 </head>
 
@@ -67,7 +114,8 @@
 
 <h2>Welcome to TDSAI Lab!</h2>
 
-<img src=".WanyongQiu_home/Assets/waseda.jpg" alt="Lab Photo" class="lab-photo">
+<!-- 修复路径错误 -->
+<img src="./WanyongQiu_home/Assets/waseda.jpg" alt="Lab Photo" class="lab-photo">
 
 <p>
 <b>The Trustworthy Data Science and AI (TDSAI) Lab</b>, also known as Cao Lab, is at the

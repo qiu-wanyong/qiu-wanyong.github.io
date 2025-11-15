@@ -1,465 +1,199 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141256821-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-141256821-1');
-</script>
-
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
-<link rel="stylesheet" href="./WanyongQiu_home/jemdocHome.css" type="text/css">
-<title>Wanyong Qiu's Homepage</title>
-<style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}
-</style>
-</head>
-<body>
-<table summary="Table for page layout." id="tlayout">
-<tbody><tr valign="top">
-<td id="layout-menu">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Welcome to TDSAI Lab!</title>
 <style>
-    .menu-item {
-        margin: 10px; 
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f4f4f9;
+    }
+
+    /* 页面总体布局 */
+    .container {
+        display: flex;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px 0;
+    }
+
+    /* 左侧导航栏 */
+    #sidebar {
+        width: 200px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-right: 1px solid #ddd;
+        height: fit-content;
+    }
+
+    #sidebar .menu-category {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    #sidebar .menu-item {
+        margin: 10px 0;
+    }
+
+    #sidebar .menu-item a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    #sidebar .menu-item a:hover,
+    #sidebar .current {
+        color: #007bff;
+        font-weight: bold;
+    }
+
+    /* 中间主区域 */
+    #main-content {
+        flex: 1;
+        padding: 0 40px;
+    }
+
+    #main-content img {
+        width: 100%;
+        border-radius: 6px;
+        margin: 20px 0;
+    }
+
+    /* 右侧新闻栏 */
+    #right-panel {
+        width: 260px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-left: 1px solid #ddd;
+    }
+
+    #right-panel h3 {
+        font-size: 20px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    #right-panel ul {
+        padding-left: 18px;
+    }
+
+    #right-panel li {
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    /* 底部栏 */
+    #footer {
+        margin-top: 30px;
+        padding: 25px;
+        background-color: #f5f5f5;
+        border-top: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #footer a {
+        text-decoration: none;
+        color: #007bff;
+    }
+
+    #footer a:hover {
+        text-decoration: underline;
     }
 </style>
-  
-<div class="menu-category">Wanyong Qiu</div>
-  
-  
-<div class="menu-item"><a href="index.html" class="current">Home</a></div>
-  
-  
-<div class="menu-item"><a href="Publications.html">Publications</a></div>
-
-  
-<div class="menu-item"><a href="Activity.html">Activity</a></div>
-
-  
-<div class="menu-item"><a href="Projects.html">Projects</a></div>
-
-
-<div class="menu-item"><a href="Prizes.html">Prizes</a></div>
-  
-
-<div class="menu-item"><a href="Library.html">Library</a></div>
-
-  
-<div class="menu-item"><a href="People.html">People</a></div>
-
-  
-<div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
-  
-  
-<div class="menu-item"><a href="Blog.html">Blog (Chinese)</a></div>
-  
-</td>
-  
-<td id="layout-content">
-<p><br></p>
-
-
-<div id="toptitle">
-    <h1><b>Wanyong Qiu</b></h1>
-    
-    <div class="btn-container">
-        <button id="online-btn" class="online-btn">👀 Watch 
-            <span id="online-count">1</span>
-        </button>
-        <button id="subscribe-btn">⭐ Star 
-            <span id="subscription-count">32</span>
-        </button>
-    </div>
-</div>
-
-<table class="imgtable"><tbody><tr><td>
-<a href="./WanyongQiu_home/Assets/photo.jpg"><img src="./WanyongQiu_home/Assets/photo.jpg" alt="alt text" width="150px&quot;"></a>&nbsp;</td>
-<td align="left"> <b>Wanyong Qiu (邱万勇)</b>. <span class="small-text">Post-doctoral fellow</span><br>
-  
-<br> <a href="https://www.waseda.jp/top/en/" target="blank">Waseda University</a>
-<br>
-
-
-
-<span style="display: block;"><a href="https://www.cs.waseda.ac.jp/" target="blank">Department of Computer Science and Engineering</a></span>
-<br>
-  
-<span style="display: block;"><em>Address</em>: <a href="https://maps.app.goo.gl/BQMYdse5F3PMWZ8q6" target="blank">Bldg. No.55, 3-4-1 Okubo-Nishi-Waseda, Shinjuku, Tokyo, 169-8555 Japan</a></span>
-  
-<span style="display: block;"><em>E-mail</em>: <a href="mailto:qiuwy@kurenai.waseda.jp/" target="blank">qiuwy@kurenai.waseda.jp</a></span><br>
-  
-<br>
-<a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(CN)20254.pdf" target="blank">CV(CN).pdf</a>&nbsp
-  
-<a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(EN)20254.pdf" target="blank">CV(EN).pdf</a>
-<br>
-
-</td></tr></tbody></table>
-
-  
-<br>
-<span class="icon"><img src="./WanyongQiu_home/Assets/github.png" alt="Icon"></span> <a href="https://github.com/qiu-wanyong/" target="blank">Github</a> |
-<span class="icon"><img src="./WanyongQiu_home/Assets/googlescholar.png" alt="Icon"></span> <a href="https://scholar.google.com/citations?user=HhrxN0UAAAAJ&hl=zh-CN/" target="blank">Google Scholar</a> |
-<span class="icon"><img src="./WanyongQiu_home/Assets/researchgate.png" alt="Icon"></span> <a href="https://www.researchgate.net/profile/Wanyong-Qiu/" target="blank">ResearchGate</a> |
-<span class="icon"><img src="./WanyongQiu_home/Assets/csdn.png" alt="Icon"></span> <a href="https://blog.csdn.net/qiu1440528444?type=blog/" target="blank">CSDN</a>
-
-<img align="right" width="150" height="100" src="./WanyongQiu_home/Assets/kattoo.gif">
-  
-<br>
-<p><br></p>
-
-  
-<h2><b>Short Bio</b></h2>
-<ul>
-  <p>I’m a Post-doctoral fellow at the <a href="https://www.waseda.jp/fsci/en/access/" target="blank">Faculty of Science and Engineering</a>, <a href="https://www.waseda.jp/top/en/" target="blank">Waseda University</a>, supervised by Prof. <a href="https://w-rdb.waseda.jp/html/100001045_ja.html" target="blank">Liu Jiang</a>. Previously, I received my PhD degree from <a href="http://www.bit.edu.cn/" target="blank"> Beijing Institute of Technology</a> in June 2025. I am a member of the <a href="https://bhe-lab.org/" target="blank"> Key Laboratory of Brain Health Intelligent Evaluation and Intervention (BIT)</a>, Ministry of Education, P. R. China, supervised by Prof. <a href="https://bhe-lab.org/%E8%83%A1%E6%96%8C/" target="blank">Bin Hu</a> (Fellow, IEEE), Prof. <a href="https://bhe-lab.org/%E9%92%B1%E6%98%86/" target="blank">Kun Qian</a> and Prof. <a href="https://bhe-lab.org/%E8%91%A3%E7%BE%A4%E5%96%9C/" target="blank">QunXi Dong.</a></p>
-</ul>
-  
-<h2><b>Research Group</b></h2>
-<ul>
-  <p> The Key Laboratory of Brain Health Intelligent Evaluation and Intervention of the Ministry of Education employs advanced technologies, including <span style="color: #00008B;">artificial intelligence</span>, <span style="color: #00008B;">big data</span>, <span style="color: #00008B;">ubiquitous computing</span>, <span style="color: #00008B;">the Internet of Health Things (IoHT)</span>, and <span style="color: #00008B;">medical electronics</span>, to achieve the comprehensive process of “<span style="color: #00008B;">Identification-Intervention-Treatment-Rehabilitation</span>” for functional brain disorders. The laboratory focuses on developing innovative methods, technologies, and products for the diagnosis and treatment of functional brain disorders. It addresses critical challenges, including the scarcity of indicators, high subjectivity, low diagnostic accuracy, difficulty in evaluating treatment efficacy, and limited generalisability of solutions.</p>
-  <p> In brain medicine, <span style="color: #00008B;">Prof. Bin Hu</span> introduced the concept of “<span style="color: #00008B;">Computational Psychophysiology</span>” at the 431st Xiangshan Science Conference in 2012, pioneering a data-driven methodology for studying cognitive function and psychological states. This innovation transitioned mental health diagnosis and treatment technologies from being <span style="color: #00008B;"> “Symptom-descriptive” to “Data-driven”</span>. At the 735th Xiangshan Science Conference in 2022, Prof. Hu proposed a future transformation of mental health diagnosis and treatment technologies from <span style="color: #00008B;"> “Data-driven” to “Systematic Interpretation”</span>. This forward-looking approach places greater demands on IoHT systems, particularly those involving wearable devices and diagnostic and treatment technologies.</p>
-  <p> <span style="color: #00008B;">Prof. Kun Qian</span> has been extensively involved in advancing theoretical research and technological applications of artificial intelligence and signal processing within the field of medical engineering. In 2020, he proposed and has been actively advancing the cutting-edge research direction of “<span style="color: #00008B;">Computer Audition for Healthcare (CA4H)</span>”. The key innovative contributions include: <span style="color: #00008B;">Intelligent body sound perception</span>, <span style="color: #00008B;">Brain-inspired auditory methods</span> and <span style="color: #00008B;">Intelligent audio intervention</span>. These innovations advance the frontiers of AI and signal processing in healthcare, underscoring the practical potential of CA4H technologies to enhance human health.</p>
-  <p> Due to smart healthcare system is highly connected to advanced wearable devices, IoHT and mobile internet, valuable patient information and other significant medical records are stored in wearable smart terminals. Ensuring data security and privacy while maintaining data availability for smart terminals is crucial. Therefore, proper medical information security is becoming equally important in smart healthcare. Motivated by these facts, <span style="color: #00008B;">we explore and share novel ideas, methods, theories and practices with focus on information security and privacy solutions for the computational psychophysiology smart healthcare industry.</span></p>
-<div class="infoblock">
-<div class="blockcontent">
-<p>🤹‍♀️ The lab is looking for PhD, master, and undergraduate students with strong background to work together on the interdisciplinary area of brain health.</p>
-<p>📫 Please see <a href="https://bhe-lab.org/" target="blank">BHE-Lab</a> for more details.</p>
-</div>
-</div>
-</ul>
-  
-<h2><b>Personal Interests</b></h2>
-<ul>
-<p>Computer Science and Technology</p>
-  
-  <ul>
-  <li><p>Artificial Intelligence：Machine learning, Computer audition</p></li>
-    
-  <li><p>Information Security：Privacy-preserving computing</p></li>
-  </ul>
-  
-<p>Engineering Medicine and Technology</p>
-  
-  <ul>
-  <li><p>Artificial Intelligence Medicine：Federated learning for healthcare</p></li>
-    
-  <li><p>Medical Information Privacy： Psychophysiology of privacy computing</p></li>
-  </ul>
-</ul>
-
-<html>
-<head>
- <title>文字滚动的设置</title>
- <style>
-   .centered-marquee {
-     margin-left: 0 auto; 
-   }
- </style>
 </head>
+
 <body>
 
-<font size="3" color="#000000">
-  <div class="centered-marquee">
-    <marquee behavior="scroll" direction="left" scrollamount="6">
-      <img src="./WanyongQiu_home/Assets/Handshake.gif" alt="Handshake" style="vertical-align: middle; width: auto; height: 32px; margin-right: 5px;">
-      If you are seeking any form of academic cooperation, please feel free to email me.
-    </marquee>
-  </div>
-</font>
+<!-- ===========================
+      页面三栏结构
+=========================== -->
+<div class="container">
+
+    <!-- 左侧导航栏 -->
+    <div id="sidebar">
+        <div class="menu-category">Wanyong Qiu</div>
+
+        <div class="menu-item"><a class="current" href="index.html">Home</a></div>
+        <div class="menu-item"><a href="About.html">About Me</a></div>
+        <div class="menu-item"><a href="Publications.html">Publications</a></div>
+        <div class="menu-item"><a href="Activity.html">Activity</a></div>
+        <div class="menu-item"><a href="Projects.html">Projects</a></div>
+        <div class="menu-item"><a href="Prizes.html">Prizes</a></div>
+        <div class="menu-item"><a href="Library.html">Library</a></div>
+        <div class="menu-item"><a href="People.html">People</a></div>
+        <div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
+        <div class="menu-item"><a href="Blog.html">Blog (Chinese)</a></div>
+    </div>
+
+    <!-- 中间主内容 -->
+    <div id="main-content">
+        <h1>Welcome to TDSAI Lab!</h1>
+
+        <img src=".WanyongQiu_home/Assets/waseda.jp" alt="Campus Photo">
+
+        <p>
+            The <b>Trustworthy Data Science and AI (TDSAI) Lab</b>, also known as <b>Cao Lab</b>, is at the forefront of
+            advancements in trustworthy data science and AI, with a strong emphasis on privacy, security,
+            reliability, fairness, and transparency. Our mission is to develop groundbreaking theories,
+            algorithms, and systems that promote ethical and dependable AI, contributing to the welfare of
+            society and the future of humanity.
+        </p>
+
+        <p>
+            Our current research focuses on developing and applying privacy-enhancing technologies to address
+            critical challenges in data management, machine learning, and security. Key areas of exploration
+            include <b>Differential Privacy, Federated Learning, Trustworthy LLM/ML, AI Security,
+            Data Marketplaces</b>, and beyond.
+        </p>
+    </div>
+
+    <!-- 右侧新闻栏 -->
+    <div id="right-panel">
+        <h3>News & Events</h3>
+        <ul>
+            <li><b>Call-for-Participant CBD 2025</b><br>Please consider participating in CBD 2025 (Tokyo, November 29 to December 1).</li>
+
+            <li><b>November 9, 2025</b><br>Four papers were accepted in AAAI 2026. Congrats to Wenbo, Fuyao, Tianle, Lele and collaborators!</li>
+
+            <li><b>June 22, 2025</b><br>Two papers were accepted in VLDB 2025. Congrats to Wen, Pengpeng, Shang and all collaborators!</li>
+
+            <li><b>May 1, 2025</b><br>One paper was accepted in IJCAI 2025. Congrats to Lele and collaborators!</li>
+
+            <li><b>April 3, 2025</b><br>Welcome Li, Taiga, Tomoyasu, Ian to our lab!</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- ===========================
+      底部栏
+=========================== -->
+<div id="footer">
+    <div>
+        <p>© Qiu Lab</p>
+        <p><a href="#">Department of Computer Science</a></p>
+        <p><a href="#">School of Computing</a></p>
+        <p><a href="#">Institute of Science Tokyo</a></p>
+    </div>
+
+    <div>
+        <p><b>Contact:</b></p>
+        <p>Mailbox W8-62, West Building 8E,<br>Ookayama Campus</p>
+        <p>2-chome-12-1 Ookayama, Meguro City,<br>Tokyo 152-855</p>
+        <p><a href="https://maps.app.goo.gl/BQMYdse5F3PMWZ8q6" target="_blank">Google Map, Picture of West Building 8E</a></p>
+    </div>
+
+    <div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Tokyo_Institute_of_Technology_logo.svg/512px-Tokyo_Institute_of_Technology_logo.svg.png"
+             alt="Institute Logo" width="120">
+    </div>
+</div>
 
 </body>
 </html>
-
-
-<!--
-<p><font color=red><b>(Last Update: 2019.11)</b></p>
--->
-
-<div id="footer">
-<div id="footer-text">
-  <div id="footer-text2">Copyright (c) 2021 Wanyong Qiu. All rights reserved.</div>
-</div>
-</div>
-</td>
-
-<td id="layout-sidebar">
-<p><br></p>
-
-    <div class="sidebar-section">
-      <h2>Latest News 🔥</h2>
-      <div id="carousel-container">
-        <div id="carousel">
-          <img src="./WanyongQiu_home/Assets/JBHI.png" alt="Image 1">
-          <img src="./WanyongQiu_home/Assets/CBS.png" alt="Image 2">
-        </div>
-        <!-- 小圆点 -->
-        <div id="carousel-indicators">
-            <span class="dot" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-        </div>
-      </div>
-      
-      <ul>
-        <li>[05/2025] 🎉Outstanding PhD Graduate, Beijing Institute of Technology, 2025</li>
-        <li>[04/2025] 🎉A New Paper has been Published by IEEE JBHI!</li>
-        <li>[11/2024] 🎉Outstanding Student Award, Beijing Institute of Technology, 2023–2024. </li>
-        <li>[10/2024] 🎉A patent has been granted, "A heart sound monitoring system based on federated learning".</li>
-        <li>[09/2024] 🎉A New Paper has been Published by AAAS CBS!</li>
-      </ul>
-    </div>
-
-      <div class="sidebar-section">
-      <h2>Awards🎖</h2>
-      <ul>
-        <li>[07/2024] [BME] Won the third prize in <a href="https://www.bmedesign.cn/#/home/" target="blank">the 9th National Biomedical Engineering Innovation Design Competition for College Students</a>! Titled "Intelligent Body Sound Perception Edge Device and System for Federated Medical Internet of Things".</li>
-        <li>[02/2023] [FinTechathon] Fed-heathcare Team has Won <a href="https://www.infoq.cn/zones/fintechathon/campus2022/result/" target="blank">the 2022 FinTechathon Competition First Prize</a>! Titled "Federated learning system for intelligent body sound perception based on FATE platform". </li>
-        <li>[10/2022] [大创] Two teams co-supervised by me won awards in college competitions (China University Student Innovation and Entrepreneurship Competition). Congratulations! </li>
-      </ul>
-    </div>
-
-    <div class="sidebar-section">
-      <h2>Talks 💬</h2>
-      <ul>
-        <li> [Invited Talks] <a href="https://mp.weixin.qq.com/s?__biz=MjM5NDI5MTYyOA==&mid=2652505487&idx=1&sn=e4ebaee23beaefd37f142c2569690d42&chksm=bc742b626f947620fbe441404d0de8b32a2df2f8e847ac92ccf0645821c18c4f587f7558f14e&scene=27/" target="blank">基于联邦学习的异常心音检测研究（A Study of Abnormal Heart Sound Detection Based on Federated Learning）</a>, invited by Global Audio Summit（声学大讲堂）, Online Live Stream, 02/2025.</li>
-        <li> [Poster] <a href="https://www.ncmmsc.org.cn/" target="blank">National Conference on Man-Machine Speech Communication</a>, NCMMSC, 08/2024. (Urumqi, China)</li>
-        <li> [Workshops] <a href="https://ccf.org.cn/cncc2023/" target="blank">Attend the 2023 China National Computer Congress</a>, CNCC, 10/2023. (Shenyang, China)</li>
-        <li> [Invited Talks] <a href="https://www.infoq.cn/video/JiD6qU8GNwgKA4lhg98e/" target="blank">China (Shenzhen) International Fintech Global Summit"- The Bay Area Fintech University Forum</a>, 02/2023. (Invited by 2022FinTechathon)</li>
-        <li> [Workshops] <a href="https://mp.weixin.qq.com/s/W1UGBf8uVcz81otz3N9drg/" target="blank">2022 Open Source AceCon+ (AI X Clound Native x Edge Computing)</a>., 08/2022. (Invited by PhD. Li)</li>
-        <li> [Report] <a href="https://appitxo9vav9136.h5.xiaoeknow.com/" target="blank">The 9th Conference on Sound and Music Technology</a>, 06/2022. (Invited by Prof. Qian)</li>
-
-      </ul>
-    </div>
-
-    <div class="sidebar-section">
-      <h2>Service 📚</h2>
-      <ul>
-        <li> CCF Student Member: China Computer Federation </li>
-        <li> Conference Review: ICASSP'22-24, INTERSPEECH'22-'24, CSMT'22-24, SWC, ICMI, IMED, EURASIP</li>
-        <li> Journal Review: IEEE TAFFC, IEEE TIFS, IEEE IoTJ, Artificial Intelligence Review</li>
-      </ul>
-    </div>
-
-      <div class="sidebar-section">
-      <h2>Supervisor 🤹‍♀️</h2>
-      <ul>
-        <li> 祝贺导师胡斌教授入选国际学术机构ScholarGPS 2024年全球前0.05%顶尖科学家榜单！ </li>
-        <li> 祝贺导师钱昆教授荣获北京市科学技术进步奖二等奖！</li>
-        <li> 祝贺导师钱昆教授入选福布斯中国·青年海归菁英100人评选！</li>
-      </ul>
-    </div>
-  
-  </div>
-</td>
-  
-</tr>
-
-</tbody>
-</table>
-
-<style>
-#carousel-container {
-    position: relative;
-    width: 50%; 
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-#carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 200%; /* 两张图片，宽度为容器的两倍 */
-}
-
-#carousel img {
-    width: 50%;
-    object-fit: cover;
-}
-
-#carousel-indicators {
-    text-align: center;
-    position: relative;
-    margin-top: 10px; 
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 4px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.active-dot {
-    background-color: #717171;
-}
-</style>
-
-<script>
-let currentIndex = 0;
-const carousel = document.getElementById('carousel');
-const dots = document.querySelectorAll('.dot');
-const totalImages = document.querySelectorAll('#carousel img').length;
-
-function showSlide(index) {
-    currentIndex = index;
-    const offset = -currentIndex * 100 / totalImages;
-    carousel.style.transform = `translateX(${offset}%)`;
-    updateDots();
-}
-
-function updateDots() {
-    dots.forEach(dot => dot.classList.remove('active-dot'));
-    dots[currentIndex].classList.add('active-dot');
-}
-
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalImages;
-    showSlide(currentIndex);
-}
-
-function currentSlide(index) {
-    showSlide(index);
-}
-
-setInterval(nextSlide, 3000); // 每3秒切换一次图片
-
-window.onload = () => {
-    showSlide(0); // 初始显示第一张图片
-};
-</script>
-
-<style>
-        #toptitle {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-  
-        .btn-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .online-btn, #subscribe-btn {
-            background-color: #f8f9fa;
-            border: 1px solid #dcdcdc;
-            border-radius: 5px;
-            padding: 4px 10px;
-            cursor: pointer;
-            font-size: 14px;
-            color: #333;
-            display: inline-flex;
-            align-items: center;
-            margin-right: 10px;
-        }
-
-        #online-count, #subscription-count {
-            margin-left: 8px;
-            font-weight: bold;
-            font-size: 14px;
-            padding: 2px 8px;
-            border-radius: 50%;
-            background-color: #e1e4e8;
-            border: 1px solid #d1d5da;
-            display: inline-block;
-        }
-  
-    </style>
-  
-<script>
-  // 读取 JSON 文件数据
-  function fetchData() {
-    return fetch('data.json')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('subscription-count').innerText = data.subscriptionCount;
-        document.getElementById('online-count').innerText = data.onlineCount;
-        return data;
-      })
-      .catch(error => console.error('读取数据失败:', error));
-  }
-
-  // 订阅功能：增加订阅人数
-  document.getElementById('subscribe-btn').addEventListener('click', () => {
-    fetchData().then(data => {
-      if (localStorage.getItem('subscribed') === 'true') {
-        alert("You have already subscribed!");
-        return;
-      }
-      
-      // 增加订阅数
-      data.subscriptionCount++;
-      localStorage.setItem('subscribed', 'true');
-      
-      // 更新页面显示
-      document.getElementById('subscription-count').innerText = data.subscriptionCount;
-      
-      // 模拟保存到 JSON 文件 (GitHub Pages 上无法动态保存，只做演示)
-      console.log('更新后的数据:', data);
-    });
-  });
-
-  // 在线人数统计功能
-  function updateOnlineCount() {
-    fetchData().then(data => {
-      let onlineCount = data.onlineCount || 1;
-
-      // 模拟用户进入页面
-      onlineCount++;
-      localStorage.setItem('online', 'true'); // 本地记录用户在线
-      
-      // 更新页面显示
-      document.getElementById('online-count').innerText = onlineCount;
-
-      // 模拟保存在线人数 (无法保存到 JSON 文件，需服务器支持)
-      console.log('更新后的在线人数:', onlineCount);
-
-      // 当用户关闭页面时，减少在线人数
-      window.addEventListener('beforeunload', function() {
-        let onlineCount = localStorage.getItem('onlineCount') || onlineCount;
-        onlineCount--;
-        localStorage.removeItem('online'); // 用户离线
-        console.log('用户离开后在线人数:', onlineCount);
-      });
-    });
-  }
-
-  // 页面加载时执行
-  fetchData();
-  updateOnlineCount();
-</script>
-
-        
-<script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-24986751-1']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-<script  type="text/javascript">
-function show(){
- if(document.getElementById("table_foot").style.display=="block"){
-  document.getElementById("table_foot").style.display="none";
- }else{
-  document.getElementById("table_foot").style.display="block";
- }
-}
-</script>
-
-<style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	 display: none !important;}</style> </body></html>

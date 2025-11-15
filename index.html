@@ -1,199 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141256821-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-141256821-1');
+</script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Welcome to TDSAI Lab!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="./WanyongQiu_home/jemdocHome.css" type="text/css">
+<title>Wanyong Qiu Homepage</title>
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #f4f4f9;
-    }
-
-    /* 页面总体布局 */
-    .container {
-        display: flex;
-        max-width: 1200px;
-        margin: auto;
-        padding: 20px 0;
-    }
-
-    /* 左侧导航栏 */
-    #sidebar {
-        width: 200px;
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-right: 1px solid #ddd;
-        height: fit-content;
-    }
-
-    #sidebar .menu-category {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 15px;
-    }
-
-    #sidebar .menu-item {
-        margin: 10px 0;
-    }
-
-    #sidebar .menu-item a {
-        text-decoration: none;
-        color: #333;
-    }
-
-    #sidebar .menu-item a:hover,
-    #sidebar .current {
-        color: #007bff;
-        font-weight: bold;
-    }
-
-    /* 中间主区域 */
-    #main-content {
-        flex: 1;
-        padding: 0 40px;
-    }
-
-    #main-content img {
-        width: 100%;
-        border-radius: 6px;
-        margin: 20px 0;
-    }
-
-    /* 右侧新闻栏 */
-    #right-panel {
-        width: 260px;
-        background-color: #ffffff;
-        padding: 20px;
-        border-left: 1px solid #ddd;
-    }
-
-    #right-panel h3 {
-        font-size: 20px;
-        border-bottom: 1px solid #ccc;
-        padding-bottom: 10px;
-        margin-bottom: 15px;
-    }
-
-    #right-panel ul {
-        padding-left: 18px;
-    }
-
-    #right-panel li {
-        margin-bottom: 12px;
-        line-height: 1.4;
-    }
-
-    /* 底部栏 */
-    #footer {
-        margin-top: 30px;
-        padding: 25px;
-        background-color: #f5f5f5;
-        border-top: 1px solid #ccc;
-        display: flex;
-        justify-content: space-between;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    #footer a {
-        text-decoration: none;
-        color: #007bff;
-    }
-
-    #footer a:hover {
-        text-decoration: underline;
-    }
+    .menu-item { margin: 10px; }
+    #layout-content { width: 100%; padding: 20px; }
+    .content-wrapper { display: flex; width: 100%; }
+    .main-area { flex: 3; padding-right: 30px; }
+    .sidebar { flex: 1.2; background: #f8f9fa; padding: 20px; border-radius: 8px; }
+    .footer-box { background: #f8f9fa; padding: 20px; margin-top: 30px; border-radius: 8px; }
+    .footer-columns { display: flex; justify-content: space-between; }
+    .footer-col { flex: 1; padding: 10px; }
+    img.lab-photo { width: 100%; border-radius: 10px; margin: 10px 0; }
 </style>
 </head>
 
+
 <body>
 
-<!-- ===========================
-      页面三栏结构
-=========================== -->
-<div class="container">
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
 
-    <!-- 左侧导航栏 -->
-    <div id="sidebar">
-        <div class="menu-category">Wanyong Qiu</div>
+<!-- LEFT NAVIGATION BAR -->
+<td id="layout-menu">
 
-        <div class="menu-item"><a class="current" href="index.html">Home</a></div>
-        <div class="menu-item"><a href="About.html">About Me</a></div>
-        <div class="menu-item"><a href="Publications.html">Publications</a></div>
-        <div class="menu-item"><a href="Activity.html">Activity</a></div>
-        <div class="menu-item"><a href="Projects.html">Projects</a></div>
-        <div class="menu-item"><a href="Prizes.html">Prizes</a></div>
-        <div class="menu-item"><a href="Library.html">Library</a></div>
-        <div class="menu-item"><a href="People.html">People</a></div>
-        <div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
-        <div class="menu-item"><a href="Blog.html">Blog (Chinese)</a></div>
-    </div>
+<div class="menu-category">Wanyong Qiu</div>
 
-    <!-- 中间主内容 -->
-    <div id="main-content">
-        <h1>Welcome to TDSAI Lab!</h1>
+<div class="menu-item"><a class="current" href="index.html">Home</a></div>
+<div class="menu-item"><a href="About.html">About Me</a></div>
+<div class="menu-item"><a href="Publications.html">Publications</a></div>
+<div class="menu-item"><a href="Activity.html">Activity</a></div>
+<div class="menu-item"><a href="Projects.html">Projects</a></div>
+<div class="menu-item"><a href="Prizes.html">Prizes</a></div>
+<div class="menu-item"><a href="Library.html">Library</a></div>
+<div class="menu-item"><a href="People.html">People</a></div>
+<div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
+<div class="menu-item"><a href="Blog.html">Blog (Chinese)</a></div>
 
-        <img src=".WanyongQiu_home/Assets/waseda.jp" alt="Campus Photo">
+</td>
 
-        <p>
-            The <b>Trustworthy Data Science and AI (TDSAI) Lab</b>, also known as <b>Cao Lab</b>, is at the forefront of
-            advancements in trustworthy data science and AI, with a strong emphasis on privacy, security,
-            reliability, fairness, and transparency. Our mission is to develop groundbreaking theories,
-            algorithms, and systems that promote ethical and dependable AI, contributing to the welfare of
-            society and the future of humanity.
-        </p>
 
-        <p>
-            Our current research focuses on developing and applying privacy-enhancing technologies to address
-            critical challenges in data management, machine learning, and security. Key areas of exploration
-            include <b>Differential Privacy, Federated Learning, Trustworthy LLM/ML, AI Security,
-            Data Marketplaces</b>, and beyond.
-        </p>
-    </div>
+<!-- MAIN CONTENT -->
+<td id="layout-content">
+<div class="content-wrapper">
 
-    <!-- 右侧新闻栏 -->
-    <div id="right-panel">
-        <h3>News & Events</h3>
-        <ul>
-            <li><b>Call-for-Participant CBD 2025</b><br>Please consider participating in CBD 2025 (Tokyo, November 29 to December 1).</li>
+<!-- CENTER MAIN AREA -->
+<div class="main-area">
 
-            <li><b>November 9, 2025</b><br>Four papers were accepted in AAAI 2026. Congrats to Wenbo, Fuyao, Tianle, Lele and collaborators!</li>
+<h2>Welcome to TDSAI Lab!</h2>
 
-            <li><b>June 22, 2025</b><br>Two papers were accepted in VLDB 2025. Congrats to Wen, Pengpeng, Shang and all collaborators!</li>
+<img src=".WanyongQiu_home/Assets/waseda.jpg" alt="Lab Photo" class="lab-photo">
 
-            <li><b>May 1, 2025</b><br>One paper was accepted in IJCAI 2025. Congrats to Lele and collaborators!</li>
+<p>
+<b>The Trustworthy Data Science and AI (TDSAI) Lab</b>, also known as Cao Lab, is at the
+forefront of advancements in trustworthy data science and AI, with a strong emphasis on
+privacy, security, reliability, fairness, and transparency.
+</p>
 
-            <li><b>April 3, 2025</b><br>Welcome Li, Taiga, Tomoyasu, Ian to our lab!</li>
-        </ul>
-    </div>
+<p>
+Our mission is to develop groundbreaking theories, algorithms, and systems that promote
+ethical and dependable AI, contributing to the welfare of society and the future of humanity.
+</p>
+
+<p>
+Our current research focuses on developing and applying privacy-enhancing technologies to
+address trust challenges in data management, machine learning, and security. Key areas of
+exploration include <b>Differential Privacy, Federated Learning, Trustworthy LLM/LMM,
+AI Security, Data Marketplaces</b>, and beyond.
+</p>
 
 </div>
 
-<!-- ===========================
-      底部栏
-=========================== -->
-<div id="footer">
-    <div>
-        <p>© Qiu Lab</p>
-        <p><a href="#">Department of Computer Science</a></p>
-        <p><a href="#">School of Computing</a></p>
-        <p><a href="#">Institute of Science Tokyo</a></p>
-    </div>
 
-    <div>
-        <p><b>Contact:</b></p>
-        <p>Mailbox W8-62, West Building 8E,<br>Ookayama Campus</p>
-        <p>2-chome-12-1 Ookayama, Meguro City,<br>Tokyo 152-855</p>
-        <p><a href="https://maps.app.goo.gl/BQMYdse5F3PMWZ8q6" target="_blank">Google Map, Picture of West Building 8E</a></p>
-    </div>
+<!-- RIGHT SIDEBAR (NEWS LIST) -->
+<div class="sidebar">
+<h4>News & Events</h4>
 
-    <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Tokyo_Institute_of_Technology_logo.svg/512px-Tokyo_Institute_of_Technology_logo.svg.png"
-             alt="Institute Logo" width="120">
-    </div>
+<p><b>Call-for-Participant CBD 2025</b><br>
+Please consider participating in CBD 2025 (Tokyo, November 29 to December 1)</p>
+
+<p><b>November 9, 2025</b><br>
+Four papers were accepted in AAAI 2026. Congrats to Fuyao, Wenbo, Tianle, Lele and all collaborators!</p>
+
+<p><b>June 22, 2025</b><br>
+One paper was accepted in VLDB 2025. Congrats to Wen, Pengpeng, Shang and all collaborators!</p>
+
+<p><b>May 1, 2025</b><br>
+One paper was accepted in IJCAI 2025. Congrats to Lele and all collaborators!</p>
+
+<p><b>April 3, 2025</b><br>
+Welcome Li, Taiga, Tomoyasu, Ian join our lab!</p>
 </div>
+
+</div> <!-- end wrapper -->
+
+
+<!-- FOOTER AREA -->
+<div class="footer-box">
+<div class="footer-columns">
+
+<div class="footer-col">
+© Cao Lab<br>
+<a href="#">Department of Computer Science</a><br>
+<a href="#">School of Computing</a><br>
+<a href="#">Institute of Science Tokyo</a>
+</div>
+
+<div class="footer-col">
+<b>Contact:</b><br>
+Mailbox W8-62, West Building 8E,<br>
+Ookayama Campus<br>
+2-chōme-12-1 Ookayama, Meguro City,<br>
+Tokyo 152-855<br>
+<a href="#">(Google Map, Picture of West Building 8E)</a>
+</div>
+
+<div class="footer-col" style="text-align:right;">
+<img src="tokyo_logo.png" style="width:160px;">
+</div>
+
+</div>
+</div>
+
+</td>
+</tr>
+</table>
 
 </body>
 </html>

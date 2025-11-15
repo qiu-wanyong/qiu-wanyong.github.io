@@ -23,18 +23,16 @@
 <style>
     .menu-item { margin: 10px; }
 
-    /* 修复：让 layout-content 自动适配高度 */
     #layout-content { 
         width: 100%; 
         padding: 20px; 
         display: block;
     }
 
-    /* 主要修复：避免内容溢出覆盖 footer */
     .content-wrapper { 
         display: flex; 
         width: 100%;
-        flex-wrap: wrap; /* 必须：保证 sidebar 不会推到 footer 上 */
+        flex-wrap: wrap;
     }
 
     .main-area { 
@@ -51,13 +49,12 @@
         min-width: 220px;
     }
 
-    /* 保证 footer 永远在最下方排版 */
     .footer-box { 
         background: #f8f9fa; 
         padding: 20px; 
         margin-top: 30px; 
         border-radius: 8px; 
-        clear: both; /* 避免被重叠 */
+        clear: both; 
     }
 
     .footer-columns { 
@@ -72,12 +69,16 @@
         min-width: 200px;
     }
 
+    /* ← 新的可自定义图片大小 */
     img.lab-photo { 
-        width: 100%; 
+        width: 600px;   /* 你可以自由调整大小 */
+        height: auto; 
         border-radius: 10px; 
         margin: 10px 0; 
+        display: block;
     }
 </style>
+
 </head>
 
 
@@ -112,7 +113,7 @@
 <!-- CENTER MAIN AREA -->
 <div class="main-area">
 
-<h2>Welcome to TDSAI Lab!</h2>
+<h2>Welcome</h2>
 
 <!-- 修复路径错误 -->
 <img src="./WanyongQiu_home/Assets/waseda.jpg" alt="Lab Photo" class="lab-photo">

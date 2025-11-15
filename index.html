@@ -23,18 +23,16 @@
 <style>
     .menu-item { margin: 10px; }
 
-    /* 修复：让 layout-content 自动适配高度 */
     #layout-content { 
         width: 100%; 
         padding: 20px; 
         display: block;
     }
 
-    /* 主要修复：避免内容溢出覆盖 footer */
     .content-wrapper { 
         display: flex; 
         width: 100%;
-        flex-wrap: wrap; /* 必须：保证 sidebar 不会推到 footer 上 */
+        flex-wrap: wrap;
     }
 
     .main-area { 
@@ -51,13 +49,12 @@
         min-width: 220px;
     }
 
-    /* 保证 footer 永远在最下方排版 */
     .footer-box { 
         background: #f8f9fa; 
         padding: 20px; 
         margin-top: 30px; 
         border-radius: 8px; 
-        clear: both; /* 避免被重叠 */
+        clear: both; 
     }
 
     .footer-columns { 
@@ -72,12 +69,76 @@
         min-width: 200px;
     }
 
-    img.lab-photo { 
-        width: 100%; 
-        border-radius: 10px; 
-        margin: 10px 0; 
-    }
+    /* ← 新的可自定义图片大小 */
+
+/* 普通图片样式 */
+img.lab-photo { 
+    max-width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin: 10px auto;
+    display: block;
+}
+
+/* 轮播容器 */
+.slider-container {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f0f0f0;
+  transition: height 0.5s ease; /* 平滑过渡高度变化 */
+}
+
+/* 图片行 */
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+/* 每张图片占满容器 */
+.slide-img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;           /* 高度自适应 */
+  object-fit: contain;    /* 保持比例完整显示图片 */
+  object-position: center;
+  display: block;
+  border-radius: 10px;
+}
+
+/* 左右按钮 */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .slider-container {
+    width: 95%;
+  }
+}
+
 </style>
+
 </head>
 
 
@@ -112,10 +173,23 @@
 <!-- CENTER MAIN AREA -->
 <div class="main-area">
 
-<h2>Welcome to TDSAI Lab!</h2>
+<h2>Welcome</h2>
 
-<!-- 修复路径错误 -->
-<img src="./WanyongQiu_home/Assets/waseda.jpg" alt="Lab Photo" class="lab-photo">
+
+<!-- IMAGE SLIDER START -->
+<div class="slider-container" id="slider-container">
+  <div class="slider-wrapper" id="slider">
+    <img src="./WanyongQiu_home/Assets/waseda.jpg" class="slide-img" alt="">
+    <img src="./WanyongQiu_home/Assets/waseda.jpg" class="slide-img" alt="">
+    <img src="./WanyongQiu_home/Assets/waseda.jpg" class="slide-img" alt="">
+  </div>
+
+  <!-- Navigation buttons -->
+  <button class="slider-btn prev" onclick="prevSlide()">❮</button>
+  <button class="slider-btn next" onclick="nextSlide()">❯</button>
+</div>
+<!-- IMAGE SLIDER END -->
+
 
 <p>
 <b>The Trustworthy Data Science and AI (TDSAI) Lab</b>, also known as Cao Lab, is at the
@@ -182,7 +256,7 @@ Tokyo 152-855<br>
 </div>
 
 <div class="footer-col" style="text-align:right;">
-<img src="tokyo_logo.png" style="width:160px;">
+<img src=".WanyongQiu_home/Assets/wasedaLOGO.jpg" style="width:160px;">
 </div>
 
 </div>
@@ -191,6 +265,52 @@ Tokyo 152-855<br>
 </td>
 </tr>
 </table>
+
+<script>
+let index = 0;
+const slider = document.getElementById("slider");
+const container = document.getElementById("slider-container");
+const slides = slider.children;
+const totalSlides = slides.length;
+
+// 显示指定幻灯片并更新容器高度
+function showSlide(i) {
+    index = (i + totalSlides) % totalSlides;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+    container.style.height = slides[index].offsetHeight + 'px';
+}
+
+// 下一张 / 上一张
+function nextSlide() { showSlide(index + 1); }
+function prevSlide() { showSlide(index - 1); }
+
+// 初始化高度
+window.addEventListener('load', () => showSlide(index));
+window.addEventListener('resize', () => showSlide(index));
+
+// 自动播放
+setInterval(nextSlide, 3000);
+
+// 支持触摸滑动切换
+let startX = 0;
+let isDragging = false;
+
+slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+});
+
+slider.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diff = startX - currentX;
+    // 阈值 50px
+    if (diff > 50) { nextSlide(); isDragging = false; }
+    if (diff < -50) { prevSlide(); isDragging = false; }
+});
+
+slider.addEventListener('touchend', () => { isDragging = false; });
+</script>
 
 </body>
 </html>

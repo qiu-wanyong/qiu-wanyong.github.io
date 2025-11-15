@@ -78,7 +78,7 @@ img.lab-photo {
     display: block;        /* ← 防止影响文本布局 */
 }
 
-/* ==== IMAGE SLIDER ==== */ 
+/* 轮播容器，固定宽高比例 */
 .slider-container {
   position: relative;
   width: 80%;
@@ -88,26 +88,28 @@ img.lab-photo {
   border-radius: 10px;
   background: #f0f0f0;
   height: 0;
-  padding-top: 28.57%; /* 高度 = 宽度 * 高/宽 比例, 200/700≈0.2857 */
+  padding-top: 28.57%; /* 图片比例 200/700 ≈ 0.2857 */
 }
 
-
+/* 轮播图片行 */
 .slider-wrapper {
   display: flex;
   transition: transform 0.6s ease;
+  height: 100%;
 }
 
+/* 每张图片占满容器 */
 .slide-img {
+  flex: 0 0 100%;
   width: 100%;
-  height: auto;         /* 高度随图片自适应 */
-  flex-shrink: 0;
+  height: 100%;
+  object-fit: contain;   /* 保持比例完整显示图片 */
+  object-position: center;
   display: block;
   border-radius: 10px;
-  object-fit: contain;  /* 保持比例显示完整图片 */
-  object-position: center;
 }
 
-/* Buttons */
+/* 左右导航按钮 */
 .slider-btn {
   position: absolute;
   top: 50%;
@@ -126,8 +128,6 @@ img.lab-photo {
 
 .prev { left: 10px; }
 .next { right: 10px; }
-
-
 
 </style>
 
@@ -258,21 +258,32 @@ Tokyo 152-855<br>
 </tr>
 </table>
 
-  <script>
+<script>
 let index = 0;
 const slider = document.getElementById("slider");
 const totalSlides = slider.children.length;
 
+// 显示指定幻灯片
 function showSlide(i) {
-    index = (i + totalSlides) % totalSlides; 
+    index = (i + totalSlides) % totalSlides;
     slider.style.transform = `translateX(-${index * 100}%)`;
 }
 
+// 下一张 / 上一张
 function nextSlide() { showSlide(index + 1); }
 function prevSlide() { showSlide(index - 1); }
 
-/* Auto-play every 3 seconds */
+// 自动播放
 setInterval(nextSlide, 3000);
+
+// 可选：确保容器高度自适应图片实际高度
+function updateSliderHeight() {
+    const sliderContainer = document.querySelector('.slider-container');
+    const img = slider.children[index];
+    sliderContainer.style.height = img.offsetHeight + 'px';
+}
+window.addEventListener('load', updateSliderHeight);
+window.addEventListener('resize', updateSliderHeight);
 </script>
 
 </body>

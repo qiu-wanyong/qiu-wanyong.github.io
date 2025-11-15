@@ -86,9 +86,11 @@ img.lab-photo {
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;
-  background: #f0f0f0; /* 补充空白背景 */
-  height: auto;         /* 容器高度自适应 */
+  background: #f0f0f0;
+  height: 0;
+  padding-top: 28.57%; /* 高度 = 宽度 * 高/宽 比例, 200/700≈0.2857 */
 }
+
 
 .slider-wrapper {
   display: flex;

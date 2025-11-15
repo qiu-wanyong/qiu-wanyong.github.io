@@ -86,7 +86,8 @@ img.lab-photo {
   margin: 20px auto;       /* 居中显示 */
   overflow: hidden;
   border-radius: 10px;
-  height: 300px;           /* 设置轮播图固定高度，可根据需要调整 */
+  height: 400px;           /* 轮播图高度，可调整 */
+  background: #f0f0f0;     /* 补充背景色，图片未填充的部分可显示 */
 }
 
 .slider-wrapper {
@@ -101,7 +102,9 @@ img.lab-photo {
   flex-shrink: 0;
   display: block;
   border-radius: 10px;
-  object-fit: cover;       /* 保持图片比例裁剪，避免拉伸 */
+  object-fit: contain;     /* 完整显示图片内容，不裁剪 */
+  object-position: center; /* 居中显示 */
+  background: #f0f0f0;     /* 未覆盖区域背景色 */
 }
 
 /* Buttons */

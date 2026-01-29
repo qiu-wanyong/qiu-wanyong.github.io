@@ -27,9 +27,149 @@
 <td id="layout-menu">
 
 <style>
-    .menu-item {
-        margin: 10px; 
+    .menu-item { margin: 10px; }
+
+    #layout-content { 
+        width: 100%; 
+        padding: 20px; 
+        display: block;
     }
+
+    .content-wrapper { 
+        display: flex; 
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .main-area { 
+        flex: 3; 
+        padding-right: 30px; 
+        min-width: 320px; 
+    }
+
+    .sidebar { 
+        flex: 1.2; 
+        background: #f8f9fa; 
+        padding: 20px; 
+        border-radius: 8px;
+        min-width: 220px;
+    }
+
+    .footer-box { 
+        background: #f8f9fa; 
+        padding: 20px; 
+        margin-top: 30px; 
+        border-radius: 8px; 
+        clear: both; 
+    }
+
+    .footer-columns { 
+        display: flex; 
+        justify-content: space-between; 
+        flex-wrap: wrap;
+    }
+
+    .footer-col { 
+        flex: 1; 
+        padding: 10px; 
+        min-width: 200px;
+    }
+
+    /* ← 新的可自定义图片大小 */
+
+/* 普通图片样式 */
+img.lab-photo { 
+    max-width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin: 10px auto;
+    display: block;
+}
+
+/* 轮播容器 */
+.slider-container{
+  position: relative;
+  width: 380px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  margin: 10px 0;       
+  margin-left: 0;       
+  margin-right: auto;    
+  overflow: hidden;
+  border-radius: 12px;
+  background: transparent;
+  display: block;   
+}
+  
+/* 让轮播所在的 td 一定左对齐 */
+.hero-photo{
+  width: 340px;
+  vertical-align: top;
+  text-align: left !important;
+  padding-right: 12px;
+}
+
+/* 防止轮播容器被 margin:auto 居中 */
+#hero-slider-container{
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+
+/* 图片行 */
+.slider-wrapper{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+}
+
+/* 每张图片：用 cover 填满容器，留白会消失（会轻微裁剪） */
+.slide-img{
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      
+  object-position: center;
+  display: block;
+}
+
+/* （可选）减少 imgtable 左侧单元格的内边距，让图更贴边更大 */
+table.imgtable td:first-child{
+  padding-right: 12px;
+}
+
+/* 左右按钮 */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .slider-container {
+    width: 95%;
+  }
+}
+
+table.imgtable td:first-child { text-align: left !important; }
+
 </style>
   
 <div class="menu-category">Wanyong Qiu</div>
@@ -66,29 +206,33 @@
     </div>
 </div>
 
-<table class="imgtable"><tbody><tr><td>
-<a href="./WanyongQiu_home/Assets/photo.jpg"><img src="./WanyongQiu_home/Assets/photo.jpg" alt="alt text" width="150px&quot;"></a>&nbsp;</td>
-<td align="left"> <b>Wanyong Qiu (邱万勇)</b>. <span class="small-text">Post-doctoral fellow</span><br>
-  
-<br> <a href="https://www.waseda.jp/top/en/" target="blank">Waseda University</a>
-<br>
+<table class="imgtable">
+  <tr>
+    <!-- 左侧：轮播（居左） -->
+    <td class="hero-photo">
+      <div class="slider-container" id="hero-slider-container">
+        <div class="slider-wrapper" id="hero-slider">
+          <img src="./WanyongQiu_home/Assets/BITPhone.jpg" class="slide-img" alt="">
+          <img src="./WanyongQiu_home/Assets/waseda5.jpg" class="slide-img" alt="">
+        </div>
 
+        <button class="slider-btn prev" onclick="prevHeroSlide()">❮</button>
+        <button class="slider-btn next" onclick="nextHeroSlide()">❯</button>
+      </div>
+    </td>
 
-
-<span style="display: block;"><a href="https://www.cs.waseda.ac.jp/" target="blank">Department of Computer Science and Engineering</a></span>
-<br>
-  
-<span style="display: block;"><em>Address</em>: <a href="https://maps.app.goo.gl/BQMYdse5F3PMWZ8q6" target="blank">Bldg. No.55, 3-4-1 Okubo-Nishi-Waseda, Shinjuku, Tokyo, 169-8555 Japan</a></span>
-  
-<span style="display: block;"><em>E-mail</em>: <a href="mailto:w.iac25173@kurenai.waseda.jp/" target="blank">w.iac25173@kurenai.waseda.jp</a></span><br>
-  
-<br>
-<a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(CN)202511.pdf" target="blank">CV(CN).pdf</a>&nbsp
-  
-<a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(EN)202511.pdf" target="blank">CV(EN).pdf</a>
-<br>
-
-</td></tr></tbody></table>
+    <!-- 右侧：文字信息 -->
+    <td class="hero-info" align="left">
+      <b>Wanyong Qiu (邱万勇)</b>. <span class="small-text">Post-doctoral fellow</span><br>
+      <br><a href="https://www.waseda.jp/top/en/" target="blank">Waseda University</a><br>
+      <span style="display:block;"><a href="https://www.cs.waseda.ac.jp/" target="blank">Department of Computer Science and Engineering</a></span><br>
+      <span style="display: block;"><em>Address</em>: <a href="https://maps.app.goo.gl/BQMYdse5F3PMWZ8q6" target="blank">Bldg. No.55, 3-4-1 Okubo-Nishi-Waseda, Shinjuku, Tokyo, 169-8555 Japan</a></span> 
+      <span style="display: block;"><em>E-mail</em>: <a href="mailto:w.iac25173@kurenai.waseda.jp/" target="blank">w.iac25173@kurenai.waseda.jp</a></span><br><br>
+      <a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(CN)202511.pdf" target="blank">CV(CN).pdf</a>&nbsp;
+      <a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(EN)202511.pdf" target="blank">CV(EN).pdf</a>
+    </td>
+  </tr>
+</table>
 
   
 <br>
@@ -96,13 +240,12 @@
 <span class="icon"><img src="./WanyongQiu_home/Assets/googlescholar.png" alt="Icon"></span> <a href="https://scholar.google.com/citations?user=HhrxN0UAAAAJ&hl=zh-CN/" target="blank">Google Scholar</a> |
 <span class="icon"><img src="./WanyongQiu_home/Assets/researchgate.png" alt="Icon"></span> <a href="https://www.researchgate.net/profile/Wanyong-Qiu/" target="blank">ResearchGate</a> |
 <span class="icon"><img src="./WanyongQiu_home/Assets/csdn.png" alt="Icon"></span> <a href="https://blog.csdn.net/qiu1440528444?type=blog/" target="blank">CSDN</a>
-
-<img align="right" width="150" height="100" src="./WanyongQiu_home/Assets/kattoo.gif">
   
+<img align="right" width="150" height="100" src="./WanyongQiu_home/Assets/kattoo.gif">
 <br>
 <p><br></p>
 
-
+  
 <h2><b>Short Bio</b></h2>
 <ul>
 <p>
@@ -123,55 +266,10 @@ Liu Lab (led by <span style="color: #00008B;">Prof. Jiang Liu</span>) focuses on
   <p> In brain medicine, <span style="color: #00008B;">Prof. Bin Hu</span> introduced the concept of “<span style="color: #00008B;">Computational Psychophysiology</span>” at the 431st Xiangshan Science Conference in 2012, pioneering a data-driven methodology for studying cognitive function and psychological states. This innovation transitioned mental health diagnosis and treatment technologies from being <span style="color: #00008B;"> “Symptom-descriptive” to “Data-driven”</span>. At the 735th Xiangshan Science Conference in 2022, Prof. Hu proposed a future transformation of mental health diagnosis and treatment technologies from <span style="color: #00008B;"> “Data-driven” to “Systematic Interpretation”</span>. This forward-looking approach places greater demands on IoHT systems, particularly those involving wearable devices and diagnostic and treatment technologies.</p>
   <p> <span style="color: #00008B;">Prof. Kun Qian</span> has been extensively involved in advancing theoretical research and technological applications of artificial intelligence and signal processing within the field of medical engineering. In 2020, he proposed and has been actively advancing the cutting-edge research direction of “<span style="color: #00008B;">Computer Audition for Healthcare (CA4H)</span>”. The key innovative contributions include: <span style="color: #00008B;">Intelligent body sound perception</span>, <span style="color: #00008B;">Brain-inspired auditory methods</span> and <span style="color: #00008B;">Intelligent audio intervention</span>. These innovations advance the frontiers of AI and signal processing in healthcare, underscoring the practical potential of CA4H technologies to enhance human health.</p>
   
-<div class="infoblock">
-<div class="blockcontent">
-<p>🤹‍♀️ The lab is looking for PhD, master, and undergraduate students with strong background to work together on the interdisciplinary area of brain health.</p>
-<p>📫 Please see <a href="https://bhe-lab.org/" target="blank">BHE-Lab</a> for more details.</p>
-</div>
-</div>
 </ul>
   
-<h2><b>Personal Interests</b></h2>
-<ul>
-<p>Computer Science and Technology</p>
-  
-  <ul>
-  <li><p>Artificial Intelligence：Machine learning, Computer audition</p></li>
-    
-  <li><p>Information Security：Privacy-preserving computing</p></li>
-  </ul>
-  
-<p>Engineering Medicine and Technology</p>
-  
-  <ul>
-  <li><p>Artificial Intelligence Medicine：Federated learning for healthcare</p></li>
-    
-  <li><p>Medical Information Privacy： Psychophysiology of privacy computing</p></li>
-  </ul>
-</ul>
 
-<html>
-<head>
- <title>文字滚动的设置</title>
- <style>
-   .centered-marquee {
-     margin-left: 0 auto; 
-   }
- </style>
-</head>
-<body>
 
-<font size="3" color="#000000">
-  <div class="centered-marquee">
-    <marquee behavior="scroll" direction="left" scrollamount="6">
-      <img src="./WanyongQiu_home/Assets/Handshake.gif" alt="Handshake" style="vertical-align: middle; width: auto; height: 32px; margin-right: 5px;">
-      If you are seeking any form of academic cooperation, please feel free to email me.
-    </marquee>
-  </div>
-</font>
-
-</body>
-</html>
 
 
 <!--
@@ -433,6 +531,46 @@ window.onload = () => {
   // 页面加载时执行
   fetchData();
   updateOnlineCount();
+</script>
+
+<script>
+let heroIndex = 0;
+const slider = document.getElementById("hero-slider");
+const slides = slider.children;
+const totalSlides = slides.length;
+
+function showHeroSlide(i) {
+  heroIndex = (i + totalSlides) % totalSlides;
+  slider.style.transform = `translateX(-${heroIndex * 100}%)`;
+}
+
+function nextHeroSlide(){ showHeroSlide(heroIndex + 1); }
+function prevHeroSlide(){ showHeroSlide(heroIndex - 1); }
+
+window.addEventListener('load', () => showHeroSlide(heroIndex));
+setInterval(nextHeroSlide, 3000);
+
+
+// 支持触摸滑动切换
+let startX = 0;
+let isDragging = false;
+
+slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+});
+
+slider.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diff = startX - currentX;
+    // 阈值 50px
+    if (diff > 50) { nextHeroSlide(); isDragging = false; }
+    if (diff < -50) { prevHeroSlide(); isDragging = false; }
+
+});
+
+slider.addEventListener('touchend', () => { isDragging = false; });
 </script>
 
         

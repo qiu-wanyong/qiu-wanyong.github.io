@@ -100,6 +100,21 @@ img.lab-photo {
   background: transparent;
   display: block;   
 }
+  
+/* 让轮播所在的 td 一定左对齐 */
+.hero-photo{
+  width: 340px;
+  vertical-align: top;
+  text-align: left !important;
+  padding-right: 12px;
+}
+
+/* 防止轮播容器被 margin:auto 居中 */
+#hero-slider-container{
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
 
 /* 图片行 */
 .slider-wrapper{
@@ -192,47 +207,32 @@ table.imgtable td:first-child { text-align: left !important; }
 
 <table class="imgtable">
   <tr>
-    <td style="width:340px; vertical-align: top; text-align:left;">
-    <div class="slider-container" id="slider-container">
-      <!-- slider-container... -->
+    <!-- 左侧：轮播（居左） -->
+    <td class="hero-photo">
+      <div class="slider-container" id="hero-slider-container">
+        <div class="slider-wrapper" id="hero-slider">
+          <img src="./WanyongQiu_home/Assets/BITPhone.jpg" class="slide-img" alt="">
+          <img src="./WanyongQiu_home/Assets/waseda5.jpg" class="slide-img" alt="">
+        </div>
+
+        <button class="slider-btn prev" onclick="prevHeroSlide()">❮</button>
+        <button class="slider-btn next" onclick="nextHeroSlide()">❯</button>
+      </div>
     </td>
-    <td align="left">
-<!-- IMAGE SLIDER START -->
-<div class="slider-container" id="slider-container">
-  <div class="slider-wrapper" id="slider">
-    <img src="./WanyongQiu_home/Assets/BITPhone.jpg" class="slide-img" alt="">
-    <img src="./WanyongQiu_home/Assets/waseda5.jpg" class="slide-img" alt="">
-  </div>
 
-  <!-- Navigation buttons -->
-  <button class="slider-btn prev" onclick="prevHeroSlide()">❮</button>
-  <button class="slider-btn next" onclick="nextHeroSlide()">❯</button>
-</div>
-<!-- IMAGE SLIDER END -->
-
-</td>
-<td align="left"> <b>Wanyong Qiu (邱万勇)</b>. <span class="small-text">Post-doctoral fellow</span><br>
-  
-<br> <a href="https://www.waseda.jp/top/en/" target="blank">Waseda University</a>
-<br>
-
-
-
-<span style="display: block;"><a href="https://www.cs.waseda.ac.jp/" target="blank">Department of Computer Science and Engineering</a></span>
-<br>
-  
-<span style="display: block;"><em>Address</em>: <a href="https://maps.app.goo.gl/BQMYdse5F3PMWZ8q6" target="blank">Bldg. No.55, 3-4-1 Okubo-Nishi-Waseda, Shinjuku, Tokyo, 169-8555 Japan</a></span>
-  
-<span style="display: block;"><em>E-mail</em>: <a href="mailto:w.iac25173@kurenai.waseda.jp/" target="blank">w.iac25173@kurenai.waseda.jp</a></span><br>
-  
-<br>
-<a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(CN)202511.pdf" target="blank">CV(CN).pdf</a>&nbsp
-  
-<a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(EN)202511.pdf" target="blank">CV(EN).pdf</a>
-<br>
+    <!-- 右侧：文字信息 -->
+    <td class="hero-info" align="left">
+      <b>Wanyong Qiu (邱万勇)</b>. <span class="small-text">Post-doctoral fellow</span><br>
+      <br><a href="https://www.waseda.jp/top/en/" target="blank">Waseda University</a><br>
+      <span style="display:block;"><a href="https://www.cs.waseda.ac.jp/" target="blank">Department of Computer Science and Engineering</a></span><br>
+      <span style="display:block;"><em>Address</em>: ...</span>
+      <span style="display:block;"><em>E-mail</em>: ...</span><br><br>
+      <a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(CN)202511.pdf" target="blank">CV(CN).pdf</a>&nbsp;
+      <a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(EN)202511.pdf" target="blank">CV(EN).pdf</a>
     </td>
   </tr>
 </table>
+
 
 
   
@@ -563,7 +563,7 @@ window.onload = () => {
 
 <script>
 let heroIndex = 0;
-const slider = document.getElementById("slider");
+const slider = document.getElementById("hero-slider");
 const slides = slider.children;
 const totalSlides = slides.length;
 
@@ -593,8 +593,9 @@ slider.addEventListener('touchmove', e => {
     const currentX = e.touches[0].clientX;
     const diff = startX - currentX;
     // 阈值 50px
-    if (diff > 50) { nextNewsSlide(); isDragging = false; }
-    if (diff < -50) { prevSlide(); isDragging = false; }
+    if (diff > 50) { nextHeroSlide(); isDragging = false; }
+    if (diff < -50) { prevHeroSlide(); isDragging = false; }
+
 });
 
 slider.addEventListener('touchend', () => { isDragging = false; });

@@ -9,17 +9,125 @@
 </script>
 
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
 <link rel="stylesheet" href="./WanyongQiu_home/jemdoc.css" type="text/css">
 <title>Wanyong Qiu's Homepage</title>
-<style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}</style></head>
+
+<style>
+/* ===== Team page (Cao-lab like) ===== */
+.team-section{ margin-top: 10px; }
+
+.team-title{
+  font-size: 18px;         
+  margin: 32px 0 6px;       
+  line-height: 1.2;         
+}
+
+.team-subtitle{
+  font-size: 15px;
+  color: #333;
+  margin: 0 0 22px;        
+  line-height: 1.4;    
+}
+
+
+.team-subtitle a{
+  color: #1e88e5;
+  text-decoration: none;
+}
+.team-subtitle a:hover{ text-decoration: underline; }
+
+.team-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px, 1fr));
+  column-gap: 90px;
+  row-gap: 40px;
+  margin-top: 10px;
+}
+
+.team-info{
+  line-height: 1.45;
+}
+
+.team-card{
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.team-photo{
+  width: 120px;
+  height: 120px;
+  border-radius: 14px;
+  object-fit: cover;
+  background: #eee;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  flex: 0 0 auto;
+  display: block;
+}
+
+.team-photo.nocrop{
+  object-fit: contain;
+  background: #f5f5f5;
+}
+
+.team-name{
+  font-size: 18px;
+  margin: 0 0 2px;
+}
+
+.team-name a{
+  color: #1e88e5;
+  text-decoration: none;
+}
+.team-name a:hover{ text-decoration: underline; }
+
+.team-role{
+  font-size: 16px;
+  font-style: italic;
+  color: #2f3a44;
+  margin: 0 0 6px;
+}
+
+.team-list{
+  margin: 0;
+  color: #444;
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+.team-list li p{
+  margin: 0;
+}
+
+.team-section{
+  margin-top: 20px;     
+  margin-bottom: 50px;  
+}
+
+.team-section:last-of-type{
+  margin-bottom: 0;
+}
+
+
+@media (max-width: 980px){
+  .team-grid{
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .team-title{ font-size: 18px; }
+  .team-name{ font-size: 18px; }
+}
+</style>
+
+
+
+</head>
+	
 <body>
 <table summary="Table for page layout." id="tlayout">
 <tbody><tr valign="top">
@@ -36,79 +144,163 @@
 	
 <div class="menu-item"><a class="current" href="index.html">Home</a></div>
 <div class="menu-item"><a href="https://bhe-lab.org/">BHE</a></div>
-<div class="menu-item"><a href="About.html">About</a></div>
+<div class="menu-item"><a href="People.html">Team</a></div>
 <div class="menu-item"><a href="Publications.html">Publications</a></div>
 <div class="menu-item"><a href="Activity.html">Activities</a></div>
 <div class="menu-item"><a href="Projects.html">Research</a></div>
 <div class="menu-item"><a href="Prizes.html">Awards</a></div>
 <div class="menu-item"><a href="Library.html">Resources</a></div>
-<div class="menu-item"><a href="People.html">Team</a></div>
 <div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
 <div class="menu-item"><a href="Blog.html">Blog (Chinese)</a></div>
 	
 </td>
 <td id="layout-content">
-<p><br></p>
 
 <h2><b>People</b></h2>
-<p>Supervision of Undergraduate Students in Study Internships.</p>
+
+<div class="team-section">
+  <div class="team-title">Current Members</div>
+  <div class="team-subtitle">
+    We are looking for motivated undergraduate interns, master’s students, and Ph.D. students worldwide to join our team.
+  </div>
+
+  <div class="team-grid">
+
+    <!-- Member 1 -->
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/photo.jpg" target="_blank">
+        <img class="team-photo" src="./WanyongQiu_home/Assets/photo.jpg" alt="Wanyong Qiu">
+      </a>
+      <div class="team-info">
+        <div class="team-name">
+          <a href="https://qiu-wanyong.github.io/About.html" target="_blank">Wanyong Qiu</a>
+        </div>
+        <div class="team-role">Postdoc, Waseda University</div>
+        <ul class="team-list">
+          <li>Postdoctoral Researcher, Waseda University (2025–present)</li>
+          <li>Ph.D., Beijing Institute of Technology</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/FYF.jpg" target="_blank">
+        <img class="team-photo" src="./WanyongQiu_home/Assets/FYF.jpg" alt="Yifan Feng">
+      </a>
+      <div class="team-info">
+        <div class="team-name">Yifan Feng</div>
+        <div class="team-role">Master’s Student</div>
+        <ul class="team-list">
+          <li>Research Intern (Jun. 2023 – Sep. 2024)</li>
+          <li>Research Interests: Dynamic and Incremental Federated Learning</li>
+          <li>Beijing Institute of Technology (Recommended Admission), 2024</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/QT.jpg" target="_blank">
+        <img class="team-photo" src="./WanyongQiu_home/Assets/QT.jpg" alt="Tian Qin">
+      </a>
+      <div class="team-info">
+        <div class="team-name">Tian Qin</div>
+        <div class="team-role">Master’s Student</div>
+        <ul class="team-list">
+          <li>Research Intern (from Jun. 2025)</li>
+          <li>Research Interests: Multimodal Federated Learning</li>
+          <li>Beijing Institute of Technology (Recommended Admission), 2025</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 
-<table class="imgtable"><tbody><tr><td>
-<a href="./WanyongQiu_home/Assets/YYZ.jpg"><img src="./WanyongQiu_home/Assets/YYZ.jpg" alt="alt text" width="100px&quot;"></a>&nbsp;</td>
-<td align="left">Yongzi Yu（于永孜）<br>
-<br> 睿信书院2020级本科生（2022.9–2023.12）科研实习
-<br> 研究方向：联邦医疗物联网
-<br> 科研成果：学术论文3篇，竞赛获奖3项
-<br> 毕业去向：香港科技大学（直博）2023.10<br>
+<div class="team-section">
+  <div class="team-title">Internship Members</div>
+  <div class="team-subtitle">
+    Undergraduate students supervised in research-oriented internship programs.
+  </div>
+
+  <div class="team-grid">
+
+    <!-- Intern 1 -->
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/YYZ.jpg" target="_blank">
+        <img class="team-photo" src="./WanyongQiu_home/Assets/YYZ.jpg" alt="Yongzi Yu">
+      </a>
+      <div class="team-info">
+        <div class="team-name">Yongzi Yu</div>
+        <div class="team-role">Research Intern</div>
+        <ul class="team-list">
+          <li>Research Intern (Sep. 2022 – Dec. 2023)</li>
+          <li>Research Interests: Federated Learning for Medical IoT</li>
+          <li>Publications: 3 papers; Awards: 3 competitions</li>
+          <li>Ph.D. Track, Hong Kong University of Science and Technology</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Intern 2 -->
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/QC.jpg" target="_blank">
+        <img class="team-photo" src="./WanyongQiu_home/Assets/QC.jpg" alt="Chen Quan">
+      </a>
+      <div class="team-info">
+        <div class="team-name">Chen Quan</div>
+        <div class="team-role">Research Intern</div>
+        <ul class="team-list">
+          <li>Research Intern (Sep. 2022 – Dec. 2023)</li>
+          <li>Research Interests: Vertical Federated Learning</li>
+          <li>Publications: 3 papers; Awards: 3 competitions</li>
+          <li>M.S. Student, Imperial College London</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Intern 3 -->
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/ZZK.jpg" target="_blank">
+        <img class="team-photo" src="./WanyongQiu_home/Assets/ZZK.jpg" alt="Zikai Zhou">
+      </a>
+      <div class="team-info">
+        <div class="team-name">Zikai Zhou</div>
+        <div class="team-role">Research Intern</div>
+        <ul class="team-list">
+          <li>Research Intern College (Jun. 2023 – Sep. 2024)</li>
+          <li>Research Interests: Lightweight Models for Federated Learning</li>
+          <li>National Undergraduate Innovation Program (1 project)</li>
+          <li>Ph.D. Track, Hong Kong University of Science and Technology</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Intern 4 -->
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/LYY.jpg" target="_blank">
+        <img class="team-photo" src="./WanyongQiu_home/Assets/LYY.jpg" alt="Yuying Li">
+      </a>
+      <div class="team-info">
+        <div class="team-name">Yuying Li</div>
+        <div class="team-role">Research Intern</div>
+        <ul class="team-list">
+          <li>Research Intern College (Jun. 2023 – Sep. 2024)</li>
+          <li>Research Interests: Personalised and Heterogeneous Federated Learning</li>
+          <li>Publications: 1 paper</li>
+          <li>Tsinghua University (Recommended Admission)</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 	
-</td></tr></tbody></table>
-<p><br></p>
-
-<table class="imgtable"><tbody><tr><td>
-<a href="./WanyongQiu_home/Assets/QC.jpg"><img src="./WanyongQiu_home/Assets/QC.jpg" alt="alt text" width="100px&quot;"></a>&nbsp;</td>
-<td align="left">Chen Quan（全晨）<br>
-<br> 睿信书院2020级本科生（2022.9–2023.12）科研实习
-<br> 研究方向：纵向联邦学习、可解释性
-<br> 科研成果：学术论文3篇，竞赛获奖3项
-<br> 毕业去向：帝国理工学院（硕士）2024.10<br>
-
-</td></tr></tbody></table>
-<p><br></p>
-
-<table class="imgtable"><tbody><tr><td>
-<a href="./WanyongQiu_home/Assets/FYF.jpg"><img src="./WanyongQiu_home/Assets/FYF.jpg" alt="alt text" width="100px&quot;"></a>&nbsp;</td>
-<td align="left">Yifan Feng（冯祎凡）<br>
-<br> 新疆大学2020级本科生（2023.6.–2024.9）科研实习
-<br> 研究方向：动态联邦学习、联邦增量学习
-<br> 科研成果：学术论文1篇
-<br> 毕业去向：北京理工大学（保研）2024.9<br>
-
-</td></tr></tbody></table>
-<p><br></p>
 
 
-<table class="imgtable"><tbody><tr><td>
-<a href="./WanyongQiu_home/Assets/ZZK.jpg"><img src="./WanyongQiu_home/Assets/ZZK.jpg" alt="alt text" width="100px&quot;"></a>&nbsp;</td>
-<td align="left">Zikai Zhou（周子凯）<br>
-<br> 徐特立书院2021级本科生（2023.6–2024.9）科研实习
-<br> 研究方向：联邦轻量化模型
-<br> 科研成果：立项国家级大创1项
-<br> 毕业去向：香港科技大学（直博）2024.10<br>
-
-</td></tr></tbody></table>
-<p><br></p>
-
-<table class="imgtable"><tbody><tr><td>
-<a href="./WanyongQiu_home/Assets/LYY.jpg"><img src="./WanyongQiu_home/Assets/LYY.jpg" alt="alt text" width="100px&quot;"></a>&nbsp;</td>
-<td align="left">Yuying Li （李昱莹）<br>
-<br> 徐特立书院2021级本科生（2023.6–2024.9）科研实习
-<br> 研究方向：异构联邦学习、个性化联邦学习
-<br> 科研成果：学术论文1篇
-<br> 毕业去向：清华大学（保研）2024.10<br>
-
-</td></tr></tbody></table>
-<p><br></p>
 
 
 	

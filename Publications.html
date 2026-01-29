@@ -85,7 +85,7 @@
     flex-wrap: wrap;
 }
 
-.control-btn {
+.toggle-btn {
     background-color: #3498db;
     color: white;
     border: none;
@@ -96,8 +96,16 @@
     font-size: 0.9em;
 }
 
-.control-btn:hover {
+.toggle-btn:hover {
     background-color: #2980b9;
+}
+
+.toggle-btn.expanded {
+    background-color: #e74c3c;
+}
+
+.toggle-btn.expanded:hover {
+    background-color: #c0392b;
 }
 
 .highlight {
@@ -122,7 +130,7 @@
         flex-direction: column;
     }
     
-    .control-btn {
+    .toggle-btn {
         width: 100%;
     }
 }
@@ -146,7 +154,7 @@
 <div class="menu-item"><a href="People.html">Team</a></div>
 <div class="menu-item"><a href="Publications.html">Publications</a></div>
 <div class="menu-item"><a href="Activity.html">Activities</a></div>
-<div class="menu-item"><a href="Projects.html">Projects</a></div>
+<div class="menu-item"><a href="Projects.html">Research</a></div>
 <div class="menu-item"><a href="Prizes.html">Awards</a></div>
 <div class="menu-item"><a href="Library.html">Resources</a></div>
 <div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
@@ -320,8 +328,7 @@ Cardiovascular diseases (CVDs) have been ranked as the leading cause for deaths.
 <h3><b>Awards</b></h3>
 
 <div class="controls">
-    <button class="control-btn" onclick="expandAllAwards()">Expand All Awards</button>
-    <button class="control-btn" onclick="collapseAllAwards()">Collapse All Awards</button>
+    <button id="awardsToggle" class="toggle-btn" onclick="toggleAllAwards()">Expand All Awards</button>
 </div>
 
 <!-- 2025 Awards -->
@@ -376,14 +383,14 @@ Cardiovascular diseases (CVDs) have been ranked as the leading cause for deaths.
                 Project: Federated Learning System for Agent-based Audio Perception (Based on FATE Platform). 
                 Team leader: Wanyong Qiu; Team member: Chen Quan. 
                 Advisors: Prof. Bin Hu, Prof. Kun Qian. 
-                February 2023. (Prize: RMB 100,000)</li>
+                February 2023. <span class="award-amount">(Prize: RMB 100,000)</span></li>
             <li>University-level Award, 9th China International "Internet+" Innovation and Entrepreneurship Competition. 
                 Project: Health Listener: A New Paradigm of Agent-based Audio Perception under Federated Medical Systems. 
                 Team leader: Wanyong Qiu. 
                 August 2023.</li>
             <li>Principal Supervisor, National Undergraduate Innovation Training Program. 
                 Project: Lightweight Federated Learning Models for Agent-based Audio Perception Terminals. 
-                Funding: RMB 10,000. 
+                Funding: <span class="highlight">RMB 10,000</span>. 
                 Project completed in May 2023.</li>
             <li>Second Prize, 19th "Century Cup" Extracurricular Academic and Technological Competition, Beijing Institute of Technology. 
                 Project: Agent-based Audio Perception System. 
@@ -400,8 +407,7 @@ Cardiovascular diseases (CVDs) have been ranked as the leading cause for deaths.
 <h3><b>Academic</b></h3>
 
 <div class="controls">
-    <button class="control-btn" onclick="expandAllAcademic()">Expand All Academic</button>
-    <button class="control-btn" onclick="collapseAllAcademic()">Collapse All Academic</button>
+    <button id="academicToggle" class="toggle-btn" onclick="toggleAllAcademic()">Expand All Academic</button>
 </div>
 
 <!-- 2025 Academic -->
@@ -688,60 +694,100 @@ function toggleYear(yearId) {
     }
 }
 
-// 展开所有Awards
-function expandAllAwards() {
-    const awardContents = ['awards-2025', 'awards-2024', 'awards-2023'];
+// 检查Awards部分是否全部展开
+function checkAwardsExpanded() {
+    const awardIds = ['awards-2025', 'awards-2024', 'awards-2023'];
+    let allExpanded = true;
     
-    awardContents.forEach(yearId => {
-        const content = document.getElementById(yearId);
+    for (let id of awardIds) {
+        const content = document.getElementById(id);
+        if (!content.classList.contains('expanded')) {
+            allExpanded = false;
+            break;
+        }
+    }
+    
+    return allExpanded;
+}
+
+// 检查Academic部分是否全部展开
+function checkAcademicExpanded() {
+    const academicIds = ['academic-2025', 'academic-2024', 'academic-2023', 'academic-2022', 'academic-2021'];
+    let allExpanded = true;
+    
+    for (let id of academicIds) {
+        const content = document.getElementById(id);
+        if (!content.classList.contains('expanded')) {
+            allExpanded = false;
+            break;
+        }
+    }
+    
+    return allExpanded;
+}
+
+// 切换所有Awards的展开/折叠状态
+function toggleAllAwards() {
+    const awardIds = ['awards-2025', 'awards-2024', 'awards-2023'];
+    const btn = document.getElementById('awardsToggle');
+    const allExpanded = checkAwardsExpanded();
+    
+    // 切换展开状态
+    for (let id of awardIds) {
+        const content = document.getElementById(id);
         const header = content.previousElementSibling;
-        if (content && header) {
+        
+        if (allExpanded) {
+            // 当前全部展开，切换为全部折叠
+            content.classList.remove('expanded');
+            header.classList.remove('expanded');
+        } else {
+            // 当前有折叠的，切换为全部展开
             content.classList.add('expanded');
             header.classList.add('expanded');
         }
-    });
+    }
+    
+    // 更新按钮文本和样式
+    if (allExpanded) {
+        btn.textContent = 'Expand All Awards';
+        btn.classList.remove('expanded');
+    } else {
+        btn.textContent = 'Collapse All Awards';
+        btn.classList.add('expanded');
+    }
 }
 
-// 折叠所有Awards
-function collapseAllAwards() {
-    const awardContents = ['awards-2025', 'awards-2024', 'awards-2023'];
+// 切换所有Academic的展开/折叠状态
+function toggleAllAcademic() {
+    const academicIds = ['academic-2025', 'academic-2024', 'academic-2023', 'academic-2022', 'academic-2021'];
+    const btn = document.getElementById('academicToggle');
+    const allExpanded = checkAcademicExpanded();
     
-    awardContents.forEach(yearId => {
-        const content = document.getElementById(yearId);
+    // 切换展开状态
+    for (let id of academicIds) {
+        const content = document.getElementById(id);
         const header = content.previousElementSibling;
-        if (content && header) {
+        
+        if (allExpanded) {
+            // 当前全部展开，切换为全部折叠
             content.classList.remove('expanded');
             header.classList.remove('expanded');
-        }
-    });
-}
-
-// 展开所有Academic
-function expandAllAcademic() {
-    const academicContents = ['academic-2025', 'academic-2024', 'academic-2023', 'academic-2022', 'academic-2021'];
-    
-    academicContents.forEach(yearId => {
-        const content = document.getElementById(yearId);
-        const header = content.previousElementSibling;
-        if (content && header) {
+        } else {
+            // 当前有折叠的，切换为全部展开
             content.classList.add('expanded');
             header.classList.add('expanded');
         }
-    });
-}
-
-// 折叠所有Academic
-function collapseAllAcademic() {
-    const academicContents = ['academic-2025', 'academic-2024', 'academic-2023', 'academic-2022', 'academic-2021'];
+    }
     
-    academicContents.forEach(yearId => {
-        const content = document.getElementById(yearId);
-        const header = content.previousElementSibling;
-        if (content && header) {
-            content.classList.remove('expanded');
-            header.classList.remove('expanded');
-        }
-    });
+    // 更新按钮文本和样式
+    if (allExpanded) {
+        btn.textContent = 'Expand All Academic';
+        btn.classList.remove('expanded');
+    } else {
+        btn.textContent = 'Collapse All Academic';
+        btn.classList.add('expanded');
+    }
 }
 
 // 默认展开最新年份

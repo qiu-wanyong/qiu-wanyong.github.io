@@ -27,9 +27,55 @@
 <td id="layout-menu">
 
 <style>
-    .menu-item {
-        margin: 10px; 
+    .menu-item { margin: 10px; }
+
+    #layout-content { 
+        width: 100%; 
+        padding: 20px; 
+        display: block;
     }
+
+    .content-wrapper { 
+        display: flex; 
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .main-area { 
+        flex: 3; 
+        padding-right: 30px; 
+        min-width: 320px; 
+    }
+
+    .sidebar { 
+        flex: 1.2; 
+        background: #f8f9fa; 
+        padding: 20px; 
+        border-radius: 8px;
+        min-width: 220px;
+    }
+
+    .footer-box { 
+        background: #f8f9fa; 
+        padding: 20px; 
+        margin-top: 30px; 
+        border-radius: 8px; 
+        clear: both; 
+    }
+
+    .footer-columns { 
+        display: flex; 
+        justify-content: space-between; 
+        flex-wrap: wrap;
+    }
+
+    .footer-col { 
+        flex: 1; 
+        padding: 10px; 
+        min-width: 200px;
+    }
+
+    /* ← 新的可自定义图片大小 */
 
 /* 普通图片样式 */
 img.lab-photo { 

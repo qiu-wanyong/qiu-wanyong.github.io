@@ -564,6 +564,52 @@ window.onload = () => {
   updateOnlineCount();
 </script>
 
+<script>
+let index = 0;
+const slider = document.getElementById("slider");
+const container = document.getElementById("slider-container");
+const slides = slider.children;
+const totalSlides = slides.length;
+
+// 显示指定幻灯片并更新容器高度
+function showSlide(i) {
+    index = (i + totalSlides) % totalSlides;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+    container.style.height = slides[index].offsetHeight + 'px';
+}
+
+// 下一张 / 上一张
+function nextSlide() { showSlide(index + 1); }
+function prevSlide() { showSlide(index - 1); }
+
+// 初始化高度
+window.addEventListener('load', () => showSlide(index));
+window.addEventListener('resize', () => showSlide(index));
+
+// 自动播放
+setInterval(nextSlide, 3000);
+
+// 支持触摸滑动切换
+let startX = 0;
+let isDragging = false;
+
+slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+});
+
+slider.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diff = startX - currentX;
+    // 阈值 50px
+    if (diff > 50) { nextSlide(); isDragging = false; }
+    if (diff < -50) { prevSlide(); isDragging = false; }
+});
+
+slider.addEventListener('touchend', () => { isDragging = false; });
+</script>
+
         
 <script type="text/javascript" async="" src="./WanyongQiu_home/ga.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga1.js"></script><script type="text/javascript" async="" src="./WanyongQiu_home/ga2.js"></script><script type="text/javascript">
   var _gaq = _gaq || [];

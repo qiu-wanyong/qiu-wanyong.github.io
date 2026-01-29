@@ -10,16 +10,81 @@
 
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
 <link rel="stylesheet" href="./WanyongQiu_home/jemdoc.css" type="text/css">
 <title>Wanyong Qiu's Homepage</title>
-<style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}</style></head>
+<style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}
+</style>
+<style>
+/* 两列网格：大屏两列，小屏一列 */
+.people-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 28px 50px;               /* 行间距 / 列间距，可调 */
+  margin-top: 18px;
+}
+
+/* 每个成员卡片 */
+.member-card{
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 10px 0;
+}
+
+/* 头像统一尺寸与圆角阴影（可调） */
+.member-photo{
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+  object-fit: cover;            /* 想完整显示不裁剪就改成 contain */
+  background: #f2f2f2;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  flex: 0 0 auto;
+}
+
+/* 文字区域 */
+.member-info{
+  line-height: 1.6;
+}
+
+.member-name{
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.member-meta{
+  margin: 0 0 6px 0;
+}
+
+/* 用列表替代你原来的 <br> 结构（更整齐） */
+.member-list{
+  margin: 0;
+  padding-left: 18px;
+}
+
+.member-list li{
+  margin: 4px 0;
+}
+
+/* 手机端一列 */
+@media (max-width: 900px){
+  .people-grid{
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+	
 <body>
 <table summary="Table for page layout." id="tlayout">
 <tbody><tr valign="top">
@@ -53,27 +118,85 @@
 <h2><b>People</b></h2>
 <p>Supervision of Undergraduate Students in Study Internships.</p>
 
+<div class="people-grid">
 
-<table class="imgtable"><tbody><tr><td>
-<a href="./WanyongQiu_home/Assets/YYZ.jpg"><img src="./WanyongQiu_home/Assets/YYZ.jpg" alt="alt text" width="100px&quot;"></a>&nbsp;</td>
-<td align="left">Yongzi Yu（于永孜）<br>
-<br> 睿信书院2020级本科生（2022.9–2023.12）科研实习
-<br> 研究方向：联邦医疗物联网
-<br> 科研成果：学术论文3篇，竞赛获奖3项
-<br> 毕业去向：香港科技大学（直博）2023.10<br>
-	
-</td></tr></tbody></table>
-<p><br></p>
+  <div class="member-card">
+    <a href="./WanyongQiu_home/Assets/YYZ.jpg">
+      <img class="member-photo" src="./WanyongQiu_home/Assets/YYZ.jpg" alt="Yongzi Yu">
+    </a>
+    <div class="member-info">
+      <p class="member-name">Yongzi Yu（于永孜）</p>
+      <ul class="member-list">
+        <li>睿信书院2020级本科生（2022.9–2023.12）科研实习</li>
+        <li>研究方向：联邦医疗物联网</li>
+        <li>科研成果：学术论文3篇，竞赛获奖3项</li>
+        <li>毕业去向：香港科技大学（直博）2023.10</li>
+      </ul>
+    </div>
+  </div>
 
-<table class="imgtable"><tbody><tr><td>
-<a href="./WanyongQiu_home/Assets/QC.jpg"><img src="./WanyongQiu_home/Assets/QC.jpg" alt="alt text" width="100px&quot;"></a>&nbsp;</td>
-<td align="left">Chen Quan（全晨）<br>
-<br> 睿信书院2020级本科生（2022.9–2023.12）科研实习
-<br> 研究方向：纵向联邦学习、可解释性
-<br> 科研成果：学术论文3篇，竞赛获奖3项
-<br> 毕业去向：帝国理工学院（硕士）2024.10<br>
+  <div class="member-card">
+    <a href="./WanyongQiu_home/Assets/QC.jpg">
+      <img class="member-photo" src="./WanyongQiu_home/Assets/QC.jpg" alt="Chen Quan">
+    </a>
+    <div class="member-info">
+      <p class="member-name">Chen Quan（全晨）</p>
+      <ul class="member-list">
+        <li>睿信书院2020级本科生（2022.9–2023.12）科研实习</li>
+        <li>研究方向：纵向联邦学习、可解释性</li>
+        <li>科研成果：学术论文3篇，竞赛获奖3项</li>
+        <li>毕业去向：帝国理工学院（硕士）2024.10</li>
+      </ul>
+    </div>
+  </div>
 
-</td></tr></tbody></table>
+  <div class="member-card">
+    <a href="./WanyongQiu_home/Assets/FYF.jpg">
+      <img class="member-photo" src="./WanyongQiu_home/Assets/FYF.jpg" alt="Yifan Feng">
+    </a>
+    <div class="member-info">
+      <p class="member-name">Yifan Feng（冯祎凡）</p>
+      <ul class="member-list">
+        <li>新疆大学2020级本科生（2023.6–2024.9）科研实习</li>
+        <li>研究方向：动态联邦学习、联邦增量学习</li>
+        <li>科研成果：学术论文1篇</li>
+        <li>毕业去向：北京理工大学（保研）2024.9</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="member-card">
+    <a href="./WanyongQiu_home/Assets/ZZK.jpg">
+      <img class="member-photo" src="./WanyongQiu_home/Assets/ZZK.jpg" alt="Zikai Zhou">
+    </a>
+    <div class="member-info">
+      <p class="member-name">Zikai Zhou（周子凯）</p>
+      <ul class="member-list">
+        <li>徐特立书院2021级本科生（2023.6–2024.9）科研实习</li>
+        <li>研究方向：联邦轻量化模型</li>
+        <li>科研成果：立项国家级大创1项</li>
+        <li>毕业去向：香港科技大学（直博）2024.10</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="member-card">
+    <a href="./WanyongQiu_home/Assets/LYY.jpg">
+      <img class="member-photo" src="./WanyongQiu_home/Assets/LYY.jpg" alt="Yuying Li">
+    </a>
+    <div class="member-info">
+      <p class="member-name">Yuying Li（李昱莹）</p>
+      <ul class="member-list">
+        <li>徐特立书院2021级本科生（2023.6–2024.9）科研实习</li>
+        <li>研究方向：异构联邦学习、个性化联邦学习</li>
+        <li>科研成果：学术论文1篇</li>
+        <li>毕业去向：清华大学（保研）2024.10</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
 <p><br></p>
 
 <table class="imgtable"><tbody><tr><td>

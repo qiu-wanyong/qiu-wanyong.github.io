@@ -81,15 +81,36 @@ img.lab-photo {
 }
 
 /* 轮播容器 */ 
-.slider-container { 
-  position: relative; 
-  width: 60%; 
-  max-width: 500px; 
-  height: 200px;             
-  margin: 20px auto; 
-  overflow: hidden; 
-  border-radius: 10px; 
-  background: #f0f0f0; 
+.slider-container {
+  position: relative;
+  width: 60%;
+  max-width: 500px;
+  height: 200px;
+  margin: 20px auto;
+  background: #f0f0f0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* 每张图都“完整显示在同一个容器里” */
+.slide-img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* 当前显示 */
+.slide-img.active {
+  opacity: 1;
 }
 
 .slider-wrapper {
@@ -98,16 +119,6 @@ img.lab-photo {
   align-items: center;        
   justify-content: center;
   transition: transform 0.6s ease;
-}
-
-.slide-img {
-  flex: 0 0 100%;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;        
-  display: block;
 }
 
 
@@ -318,10 +329,17 @@ const slides = slider.children;
 const totalSlides = slides.length;
 
 // 显示指定幻灯片并更新容器高度
+const slides = document.querySelectorAll('.slide-img');
+let index = 0;
+
 function showSlide(i) {
-    index = (i + totalSlides) % totalSlides;
-    slider.style.transform = `translateX(-${index * 100}%)`;
+  slides[index].classList.remove('active');
+  index = (i + slides.length) % slides.length;
+  slides[index].classList.add('active');
 }
+
+setInterval(() => showSlide(index + 1), 3000);
+
 
 
 // 下一张 / 上一张

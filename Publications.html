@@ -364,3 +364,13 @@ function show(obj){
  }
 }
 </script>
+
+<script>
+document.querySelectorAll('.acc-header').forEach(h => {
+  h.addEventListener('click', () => {
+    h.classList.toggle('active');
+    const c = h.nextElementSibling;
+    c.style.display = (c.style.display === 'block') ? 'none' : 'block';
+  });
+});
+</script>

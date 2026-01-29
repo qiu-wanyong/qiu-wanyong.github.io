@@ -1,616 +1,481 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
-    <link rel="stylesheet" href="./WanyongQiu_home/jemdoc.css" type="text/css">
-    <title>Wanyong Qiu's Homepage</title>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
+<link rel="stylesheet" href="./WanyongQiu_home/jemdoc.css" type="text/css">
+<title>Wanyong Qiu's Homepage</title>
+<style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}
+
+/* 导航栏样式优化 - 去掉通栏背景 */
+#layout-menu {
+    background: none;
+    border-right: 1px solid #eaeaea;
+    padding-top: 20px;
+}
+
+.menu-category {
+    color: #4a6fa5;
+    font-weight: 600;
+    font-size: 0.85em;
+    margin: 25px 10px 10px 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.menu-item {
+    margin: 8px 10px;
+}
+
+.menu-item a {
+    color: #555;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: block;
+    transition: all 0.2s ease;
+    font-size: 0.9em;
+    border-left: 3px solid transparent;
+}
+
+.menu-item a:hover {
+    background-color: #f5f8ff;
+    color: #4a6fa5;
+    border-left-color: #4a6fa5;
+}
+
+.menu-item a.current {
+    background-color: #f0f5ff;
+    color: #4a6fa5;
+    border-left-color: #4a6fa5;
+    font-weight: 500;
+}
+
+/* 按钮样式优化 - 更柔和的颜色 */
+.badge {
+    padding: 4px 10px;
+    font-size: 0.85em;
+    font-weight: 500;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    display: inline-block;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.badge-info {
+    background-color: #e8f0fe;
+    color: #4a6fa5;
+    border-color: #d0e0ff;
+}
+
+.badge-info:hover {
+    background-color: #d0e0ff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(74, 111, 165, 0.1);
+}
+
+.badge-success {
+    background-color: #e8f6ef;
+    color: #2e7d32;
+    border-color: #c8e6c9;
+}
+
+.badge-success:hover {
+    background-color: #d5e9dd;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(46, 125, 50, 0.1);
+}
+
+.badge-danger {
+    background-color: #ffebee;
+    color: #c62828;
+    border-color: #ffcdd2;
+}
+
+.badge-danger:hover {
+    background-color: #ffdbde;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(198, 40, 40, 0.1);
+}
+
+.badge-light {
+    background-color: #f5f5f5;
+    color: #666;
+    border-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.badge-light:hover {
+    background-color: #e8e8e8;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 控制按钮样式优化 */
+.toggle-btn {
+    background-color: #f0f5ff;
+    color: #4a6fa5;
+    border: 1px solid #d0e0ff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.toggle-btn:hover {
+    background-color: #e0ebff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(74, 111, 165, 0.15);
+}
+
+.toggle-btn.expanded {
+    background-color: #ffeaea;
+    color: #c62828;
+    border-color: #ffcdd2;
+}
+
+.toggle-btn.expanded:hover {
+    background-color: #ffdbde;
+}
+
+/* 可折叠年份样式优化 */
+.year-section {
+    margin-bottom: 15px;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.year-header {
+    background: linear-gradient(to right, #f8faff, #f0f5ff);
+    color: #4a6fa5;
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+}
+
+.year-header:hover {
+    background: linear-gradient(to right, #f0f5ff, #e8f0fe);
+}
+
+.year-header.expanded {
+    background: linear-gradient(to right, #e8f0fe, #d0e0ff);
+    border-bottom-color: #d0e0ff;
+}
+
+.year-header i {
+    transition: transform 0.3s ease;
+    color: #7b9bd6;
+}
+
+.year-header.expanded i {
+    transform: rotate(180deg);
+}
+
+.year-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.year-content.expanded {
+    padding: 20px;
+    max-height: 5000px;
+    background-color: #fcfdff;
+}
+
+.sub-section {
+    margin-bottom: 20px;
+}
+
+.sub-section h4 {
+    color: #4a6fa5;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #e0e0e0;
+    font-size: 1.05em;
+    font-weight: 600;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.highlight {
+    background-color: #fff3cd;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.award-amount {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* 引用容器优化 */
+.quote-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fcfdff;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+}
+
+.text-block {
+    flex-grow: 1;
+}
+
+.text-block p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.text-block p:last-child {
+    color: #777;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.quote-gif {
+    width: 120px;
+    height: auto;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .year-header {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141256821-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-141256821-1');
-    </script>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <style type="text/css">
-        /* 整体配色方案 - 教育风格 */
-        :root {
-            --primary-color: #2c5aa0;      /* 深蓝色 - 学术感 */
-            --secondary-color: #4a90e2;    /* 中蓝色 */
-            --accent-color: #7cb5ec;       /* 浅蓝色 */
-            --light-bg: #f8fafd;           /* 浅色背景 */
-            --border-color: #d1e0f0;       /* 边框颜色 */
-            --text-color: #2c3e50;         /* 主文本颜色 */
-            --muted-text: #6c757d;         /* 次要文本 */
-        }
-
-        /* 导航栏样式优化 */
-        #layout-menu {
-            background: linear-gradient(180deg, #ffffff 0%, #f8fafd 100%);
-            border-right: 1px solid var(--border-color);
-            padding-top: 20px;
-        }
-
-        .menu-category {
-            color: var(--primary-color);
-            font-weight: 600;
-            font-size: 0.9em;
-            margin: 25px 10px 10px 10px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--accent-color);
-            letter-spacing: 1px;
-        }
-
-        .menu-item {
-            margin: 8px 10px;
-            transition: all 0.3s ease;
-        }
-
-        .menu-item a {
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 6px;
-            display: block;
-            transition: all 0.3s ease;
-            font-size: 0.95em;
-        }
-
-        .menu-item a:hover {
-            background-color: #e8f1fc;
-            color: var(--primary-color);
-            transform: translateX(3px);
-        }
-
-        .menu-item a.current {
-            background-color: var(--primary-color);
-            color: white;
-            font-weight: 500;
-        }
-
-        /* 主要内容区域 */
-        #layout-content {
-            padding: 30px 40px;
-            background-color: white;
-        }
-
-        /* 标题样式 */
-        h2, h3 {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-top: 30px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        h2 {
-            font-size: 1.8em;
-            margin-bottom: 25px;
-        }
-
-        h3 {
-            font-size: 1.4em;
-            margin-top: 35px;
-        }
-
-        /* 引用容器 */
-        .quote-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 30px auto;
-            max-width: 900px;
-            padding: 25px;
-            background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 12px rgba(44, 90, 160, 0.08);
-        }
-
-        .text-block {
-            flex-grow: 1;
-            padding-right: 30px;
-        }
-
-        .text-block p {
-            color: var(--text-color);
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .text-block p:last-child {
-            color: var(--muted-text);
-            font-style: italic;
-            margin-top: 5px;
-        }
-
-        .quote-gif {
-            width: 140px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        /* 论文列表样式 */
-        ol {
-            padding-left: 20px;
-        }
-
-        ol li {
-            margin-bottom: 25px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed var(--border-color);
-        }
-
-        ol li:last-child {
-            border-bottom: none;
-        }
-
-        /* 按钮样式优化 */
-        .badge {
-            padding: 6px 12px;
-            font-size: 0.85em;
-            font-weight: 500;
-            border-radius: 4px;
-            text-decoration: none;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            display: inline-block;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .badge-info {
-            background-color: #e3f2fd;
-            color: var(--primary-color);
-            border-color: #bbdefb;
-        }
-
-        .badge-info:hover {
-            background-color: #bbdefb;
-            transform: translateY(-2px);
-        }
-
-        .badge-success {
-            background-color: #e8f5e9;
-            color: #2e7d32;
-            border-color: #c8e6c9;
-        }
-
-        .badge-success:hover {
-            background-color: #c8e6c9;
-            transform: translateY(-2px);
-        }
-
-        .badge-danger {
-            background-color: #ffebee;
-            color: #c62828;
-            border-color: #ffcdd2;
-        }
-
-        .badge-danger:hover {
-            background-color: #ffcdd2;
-            transform: translateY(-2px);
-        }
-
-        .badge-light {
-            background-color: #f5f5f5;
-            color: var(--text-color);
-            border-color: #e0e0e0;
-            cursor: pointer;
-        }
-
-        .badge-light:hover {
-            background-color: #eeeeee;
-            transform: translateY(-2px);
-        }
-
-        /* 摘要样式 */
-        div[id$="abstract"] {
-            margin-top: 15px;
-            padding: 20px;
-            background-color: var(--light-bg);
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            font-size: 0.95em;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        }
-
-        /* 可折叠区域样式 */
-        .year-section {
-            margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            overflow: hidden;
-            background: white;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .year-section:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-
-        .year-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 16px 25px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.1em;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .year-header:hover {
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-        }
-
-        .year-header i {
-            transition: transform 0.3s ease;
-            font-size: 0.9em;
-        }
-
-        .year-header.expanded i {
-            transform: rotate(180deg);
-        }
-
-        .year-content {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.5s ease;
-        }
-
-        .year-content.expanded {
-            padding: 25px;
-            max-height: 5000px;
-        }
-
-        .sub-section {
-            margin-bottom: 25px;
-        }
-
-        .sub-section h4 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--accent-color);
-            font-size: 1.1em;
-            font-weight: 600;
-        }
-
-        /* 控制按钮样式 */
-        .controls {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        .toggle-btn {
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.95em;
-            font-weight: 500;
-            box-shadow: 0 3px 6px rgba(44, 90, 160, 0.2);
-        }
-
-        .toggle-btn:hover {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            transform: translateY(-2px);
-            box-shadow: 0 5px 12px rgba(44, 90, 160, 0.3);
-        }
-
-        .toggle-btn.expanded {
-            background: linear-gradient(135deg, #e53935, #c62828);
-        }
-
-        .toggle-btn.expanded:hover {
-            background: linear-gradient(135deg, #c62828, #b71c1c);
-        }
-
-        /* 高亮文本 */
-        .highlight {
-            background-color: #fff8e1;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-            color: #f57c00;
-            border: 1px solid #ffe082;
-        }
-
-        .award-amount {
-            color: #2e7d32;
-            font-weight: 600;
-            margin-left: 8px;
-        }
-
-        /* 页脚 */
-        #footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            color: var(--muted-text);
-            font-size: 0.9em;
-        }
-
-        /* 响应式设计 */
-        @media (max-width: 992px) {
-            #layout-content {
-                padding: 20px;
-            }
-            
-            .quote-container {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-            
-            .text-block {
-                padding-right: 0;
-                margin-bottom: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .year-header {
-                padding: 14px 20px;
-                font-size: 1em;
-            }
-            
-            .controls {
-                flex-direction: column;
-            }
-            
-            .toggle-btn {
-                width: 100%;
-            }
-            
-            .badge {
-                margin-right: 5px;
-                margin-bottom: 5px;
-                padding: 5px 10px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            #layout-content {
-                padding: 15px;
-            }
-            
-            .quote-container {
-                padding: 15px;
-                margin: 20px auto;
-            }
-            
-            .quote-gif {
-                width: 120px;
-            }
-        }
-
-        /* 链接样式 */
-        a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--primary-color);
-            text-decoration: underline;
-        }
-
-        /* 列表项样式 */
-        ol li p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        /* 特别强调 */
-        font[color="RoyalBlue"] {
-            color: var(--secondary-color) !important;
-            font-weight: 600;
-        }
-
-        font[color="red"] {
-            color: #e53935 !important;
-            font-weight: 600;
-        }
-    </style>
-</head>
+    .controls {
+        flex-direction: column;
+    }
+    
+    .toggle-btn {
+        width: 100%;
+    }
+    
+    .quote-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .text-block {
+        margin-bottom: 15px;
+    }
+}
+</style></head>
 <body>
 <table summary="Table for page layout." id="tlayout">
 <tbody><tr valign="top">
 <td id="layout-menu">
-    <div class="menu-category">BHE-AIM-TMMI</div>
-    
-    <div class="menu-item"><a class="current" href="index.html">Home</a></div>
-    <div class="menu-item"><a href="https://bhe-lab.org/">BHE</a></div>
-    <div class="menu-item"><a href="People.html">Team</a></div>
-    <div class="menu-item"><a href="Publications.html">Publications</a></div>
-    <div class="menu-item"><a href="Activity.html">Activities</a></div>
-    <div class="menu-item"><a href="Projects.html">Research</a></div>
-    <div class="menu-item"><a href="Prizes.html">Awards</a></div>
-    <div class="menu-item"><a href="Library.html">Resources</a></div>
-    <div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
-    <div class="menu-item"><a href="Blog.html">Blog (Chinese)</a></div>
+
+<style>
+    .menu-item {
+        margin: 10px; 
+    }
+</style>
+	
+<div class="menu-category">BHE-AIM-TMMI</div>
+
+	
+<div class="menu-item"><a class="current" href="index.html">Home</a></div>
+<div class="menu-item"><a href="https://bhe-lab.org/">BHE</a></div>
+<div class="menu-item"><a href="People.html">Team</a></div>
+<div class="menu-item"><a href="Publications.html">Publications</a></div>
+<div class="menu-item"><a href="Activity.html">Activities</a></div>
+<div class="menu-item"><a href="Projects.html">Research</a></div>
+<div class="menu-item"><a href="Prizes.html">Awards</a></div>
+<div class="menu-item"><a href="Library.html">Resources</a></div>
+<div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
+<div class="menu-item"><a href="Blog.html">Blog (Chinese)</a></div>
+	
 </td>
 <td id="layout-content">
 <p><br></p>
 
 <h2><b>Publications</b></h2>
 
+
 <div class="quote-container">
     <div class="text-block">
-        <p>年轻人你的职责是平整土地，而非焦虑时光</p>
-        <p>你做三四月的事情，在八九月自有答案</p>
-        <p>——系外行星的研究僧</p>
+        <p style="text-align: center;">年轻人你的职责是平整土地，而非焦虑时光</p>
+        <p style="text-align: center;">你做三四月的事情，在八九月自有答案</p>
+        <p style="text-align: right;">——系外行星的研究僧</p>
     </div>
     <div class="gif-block">
         <img src="./WanyongQiu_home/Assets/Developer.gif" alt="Developer" class="quote-gif">
     </div>
 </div>
 
+
 <h3><b>Journal Papers (published/accepted)</b>&nbsp;<img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"></h3>
 
 <ol>
-<li>
-    <font color="RoyalBlue">[IEEE JBHI]</font> Wanyong Qiu, Yifan Feng, Yuying Li, Yi Chang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "Fed-MStacking: Heterogeneous Federated Learning with Stacking Misaligned Labels for Abnormal Heart Sound Detection", <i>IEEE Journal of Biomedical and Health Informatics (IF-2023: 6.7)</i>, vol. 28, no. 9, July 2024 (<font color="red"><b>SCI 1区 Top</b></font>).
-    <a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/10599790">PDF</a>	 
-    <a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10599790">Technical Report</a>
-    <a class="badge badge-light" onclick="show('JBHI')">show/hide abstract</a>
-    <div id="JBHI" style="display:none; color:#4FA1EA; font-style:italic"> 
-        Ubiquitous sensing has been widely applied in smart healthcare, providing an opportunity for intelligent heart sound auscultation. However, smart devices contain sensitive information, raising user privacy concerns. To this end, federated learning (FL) has been adopted as an effective solution, enabling decentralised learning without data sharing, thus preserving data privacy in the Internet of Health Things (IoHT). Nevertheless, traditional FL requires the same architectural models to be trained across local clients and global servers, leading to a lack of model heterogeneity and client personalisation. For medical institutions with private data clients, this study proposes Fed-MStacking, a heterogeneous FL framework that incorporates a stacking ensemble learning strategy to support clients in building their own models. The secondary objective of this study is to address scenarios involving local clients with data characterised by inconsistent labelling. Specifically, the local client contains only one case type, and the data cannot be shared within or outside the institution. To train a global multi-class classifier, we aggregate missing class information from all clients at each institution and build meta-data, which then participates in FL training via a meta-learner. We apply the proposed framework to a multi-institutional heart sound database. The experiments utilise random forests (RFs), feedforward neural networks (FNNs), and convolutional neural networks (CNNs) as base classifiers. The results show that the heterogeneous stacking of local models performs better compared to homogeneous stacking.
-    </div>	
-</li>
 
 <li>
-    <font color="RoyalBlue">[IEEE TBME]</font> Wanyong Qiu, Chen Quan, Lixian Zhu, Yongzi Yu, Zhihua Wang, Yu Ma, Mengkai Sun, Yi Chang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "Heart Sound Abnormality Detection From Multi-Institutional Collaboration: Introducing a Federated Learning Framework", <i>IEEE Transactions on Bio-medical Engineering (IF-2023: 4.7)</i>, vol. 71, no. 10, May 2024  (<font color="red"><b>SCI 2区</b></font>).
-    <a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10518113">PDF</a>
-    <a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10518113">Technical Report</a>
-    <a class="badge badge-light" onclick="show('TBME')">show/hide abstract</a>
-    <div id="TBME" style="display:none; color:#4FA1EA; font-style:italic"> 
-        Objective: Early diagnosis of cardiovascular diseases is a crucial task in medical practice. With the application of computer audition in the healthcare field, artificial intelligence (AI) has been applied to clinical non-invasive intelligent auscultation of heart sounds to provide rapid and effective pre-screening. However, AI models generally require large amounts of data which may cause privacy issues. Unfortunately, it is difficult to collect large amounts of healthcare data from a single centre. Methods: In this study, we propose federated learning (FL) optimisation strategies for the practical application in multi-centre institutional heart sound databases. The horizontal FL is mainly employed to tackle the privacy problem by aligning the feature spaces of FL participating institutions without information leakage. In addition, techniques based on deep learning have poor interpretability due to their "black-box" property, which limits the feasibility of AI in real medical data. To this end, vertical FL is utilised to address the issues of model interpretability and data scarcity. Conclusion: Experimental results demonstrate that, the proposed FL framework can achieve good performance for heart sound abnormality detection by taking the personal privacy protection into account. Moreover, using the federated feature space is beneficial to balance the interpretability of the vertical FL and the privacy of the data. Significance: This work realises the potential of FL from research to clinical practice, and is expected to have extensive application in the federated smart medical system.
-    </div>	
-</li>
-
+	<font color="RoyalBlue">[IEEE JBHI]</font> Wanyong Qiu, Yifan Feng, Yuying Li, Yi Chang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "Fed-MStacking: Heterogeneous Federated Learning with Stacking Misaligned Labels for Abnormal Heart Sound Detection", <i>IEEE Journal of Biomedical and Health Informatics (IF-2023: 6.7)</i>, vol. 28, no. 9, July 2024 (<font color="red"><b>SCI 1区 Top</b></font>).
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/10599790">PDF</a>	 
+	<a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10599790">Technical Report</a>
+<a class="badge badge-light" onclick="show('JBHI')">show/hide abstract</a>
+<div id="JBHI" style="display:none; color:#4FA1EA; font-style:italic"> 
+Ubiquitous sensing has been widely applied in smart healthcare, providing an opportunity for intelligent heart sound auscultation. However, smart devices contain sensitive information, raising user privacy concerns. To this end, federated learning (FL) has been adopted as an effective solution, enabling decentralised learning without data sharing, thus preserving data privacy in the Internet of Health Things (IoHT). Nevertheless, traditional FL requires the same architectural models to be trained across local clients and global servers, leading to a lack of model heterogeneity and client personalisation. For medical institutions with private data clients, this study proposes Fed-MStacking, a heterogeneous FL framework that incorporates a stacking ensemble learning strategy to support clients in building their own models. The secondary objective of this study is to address scenarios involving local clients with data characterised by inconsistent labelling. Specifically, the local client contains only one case type, and the data cannot be shared within or outside the institution. To train a global multi-class classifier, we aggregate missing class information from all clients at each institution and build meta-data, which then participates in FL training via a meta-learner. We apply the proposed framework to a multi-institutional heart sound database. The experiments utilise random forests (RFs), feedforward neural networks (FNNs), and convolutional neural networks (CNNs) as base classifiers. The results show that the heterogeneous stacking of local models performs better compared to homogeneous stacking.
+</div>	
+	</p></li>
+	
 <li>
-    <font color="RoyalBlue">[AAAS CBS]</font> Wanyong Qiu, Chen Quan, Yongzi Yu, Eda Kara, Kun Qian*, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "Federated Abnormal Heart Sound Detection with Weak to No Labels", <i>Cyborg and Bionic Systems (IF-2023: 10.5)</i>, vol. 5, Sep 2024 (<font color="red"><b>JCR 1区</b></font>).
-    <a class="badge badge-info" href="https://spj.science.org/doi/10.34133/cbsystems.0152">PDF</a>
-    <a class="badge badge-success" href="https://spj.science.org/doi/epdf/10.34133/cbsystems.0152">Technical Report</a>	
-    <a class="badge badge-light" onclick="show('CBS')">show/hide abstract</a>
-    <div id="CBS" style="display:none; color:#4FA1EA; font-style:italic"> 
-        Cardiovascular diseases are a prominent cause of mortality, emphasizing the need for early prevention and diagnosis. Utilizing artificial intelligence (AI) models, heart sound analysis emerges as a noninvasive and universally applicable approach for assessing cardiovascular health conditions. However, real-world medical data are dispersed across medical institutions, forming "data islands" due to data sharing limitations for security reasons. To this end, federated learning (FL) has been extensively employed in the medical field, which can effectively model across multiple institutions. Additionally, conventional supervised classification methods require fully labeled data classes, e.g., binary classification requires labeling of positive and negative samples. Nevertheless, the process of labeling healthcare data is time-consuming and labor-intensive, leading to the possibility of mislabeling negative samples. In this study, we validate an FL framework with a naive positive-unlabeled (PU) learning strategy. Semisupervised FL model can directly learn from a limited set of positive samples and an extensive pool of unlabeled samples. Our emphasis is on vertical-FL to enhance collaboration across institutions with different medical record feature spaces. Additionally, our contribution extends to feature importance analysis, where we explore 6 methods and provide practical recommendations for detecting abnormal heart sounds. The study demonstrated an impressive accuracy of 84%, comparable to outcomes in supervised learning, thereby advancing the application of FL in abnormal heart sound detection. 	
-    </div>
-</li>
-
+	<font color="RoyalBlue">[IEEE TBME]</font> Wanyong Qiu, Chen Quan, Lixian Zhu, Yongzi Yu, Zhihua Wang, Yu Ma, Mengkai Sun, Yi Chang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "Heart Sound Abnormality Detection From Multi-Institutional Collaboration: Introducing a Federated Learning Framework", <i>IEEE Transactions on Bio-medical Engineering (IF-2023: 4.7)</i>, vol. 71, no. 10, May 2024  (<font color="red"><b>SCI 2区</b></font>).
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10518113">PDF</a>
+	<a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10518113">Technical Report</a>
+ <a class="badge badge-light" onclick="show('TBME')">show/hide abstract</a>
+<div id="TBME" style="display:none; color:#4FA1EA; font-style:italic"> 
+Objective: Early diagnosis of cardiovascular diseases is a crucial task in medical practice. With the application of computer audition in the healthcare field, artificial intelligence (AI) has been applied to clinical non-invasive intelligent auscultation of heart sounds to provide rapid and effective pre-screening. However, AI models generally require large amounts of data which may cause privacy issues. Unfortunately, it is difficult to collect large amounts of healthcare data from a single centre. Methods: In this study, we propose federated learning (FL) optimisation strategies for the practical application in multi-centre institutional heart sound databases. The horizontal FL is mainly employed to tackle the privacy problem by aligning the feature spaces of FL participating institutions without information leakage. In addition, techniques based on deep learning have poor interpretability due to their "black-box" property, which limits the feasibility of AI in real medical data. To this end, vertical FL is utilised to address the issues of model interpretability and data scarcity. Conclusion: Experimental results demonstrate that, the proposed FL framework can achieve good performance for heart sound abnormality detection by taking the personal privacy protection into account. Moreover, using the federated feature space is beneficial to balance the interpretability of the vertical FL and the privacy of the data. Significance: This work realises the potential of FL from research to clinical practice, and is expected to have extensive application in the federated smart medical system.
+</div>	
+	</p></li>
+	
 <li>
-    <font color="RoyalBlue">[IEEE TIM]</font> Lixian Zhu, Wanyong Qiu, Yu Ma, Fuze Tian, Mengkai Sun, Zhihua Wang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "LEPCNet: A lightweight End-to-End PCG Classification Neural Network Model for Wearable Devices", <i>IEEE Transactions on Instrumentation & Measurement (IF-2023: 5.6)</i>, vol. 73, no. 2511111, Sep 2023  (<font color="red"><b>SCI 2区 Top</b></font>).
-    <a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10268395">PDF</a>
-    <a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10268395">Technical Report</a>
-    <a class="badge badge-light" onclick="show('TIM')">show/hide abstract</a>
-    <div id="TIM" style="display:none; color:#4FA1EA; font-style:italic"> 
-        Wearable intelligent phonocardiogram (PCG) sensors provide a non-invasive method for long-term monitoring of cardiac status, which is crucial for the early detection of cardiovascular diseases. As one of the key technologies for intelligent PCG sensors, PCG classification techniques based on computer audition have been widely leveraged in recent years, such as Convolutional Neural Networks, Generative Adversarial Nets, and Long Short-Term Memory. However, the limitation of these methods is that the models have a sizeable computational complexity, which is not suitable for wearable devices. To this end, we propose an end-to-end neural network for PCG classification with low computational complexity (52.67K parameters and 1.59M floating point operations per second (FLOPs). We utilise two public datasets to test the model, and experimental results demonstrate that the proposed model achieves an accuracy of 93.1% in the 2016 PhysioNet/CinC Challenge dataset with considerable complexity reduction compared to the state-of-theart works. Moreover, we design an energy-efficient wearable PCG sensor and deploy the proposed algorithms on it. The experimental results show that our proposed model consumes only 245.1mW for PCG classification with an accuracy of 89.8% on test datasets. This means that the proposed model obtains excellent performance compared to previous work while consuming lower power, which is significant in practical application scenarios.
-    </div>
-</li>
-
+	<font color="RoyalBlue">[AAAS CBS]</font> Wanyong Qiu, Chen Quan, Yongzi Yu, Eda Kara, Kun Qian*, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "Federated Abnormal Heart Sound Detection with Weak to No Labels", <i>Cyborg and Bionic Systems (IF-2023: 10.5)</i>, vol. 5, Sep 2024 (<font color="red"><b>JCR 1区</b></font>).
+	<a class="badge badge-info" href="https://spj.science.org/doi/10.34133/cbsystems.0152">PDF</a>
+	<a class="badge badge-success" href="https://spj.science.org/doi/epdf/10.34133/cbsystems.0152">Technical Report</a>	
+<a class="badge badge-light" onclick="show('CBS')">show/hide abstract</a>
+<div id="CBS" style="display:none; color:#4FA1EA; font-style:italic"> 
+Cardiovascular diseases are a prominent cause of mortality, emphasizing the need for early prevention and diagnosis. Utilizing artificial intelligence (AI) models, heart sound analysis emerges as a noninvasive and universally applicable approach for assessing cardiovascular health conditions. However, real-world medical data are dispersed across medical institutions, forming "data islands" due to data sharing limitations for security reasons. To this end, federated learning (FL) has been extensively employed in the medical field, which can effectively model across multiple institutions. Additionally, conventional supervised classification methods require fully labeled data classes, e.g., binary classification requires labeling of positive and negative samples. Nevertheless, the process of labeling healthcare data is time-consuming and labor-intensive, leading to the possibility of mislabeling negative samples. In this study, we validate an FL framework with a naive positive-unlabeled (PU) learning strategy. Semisupervised FL model can directly learn from a limited set of positive samples and an extensive pool of unlabeled samples. Our emphasis is on vertical-FL to enhance collaboration across institutions with different medical record feature spaces. Additionally, our contribution extends to feature importance analysis, where we explore 6 methods and provide practical recommendations for detecting abnormal heart sounds. The study demonstrated an impressive accuracy of 84%, comparable to outcomes in supervised learning, thereby advancing the application of FL in abnormal heart sound detection. 	
+</div>
+        </p></li>	
+	
 <li>
-    <font color="RoyalBlue">[IEEE JBHI]</font> Xihang Qiu, Wanyong Qiu, Ye Zhang, Kun Qian*, Chun Li, Bin Hu*, Björn W. Schuller and Yoshiharu Yamamoto, "FedKDC: Consensus-Driven Knowledge Distillation for Personalized Federated Learning in EEG-Based Emotion Recognition", <i>IEEE Transactions on Instrumentation & Measurement (IF-2023: 6.7)</i>, vol.29, no.8, pp.5527-5540, Aug.2025  (<font color="red"><b>SCI 1区 Top</b></font>).
-    <a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10967240">PDF</a>
-    <a class="badge badge-success" href="https://ieeexplore.ieee.org/document/10967240">Technical Report</a>
-    <a class="badge badge-light" onclick="show('JBHI2025')">show/hide abstract</a>
-    <div id="JBHI2025" style="display:none; color:#4FA1EA; font-style:italic"> 
-        Federated learning (FL) has gained prominence in electroencephalogram (EEG)-based emotion recognition because of its ability to enable secure collaborative training without centralized data. However, traditional FL faces challenges due to model and data heterogeneity in smart healthcare settings. For example, medical institutions have varying computational resources, which creates a need for personalized local models. Moreover, EEG data from medical institutions typically face data heterogeneity issues stemming from limitations in participant availability, ethical constraints, and cultural differences among subjects, which can slow model convergence and degrade model performance. To address these challenges, we propose FedKDC, a novel FL framework that incorporates clustered knowledge distillation (CKD). This method introduces a consensus-based distributed learning mechanism to facilitate the clustering process. It then enhances the convergence speed through intraclass distillation and reduces the negative impact of heterogeneity through interclass distillation. Additionally, we introduce a DriftGuard mechanism to mitigate client drift, along with an entropy reducer to decrease the entropy of aggregated knowledge. The framework is validated on the SEED, SEED-IV, SEED-FRA, and SEED-GER datasets, demonstrating its effectiveness in scenarios where both the data and the models are heterogeneous. Experimental results show that FedKDC outperforms other FL frameworks in emotion recognition, achieving a maximum average accuracy of 85.2%, and in convergence efficiency, with faster and more stable convergence. Our code is made publicly available at: https://github.com/wdqdp/FedKDC.
-    </div>	
-</li>
-
+	<font color="RoyalBlue">[IEEE TIM]</font> Lixian Zhu, Wanyong Qiu, Yu Ma, Fuze Tian, Mengkai Sun, Zhihua Wang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "LEPCNet: A lightweight End-to-End PCG Classification Neural Network Model for Wearable Devices", <i>IEEE Transactions on Instrumentation & Measurement (IF-2023: 5.6)</i>, vol. 73, no. 2511111, Sep 2023  (<font color="red"><b>SCI 2区 Top</b></font>).
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10268395">PDF</a>
+	<a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10268395">Technical Report</a>
+ <a class="badge badge-light" onclick="show('TIM')">show/hide abstract</a>
+<div id="TIM" style="display:none; color:#4FA1EA; font-style:italic"> 
+Wearable intelligent phonocardiogram (PCG) sensors provide a non-invasive method for long-term monitoring of cardiac status, which is crucial for the early detection of cardiovascular diseases. As one of the key technologies for intelligent PCG sensors, PCG classification techniques based on computer audition have been widely leveraged in recent years, such as Convolutional Neural Networks, Generative Adversarial Nets, and Long Short-Term Memory. However, the limitation of these methods is that the models have a sizeable computational complexity, which is not suitable for wearable devices. To this end, we propose an end-to-end neural network for PCG classification with low computational complexity (52.67K parameters and 1.59M floating point operations per second (FLOPs). We utilise two public datasets to test the model, and experimental results demonstrate that the proposed model achieves an accuracy of 93.1% in the 2016 PhysioNet/CinC Challenge dataset with considerable complexity reduction compared to the state-of-theart works. Moreover, we design an energy-efficient wearable PCG sensor and deploy the proposed algorithms on it. The experimental results show that our proposed model consumes only 245.1mW for PCG classification with an accuracy of 89.8% on test datasets. This means that the proposed model obtains excellent performance compared to previous work while consuming lower power, which is significant in practical application scenarios.
+</div>
+	</p></li>
 <li>
-    <font color="RoyalBlue">[IEEE TCSS]</font> Guihua Tian*, Kun Qian*, Xinyi Li, Mengkai Sun, Hao Jiang, Wanyong Qiu, Xiaoming Xie, Zhonghao Zhao, Liangqing Huang, Siyan Luo, Tianxing Guo, Ran Cai, Zhihua Wang, and Björn W. Schuller, "Can a Holistic View Facilitate the Development of Intelligent Traditional Chinese Medicine? A Survey", <i>IEEE Transactions on Computational Social Systems (IF-2023: 4.5)</i>, vol. 10, no. 2, Sep 2023  (<font color="red"><b>SCI 2区</b></font>).
-    <a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10065412">PDF</a>
-    <a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10065412">Technical Report</a>
-    <a class="badge badge-light" onclick="show('TCSS')">show/hide abstract</a>
-    <div id="TCSS" style="display:none; color:#4FA1EA; font-style:italic"> 
-        Intelligent traditional Chinese medicine (ITCM) is an emerging interdisciplinary subject. It aims to efficiently and precisely promote the prevention and treatment of diseases and health management in Chinese medicine clinical practice via the combination of traditional Chinese medicine (TCM) fundamentals and artificial intelligence technologies. Presently, it is experiencing dramatic growth in recent years. On the one hand, a holistic view, as a crucial philosophy in the theory of TCM, will be guiding the development of ITCM. On the other hand, a comprehensive discussion of the benefits of such a holistic view of ITCM is lacking. To this end, we conduct this survey by introducing the named holistic view first. Then, adaptive learning and field theory will be presented and discussed with respect to their application in ITCM. Ethical issues of ITCM will then be taken into account by human-centered TCM and potentials based on affective computing of ITCM. In addition, we give our opinions and insights on the challenges and open issues regarding the future of ITCM. We hope that this survey article can be a good guide for experts in the relevant fields.
-    </div>
-</li>
-
+	<font color="RoyalBlue">[IEEE JBHI]</font> Xihang Qiu, Wanyong Qiu, Ye Zhang, Kun Qian*, Chun Li, Bin Hu*, Björn W. Schuller and Yoshiharu Yamamoto, "FedKDC: Consensus-Driven Knowledge Distillation for Personalized Federated Learning in EEG-Based Emotion Recognition", <i>IEEE Transactions on Instrumentation & Measurement (IF-2023: 6.7)</i>, vol.29, no.8, pp.5527-5540, Aug.2025  (<font color="red"><b>SCI 1区 Top</b></font>).
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10967240">PDF</a>
+	<a class="badge badge-success" href="https://ieeexplore.ieee.org/document/10967240">Technical Report</a>
+ <a class="badge badge-light" onclick="show('JBHI2025')">show/hide abstract</a>
+<div id="JBHI2025" style="display:none; color:#4FA1EA; font-style:italic"> 
+Federated learning (FL) has gained prominence in electroencephalogram (EEG)-based emotion recognition because of its ability to enable secure collaborative training without centralized data. However, traditional FL faces challenges due to model and data heterogeneity in smart healthcare settings. For example, medical institutions have varying computational resources, which creates a need for personalized local models. Moreover, EEG data from medical institutions typically face data heterogeneity issues stemming from limitations in participant availability, ethical constraints, and cultural differences among subjects, which can slow model convergence and degrade model performance. To address these challenges, we propose FedKDC, a novel FL framework that incorporates clustered knowledge distillation (CKD). This method introduces a consensus-based distributed learning mechanism to facilitate the clustering process. It then enhances the convergence speed through intraclass distillation and reduces the negative impact of heterogeneity through interclass distillation. Additionally, we introduce a DriftGuard mechanism to mitigate client drift, along with an entropy reducer to decrease the entropy of aggregated knowledge. The framework is validated on the SEED, SEED-IV, SEED-FRA, and SEED-GER datasets, demonstrating its effectiveness in scenarios where both the data and the models are heterogeneous. Experimental results show that FedKDC outperforms other FL frameworks in emotion recognition, achieving a maximum average accuracy of 85.2%, and in convergence efficiency, with faster and more stable convergence. Our code is made publicly available at: https://github.com/wdqdp/FedKDC.
+</div>	
+        </p></li>
 <li>
-    <font color="RoyalBlue">[Journal of Cyber Security]</font> 贾俊杰, 邱万勇*, 马慧芳, "差分隐私保护约束下集成分类算法的研究", <i>信息安全学报</i>, vol. 6, no. 4, Sep 2021  (<font color="red"><b>CCF A</b></font>).
-    <a class="badge badge-info" href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2021&filename=XAXB202104007&uniplatform=NZKPT&v=AAQtkV0Zi8V3c0w_3ddKMLSn46bRWjuP-5zm-fAVfqxARXXaCqkbxxBjP6klxX8G">PDF</a>
-    <a class="badge badge-success" href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2021&filename=XAXB202104007&uniplatform=NZKPT&v=AAQtkV0Zi8V3c0w_3ddKMLSn46bRWjuP-5zm-fAVfqxARXXaCqkbxxBjP6klxX8G">Technical Report</a>
-    <a class="badge badge-light" onclick="show('JCS')">show/hide abstract</a>
-    <div id="JCS" style="display:none; color:#4FA1EA; font-style:italic"> 
-        机器学习中的隐私保护问题是目前信息安全领域的研究热点之一。针对隐私保护下的分类问题,该文提出一种基于差分隐私保护的AdaBoost集成分类算法:CART-DPsAdaBoost（CART-Differential Privacy structure of AdaBoost）。算法在Boosting过程中结合Bagging的基本思想以增加采样本的多样性,在基于随机子空间算法的特征扰动中利用指数机制选择连续特征分裂点,利用Gini指数选择最佳离散特征,构造CART提升树作为集成学习的基分类器,并根据Laplace机制添加噪声。在整个算法过程中合理分配隐私预算以满足差分隐私保护需求。在实验中分析不同树深度下隐私水平对集成分类模型的影响并得出最优树深值和隐私预算域。相比同类算法,该方法无需对数据进行离散化预处理,用Adult、Census Income两个数据集实验结果表明,模型在兼顾隐私性和可用性的同时具有较好的分类准确率。此外,样本扰动和特征扰动两类随机性方案的引入能有效处理大规模、高维度数据分类问题。
-    </div>
-</li>
+	<font color="RoyalBlue">[IEEE TCSS]</font> Guihua Tian*, Kun Qian*, Xinyi Li, Mengkai Sun, Hao Jiang, Wanyong Qiu, Xiaoming Xie, Zhonghao Zhao, Liangqing Huang, Siyan Luo, Tianxing Guo, Ran Cai, Zhihua Wang, and Björn W. Schuller, "Can a Holistic View Facilitate the Development of Intelligent Traditional Chinese Medicine? A Survey", <i>IEEE Transactions on Computational Social Systems (IF-2023: 4.5)</i>, vol. 10, no. 2, Sep 2023  (<font color="red"><b>SCI 2区</b></font>).
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10065412">PDF</a>
+	<a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10065412">Technical Report</a>
+ <a class="badge badge-light" onclick="show('TCSS')">show/hide abstract</a>
+<div id="TCSS" style="display:none; color:#4FA1EA; font-style:italic"> 
+Intelligent traditional Chinese medicine (ITCM) is an emerging interdisciplinary subject. It aims to efficiently and precisely promote the prevention and treatment of diseases and health management in Chinese medicine clinical practice via the combination of traditional Chinese medicine (TCM) fundamentals and artificial intelligence technologies. Presently, it is experiencing dramatic growth in recent years. On the one hand, a holistic view, as a crucial philosophy in the theory of TCM, will be guiding the development of ITCM. On the other hand, a comprehensive discussion of the benefits of such a holistic view of ITCM is lacking. To this end, we conduct this survey by introducing the named holistic view first. Then, adaptive learning and field theory will be presented and discussed with respect to their application in ITCM. Ethical issues of ITCM will then be taken into account by human-centered TCM and potentials based on affective computing of ITCM. In addition, we give our opinions and insights on the challenges and open issues regarding the future of ITCM. We hope that this survey article can be a good guide for experts in the relevant fields.
+</div>
+	</p></li>
+	
+<li>
+	<font color="RoyalBlue">[Journal of Cyber Security]</font> 贾俊杰, 邱万勇*, 马慧芳, "差分隐私保护约束下集成分类算法的研究", <i>信息安全学报</i>, vol. 6, no. 4, Sep 2021  (<font color="red"><b>CCF A</b></font>).
+	<a class="badge badge-info" href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2021&filename=XAXB202104007&uniplatform=NZKPT&v=AAQtkV0Zi8V3c0w_3ddKMLSn46bRWjuP-5zm-fAVfqxARXXaCqkbxxBjP6klxX8G">PDF</a>
+	<a class="badge badge-success" href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2021&filename=XAXB202104007&uniplatform=NZKPT&v=AAQtkV0Zi8V3c0w_3ddKMLSn46bRWjuP-5zm-fAVfqxARXXaCqkbxxBjP6klxX8G">Technical Report</a>
+ <a class="badge badge-light" onclick="show('JCS')">show/hide abstract</a>
+<div id="JCS" style="display:none; color:#4FA1EA; font-style:italic"> 
+机器学习中的隐私保护问题是目前信息安全领域的研究热点之一。针对隐私保护下的分类问题,该文提出一种基于差分隐私保护的AdaBoost集成分类算法:CART-DPsAdaBoost（CART-Differential Privacy structure of AdaBoost）。算法在Boosting过程中结合Bagging的基本思想以增加采样本的多样性,在基于随机子空间算法的特征扰动中利用指数机制选择连续特征分裂点,利用Gini指数选择最佳离散特征,构造CART提升树作为集成学习的基分类器,并根据Laplace机制添加噪声。在整个算法过程中合理分配隐私预算以满足差分隐私保护需求。在实验中分析不同树深度下隐私水平对集成分类模型的影响并得出最优树深值和隐私预算域。相比同类算法,该方法无需对数据进行离散化预处理,用Adult、Census Income两个数据集实验结果表明,模型在兼顾隐私性和可用性的同时具有较好的分类准确率。此外,样本扰动和特征扰动两类随机性方案的引入能有效处理大规模、高维度数据分类问题。
+</div>
+	</p></li>
+
 </ol>
+
 
 <h3><b>Conference Papers</b></h3>
 
 <ol>
-<li>
-    <font color="RoyalBlue">[NCMMSC]</font> Xiaoyu Shen†, Wanyong Qiu†, Haojie Zhang, Yongzi Yu, Kun Qian*, Bin Hu*, "Self-Supervised Federated Learning for Heart Sound Recognition," in <i>Proceedings of the 19th National Conference on Man-Machine Speech Communication (NCMMSC) </i>, Urumq, China, August 2024 (<font color="red"><b>EI</b></font>).
-    <a class="badge badge-info" href="https://www.researchgate.net/publication/385420158_mianxiangxinyinshibiedezijiandulianbangxuexi_Self-Supervised_Federated_Learning_for_Heart_Sound_Recognition">PDF</a>
-    <a class="badge badge-danger" href="https://www.researchgate.net/publication/385420158_mianxiangxinyinshibiedezijiandulianbangxuexi_Self-Supervised_Federated_Learning_for_Heart_Sound_Recognition">Slides (Oral Report)</a>
-    <a class="badge badge-light" onclick="show('NCMMSC')">show/hide abstract</a>
-    <div id="NCMMSC" style="display:none; color:#4FA1EA; font-style:italic"> 
-        据2019全球疾病负担研究（Global Burden of Disease Study 2019, GBD）专题公布，2019年全球心血管疾病死亡人数约为1860万人，其中中国死亡人数约占比 1/4。因此，心血管疾病的早期诊断与日常监测至关重要。心音信号分析是对心血管疾病患者进行早期诊断与筛查的有效手段，但目前仍存在以下问题：数据安全与隐私限制了多源数据的中心化因而形成"数据孤岛"，同时精确标注的医疗健康数据极度稀缺。针对以上问题，本文提出应用自监督联邦学习模型实现心音异常检测，基于多中心化的心音数据集进行模型训练，在实现本地数据安全的同时，解决数据标签稀缺问题。实验验证了本文模型的有效性，并分析了联邦参与方数量对模型性能的影响。实验结果表明，在 PhysioNet心音数据集上，当参与方数量为2时模型的性能最优（准确率为65.04% ，非加权平均召回率为57.35%）。
-    </div>
-</li>
+<li><p>
+	<font color="RoyalBlue">[NCMMSC]</font> Xiaoyu Shen†, Wanyong Qiu†, Haojie Zhang, Yongzi Yu, Kun Qian*, Bin Hu*, "Self-Supervised Federated Learning for Heart Sound Recognition," in <i>Proceedings of the 19th National Conference on Man-Machine Speech Communication (NCMMSC) </i>, Urumq, China, August 2024 (<font color="red"><b>EI</b></font>).
+	<a class="badge badge-info" href="https://www.researchgate.net/publication/385420158_mianxiangxinyinshibiedezijiandulianbangxuexi_Self-Supervised_Federated_Learning_for_Heart_Sound_Recognition">PDF</a>
+	<a class="badge badge-danger" href="https://www.researchgate.net/publication/385420158_mianxiangxinyinshibiedezijiandulianbangxuexi_Self-Supervised_Federated_Learning_for_Heart_Sound_Recognition">Slides (Oral Report)</a>
+	<a class="badge badge-light" onclick="show('NCMMSC')">show/hide abstract</a>
+<div id="NCMMSC" style="display:none; color:#4FA1EA; font-style:italic"> 
+据2019全球疾病负担研究（Global Burden of Disease Study 2019, GBD）专题公布，2019年全球心血管疾病死亡人数约为1860万人，其中中国死亡人数约占比 1/4。因此，心血管疾病的早期诊断与日常监测至关重要。心音信号分析是对心血管疾病患者进行早期诊断与筛查的有效手段，但目前仍存在以下问题：数据安全与隐私限制了多源数据的中心化因而形成"数据孤岛"，同时精确标注的医疗健康数据极度稀缺。针对以上问题，本文提出应用自监督联邦学习模型实现心音异常检测，基于多中心化的心音数据集进行模型训练，在实现本地数据安全的同时，解决数据标签稀缺问题。实验验证了本文模型的有效性，并分析了联邦参与方数量对模型性能的影响。实验结果表明，在 PhysioNet心音数据集上，当参与方数量为2时模型的性能最优（准确率为65.04% ，非加权平均召回率为57.35%）。
+</div>
+        </p></li>
 
-<li>
-    <font color="RoyalBlue">[ICASSP]</font> Yongzi Yu†, Wanyong Qiu†, Chen Quan, Kun Qian*, Zhihua Wang, Yu Ma, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "Federated Intelligent Terminals Facilitate Stuttering Monitoring," in <i>Proceedings of IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) </i>, Rhodes Island, Greek, June 2023 (<font color="red"><b>CCF B</b></font>).
-    <a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/10097263">PDF</a>
-    <a class="badge badge-danger" href="./WanyongQiu_home/ICASSP_2023_Oral.pdf">Slides (Oral Report)</a>
-    <a class="badge badge-light" onclick="show('ICASSP')">show/hide abstract</a>
-    <div id="ICASSP" style="display:none; color:#4FA1EA; font-style:italic"> 
-        Stuttering is a complicated language disorder. The most common form of stuttering is developmental stuttering, which begins in childhood. Early monitoring and intervention are essential for the treatment of children with stuttering. Automatic speech recognition technology has shown its great potential for non-fluent disorder identification, whereas the previous work has not considered the privacy of users data. To this end, we propose federated intelligent terminals for automatic monitoring of stuttering speech in different contexts. Experimental results demonstrate that the proposed federated intelligent terminals model can analyse symptoms of stammering speech by taking the personal privacy protection into account. Furthermore, the study has explored that the Shapley value approach in the federated learning setting has comparable performance to data-centralised learning.
-    </div>
-</li>
-
-<li>
-    <font color="RoyalBlue">[EMBC]</font> Wanyong Qiu, Kun Qian*, Zhihua Wang, Yi Chang, Zhihao Bao, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "A Federated Learning Paradigm for Heart Sound Classification," in <i>Proceedings of IEEE Engineering in Medicine & Biology Society (EMBC) </i>, Glasgow, Scotland, UK, July 2022 (<font color="red"><b>EI</b></font>).
-    <a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/9871319">PDF</a>
-    <a class="badge badge-danger" href="./WanyongQiu_home/EMBC_2022_Poster.pdf">Slide (Poster)</a>
-    <a class="badge badge-light" onclick="show('EMBC')">show/hide abstract</a>
-    <div id="EMBC" style="display:none; color:#4FA1EA; font-style:italic"> 
-        Cardiovascular diseases (CVDs) have been ranked as the leading cause for deaths. The early diagnosis of CVDs is a crucial task in the medical practice. A plethora of efforts were given to the automated auscultation of heart sound, which leverages the power of computer audition to develop a cheap, non-invasive method that can be used at any time and anywhere for measuring the status of the heart. Nevertheless, previous works ignore an important factor, namely, the privacy of the user data. On the one hand, learnt models are always hungry for bigger data. On the other hand, it can be difficult to protect personal private information when collecting such large amount of data. In this dilemma, we propose a federated learning (FL) framework for the heart sound classification task. To the best of our knowledge, this is the first time to introduce FL to this field. We conducted multiple experiments, analysed the impact of data distribution across collaborative institutions on model quality and learning patterns, and verified the feasibility and effectiveness of FL based on real data. Non- independent identically distributed (Non-IID) data and model quality can be effectively improved by adding a strategy of globally sharing data.
-    </div>	
-</li>
+<li><p>
+	<font color="RoyalBlue">[ICASSP]</font> Yongzi Yu†, Wanyong Qiu†, Chen Quan, Kun Qian*, Zhihua Wang, Yu Ma, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "Federated Intelligent Terminals Facilitate Stuttering Monitoring," in <i>Proceedings of IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) </i>, Rhodes Island, Greek, June 2023 (<font color="red"><b>CCF B</b></font>).
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/10097263">PDF</a>
+	<a class="badge badge-danger" href="./WanyongQiu_home/ICASSP_2023_Oral.pdf">Slides (Oral Report)</a>
+	<a class="badge badge-light" onclick="show('ICASSP')">show/hide abstract</a>
+<div id="ICASSP" style="display:none; color:#4FA1EA; font-style:italic"> 
+Stuttering is a complicated language disorder. The most common form of stuttering is developmental stuttering, which begins in childhood. Early monitoring and intervention are essential for the treatment of children with stuttering. Automatic speech recognition technology has shown its great potential for non-fluent disorder identification, whereas the previous work has not considered the privacy of users data. To this end, we propose federated intelligent terminals for automatic monitoring of stuttering speech in different contexts. Experimental results demonstrate that the proposed federated intelligent terminals model can analyse symptoms of stammering speech by taking the personal privacy protection into account. Furthermore, the study has explored that the Shapley value approach in the federated learning setting has comparable performance to data-centralised learning.
+</div>
+        </p></li>	
+	
+<li><p>
+	<font color="RoyalBlue">[EMBC]</font> Wanyong Qiu, Kun Qian*, Zhihua Wang, Yi Chang, Zhihao Bao, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "A Federated Learning Paradigm for Heart Sound Classification," in <i>Proceedings of IEEE Engineering in Medicine & Biology Society (EMBC) </i>, Glasgow, Scotland, UK, July 2022 (<font color="red"><b>EI</b></font>).
+	<a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/9871319">PDF</a>
+	<a class="badge badge-danger" href="./WanyongQiu_home/EMBC_2022_Poster.pdf">Slide (Poster)</a>
+	<a class="badge badge-light" onclick="show('EMBC')">show/hide abstract</a>
+<div id="EMBC" style="display:none; color:#4FA1EA; font-style:italic"> 
+Cardiovascular diseases (CVDs) have been ranked as the leading cause for deaths. The early diagnosis of CVDs is a crucial task in the medical practice. A plethora of efforts were given to the automated auscultation of heart sound, which leverages the power of computer audition to develop a cheap, non-invasive method that can be used at any time and anywhere for measuring the status of the heart. Nevertheless, previous works ignore an important factor, namely, the privacy of the user data. On the one hand, learnt models are always hungry for bigger data. On the other hand, it can be difficult to protect personal private information when collecting such large amount of data. In this dilemma, we propose a federated learning (FL) framework for the heart sound classification task. To the best of our knowledge, this is the first time to introduce FL to this field. We conducted multiple experiments, analysed the impact of data distribution across collaborative institutions on model quality and learning patterns, and verified the feasibility and effectiveness of FL based on real data. Non- independent identically distributed (Non-IID) data and model quality can be effectively improved by adding a strategy of globally sharing data.
+</div>	
+	</p></li>
+	
 </ol>
+
 
 <h3><b>Patents</b></h3>
 
 <ol>
-<li>
-    <font color="RoyalBlue">[发明专利]</font> 胡斌, 钱昆, 邱万勇 "一种基于联邦学习的心音-心电多模态融合检测方法[P]," <i>中国发明专利</i>，申请号202411897434.6，2024年12月23日.
-    <a class="badge badge-info" href="https://kns.cnki.net/">PDF</a>
-    <a class="badge badge-danger" href="https://kns.cnki.net/">Slides</a>
-    <a class="badge badge-light" onclick="show('Patents2')">show/hide abstract</a>
-    <div id="Patents2" style="display:none; color:#4FA1EA; font-style:italic"> 
-        本发明公开了一种基于联邦学习的心音-心电多模态融合检测方法，旨在解决心血管疾病早期筛查和检测中的关键技术问题。首先提出多模态联邦医疗模型的分类、结构化定义和形式化表述。其次，利用跨模态协同机制，充分挖掘心音和心电数据之间的协同关系，以提升多医疗机构联邦检测模型的准确性和稳健性。
-    </div>
-</li>
-
-<li>
-    <font color="RoyalBlue">[发明专利]</font> 胡斌, 邱万勇, 钱昆, "一种基于联邦学习的心音监测系统[P]," <i>中国发明专利</i>，专利号ZL202211091843.8，授权公告日：2024年09月24日.
-    <a class="badge badge-info" href="https://kns.cnki.net/kcms2/article/abstract?v=2arE9-pF_S3WqVbWlgznrSTwjN-6G2-P1nsGgy-7SKnFcLuSef9vydeWBT7JmKMPc0ASCB19fGu52ts2jhnRmRpLabp7KAahIUjPSe-47J5pW533f5Jl7EGyy8nCcpdBxf_BGHDK-BwmPZlbEiEph8ZdyKA19KLizGrU9QrUTzyMP0zop5qeFE13WzYEjgwL&uniplatform=NZKPT&language=CHS">PDF</a>
-    <a class="badge badge-danger" href="./WanyongQiu_home/patent.pdf">Slides</a>
-    <a class="badge badge-light" onclick="show('Patents1')">show/hide abstract</a>
-    <div id="Patents1" style="display:none; color:#4FA1EA; font-style:italic"> 
-        一种基于联邦学习的心音监测系统,其特征在于,所述系统包括联邦智能终端、联邦服务端、医疗云服务中心；所述联邦智能终端用于联邦学习系统的便携式智能心音感知,包括心音数据采集模块、心音数据预处理模块、心音特征提取模块、终端模型训练模块；所述联邦服务端用于协调各联邦参与方进行联合建模,包括模型参数安全聚合模块、全局模型更新模块；所述医疗云服务中心用于接收上传的稳定、可靠且具有可解释性的医疗模型并进行存储,以便各个基层医疗机构都可以下载使用。
-    </div>
-</li>
-
-<li>
-    <font color="RoyalBlue">[软件著作]</font> 北京理工大学; 胡斌; 钱昆; 邱万勇, "面向智能体音感知的联邦学习智能客户端"，<i>计算机软件著作权</i>，2023SR1107177，2023年09年19日.
-    <a class="badge badge-info" href="https://www.ccopyright.com.cn">PDF</a>
-    <a class="badge badge-danger" href="./WanyongQiu_home/software.pdf">Slides</a>
-    <a class="badge badge-light" onclick="show('Patents3')">show/hide abstract</a>
-    <div id="Patents3" style="display:none; color:#4FA1EA; font-style:italic"> 
-        面向智能体音感知的联邦学习智能终端是一款用于联邦医疗健康系统的便携式智能体音感知与分析终端。联邦智能终端包括体音数据采集功能模块、体音数据预处理功能模块、终端模型训练模块。在联邦服务器的协调下多中心的联邦智能终端可协作进行医疗建模，同时能有效解决数据安全与患者隐私保护的问题。
-    </div>	
-</li>
+<li><p>
+	<font color="RoyalBlue">[发明专利]</font> 胡斌, 钱昆, 邱万勇 "一种基于联邦学习的心音-心电多模态融合检测方法[P]," <i>中国发明专利</i>，申请号202411897434.6，2024年12月23日.
+	<a class="badge badge-info" href="https://kns.cnki.net/">PDF</a>
+	<a class="badge badge-danger" href="https://kns.cnki.net/">Slides</a>
+	<a class="badge badge-light" onclick="show('Patents2')">show/hide abstract</a>
+<div id="Patents2" style="display:none; color:#4FA1EA; font-style:italic"> 
+本发明公开了一种基于联邦学习的心音-心电多模态融合检测方法，旨在解决心血管疾病早期筛查和检测中的关键技术问题。首先提出多模态联邦医疗模型的分类、结构化定义和形式化表述。其次，利用跨模态协同机制，充分挖掘心音和心电数据之间的协同关系，以提升多医疗机构联邦检测模型的准确性和稳健性。
+</div>
+        </p></li>
+<li><p>
+	<font color="RoyalBlue">[发明专利]</font> 胡斌, 邱万勇, 钱昆, "一种基于联邦学习的心音监测系统[P]," <i>中国发明专利</i>，专利号ZL202211091843.8，授权公告日：2024年09月24日.
+	<a class="badge badge-info" href="https://kns.cnki.net/kcms2/article/abstract?v=2arE9-pF_S3WqVbWlgznrSTwjN-6G2-P1nsGgy-7SKnFcLuSef9vydeWBT7JmKMPc0ASCB19fGu52ts2jhnRmRpLabp7KAahIUjPSe-47J5pW533f5Jl7EGyy8nCcpdBxf_BGHDK-BwmPZlbEiEph8ZdyKA19KLizGrU9QrUTzyMP0zop5qeFE13WzYEjgwL&uniplatform=NZKPT&language=CHS">PDF</a>
+	<a class="badge badge-danger" href="./WanyongQiu_home/patent.pdf">Slides</a>
+	<a class="badge badge-light" onclick="show('Patents1')">show/hide abstract</a>
+<div id="Patents1" style="display:none; color:#4FA1EA; font-style:italic"> 
+一种基于联邦学习的心音监测系统,其特征在于,所述系统包括联邦智能终端、联邦服务端、医疗云服务中心；所述联邦智能终端用于联邦学习系统的便携式智能心音感知,包括心音数据采集模块、心音数据预处理模块、心音特征提取模块、终端模型训练模块；所述联邦服务端用于协调各联邦参与方进行联合建模,包括模型参数安全聚合模块、全局模型更新模块；所述医疗云服务中心用于接收上传的稳定、可靠且具有可解释性的医疗模型并进行存储,以便各个基层医疗机构都可以下载使用。
+</div>
+        </p></li>	
+	
+<li><p>
+	<font color="RoyalBlue">[软件著作]</font> 北京理工大学; 胡斌; 钱昆; 邱万勇, "面向智能体音感知的联邦学习智能客户端"，<i>计算机软件著作权</i>，2023SR1107177，2023年09年19日.
+	<a class="badge badge-info" href="https://www.ccopyright.com.cn">PDF</a>
+	<a class="badge badge-danger" href="./WanyongQiu_home/software.pdf">Slides</a>
+	<a class="badge badge-light" onclick="show('Patents2')">show/hide abstract</a>
+<div id="Patents2" style="display:none; color:#4FA1EA; font-style:italic"> 
+面向智能体音感知的联邦学习智能终端是一款用于联邦医疗健康系统的便携式智能体音感知与分析终端。联邦智能终端包括体音数据采集功能模块、体音数据预处理功能模块、终端模型训练模块。在联邦服务器的协调下多中心的联邦智能终端可协作进行医疗建模，同时能有效解决数据安全与患者隐私保护的问题。
+</div>	
+	</p></li>
+	
 </ol>
+
 
 <h3><b>Awards</b></h3>
 
@@ -689,6 +554,7 @@
         </ol>
     </div>
 </div>
+
 
 <h3><b>Academic</b></h3>
 
@@ -904,33 +770,66 @@
     </div>
 </div>
 
+
+	
+	
 <div id="footer">
-    <div id="footer-text">Copyright (c) 2021 Wanyong Qiu. All rights reserved.</div>
+<div id="footer-text">Copyright (c) 2021 Wanyong Qiu. All rights reserved.</div>
 </div>
 
 </td>
 </tr>
 </tbody></table>
 
+<style>
+/* 容器样式，使用flexbox布局 */
+.quote-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 10px;
+}
+
+/* 文字部分样式 */
+.text-block {
+    flex-grow: 1;
+}
+
+/* 图片部分样式 */
+.gif-block {
+    margin-left: 20px; /* 给文字和图片之间留点间距 */
+}
+
+.quote-gif {
+    width: 120px; /* 设置GIF的宽度 */
+    height: auto; /* 保持图片比例 */
+}
+</style>
+
+
+<style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	 display: none !important;}</style> </body></html>
+
 <script language="javascript" type="text/javascript">
 function showHide(obj) {
-    var el = document.getElementById(obj);
-    if ( el.style.display != 'block' ) {
-        el.style.display = 'block';
-    }
-    else {
-        el.style.display = 'none';
-    }
+	var el = document.getElementById(obj);
+	if ( el.style.display != 'block' ) {
+		el.style.display = 'block';
+	}
+	else {
+		el.style.display = 'none';
+	}
 }
 </script>
 
-<script type="text/javascript">
+<script  type="text/javascript">
 function show(obj){
-    if(document.getElementById(obj).style.display=="block"){
-        document.getElementById(obj).style.display="none";
-    }else{
-        document.getElementById(obj).style.display="block";
-    }
+ if(document.getElementById(obj).style.display=="block"){
+  document.getElementById(obj).style.display="none";
+ }else{
+  document.getElementById(obj).style.display="block";
+ }
 }
 
 // 可折叠年份脚本
@@ -1057,5 +956,3 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-</body>
-</html>

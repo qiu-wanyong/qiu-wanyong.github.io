@@ -138,6 +138,24 @@ img.lab-photo {
   }
 }
 
+.carousel {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;  
+  background: #f4f4f4;    
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   
+  object-position: center;
+}
+
+
 </style>
 
 </head>
@@ -183,8 +201,6 @@ img.lab-photo {
     <img src="./WanyongQiu_home/Assets/BIT.jpg" class="slide-img" alt="">
     <img src="./WanyongQiu_home/Assets/waseda1.jpg" class="slide-img" alt="">
     
-
-
   </div>
 
   <!-- Navigation buttons -->
@@ -192,6 +208,16 @@ img.lab-photo {
   <button class="slider-btn next" onclick="nextSlide()">❯</button>
 </div>
 <!-- IMAGE SLIDER END -->
+
+<div class="carousel">
+  <div class="carousel-item">
+    <img src="waseda.jpg" alt="Waseda University">
+  </div>
+  <div class="carousel-item">
+    <img src="campus.jpg" alt="Campus">
+  </div>
+</div>
+
 
 
   

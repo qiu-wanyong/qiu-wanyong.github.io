@@ -9,11 +9,6 @@
 </script>
 
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -23,93 +18,109 @@
 <title>Wanyong Qiu's Homepage</title>
 <style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}
 </style>
-<style>
-/* Section title like screenshot */
-.people-section-title{
+/* ===== Team page (Cao-lab like) ===== */
+.team-section{
+  margin-top: 10px;
+}
+
+.team-title{
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   margin: 10px 0 6px;
 }
 
-.people-section-sub{
+.team-subtitle{
   font-size: 18px;
-  color: #444;
   font-weight: 600;
-  margin: 0 0 22px;
-}
-
-.people-section-sub a{
-  color: #0b84c6;
-  font-weight: 700;
-  text-decoration: none;
-}
-.people-section-sub a:hover{ text-decoration: underline; }
-
-/* Two-column layout */
-.people-grid{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(360px, 1fr));
-  column-gap: 90px;
-  row-gap: 46px;
-  margin: 18px 0 40px;
-}
-
-/* One member row (photo + content) */
-.member-card{
-  display: flex;
-  gap: 22px;
-  align-items: flex-start;
-}
-
-/* Photo style */
-.member-photo{
-  width: 120px;
-  height: 120px;
-  border-radius: 14px;
-  object-fit: cover;           /* 想完整显示就改 contain */
-  background: #e9ecef;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-  flex: 0 0 auto;
-}
-
-/* Name (blue link) */
-.member-name{
-  font-size: 26px;
-  font-weight: 700;
-  margin: 0 0 6px;
-  line-height: 1.2;
-}
-.member-name a{
-  color: #0b84c6;              /* screenshot-like blue */
-  text-decoration: none;
-}
-.member-name a:hover{ text-decoration: underline; }
-
-/* Role line (italic, gray) */
-.member-role{
-  font-size: 16px;
-  font-style: italic;
-  color: #666;
-  margin: 0 0 10px;
-}
-
-/* Bullet list */
-.member-list{
-  margin: 0;
-  padding-left: 20px;
-}
-.member-list li{
-  margin: 6px 0;
   color: #333;
-  font-size: 16px;
+  margin: 0 0 18px;
+}
+
+.team-subtitle a{
+  color: #1e88e5;
+  text-decoration: none;
+  font-weight: 700;
+}
+.team-subtitle a:hover{ text-decoration: underline; }
+
+/* 两列布局：大屏2列，小屏1列 */
+.team-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px, 1fr));
+  column-gap: 90px;
+  row-gap: 56px;
+  margin-top: 10px;
+}
+
+/* 成员卡片：左图右文 */
+.team-card{
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+/* 头像（默认类似 cao-lab：圆角+阴影+固定尺寸） */
+.team-photo{
+  width: 140px;
+  height: 140px;
+  border-radius: 14px;
+  object-fit: cover;            /* 类似 cao-lab 的观感：更饱满 */
+  background: #eee;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  flex: 0 0 auto;
+  display: block;
+}
+
+/* 如果你“不裁剪”，给 img 额外加 class="nocrop" */
+.team-photo.nocrop{
+  object-fit: contain;          /* 不裁剪，可能出现留白 */
+  background: #f5f5f5;
+}
+
+/* 右侧文字 */
+.team-info{
   line-height: 1.55;
 }
 
-/* Responsive */
-@media (max-width: 980px){
-  .people-grid{ grid-template-columns: 1fr; column-gap: 0; }
+.team-name{
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0 0 4px;
 }
-</style>
+
+.team-name a{
+  color: #1e88e5;               /* 名字蓝色 */
+  text-decoration: none;
+}
+.team-name a:hover{ text-decoration: underline; }
+
+.team-role{
+  font-size: 18px;
+  font-style: italic;           /* 职位斜体 */
+  color: #444;
+  margin: 0 0 10px;
+}
+
+/* bullet 列表 */
+.team-list{
+  margin: 0;
+  padding-left: 22px;
+  font-size: 18px;
+}
+.team-list li{
+  margin: 10px 0;
+}
+
+/* 响应式：窄屏一列 */
+@media (max-width: 980px){
+  .team-grid{
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .team-title{ font-size: 38px; }
+  .team-name{ font-size: 30px; }
+}
+
 
 </head>
 	
@@ -144,133 +155,108 @@
 
 <h2><b>People</b></h2>
 
-<div class="people-section-title">Current Members</div>
-<div class="people-section-sub">
-  We are looking for new PhD students, Postdocs, and Master students to join the team
-  <a href="openings.html">see openings!</a>
+<div class="team-section">
+  <div class="team-title">Current Members</div>
+  <div class="team-subtitle">
+    We are looking for new PhD students, Postdocs, and Master students to join the team
+    <a href="https://cao-lab.org/join-us/" target="_blank">see openings!</a>
+  </div>
+
+  <div class="team-grid">
+
+    <!-- Member 1 -->
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/photo.jpg" target="_blank">
+        <!-- 不想裁剪就加 nocrop -->
+        <img class="team-photo" src="./WanyongQiu_home/Assets/photo.jpg" alt="Wanyong Qiu">
+      </a>
+      <div class="team-info">
+        <div class="team-name">
+          <a href="https://qiu-wanyong.github.io/About.html" target="_blank">Wanyong Qiu（邱万勇）</a>
+        </div>
+        <div class="team-role">Postdoc, Waseda University</div>
+        <ul class="team-list">
+          <li>Postdoc, Waseda University (2025–)</li>
+          <li>PhD, Beijing Institute of Technology</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Member 2 -->
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/FYF.jpg" target="_blank">
+        <img class="team-photo" src="./WanyongQiu_home/Assets/FYF.jpg" alt="Yifan Feng">
+      </a>
+      <div class="team-info">
+        <div class="team-name">Yifan Feng（冯祎凡）</div>
+        <div class="team-role">Research Intern</div>
+        <ul class="team-list">
+          <li>新疆大学2020级本科生（2023.6–2024.9）科研实习</li>
+          <li>研究方向：动态联邦学习、联邦增量学习</li>
+          <li>科研成果：学术论文1篇</li>
+          <li>毕业去向：北京理工大学（保研）2024.9</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Member 3 -->
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/QT.jpg" target="_blank">
+        <img class="team-photo" src="./WanyongQiu_home/Assets/QT.jpg" alt="Tian Qin">
+      </a>
+      <div class="team-info">
+        <div class="team-name">Tian Qin（覃添）</div>
+        <div class="team-role">Research Intern, started 2025</div>
+        <ul class="team-list">
+          <li>新疆大学2020级本科生（2025.6–）科研实习</li>
+          <li>研究方向：多模态联邦学习、量子学习</li>
+          <li>毕业去向：北京理工大学（保研）2026</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-<div class="people-grid">
+<div class="team-section" style="margin-top:60px;">
+  <div class="team-title">Internship Members</div>
+  <div class="team-subtitle">Supervision of Undergraduate Students in Study Internships.</div>
 
-  <div class="member-card">
-    <a href="./WanyongQiu_home/Assets/photo.jpg">
-      <img class="member-photo" src="./WanyongQiu_home/Assets/photo.jpg" alt="Wanyong Qiu">
-    </a>
-    <div>
-      <p class="member-name">
-        <a href="https://qiu-wanyong.github.io/About.html" target="_blank">Wanyong Qiu（邱万勇）</a>
-      </p>
-      <p class="member-role">Postdoc, Waseda University</p>
-      <ul class="member-list">
-        <li>Postdoc, Waseda University (2025–)</li>
-        <li>PhD, Beijing Institute of Technology</li>
-      </ul>
+  <div class="team-grid">
+
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/YYZ.jpg" target="_blank">
+        <img class="team-photo" src="./WanyongQiu_home/Assets/YYZ.jpg" alt="Yongzi Yu">
+      </a>
+      <div class="team-info">
+        <div class="team-name">Yongzi Yu（于永孜）</div>
+        <div class="team-role">Undergraduate Research Intern</div>
+        <ul class="team-list">
+          <li>睿信书院2020级本科生（2022.9–2023.12）科研实习</li>
+          <li>研究方向：联邦医疗物联网</li>
+          <li>科研成果：学术论文3篇，竞赛获奖3项</li>
+          <li>毕业去向：香港科技大学（直博）2023.10</li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="member-card">
-    <a href="./WanyongQiu_home/Assets/FYF.jpg">
-      <img class="member-photo" src="./WanyongQiu_home/Assets/FYF.jpg" alt="Yifan Feng">
-    </a>
-    <div>
-      <p class="member-name">Yifan Feng（冯祎凡）</p>
-      <p class="member-role">Research Intern</p>
-      <ul class="member-list">
-        <li>新疆大学2020级本科生（2023.6–2024.9）科研实习</li>
-        <li>研究方向：动态联邦学习、联邦增量学习</li>
-        <li>科研成果：学术论文1篇</li>
-        <li>毕业去向：北京理工大学（保研）2024.9</li>
-      </ul>
+    <div class="team-card">
+      <a href="./WanyongQiu_home/Assets/QC.jpg" target="_blank">
+        <img class="team-photo" src="./WanyongQiu_home/Assets/QC.jpg" alt="Chen Quan">
+      </a>
+      <div class="team-info">
+        <div class="team-name">Chen Quan（全晨）</div>
+        <div class="team-role">Undergraduate Research Intern</div>
+        <ul class="team-list">
+          <li>睿信书院2020级本科生（2022.9–2023.12）科研实习</li>
+          <li>研究方向：纵向联邦学习、可解释性</li>
+          <li>科研成果：学术论文3篇，竞赛获奖3项</li>
+          <li>毕业去向：帝国理工学院（硕士）2024.10</li>
+        </ul>
+      </div>
     </div>
+
   </div>
-
-  <div class="member-card">
-    <a href="./WanyongQiu_home/Assets/QT.jpg">
-      <img class="member-photo" src="./WanyongQiu_home/Assets/QT.jpg" alt="Tian Qin">
-    </a>
-    <div>
-      <p class="member-name">Tian Qin（覃添）</p>
-      <p class="member-role">Research Intern, started 2025</p>
-      <ul class="member-list">
-        <li>新疆大学2020级本科生（2025.6–）科研实习</li>
-        <li>研究方向：多模态联邦学习、量子学习</li>
-        <li>毕业去向：北京理工大学（保研）2026</li>
-      </ul>
-    </div>
-  </div>
-
-</div>
-
-
-<div class="people-section-title">Internship Members</div>
-<div class="people-section-sub">Supervision of Undergraduate Students in Study Internships.</div>
-
-<div class="people-grid">
-
-  <div class="member-card">
-    <a href="./WanyongQiu_home/Assets/YYZ.jpg">
-      <img class="member-photo" src="./WanyongQiu_home/Assets/YYZ.jpg" alt="Yongzi Yu">
-    </a>
-    <div>
-      <p class="member-name">Yongzi Yu（于永孜）</p>
-      <p class="member-role">Undergraduate Intern (2022.9–2023.12)</p>
-      <ul class="member-list">
-        <li>睿信书院2020级本科生（2022.9–2023.12）科研实习</li>
-        <li>研究方向：联邦医疗物联网</li>
-        <li>科研成果：学术论文3篇，竞赛获奖3项</li>
-        <li>毕业去向：香港科技大学（直博）2023.10</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="member-card">
-    <a href="./WanyongQiu_home/Assets/QC.jpg">
-      <img class="member-photo" src="./WanyongQiu_home/Assets/QC.jpg" alt="Chen Quan">
-    </a>
-    <div>
-      <p class="member-name">Chen Quan（全晨）</p>
-      <p class="member-role">Undergraduate Intern (2022.9–2023.12)</p>
-      <ul class="member-list">
-        <li>睿信书院2020级本科生（2022.9–2023.12）科研实习</li>
-        <li>研究方向：纵向联邦学习、可解释性</li>
-        <li>科研成果：学术论文3篇，竞赛获奖3项</li>
-        <li>毕业去向：帝国理工学院（硕士）2024.10</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="member-card">
-    <a href="./WanyongQiu_home/Assets/ZZK.jpg">
-      <img class="member-photo" src="./WanyongQiu_home/Assets/ZZK.jpg" alt="Zikai Zhou">
-    </a>
-    <div>
-      <p class="member-name">Zikai Zhou（周子凯）</p>
-      <p class="member-role">Undergraduate Intern (2023.6–2024.9)</p>
-      <ul class="member-list">
-        <li>徐特立书院2021级本科生（2023.6–2024.9）科研实习</li>
-        <li>研究方向：联邦轻量化模型</li>
-        <li>科研成果：立项国家级大创1项</li>
-        <li>毕业去向：香港科技大学（直博）2024.10</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="member-card">
-    <a href="./WanyongQiu_home/Assets/LYY.jpg">
-      <img class="member-photo" src="./WanyongQiu_home/Assets/LYY.jpg" alt="Yuying Li">
-    </a>
-    <div>
-      <p class="member-name">Yuying Li（李昱莹）</p>
-      <p class="member-role">Undergraduate Intern (2023.6–2024.9)</p>
-      <ul class="member-list">
-        <li>徐特立书院2021级本科生（2023.6–2024.9）科研实习</li>
-        <li>研究方向：异构联邦学习、个性化联邦学习</li>
-        <li>科研成果：学术论文1篇</li>
-        <li>毕业去向：清华大学（保研）2024.10</li>
-      </ul>
-    </div>
-  </div>
-
 </div>
 
 	

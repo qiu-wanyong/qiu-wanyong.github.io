@@ -1,15 +1,3 @@
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141256821-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-141256821-1');
-</script>
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
@@ -19,6 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="./WanyongQiu_home/jemdocHome.css" type="text/css">
 <title>Wanyong Qiu Homepage</title>
+
+<!-- 先加载 Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 <style>
     .menu-item { margin: 10px; }
@@ -69,86 +60,81 @@
         min-width: 200px;
     }
 
-    /* ← 新的可自定义图片大小 */
+    /* 轮播容器样式修改 */
+    .slider-container {
+        position: relative;
+        width: 60%;
+        max-width: 500px;
+        height: 300px; /* 增加高度以显示完整图片 */
+        margin: 20px auto;
+        background: #f0f0f0;
+        overflow: hidden;
+        border-radius: 10px;
+    }
 
-/* 普通图片样式 */
-img.lab-photo { 
-    max-width: 100%;
-    height: 300px;
-    border-radius: 10px;
-    margin: 10px auto;
-    display: block;
-}
+    /* 移除 slider-wrapper 的 flex，改为 relative */
+    .slider-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
 
-/* 轮播容器 */ 
-.slider-container {
-  position: relative;
-  width: 60%;
-  max-width: 500px;
-  height: 200px;
-  margin: 20px auto;
-  background: #f0f0f0;
-  overflow: hidden;
-  border-radius: 10px;
-}
+    /* 每张图片样式 - 居中显示 */
+    .slide-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* 保持宽高比，完整显示图片 */
+        opacity: 0;
+        transition: opacity 0.6s ease;
+    }
 
-/* 每张图都“完整显示在同一个容器里” */
-.slide-img {
-  position: absolute;
-  inset: 0;
-  margin: auto;
+    /* 当前显示的图片 */
+    .slide-img.active {
+        opacity: 1;
+    }
 
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+    /* 左右按钮 */
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255,255,255,0.7);
+        border: none;
+        padding: 10px 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 20px;
+        z-index: 10;
+    }
 
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
+    .slider-btn:hover {
+        background: rgba(255,255,255,0.9);
+    }
 
-/* 当前显示 */
-.slide-img.active {
-  opacity: 1;
-}
+    .prev { left: 10px; }
+    .next { right: 10px; }
 
+    /* 响应式适配 */
+    @media (max-width: 768px) {
+        .slider-container {
+            width: 95%;
+            height: 250px; /* 移动端适当降低高度 */
+        }
+    }
 
-
-/* 左右按钮 */
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
-  border: none;
-  padding: 10px 16px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  z-index: 10;
-}
-
-.slider-btn:hover {
-  background: rgba(255,255,255,0.9);
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-/* 响应式适配 */
-@media (max-width: 768px) {
-  .slider-container {
-    width: 95%;
-  }
-}
-
-
+    @media (max-width: 480px) {
+        .slider-container {
+            height: 200px;
+        }
+    }
 
 </style>
 
 </head>
-
 
 <body>
 
@@ -186,10 +172,10 @@ img.lab-photo {
 
 <!-- IMAGE SLIDER START -->
 <div class="slider-container" id="slider-container">
-  <div class="slider-wrapper" id="slider">
-    <img src="./WanyongQiu_home/Assets/BIT.jpg" class="slide-img" alt="">
-    <img src="./WanyongQiu_home/Assets/waseda1.jpg" class="slide-img" alt="">
-    
+  <div class="slider-wrapper" id="slider-wrapper">
+    <!-- 使用绝对定位的图片 -->
+    <img src="./WanyongQiu_home/Assets/BIT.jpg" class="slide-img active" alt="BIT">
+    <img src="./WanyongQiu_home/Assets/waseda1.jpg" class="slide-img" alt="Waseda">
   </div>
 
   <!-- Navigation buttons -->
@@ -205,7 +191,7 @@ img.lab-photo {
 <h2 style="text-align: center;">Trustworthy & Multimodal Medical Intelligence (TMMI)</h2>
 
 <p>
-The Trustworthy & Multimodal Medical Intelligence (TMMI) team is affiliated with the Key Laboratory of Brain Health Intelligent Evaluation and Intervention of the Ministry of Education (BIT) and Liu’s Lab (Waseda). We focus on privacy-preserving AI for healthcare, developing trustworthy AI methods and models to enable precision, data-driven medicine while protecting sensitive medical data.
+The Trustworthy & Multimodal Medical Intelligence (TMMI) team is affiliated with the Key Laboratory of Brain Health Intelligent Evaluation and Intervention of the Ministry of Education (BIT) and Liu's Lab (Waseda). We focus on privacy-preserving AI for healthcare, developing trustworthy AI methods and models to enable precision, data-driven medicine while protecting sensitive medical data.
 </p>
 
 <p>
@@ -256,8 +242,6 @@ The current research focuses on the early screening and diagnosis of brain-cardi
   
 </div>
 
-
-
   
 
 <!-- RIGHT SIDEBAR (NEWS LIST) -->
@@ -271,7 +255,7 @@ Please consider participating in GITW 2025 (Tokyo, December 5th-6th 2025)</p>
 Visited the Quantum Computing Center at Juntendo University at the invitation of Prof. Liu.</p>
 
 <p><b>November 5, 2025</b><br>
-Joined Waseda University as a Research Fellow in Liu’s Lab.</p>
+Joined Waseda University as a Research Fellow in Liu's Lab.</p>
 
 <p><b>June 10, 2025</b><br>
 Awarded the China Scholarship Council (CSC) Postdoctoral Fellowship to pursue research in Japan.</p>
@@ -304,7 +288,6 @@ Shinjuku, Tokyo, 169-8555 Japan<br>
 <img src="./WanyongQiu_home/Assets/BIT_logo.png" style="height: 100px; width: auto;">
 <img src="./WanyongQiu_home/Assets/Waseda_logo.png" style="height: 100px; width: auto;">
 
-
 </div>
 
 </div>
@@ -314,54 +297,97 @@ Shinjuku, Tokyo, 169-8555 Japan<br>
 </tr>
 </table>
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141256821-1"></script>
 <script>
-let index = 0;
-const slider = document.getElementById("slider");
-const container = document.getElementById("slider-container");
-const slides = slider.children;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-141256821-1');
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+// 轮播图脚本
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide-img');
 const totalSlides = slides.length;
 
-// 显示指定幻灯片并更新容器高度
-const slides = document.querySelectorAll('.slide-img');
-let index = 0;
-
-function showSlide(i) {
-  slides[index].classList.remove('active');
-  index = (i + slides.length) % slides.length;
-  slides[index].classList.add('active');
+// 显示指定幻灯片
+function showSlide(index) {
+    // 隐藏所有幻灯片
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+    });
+    
+    // 显示当前幻灯片
+    slides[index].classList.add('active');
+    currentIndex = index;
 }
 
-setInterval(() => showSlide(index + 1), 3000);
+// 下一张幻灯片
+function nextSlide() {
+    const nextIndex = (currentIndex + 1) % totalSlides;
+    showSlide(nextIndex);
+}
 
-
-
-// 下一张 / 上一张
-function nextSlide() { showSlide(index + 1); }
-function prevSlide() { showSlide(index - 1); }
-
+// 上一张幻灯片
+function prevSlide() {
+    const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    showSlide(prevIndex);
+}
 
 // 自动播放
-setInterval(nextSlide, 3000);
+let slideInterval = setInterval(nextSlide, 3000);
 
-// 支持触摸滑动切换
+// 当鼠标悬停在轮播图上时暂停自动播放
+const sliderContainer = document.getElementById('slider-container');
+sliderContainer.addEventListener('mouseenter', () => {
+    clearInterval(slideInterval);
+});
+
+sliderContainer.addEventListener('mouseleave', () => {
+    slideInterval = setInterval(nextSlide, 3000);
+});
+
+// 触摸滑动支持
 let startX = 0;
 let isDragging = false;
 
-slider.addEventListener('touchstart', e => {
+sliderContainer.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
     isDragging = true;
+    clearInterval(slideInterval); // 触摸时暂停自动播放
 });
 
-slider.addEventListener('touchmove', e => {
+sliderContainer.addEventListener('touchmove', e => {
     if (!isDragging) return;
     const currentX = e.touches[0].clientX;
     const diff = startX - currentX;
-    // 阈值 50px
-    if (diff > 50) { nextSlide(); isDragging = false; }
-    if (diff < -50) { prevSlide(); isDragging = false; }
+    
+    // 滑动阈值 50px
+    if (diff > 50) { 
+        nextSlide(); 
+        isDragging = false;
+        startX = currentX;
+    }
+    if (diff < -50) { 
+        prevSlide(); 
+        isDragging = false;
+        startX = currentX;
+    }
 });
 
-slider.addEventListener('touchend', () => { isDragging = false; });
+sliderContainer.addEventListener('touchend', () => { 
+    isDragging = false;
+    // 重新开始自动播放
+    slideInterval = setInterval(nextSlide, 3000);
+});
+
+// 初始化：显示第一张图片
+showSlide(0);
 </script>
 
 </body>

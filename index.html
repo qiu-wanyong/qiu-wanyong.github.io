@@ -85,16 +85,18 @@ img.lab-photo {
   position: relative; 
   width: 60%; 
   max-width: 500px; 
-  height: 200px; 
+  height: 200px;             
   margin: 20px auto; 
   overflow: hidden; 
   border-radius: 10px; 
   background: #f0f0f0; 
 }
 
-/* 图片行 */
 .slider-wrapper {
   display: flex;
+  height: 100%;
+  align-items: center;        
+  justify-content: center;
   transition: transform 0.6s ease;
 }
 
@@ -102,11 +104,10 @@ img.lab-photo {
   flex: 0 0 100%;
   max-width: 100%;
   max-height: 100%;
-  width: auto;           
-  height: auto;         
-  object-fit: contain;
+  width: auto;
+  height: auto;
+  object-fit: contain;        
   display: block;
-  margin: auto;          
 }
 
 

@@ -138,22 +138,6 @@ img.lab-photo {
   }
 }
 
-.carousel {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  aspect-ratio: 16 / 9;  
-  background: #f4f4f4;    
-  overflow: hidden;
-  position: relative;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;   
-  object-position: center;
-}
 
 
 </style>
@@ -209,14 +193,6 @@ img.lab-photo {
 </div>
 <!-- IMAGE SLIDER END -->
 
-<div class="carousel">
-  <div class="carousel-item">
-    <img src="waseda.jpg" alt="Waseda University">
-  </div>
-  <div class="carousel-item">
-    <img src="campus.jpg" alt="Campus">
-  </div>
-</div>
 
 
 
@@ -344,16 +320,13 @@ const totalSlides = slides.length;
 function showSlide(i) {
     index = (i + totalSlides) % totalSlides;
     slider.style.transform = `translateX(-${index * 100}%)`;
-    container.style.height = slides[index].offsetHeight + 'px';
 }
+
 
 // 下一张 / 上一张
 function nextSlide() { showSlide(index + 1); }
 function prevSlide() { showSlide(index - 1); }
 
-// 初始化高度
-window.addEventListener('load', () => showSlide(index));
-window.addEventListener('resize', () => showSlide(index));
 
 // 自动播放
 setInterval(nextSlide, 3000);

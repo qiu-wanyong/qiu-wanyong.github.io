@@ -5,53 +5,7 @@
 <title>Wanyong Qiu's Homepage</title>
 <style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}
 
-/* 导航栏样式优化*/
-#layout-menu {
-    background: none;
-    border-right: 1px solid #eaeaea;
-    padding-top: 20px;
-}
-
-.menu-category {
-    color: #4a6fa5;
-    font-weight: 600;
-    font-size: 0.85em;
-    margin: 25px 10px 10px 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #e0e0e0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.menu-item {
-    margin: 8px 10px;
-}
-
-.menu-item a {
-    color: #555;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    display: block;
-    transition: all 0.2s ease;
-    font-size: 0.9em;
-    border-left: 3px solid transparent;
-}
-
-.menu-item a:hover {
-    background-color: #f5f8ff;
-    color: #4a6fa5;
-    border-left-color: #4a6fa5;
-}
-
-.menu-item a.current {
-    background-color: #f0f5ff;
-    color: #4a6fa5;
-    border-left-color: #4a6fa5;
-    font-weight: 500;
-}
-
-/* 按钮样式 */
+/* 按钮样式优化 */
 .badge {
     padding: 4px 10px;
     font-size: 0.85em;
@@ -114,7 +68,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* 控制按钮样式 */
+/* 控制按钮样式优化 */
 .toggle-btn {
     background-color: #f0f5ff;
     color: #4a6fa5;
@@ -143,7 +97,7 @@
     background-color: #ffdbde;
 }
 
-/* 可折叠年份样式 */
+/* 可折叠年份样式优化 */
 .year-section {
     margin-bottom: 15px;
     border: 1px solid #eaeaea;
@@ -228,7 +182,7 @@
     font-weight: bold;
 }
 
-/* 引用容器 */
+/* 引用容器优化 */
 .quote-container {
     display: flex;
     justify-content: space-between;
@@ -944,7 +898,7 @@ function toggleAllAcademic() {
 
 // 默认展开最新年份
 document.addEventListener('DOMContentLoaded', function() {
-    // 默认展开2025年的内容
+    // 默认展开最新年的内容
     const defaultYears = ['awards-2025', 'academic-2025'];
     defaultYears.forEach(yearId => {
         const content = document.getElementById(yearId);

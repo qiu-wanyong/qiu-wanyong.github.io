@@ -87,33 +87,38 @@ img.lab-photo {
 }
 
 /* 轮播容器 */
-.slider-container {
+.slider-container{
   position: relative;
-  width: 60%;
-  max-width: 500px;
-  height: 200px;       /* ← 自定义轮播高度 */
-  margin: 20px auto;
+  width: 320px;          
+  max-width: 100%;
+  height: 320px;        
+  margin: 10px 0;        
   overflow: hidden;
-  border-radius: 10px;
-  background: #f0f0f0;
+  border-radius: 12px;
+  background: transparent; 
 }
 
-
 /* 图片行 */
-.slider-wrapper {
+.slider-wrapper{
   display: flex;
+  width: 100%;
+  height: 100%;
   transition: transform 0.6s ease;
 }
 
-/* 每张图片占满容器 */
-.slide-img {
+/* 每张图片：用 cover 填满容器，留白会消失（会轻微裁剪） */
+.slide-img{
   flex: 0 0 100%;
   width: 100%;
-  height: 100%;        /* 填满容器高度 */
-  object-fit: contain; /* 保持比例显示完整图片 */
+  height: 100%;
+  object-fit: cover;      
   object-position: center;
   display: block;
-  border-radius: 10px;
+}
+
+/* （可选）减少 imgtable 左侧单元格的内边距，让图更贴边更大 */
+table.imgtable td:first-child{
+  padding-right: 12px;
 }
 
 /* 左右按钮 */
@@ -180,7 +185,12 @@ img.lab-photo {
     </div>
 </div>
 
-<table class="imgtable"><tbody><tr><td>
+<table class="imgtable">
+  <tr>
+    <td style="width:340px; vertical-align: top;">
+      <!-- slider-container... -->
+    </td>
+    <td align="left">
 <!-- IMAGE SLIDER START -->
 <div class="slider-container" id="slider-container">
   <div class="slider-wrapper" id="slider">
@@ -189,8 +199,8 @@ img.lab-photo {
   </div>
 
   <!-- Navigation buttons -->
-  <button class="slider-btn prev" onclick="prevSlide()">❮</button>
-  <button class="slider-btn next" onclick="nextSlide()">❯</button>
+  <button class="slider-btn prev" onclick="prevHeroSlide()">❮</button>
+  <button class="slider-btn next" onclick="nextHeroSlide()">❯</button>
 </div>
 <!-- IMAGE SLIDER END -->
 
@@ -214,8 +224,10 @@ img.lab-photo {
   
 <a class="badge badge-info" href="./WanyongQiu_home/W.Qiu@CV(EN)202511.pdf" target="blank">CV(EN).pdf</a>
 <br>
+    </td>
+  </tr>
+</table>
 
-</td></tr></tbody></table>
 
   
 <br>
@@ -562,29 +574,22 @@ window.onload = () => {
 </script>
 
 <script>
-let index = 0;
+let heroIndex = 0;
 const slider = document.getElementById("slider");
-const container = document.getElementById("slider-container");
 const slides = slider.children;
 const totalSlides = slides.length;
 
-// 显示指定幻灯片并更新容器高度
-function showSlide(i) {
-    index = (i + totalSlides) % totalSlides;
-    slider.style.transform = `translateX(-${index * 100}%)`;
-    container.style.height = slides[index].offsetHeight + 'px';
+function showHeroSlide(i) {
+  heroIndex = (i + totalSlides) % totalSlides;
+  slider.style.transform = `translateX(-${heroIndex * 100}%)`;
 }
 
-// 下一张 / 上一张
-function nextSlide() { showSlide(index + 1); }
-function prevSlide() { showSlide(index - 1); }
+function nextHeroSlide(){ showHeroSlide(heroIndex + 1); }
+function prevHeroSlide(){ showHeroSlide(heroIndex - 1); }
 
-// 初始化高度
-window.addEventListener('load', () => showSlide(index));
-window.addEventListener('resize', () => showSlide(index));
+window.addEventListener('load', () => showHeroSlide(heroIndex));
+setInterval(nextHeroSlide, 3000);
 
-// 自动播放
-setInterval(nextSlide, 3000);
 
 // 支持触摸滑动切换
 let startX = 0;
@@ -600,7 +605,7 @@ slider.addEventListener('touchmove', e => {
     const currentX = e.touches[0].clientX;
     const diff = startX - currentX;
     // 阈值 50px
-    if (diff > 50) { nextSlide(); isDragging = false; }
+    if (diff > 50) { nextNewsSlide(); isDragging = false; }
     if (diff < -50) { prevSlide(); isDragging = false; }
 });
 

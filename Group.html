@@ -4,112 +4,177 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+
   gtag('config', 'UA-141256821-1');
 </script>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Wanyong Qiu's Homepage</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
 <link rel="stylesheet" href="./WanyongQiu_home/jemdoc.css" type="text/css">
+<title>Wanyong Qiu's Homepage</title>
+<style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}
 
-<style>
-/* ===== Photo Wall Styles ===== */
+/* 照片墙样式 */
 :root{
   --gap: 16px;
-  --radius: 8px;
+  --card-radius: 8px;
+  --card-padding: 6px;
+  --border-width: 2px;
 }
 
+/* 使用CSS列创建瀑布流布局 */
 .photo-wall{
-  column-count: 3;
+  column-count: 4;             /* 默认4列 */
   column-gap: var(--gap);
-  margin-top: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
+/* 防止卡片在列之间被分割 */
 .photo-card{
+  display: inline-block;      /* 列布局必需 */
+  width: 100%;
+  margin: 0 0 var(--gap);
   break-inside: avoid;
-  margin-bottom: var(--gap);
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+
   background: #fff;
-  border-radius: var(--radius);
-  padding: 6px;
-  border: 2px solid #ec6b6b;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform .2s ease, box-shadow .2s ease;
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  box-sizing: border-box;
+
+  /* 卡片边框颜色，通过 --border 变量设置 */
+  border: var(--border-width) solid var(--border, #ddd);
+  box-shadow: 0 4px 12px rgba(18,20,24,0.04);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
+/* 悬停效果 */
 .photo-card:hover{
   transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 28px rgba(18,20,24,0.08);
 }
 
 .photo-card img{
+  display: block;
   width: 100%;
-  border-radius: 6px;
+  height: auto;      /* 保持宽高比（产生瀑布流高度） */
+  border-radius: calc(var(--card-radius) - var(--card-padding));
+  object-fit: cover;
+  user-select: none;
+  vertical-align: middle;
   cursor: zoom-in;
 }
 
 figcaption{
-  margin-top: 6px;
-  font-size: 13px;
-  color: #444;
-  text-align: center;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #333;
 }
 
-/* Responsive */
+.caption-badge{
+  display: inline-block;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.04);
+  font-size: 13px;
+}
+
+/* 响应式列数 */
 @media (max-width: 900px){
-  .photo-wall{ column-count: 2; }
+  .photo-wall { column-count: 2; }
 }
 @media (max-width: 560px){
-  .photo-wall{ column-count: 1; }
+  .photo-wall { column-count: 1; }
 }
 
-/* ===== Lightbox ===== */
+/* 灯箱样式 */
 .lightbox{
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
   display: none;
   align-items: center;
   justify-content: center;
+  background: rgba(0,0,0,0.75);
   z-index: 9999;
+  padding: 20px;
 }
-.lightbox.open{ display: flex; }
-
+.lightbox.open { display:flex; }
+.lightbox .box{
+  max-width: 1100px;
+  max-height: 90vh;
+  width: 100%;
+  text-align: center;
+}
 .lightbox img{
-  max-width: 90%;
+  max-width: 100%;
   max-height: 80vh;
   border-radius: 8px;
 }
-
 .lightbox .caption{
-  color: #fff;
-  text-align: center;
   margin-top: 10px;
+  color: #fff;
+  font-size: 15px;
 }
-
 .lightbox .close{
   position: absolute;
   top: 16px;
-  right: 20px;
-  font-size: 20px;
+  right: 18px;
   color: #fff;
+  font-size: 20px;
   cursor: pointer;
 }
-</style>
-</head>
 
+/* 循环向上滚动的设置 */
+.scroll-container {
+  width: 500px;   
+  height: 30px;   
+  margin: 0 auto; 
+  overflow: hidden; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  position: relative; 
+}
+
+.scroll-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.5s ease-in-out; 
+}
+
+.scroll-text {
+  height: 30px; 
+  line-height: 30px; 
+  text-align: center; 
+}
+</style></head>
 <body>
 <table summary="Table for page layout." id="tlayout">
-<tr valign="top">
+<tbody><tr valign="top">
+<td id="layout-menu">
 
-
+<style>
+    .menu-item {
+        margin: 10px; 
+    }
+</style>
+	
 <div class="menu-category">BHE-AIM-TMMI</div>
-  
+
+	
 <div class="menu-item"><a class="current" href="index.html">Home</a></div>
 <div class="menu-item"><a href="https://bhe-lab.org/">BHE</a></div>
 <div class="menu-item"><a href="People.html">Team</a></div>
@@ -120,85 +185,175 @@ figcaption{
 <div class="menu-item"><a href="Library.html">Resources</a></div>
 <div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
 <div class="menu-item"><a href="Blog.html">Blog (Chinese)</a></div>
+	
 </td>
-
 <td id="layout-content">
 <p><br></p>
 
 
-<h2><b>Our Group</b></h2>
+<h2><b>Our group</b></h2>
 
-<!-- 滚动标语 -->
-<div style="width:500px;margin:0 auto;overflow:hidden;height:30px;">
-  <div id="scrollText">
-    <div>Action is the only path to results.</div>
-    <div>Deadlines are the primary driver of productivity.</div>
+<div class="scroll-container">
+  <div class="scroll-content">
+    <div class="scroll-text">行动是产生结果的唯一途径</div>
+    <div class="scroll-text">Deadline永远是第一生产力</div>
   </div>
 </div>
 
 <script>
-let idx = 0;
-setInterval(()=>{
-  const box = document.getElementById('scrollText');
-  idx = (idx+1)%2;
-  box.style.transform = `translateY(${-idx*30}px)`;
-  box.style.transition = '0.5s';
-},3000);
+  const scrollContent = document.querySelector('.scroll-content');
+  const texts = document.querySelectorAll('.scroll-text');
+  let currentIndex = 0;
+  const totalItems = texts.length;
+  const itemHeight = 30; 
+
+  function scrollToNext() {
+    currentIndex = (currentIndex + 1) % totalItems;
+    const translateY = -currentIndex * itemHeight;
+    scrollContent.style.transform = `translateY(${translateY}px)`;
+    if (currentIndex === totalItems - 1) {
+      setTimeout(() => {
+        scrollContent.style.transition = 'none';
+        scrollContent.style.transform = 'translateY(0px)';
+        currentIndex = -1; 
+        setTimeout(() => {
+          scrollContent.style.transition = 'transform 0.5s ease-in-out';
+        }, 50);
+      }, 3000); 
+    }
+  }
+  setInterval(scrollToNext, 3000);
 </script>
 
-<!-- ====== 替换原 2025 模块：照片墙 ====== -->
-<h2><b>Photo Wall · 2025</b></h2>
+<h2><b>Group Photos</b></h2>
 
-<section class="photo-wall">
-  <figure class="photo-card">
-    <img src="./photos/2025_1.jpg" alt="Group Meeting">
-    <figcaption>Group Meeting (2025)</figcaption>
+<!-- 照片墙部分 -->
+<section class="photo-wall" id="photoWall">
+  <!-- 每个figure是一个卡片。通过--border设置边框颜色。图片下面是标题。 -->
+  <!-- 你可以替换下面的图片路径和标题为你自己的内容 -->
+  <figure class="photo-card" style="--border:#4a6fa5">
+    <img src="./WanyongQiu_home/photos/group1.jpg" alt="Group Gathering" loading="lazy">
+    <figcaption><span class="caption-badge">Group Gathering (2024)</span></figcaption>
   </figure>
 
-  <figure class="photo-card">
-    <img src="./photos/2025_2.jpg" alt="Paper Discussion">
-    <figcaption>Paper Discussion</figcaption>
+  <figure class="photo-card" style="--border:#4a6fa5">
+    <img src="./WanyongQiu_home/photos/group2.jpg" alt="Team Meeting" loading="lazy">
+    <figcaption><span class="caption-badge">Team Meeting (2024)</span></figcaption>
   </figure>
 
-  <figure class="photo-card">
-    <img src="./photos/2025_3.jpg" alt="Conference">
-    <figcaption>Conference Participation</figcaption>
+  <figure class="photo-card" style="--border:#4a6fa5">
+    <img src="./WanyongQiu_home/photos/group3.jpg" alt="Academic Seminar" loading="lazy">
+    <figcaption><span class="caption-badge">Academic Seminar (2024)</span></figcaption>
   </figure>
+
+  <figure class="photo-card" style="--border:#4a6fa5">
+    <img src="./WanyongQiu_home/photos/group4.jpg" alt="Lab Activities" loading="lazy">
+    <figcaption><span class="caption-badge">Lab Activities (2024)</span></figcaption>
+  </figure>
+
+  <figure class="photo-card" style="--border:#4a6fa5">
+    <img src="./WanyongQiu_home/photos/group5.jpg" alt="Conference Trip" loading="lazy">
+    <figcaption><span class="caption-badge">Conference Trip (2024)</span></figcaption>
+  </figure>
+
+  <figure class="photo-card" style="--border:#4a6fa5">
+    <img src="./WanyongQiu_home/photos/group6.jpg" alt="Graduation Celebration" loading="lazy">
+    <figcaption><span class="caption-badge">Graduation Celebration (2024)</span></figcaption>
+  </figure>
+
+  <figure class="photo-card" style="--border:#4a6fa5">
+    <img src="./WanyongQiu_home/photos/group7.jpg" alt="Research Discussion" loading="lazy">
+    <figcaption><span class="caption-badge">Research Discussion (2024)</span></figcaption>
+  </figure>
+
+  <figure class="photo-card" style="--border:#4a6fa5">
+    <img src="./WanyongQiu_home/photos/group8.jpg" alt="Team Building" loading="lazy">
+    <figcaption><span class="caption-badge">Team Building (2024)</span></figcaption>
+  </figure>
+
+  <!-- 根据需要添加更多figure，替换src为你自己的图片路径，编辑标题 -->
 </section>
 
-<!-- Footer -->
-<div id="footer">
-  <div id="footer-text">
-    Copyright (c) 2021 Wanyong Qiu. All rights reserved.
+<!-- 简单灯箱标记（默认隐藏） -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+  <div class="close" id="lbClose" title="Close">✕</div>
+  <div class="box">
+    <img id="lbImg" src="" alt="">
+    <div class="caption" id="lbCaption"></div>
   </div>
+</div>
+
+<script>
+  /* 简单灯箱：点击图片打开覆盖层并显示标题。
+     无外部依赖。 */
+  (function(){
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbClose = document.getElementById('lbClose');
+
+    // 为照片墙中的每个图片附加点击处理程序
+    document.querySelectorAll('.photo-card img').forEach(img=>{
+      img.addEventListener('click', (e)=>{
+        // 使用点击的图片源作为灯箱
+        lbImg.src = img.src.replace(/(\?.*)$/,'') || img.src;
+        lbImg.alt = img.alt || '';
+        // 提取最近的figcaption文本作为标题
+        const fig = img.closest('figure');
+        const cap = fig ? (fig.querySelector('figcaption')?.innerText || '') : '';
+        lbCaption.textContent = cap;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden','false');
+      });
+    });
+
+    // 通过关闭按钮、覆盖层点击或ESC键关闭灯箱
+    function closeLB(){
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+      lbImg.src = '';
+      lbCaption.textContent = '';
+    }
+    lbClose.addEventListener('click', closeLB);
+    lightbox.addEventListener('click', (e)=>{
+      if(e.target === lightbox) closeLB();
+    });
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape') closeLB();
+    });
+  })();
+</script>
+
+	
+<div id="footer">
+<div id="footer-text">Copyright (c) 2021 Wanyong Qiu. All rights reserved.</div>
 </div>
 
 </td>
 </tr>
-</table>
+</tbody></table>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <div class="close" onclick="closeLB()">✕</div>
-  <div>
-    <img id="lbImg">
-    <div class="caption" id="lbCap"></div>
-  </div>
-</div>
 
-<script>
-document.querySelectorAll('.photo-card img').forEach(img=>{
-  img.onclick=()=>{
-    document.getElementById('lbImg').src=img.src;
-    document.getElementById('lbCap').innerText=
-      img.parentElement.querySelector('figcaption').innerText;
-    document.getElementById('lightbox').classList.add('open');
-  }
-});
-function closeLB(){
-  document.getElementById('lightbox').classList.remove('open');
+<style type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	 display: none !important;}</style> </body></html>
+
+<script language="javascript" type="text/javascript">
+function showHide(obj) {
+	var el = document.getElementById(obj);
+	if ( el.style.display != 'block' ) {
+		el.style.display = 'block';
+	}
+	else {
+		el.style.display = 'none';
+	}
 }
 </script>
 
-</body>
-</html>
+<script  type="text/javascript">
+function show(obj){
+ if(document.getElementById(obj).style.display=="block"){
+  document.getElementById(obj).style.display="none";
+ }else{
+  document.getElementById(obj).style.display="block";
+ }
+}
+</script>

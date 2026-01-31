@@ -67,6 +67,20 @@
       color: #222;
     }
 
+    .recruit-list .dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.dot.ug { background: #2c7be5; }
+.dot.ms { background: #00a870; }
+.dot.phd { background: #c0392b; }
+.dot.visit { background: #777; }
+
   </style>
 
 <div class="menu-category">BHE-AIM-TMMI</div>
@@ -102,12 +116,13 @@
 <!-- Section 1 -->
 <div class="section">
 <h3>Who We Are Looking For</h3>
-<ul>
-      <li>🎓 Undergraduate interns</li>
-      <li>🎓 Master’s student interns</li>
-      <li>🎓 Ph.D. student interns</li>
-      <li>🌍 Visiting students</li>
+<ul class="recruit-list">
+  <li><span class="dot ug"></span> 🎓 Undergraduate interns</li>
+  <li><span class="dot ms"></span> 🎓 Master’s student interns</li>
+  <li><span class="dot phd"></span> 🎓 Ph.D. student interns</li>
+  <li><span class="dot visit"></span> 🌍 Visiting students</li>
 </ul>
+
 
 
     <p>We value the following qualities more than background labels:</p>

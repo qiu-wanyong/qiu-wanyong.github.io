@@ -1,25 +1,246 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141256821-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-141256821-1');
-</script>
-
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/">
 <link rel="stylesheet" href="./WanyongQiu_home/jemdoc.css" type="text/css">
 <title>Wanyong Qiu's Homepage</title>
-<style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}</style></head>
+<style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}
+
+/* 按钮样式优化 */
+.badge {
+    padding: 4px 10px;
+    font-size: 0.85em;
+    font-weight: 500;
+    border-radius: 3px;
+    text-decoration: none;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    display: inline-block;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.badge-info {
+    background-color: #e8f0fe;
+    color: #4a6fa5;
+    border-color: #d0e0ff;
+}
+
+.badge-info:hover {
+    background-color: #d0e0ff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(74, 111, 165, 0.1);
+}
+
+.badge-success {
+    background-color: #e8f6ef;
+    color: #2e7d32;
+    border-color: #c8e6c9;
+}
+
+.badge-success:hover {
+    background-color: #d5e9dd;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(46, 125, 50, 0.1);
+}
+
+.badge-danger {
+    background-color: #ffebee;
+    color: #c62828;
+    border-color: #ffcdd2;
+}
+
+.badge-danger:hover {
+    background-color: #ffdbde;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(198, 40, 40, 0.1);
+}
+
+.badge-light {
+    background-color: #f5f5f5;
+    color: #666;
+    border-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.badge-light:hover {
+    background-color: #e8e8e8;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 控制按钮样式优化 */
+.toggle-btn {
+    background-color: #f0f5ff;
+    color: #4a6fa5;
+    border: 1px solid #d0e0ff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.toggle-btn:hover {
+    background-color: #e0ebff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(74, 111, 165, 0.15);
+}
+
+.toggle-btn.expanded {
+    background-color: #ffeaea;
+    color: #c62828;
+    border-color: #ffcdd2;
+}
+
+.toggle-btn.expanded:hover {
+    background-color: #ffdbde;
+}
+
+/* 可折叠年份样式优化 */
+.year-section {
+    margin-bottom: 15px;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.year-header {
+    background: linear-gradient(to right, #f8faff, #f0f5ff);
+    color: #4a6fa5;
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+}
+
+.year-header:hover {
+    background: linear-gradient(to right, #f0f5ff, #e8f0fe);
+}
+
+.year-header.expanded {
+    background: linear-gradient(to right, #e8f0fe, #d0e0ff);
+    border-bottom-color: #d0e0ff;
+}
+
+.year-header i {
+    transition: transform 0.3s ease;
+    color: #7b9bd6;
+}
+
+.year-header.expanded i {
+    transform: rotate(180deg);
+}
+
+.year-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.year-content.expanded {
+    padding: 20px;
+    max-height: 5000px;
+    background-color: #fcfdff;
+}
+
+.sub-section {
+    margin-bottom: 20px;
+}
+
+.sub-section h4 {
+    color: #4a6fa5;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #e0e0e0;
+    font-size: 1.05em;
+    font-weight: 600;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.highlight {
+    background-color: #fff3cd;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.award-amount {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* 引用容器优化 */
+.quote-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fcfdff;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+}
+
+.text-block {
+    flex-grow: 1;
+}
+
+.text-block p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.text-block p:last-child {
+    color: #777;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.quote-gif {
+    width: 120px;
+    height: auto;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .year-header {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .toggle-btn {
+        width: 100%;
+    }
+    
+    .quote-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .text-block {
+        margin-bottom: 15px;
+    }
+}
+</style></head>
 <body>
 <table summary="Table for page layout." id="tlayout">
 <tbody><tr valign="top">
@@ -31,16 +252,16 @@
     }
 </style>
 	
-<div class="menu-category">Wanyong Qiu</div>
+<div class="menu-category">BHE-AIM-TMMI</div>
 
 	
 <div class="menu-item"><a class="current" href="index.html">Home</a></div>
 <div class="menu-item"><a href="https://bhe-lab.org/">BHE</a></div>
 <div class="menu-item"><a href="People.html">Team</a></div>
+<div class="menu-item"><a href="Join.html">Join us</a></div>
 <div class="menu-item"><a href="Publications.html">Publications</a></div>
-<div class="menu-item"><a href="Activity.html">Activities</a></div>
-<div class="menu-item"><a href="Projects.html">Research</a></div>
-<div class="menu-item"><a href="Prizes.html">Awards</a></div>
+<div class="menu-item"><a href="Projects.html">Projects</a></div>
+<div class="menu-item"><a href="Group.html">Our group</a></div>
 <div class="menu-item"><a href="Library.html">Resources</a></div>
 <div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
 <div class="menu-item"><a href="Blog.html">Blog (Chinese)</a></div>
@@ -69,7 +290,7 @@
 <ol>
 
 <li>
-	<font color="RoyalBlue">[IEEE JBHI]</font> <b>Wanyong Qiu</b>, Yifan Feng, Yuying Li, Yi Chang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "Fed-MStacking: Heterogeneous Federated Learning with Stacking Misaligned Labels for Abnormal Heart Sound Detection", <i>IEEE Journal of Biomedical and Health Informatics (IF-2023: 6.7)</i>, vol. 28, no. 9, July 2024 (<font color="red"><b>SCI 1区 Top</b></font>).
+	<font color="RoyalBlue">[IEEE JBHI]</font> Wanyong Qiu, Yifan Feng, Yuying Li, Yi Chang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "Fed-MStacking: Heterogeneous Federated Learning with Stacking Misaligned Labels for Abnormal Heart Sound Detection", <i>IEEE Journal of Biomedical and Health Informatics (IF-2023: 6.7)</i>, vol. 28, no. 9, July 2024 (<font color="red"><b>SCI 1区 Top</b></font>).
 	<a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/10599790">PDF</a>	 
 	<a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10599790">Technical Report</a>
 <a class="badge badge-light" onclick="show('JBHI')">show/hide abstract</a>
@@ -79,27 +300,27 @@ Ubiquitous sensing has been widely applied in smart healthcare, providing an opp
 	</p></li>
 	
 <li>
-	<font color="RoyalBlue">[IEEE TBME]</font> <b>Wanyong Qiu</b>, Chen Quan, Lixian Zhu, Yongzi Yu, Zhihua Wang, Yu Ma, Mengkai Sun, Yi Chang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "Heart Sound Abnormality Detection From Multi-Institutional Collaboration: Introducing a Federated Learning Framework", <i>IEEE Transactions on Bio-medical Engineering (IF-2023: 4.7)</i>, vol. 71, no. 10, May 2024  (<font color="red"><b>SCI 2区</b></font>).
+	<font color="RoyalBlue">[IEEE TBME]</font> Wanyong Qiu, Chen Quan, Lixian Zhu, Yongzi Yu, Zhihua Wang, Yu Ma, Mengkai Sun, Yi Chang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "Heart Sound Abnormality Detection From Multi-Institutional Collaboration: Introducing a Federated Learning Framework", <i>IEEE Transactions on Bio-medical Engineering (IF-2023: 4.7)</i>, vol. 71, no. 10, May 2024  (<font color="red"><b>SCI 2区</b></font>).
 	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10518113">PDF</a>
 	<a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10518113">Technical Report</a>
  <a class="badge badge-light" onclick="show('TBME')">show/hide abstract</a>
 <div id="TBME" style="display:none; color:#4FA1EA; font-style:italic"> 
-Objective: Early diagnosis of cardiovascular diseases is a crucial task in medical practice. With the application of computer audition in the healthcare field, artificial intelligence (AI) has been applied to clinical non-invasive intelligent auscultation of heart sounds to provide rapid and effective pre-screening. However, AI models generally require large amounts of data which may cause privacy issues. Unfortunately, it is difficult to collect large amounts of healthcare data from a single centre. Methods: In this study, we propose federated learning (FL) optimisation strategies for the practical application in multi-centre institutional heart sound databases. The horizontal FL is mainly employed to tackle the privacy problem by aligning the feature spaces of FL participating institutions without information leakage. In addition, techniques based on deep learning have poor interpretability due to their “black-box” property, which limits the feasibility of AI in real medical data. To this end, vertical FL is utilised to address the issues of model interpretability and data scarcity. Conclusion: Experimental results demonstrate that, the proposed FL framework can achieve good performance for heart sound abnormality detection by taking the personal privacy protection into account. Moreover, using the federated feature space is beneficial to balance the interpretability of the vertical FL and the privacy of the data. Significance: This work realises the potential of FL from research to clinical practice, and is expected to have extensive application in the federated smart medical system.
+Objective: Early diagnosis of cardiovascular diseases is a crucial task in medical practice. With the application of computer audition in the healthcare field, artificial intelligence (AI) has been applied to clinical non-invasive intelligent auscultation of heart sounds to provide rapid and effective pre-screening. However, AI models generally require large amounts of data which may cause privacy issues. Unfortunately, it is difficult to collect large amounts of healthcare data from a single centre. Methods: In this study, we propose federated learning (FL) optimisation strategies for the practical application in multi-centre institutional heart sound databases. The horizontal FL is mainly employed to tackle the privacy problem by aligning the feature spaces of FL participating institutions without information leakage. In addition, techniques based on deep learning have poor interpretability due to their "black-box" property, which limits the feasibility of AI in real medical data. To this end, vertical FL is utilised to address the issues of model interpretability and data scarcity. Conclusion: Experimental results demonstrate that, the proposed FL framework can achieve good performance for heart sound abnormality detection by taking the personal privacy protection into account. Moreover, using the federated feature space is beneficial to balance the interpretability of the vertical FL and the privacy of the data. Significance: This work realises the potential of FL from research to clinical practice, and is expected to have extensive application in the federated smart medical system.
 </div>	
 	</p></li>
 	
 <li>
-	<font color="RoyalBlue">[AAAS CBS]</font> <b>Wanyong Qiu</b>, Chen Quan, Yongzi Yu, Eda Kara, Kun Qian*, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "Federated Abnormal Heart Sound Detection with Weak to No Labels", <i>Cyborg and Bionic Systems (IF-2023: 10.5)</i>, vol. 5, Sep 2024 (<font color="red"><b>JCR 1区</b></font>).
+	<font color="RoyalBlue">[AAAS CBS]</font> Wanyong Qiu, Chen Quan, Yongzi Yu, Eda Kara, Kun Qian*, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "Federated Abnormal Heart Sound Detection with Weak to No Labels", <i>Cyborg and Bionic Systems (IF-2023: 10.5)</i>, vol. 5, Sep 2024 (<font color="red"><b>JCR 1区</b></font>).
 	<a class="badge badge-info" href="https://spj.science.org/doi/10.34133/cbsystems.0152">PDF</a>
 	<a class="badge badge-success" href="https://spj.science.org/doi/epdf/10.34133/cbsystems.0152">Technical Report</a>	
 <a class="badge badge-light" onclick="show('CBS')">show/hide abstract</a>
 <div id="CBS" style="display:none; color:#4FA1EA; font-style:italic"> 
-Cardiovascular diseases are a prominent cause of mortality, emphasizing the need for early prevention and diagnosis. Utilizing artificial intelligence (AI) models, heart sound analysis emerges as a noninvasive and universally applicable approach for assessing cardiovascular health conditions. However, real-world medical data are dispersed across medical institutions, forming “data islands” due to data sharing limitations for security reasons. To this end, federated learning (FL) has been extensively employed in the medical field, which can effectively model across multiple institutions. Additionally, conventional supervised classification methods require fully labeled data classes, e.g., binary classification requires labeling of positive and negative samples. Nevertheless, the process of labeling healthcare data is time-consuming and labor-intensive, leading to the possibility of mislabeling negative samples. In this study, we validate an FL framework with a naive positive-unlabeled (PU) learning strategy. Semisupervised FL model can directly learn from a limited set of positive samples and an extensive pool of unlabeled samples. Our emphasis is on vertical-FL to enhance collaboration across institutions with different medical record feature spaces. Additionally, our contribution extends to feature importance analysis, where we explore 6 methods and provide practical recommendations for detecting abnormal heart sounds. The study demonstrated an impressive accuracy of 84%, comparable to outcomes in supervised learning, thereby advancing the application of FL in abnormal heart sound detection. 	
+Cardiovascular diseases are a prominent cause of mortality, emphasizing the need for early prevention and diagnosis. Utilizing artificial intelligence (AI) models, heart sound analysis emerges as a noninvasive and universally applicable approach for assessing cardiovascular health conditions. However, real-world medical data are dispersed across medical institutions, forming "data islands" due to data sharing limitations for security reasons. To this end, federated learning (FL) has been extensively employed in the medical field, which can effectively model across multiple institutions. Additionally, conventional supervised classification methods require fully labeled data classes, e.g., binary classification requires labeling of positive and negative samples. Nevertheless, the process of labeling healthcare data is time-consuming and labor-intensive, leading to the possibility of mislabeling negative samples. In this study, we validate an FL framework with a naive positive-unlabeled (PU) learning strategy. Semisupervised FL model can directly learn from a limited set of positive samples and an extensive pool of unlabeled samples. Our emphasis is on vertical-FL to enhance collaboration across institutions with different medical record feature spaces. Additionally, our contribution extends to feature importance analysis, where we explore 6 methods and provide practical recommendations for detecting abnormal heart sounds. The study demonstrated an impressive accuracy of 84%, comparable to outcomes in supervised learning, thereby advancing the application of FL in abnormal heart sound detection. 	
 </div>
         </p></li>	
 	
 <li>
-	<font color="RoyalBlue">[IEEE TIM]</font> Lixian Zhu, <b>Wanyong Qiu</b>, Yu Ma, Fuze Tian, Mengkai Sun, Zhihua Wang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "LEPCNet: A lightweight End-to-End PCG Classification Neural Network Model for Wearable Devices", <i>IEEE Transactions on Instrumentation & Measurement (IF-2023: 5.6)</i>, vol. 73, no. 2511111, Sep 2023  (<font color="red"><b>SCI 2区 Top</b></font>).
+	<font color="RoyalBlue">[IEEE TIM]</font> Lixian Zhu, Wanyong Qiu, Yu Ma, Fuze Tian, Mengkai Sun, Zhihua Wang, Kun Qian*, Bin Hu*, Yoshiharu Yamamoto, and Björn W. Schuller, "LEPCNet: A lightweight End-to-End PCG Classification Neural Network Model for Wearable Devices", <i>IEEE Transactions on Instrumentation & Measurement (IF-2023: 5.6)</i>, vol. 73, no. 2511111, Sep 2023  (<font color="red"><b>SCI 2区 Top</b></font>).
 	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10268395">PDF</a>
 	<a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10268395">Technical Report</a>
  <a class="badge badge-light" onclick="show('TIM')">show/hide abstract</a>
@@ -108,7 +329,7 @@ Wearable intelligent phonocardiogram (PCG) sensors provide a non-invasive method
 </div>
 	</p></li>
 <li>
-	<font color="RoyalBlue">[IEEE JBHI]</font> Xihang Qiu, <b>Wanyong Qiu</b>, Ye Zhang, Kun Qian*, Chun Li, Bin Hu*, Björn W. Schuller and Yoshiharu Yamamoto, "FedKDC: Consensus-Driven Knowledge Distillation for Personalized Federated Learning in EEG-Based Emotion Recognition", <i>IEEE Transactions on Instrumentation & Measurement (IF-2023: 6.7)</i>, vol.29, no.8, pp.5527-5540, Aug.2025  (<font color="red"><b>SCI 1区 Top</b></font>).
+	<font color="RoyalBlue">[IEEE JBHI]</font> Xihang Qiu, Wanyong Qiu, Ye Zhang, Kun Qian*, Chun Li, Bin Hu*, Björn W. Schuller and Yoshiharu Yamamoto, "FedKDC: Consensus-Driven Knowledge Distillation for Personalized Federated Learning in EEG-Based Emotion Recognition", <i>IEEE Transactions on Instrumentation & Measurement (IF-2023: 6.7)</i>, vol.29, no.8, pp.5527-5540, Aug.2025  (<font color="red"><b>SCI 1区 Top</b></font>).
 	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10967240">PDF</a>
 	<a class="badge badge-success" href="https://ieeexplore.ieee.org/document/10967240">Technical Report</a>
  <a class="badge badge-light" onclick="show('JBHI2025')">show/hide abstract</a>
@@ -117,7 +338,7 @@ Federated learning (FL) has gained prominence in electroencephalogram (EEG)-base
 </div>	
         </p></li>
 <li>
-	<font color="RoyalBlue">[IEEE TCSS]</font> Guihua Tian*, Kun Qian*, Xinyi Li, Mengkai Sun, Hao Jiang, <b>Wanyong Qiu</b>, Xiaoming Xie, Zhonghao Zhao, Liangqing Huang, Siyan Luo, Tianxing Guo, Ran Cai, Zhihua Wang, and Björn W. Schuller, "Can a Holistic View Facilitate the Development of Intelligent Traditional Chinese Medicine? A Survey", <i>IEEE Transactions on Computational Social Systems (IF-2023: 4.5)</i>, vol. 10, no. 2, Sep 2023  (<font color="red"><b>SCI 2区</b></font>).
+	<font color="RoyalBlue">[IEEE TCSS]</font> Guihua Tian*, Kun Qian*, Xinyi Li, Mengkai Sun, Hao Jiang, Wanyong Qiu, Xiaoming Xie, Zhonghao Zhao, Liangqing Huang, Siyan Luo, Tianxing Guo, Ran Cai, Zhihua Wang, and Björn W. Schuller, "Can a Holistic View Facilitate the Development of Intelligent Traditional Chinese Medicine? A Survey", <i>IEEE Transactions on Computational Social Systems (IF-2023: 4.5)</i>, vol. 10, no. 2, Sep 2023  (<font color="red"><b>SCI 2区</b></font>).
 	<a class="badge badge-info" href="https://ieeexplore.ieee.org/document/10065412">PDF</a>
 	<a class="badge badge-success" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10065412">Technical Report</a>
  <a class="badge badge-light" onclick="show('TCSS')">show/hide abstract</a>
@@ -127,7 +348,7 @@ Intelligent traditional Chinese medicine (ITCM) is an emerging interdisciplinary
 	</p></li>
 	
 <li>
-	<font color="RoyalBlue">[Journal of Cyber Security]</font> 贾俊杰, <b>邱万勇</b>*, 马慧芳, "差分隐私保护约束下集成分类算法的研究", <i>信息安全学报</i>, vol. 6, no. 4, Sep 2021  (<font color="red"><b>CCF A</b></font>).
+	<font color="RoyalBlue">[Journal of Cyber Security]</font> 贾俊杰, 邱万勇*, 马慧芳, "差分隐私保护约束下集成分类算法的研究", <i>信息安全学报</i>, vol. 6, no. 4, Sep 2021  (<font color="red"><b>CCF A</b></font>).
 	<a class="badge badge-info" href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2021&filename=XAXB202104007&uniplatform=NZKPT&v=AAQtkV0Zi8V3c0w_3ddKMLSn46bRWjuP-5zm-fAVfqxARXXaCqkbxxBjP6klxX8G">PDF</a>
 	<a class="badge badge-success" href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2021&filename=XAXB202104007&uniplatform=NZKPT&v=AAQtkV0Zi8V3c0w_3ddKMLSn46bRWjuP-5zm-fAVfqxARXXaCqkbxxBjP6klxX8G">Technical Report</a>
  <a class="badge badge-light" onclick="show('JCS')">show/hide abstract</a>
@@ -143,17 +364,17 @@ Intelligent traditional Chinese medicine (ITCM) is an emerging interdisciplinary
 
 <ol>
 <li><p>
-	<font color="RoyalBlue">[NCMMSC]</font> Xiaoyu Shen†, <b>Wanyong Qiu†</b>, Haojie Zhang, Yongzi Yu, Kun Qian*, Bin Hu*, "Self-Supervised Federated Learning for Heart Sound Recognition," in <i>Proceedings of the 19th National Conference on Man-Machine Speech Communication (NCMMSC) </i>, Urumq, China, August 2024 (<font color="red"><b>EI</b></font>).
+	<font color="RoyalBlue">[NCMMSC]</font> Xiaoyu Shen†, Wanyong Qiu†, Haojie Zhang, Yongzi Yu, Kun Qian*, Bin Hu*, "Self-Supervised Federated Learning for Heart Sound Recognition," in <i>Proceedings of the 19th National Conference on Man-Machine Speech Communication (NCMMSC) </i>, Urumq, China, August 2024 (<font color="red"><b>EI</b></font>).
 	<a class="badge badge-info" href="https://www.researchgate.net/publication/385420158_mianxiangxinyinshibiedezijiandulianbangxuexi_Self-Supervised_Federated_Learning_for_Heart_Sound_Recognition">PDF</a>
 	<a class="badge badge-danger" href="https://www.researchgate.net/publication/385420158_mianxiangxinyinshibiedezijiandulianbangxuexi_Self-Supervised_Federated_Learning_for_Heart_Sound_Recognition">Slides (Oral Report)</a>
 	<a class="badge badge-light" onclick="show('NCMMSC')">show/hide abstract</a>
 <div id="NCMMSC" style="display:none; color:#4FA1EA; font-style:italic"> 
-据2019全球疾病负担研究（Global Burden of Disease Study 2019, GBD）专题公布，2019年全球心血管疾病死亡人数约为1860万人，其中中国死亡人数约占比 1/4。因此，心血管疾病的早期诊断与日常监测至关重要。心音信号分析是对心血管疾病患者进行早期诊断与筛查的有效手段，但目前仍存在以下问题：数据安全与隐私限制了多源数据的中心化因而形成“数据孤岛”，同时精确标注的医疗健康数据极度稀缺。针对以上问题，本文提出应用自监督联邦学习模型实现心音异常检测，基于多中心化的心音数据集进行模型训练，在实现本地数据安全的同时，解决数据标签稀缺问题。实验验证了本文模型的有效性，并分析了联邦参与方数量对模型性能的影响。实验结果表明，在 PhysioNet心音数据集上，当参与方数量为2时模型的性能最优（准确率为65.04% ，非加权平均召回率为57.35%）。
+据2019全球疾病负担研究（Global Burden of Disease Study 2019, GBD）专题公布，2019年全球心血管疾病死亡人数约为1860万人，其中中国死亡人数约占比 1/4。因此，心血管疾病的早期诊断与日常监测至关重要。心音信号分析是对心血管疾病患者进行早期诊断与筛查的有效手段，但目前仍存在以下问题：数据安全与隐私限制了多源数据的中心化因而形成"数据孤岛"，同时精确标注的医疗健康数据极度稀缺。针对以上问题，本文提出应用自监督联邦学习模型实现心音异常检测，基于多中心化的心音数据集进行模型训练，在实现本地数据安全的同时，解决数据标签稀缺问题。实验验证了本文模型的有效性，并分析了联邦参与方数量对模型性能的影响。实验结果表明，在 PhysioNet心音数据集上，当参与方数量为2时模型的性能最优（准确率为65.04% ，非加权平均召回率为57.35%）。
 </div>
         </p></li>
 
 <li><p>
-	<font color="RoyalBlue">[ICASSP]</font> Yongzi Yu†, <b>Wanyong Qiu†</b>, Chen Quan, Kun Qian*, Zhihua Wang, Yu Ma, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "Federated Intelligent Terminals Facilitate Stuttering Monitoring," in <i>Proceedings of IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) </i>, Rhodes Island, Greek, June 2023 (<font color="red"><b>CCF B</b></font>).
+	<font color="RoyalBlue">[ICASSP]</font> Yongzi Yu†, Wanyong Qiu†, Chen Quan, Kun Qian*, Zhihua Wang, Yu Ma, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "Federated Intelligent Terminals Facilitate Stuttering Monitoring," in <i>Proceedings of IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) </i>, Rhodes Island, Greek, June 2023 (<font color="red"><b>CCF B</b></font>).
 	<a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/10097263">PDF</a>
 	<a class="badge badge-danger" href="./WanyongQiu_home/ICASSP_2023_Oral.pdf">Slides (Oral Report)</a>
 	<a class="badge badge-light" onclick="show('ICASSP')">show/hide abstract</a>
@@ -163,7 +384,7 @@ Stuttering is a complicated language disorder. The most common form of stutterin
         </p></li>	
 	
 <li><p>
-	<font color="RoyalBlue">[EMBC]</font> <b>Wanyong Qiu</b>, Kun Qian*, Zhihua Wang, Yi Chang, Zhihao Bao, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "A Federated Learning Paradigm for Heart Sound Classification," in <i>Proceedings of IEEE Engineering in Medicine & Biology Society (EMBC) </i>, Glasgow, Scotland, UK, July 2022 (<font color="red"><b>EI</b></font>).
+	<font color="RoyalBlue">[EMBC]</font> Wanyong Qiu, Kun Qian*, Zhihua Wang, Yi Chang, Zhihao Bao, Bin Hu*, Björn W. Schuller, and Yoshiharu Yamamoto, "A Federated Learning Paradigm for Heart Sound Classification," in <i>Proceedings of IEEE Engineering in Medicine & Biology Society (EMBC) </i>, Glasgow, Scotland, UK, July 2022 (<font color="red"><b>EI</b></font>).
 	<a class="badge badge-info" href="https://ieeexplore.ieee.org/abstract/document/9871319">PDF</a>
 	<a class="badge badge-danger" href="./WanyongQiu_home/EMBC_2022_Poster.pdf">Slide (Poster)</a>
 	<a class="badge badge-light" onclick="show('EMBC')">show/hide abstract</a>
@@ -209,6 +430,302 @@ Cardiovascular diseases (CVDs) have been ranked as the leading cause for deaths.
 	
 </ol>
 
+
+<h3><b>Awards</b></h3>
+
+<div class="controls">
+    <button id="awardsToggle" class="toggle-btn" onclick="toggleAllAwards()">Expand All Awards</button>
+</div>
+
+<!-- 2025 Awards -->
+<div class="year-section">
+    <div class="year-header" onclick="toggleYear('awards-2025')">
+        <span>2025</span>
+        <i>▼</i>
+    </div>
+    <div class="year-content" id="awards-2025">
+        <ol>
+            <li>Awarded the <a href="https://www.csc.edu.cn/chuguo">CSC Postdoctoral Fellowship (2025)</a>, China Scholarship Council; appointed as Research Fellow at Waseda University, Tokyo, Japan, 2025.</li>
+			<li>Awarded the <a href="https://cs.bit.edu.cn/tzgg/4f6aff74daa142048ee70433d296517c.htm">Outstanding PhD Graduate Honor</a>, Beijing Institute of Technology, June 2025.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- 2024 Awards -->
+<div class="year-section">
+    <div class="year-header" onclick="toggleYear('awards-2024')">
+        <span>2024</span>
+        <i>▼</i>
+    </div>
+    <div class="year-content" id="awards-2024">
+        <ol>
+            <li>National Third Prize, <a href="https://cpipc.acge.org.cn//cw/detail/2c9088a5696cbf370169a3f8101510bd/2c908015928e1f2801928f39bf290546">6th "Huawei Cup" China Graduate Artificial Intelligence Innovation Competition</a>,
+                Project: Agent-based Audio Perception Edge Device and System for Multi-disease Assisted Diagnosis. 
+                Team members: Haojie Zhang, Mengkai Sun, Zhonghao Zhao, Wanyong Qiu. 
+                Advisors: Prof. Kun Qian, Prof. Bin Hu. 
+                Sept 2024.</li>
+            <li>Outstanding Student Honor (University Level), Beijing Institute of Technology, Academic Year 2023–2024. 
+                October 2024.</li>
+            <li>National Third Prize, <a href="https://www.bmedesign.cn/#/home">9th National Undergraduate Biomedical Engineering Innovation Design Competition</a>, 
+                Project: Agent-based Audio Perception Edge Device and System for Federated Medical IoT. 
+                Team members: Zhonghao Zhao, Wanyong Qiu, Mengkai Sun, Haojie Zhang, Jiuhao Zhou. 
+                Advisors: Prof. Kun Qian, Prof. Bin Hu. 
+                July 2024.</li>
+            <li>Outstanding Student Dormitory Award, School of Computer Science, Beijing Institute of Technology 
+                (Academic Year 2023–2024). October 2024.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- 2023 Awards -->
+<div class="year-section">
+    <div class="year-header" onclick="toggleYear('awards-2023')">
+        <span>2023</span>
+        <i>▼</i>
+    </div>
+    <div class="year-content" id="awards-2023">
+        <ol>
+            <li>National First Prize, <a href="https://www.infoq.cn/zones/fintechathon/campus2022/result/">2022 FinTechathon Shenzhen International FinTech Competition (Artificial Intelligence Track)</a>, 
+                Project: Federated Learning System for Agent-based Audio Perception (Based on FATE Platform). 
+                Team leader: Wanyong Qiu; Team member: Chen Quan. 
+                Advisors: Prof. Bin Hu, Prof. Kun Qian. 
+                Feb 2023. (Prize: RMB 100,000)</li>
+            <li>University-level Award, 9th China International "Internet+" Innovation and Entrepreneurship Competition. 
+                Project: Health Listener: A New Paradigm of Agent-based Audio Perception under Federated Medical Systems. 
+                Team leader: Wanyong Qiu. 
+                Aug 2023.</li>
+            <li>Principal Supervisor, National Undergraduate Innovation Training Program. 
+                Project: Lightweight Federated Learning Models for Agent-based Audio Perception Terminals. 
+                Funding: RMB 10,000. 
+                Project completed in May 2023.</li>
+            <li>Second Prize, 19th "Century Cup" Extracurricular Academic and Technological Competition, Beijing Institute of Technology. 
+                Project: Agent-based Audio Perception System. 
+                Undergraduate team supervised.</li>
+            <li>Silver Award, 13th "Challenge Cup" China Undergraduate Entrepreneurship Competition 
+                (University Preliminary Round). 
+                Project: Multi-center Intelligent Heart Sound Perception Modeling Based on Federated Learning. 
+                Undergraduate team supervised.</li>
+        </ol>
+    </div>
+</div>
+
+
+<h3><b>Academic</b></h3>
+
+<div class="controls">
+    <button id="academicToggle" class="toggle-btn" onclick="toggleAllAcademic()">Expand All Academic</button>
+</div>
+
+<!-- 2025 Academic -->
+<div class="year-section">
+    <div class="year-header" onclick="toggleYear('academic-2025')">
+        <span>2025</span>
+        <i>▼</i>
+    </div>
+    <div class="year-content" id="academic-2025">
+        <div class="sub-section">
+            <h4>Academic Activities</h4>
+            <ol>
+                <li>
+                    <p>Attended the Global Information and Telecommunication Workshop (GITW 2025), Waseda University, Nishi-Waseda Campus, Tokyo, Japan, December 5–6, 2025.</p>
+                </li>
+                <li>
+                    <p>Invited speaker at the 2025 Global Audio Summit (GAS) Public Lecture Series on Audio Industry Innovation. 
+                        Talk: 
+                        <a href="https://mp.weixin.qq.com/s?__biz=MjM5NDI5MTYyOA==&mid=2652505487&idx=1&sn=e4ebaee23beaefd37f142c2569690d42&chksm=bc742b626f947620fbe441404d0de8b32a2df2f8e847ac92ccf0645821c18c4f587f7558f14e&scene=27/" target="_blank">
+                            A Study of Abnormal Heart Sound Detection Based on Federated Learning
+                        </a>, 
+                        Online live stream, February 2025.</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- 2024 Academic -->
+<div class="year-section">
+    <div class="year-header" onclick="toggleYear('academic-2024')">
+        <span>2024</span>
+        <i>▼</i>
+    </div>
+    <div class="year-content" id="academic-2024">
+        <div class="sub-section">
+            <h4>Academic Activities</h4>
+            <ol>
+                <li>
+                    <p>Attended the 764th Xiangshan Science Conference: 
+                        <a href="https://xssc.ac.cn/waiwangNew/index.html#/xsscNew/detailsNew/c9a874d4d03a238e1106b3a789220f1b" target="_blank">
+                            Novel Theories and Methodologies for Exploring Human Mind Mechanisms: Psychological Field and Physical Field
+                        </a>, 
+                        Beijing, China, November 27–28, 2024.</p>
+                </li>
+                <li>
+                    <p>Poster presentation at the 
+                        <a href="https://www.ncmmsc.org.cn/" target="_blank">
+                            19th National Conference on Man-Machine Speech Communication (NCMMSC)
+                        </a>: 
+                        "Self-supervised Federated Learning for Heart Sound Recognition", 
+                        Urumqi, China, August 15–18, 2024.</p>
+                </li>
+            </ol>
+        </div>
+        <div class="sub-section">
+            <h4>BHE-Lab Activities</h4>
+            <ol>
+                <li>
+                    <p>BHE-Lab Academic Seminar: "The Psychology of Obesity and Weight Management", 
+                        Prof. Stephen Stotland, Université de Montréal, Beijing, November 14, 2024.</p>
+                </li>
+                <li>
+                    <p>BHE-Lab Academic Seminar: "Deciphering the Influence of Fetal Programming on Child Mental Health: Insights from Neuroimaging and Genetics", 
+                        Prof. <a href="https://www.polyu.edu.hk/mhrc/people/mhrc-people/prof-qiu-anqi/?sc_lang=tc/" target="_blank">Anqi Qiu</a>, 
+                        The Hong Kong Polytechnic University / National University of Singapore, April 29, 2024.</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- 2023 Academic -->
+<div class="year-section">
+    <div class="year-header" onclick="toggleYear('academic-2023')">
+        <span>2023</span>
+        <i>▼</i>
+    </div>
+    <div class="year-content" id="academic-2023">
+        <div class="sub-section">
+            <h4>Academic Activities</h4>
+            <ol>
+                <li>
+                    <p>Attended the 
+                        <a href="https://ccf.org.cn/cncc2023/" target="_blank">
+                            China National Computer Conference (CNCC 2023)
+                        </a>, 
+                        Shenyang, China, October 25–28, 2023.</p>
+                </li>
+                <li>
+                    <p>Invited lecture: "Digital Mental Health: Do Not Fear Large Models?", 
+                        Prof. <a href="http://www.schuller.one/" target="_blank">Björn W. Schuller</a>, 
+                        Imperial College London, Beijing, September 30, 2023.</p>
+                </li>
+                <li>
+                    <p>Attended the 
+                        <a href="http://www.hlhl.org.cn/" target="_blank">
+                            Ho Leung Ho Lee Interdisciplinary Science and Technology Forum
+                        </a>, 
+                        Beijing Institute of Technology, April 15, 2023.</p>
+                </li>
+                <li>
+                    <p>Invited speaker at the 2022 Shenzhen International FinTech Competition Award Ceremony and Bay Area FinTech Forum. 
+                        Talk: "Federated Learning System for Agent-based Audio Perception (Based on FATE Platform)", 
+                        Shenzhen, China, February 4, 2023.</p>
+                </li>
+            </ol>
+        </div>
+        <div class="sub-section">
+            <h4>BHE-Lab Activities</h4>
+            <ol>
+                <li>
+                    <p>BHE-Lab Academic Seminar: "Applications of Large Language Models in Research, Education, and Clinical Medicine", 
+                        Prof. Bin Hu, University of Calgary, November 8, 2023.</p>
+                </li>
+                <li>
+                    <p>BHE-Lab Academic Seminar: "Asynchronous Neuromorphic Chip Design", 
+                        Prof. <a href="https://www.sic.tsinghua.edu.cn/" target="_blank">Hong Chen</a>, 
+                        Tsinghua University, April 25, 2023.</p>
+                </li>
+                <li>
+                    <p>BHE-Lab Academic Seminar: "Exploration and Practice of Intelligent Music Generation", 
+                        Prof. <a href="https://person.zju.edu.cn/zhangkejun" target="_blank">Kejun Zhang</a>, 
+                        Zhejiang University, April 14, 2023.</p>
+                </li>
+                <li>
+                    <p>BHE-Lab Academic Seminar: "Multimodal Data-driven Audio Signal Analysis and Applications", 
+                        Dr. Kele Xu, National University of Defense Technology, March 10, 2023.</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- 2022 Academic -->
+<div class="year-section">
+    <div class="year-header" onclick="toggleYear('academic-2022')">
+        <span>2022</span>
+        <i>▼</i>
+    </div>
+    <div class="year-content" id="academic-2022">
+        <div class="sub-section">
+            <h4>Academic Activities</h4>
+            <ol>
+                <li>
+                    <p>Attended the 735th Xiangshan Science Conference: 
+                        <a href="https://xssc.ac.cn/waiwangNew/index.html#/xsscNew/detailsNew/d07174eef79e187a371ddcbb0f436270/" target="_blank">
+                            Challenges and Opportunities in Emerging Mental Health Diagnostic Technologies
+                        </a>, 
+                        Beijing, China, November 9, 2022.</p>
+                </li>
+                <li>
+                    <p>Attended the Open Source AceCon+ Intelligent Cloud-Edge Summit: 
+                        AI × Cloud Native × Edge Computing, Online, August 19–20, 2022.</p>
+                </li>
+                <li>
+                    <p>Oral presentation at the 
+                        <a href="https://appitxo9vav9136.h5.xiaoeknow.com/" target="_blank">
+                            9th Conference on Sound and Music Technology (CSMT)
+                        </a>: 
+                        "Multi-center Medical Modeling Using Federated Learning", 
+                        Zhejiang University & Zhejiang Conservatory of Music, June 10, 2022.</p>
+                </li>
+            </ol>
+        </div>
+        <div class="sub-section">
+            <h4>BHE-Lab Activities</h4>
+            <ol>
+                <li>
+                    <p>BHE-Lab Academic Seminar: "Current Status and Development of 3D Audio Reproduction Technology", 
+                        Prof. <a href="https://teacher.nwpu.edu.cn/wenzhang/" target="_blank">Wen Zhang</a>, 
+                        Northwestern Polytechnical University, October 15, 2022.</p>
+                </li>
+                <li>
+                    <p>BHE-Lab Academic Seminar: "Fundamentals and Modeling of Acoustic Sound Fields", 
+                        Assoc. Prof. <a href="https://www2.scut.edu.cn/architecture/2012/1104/c2893a101853/page.htm/" target="_blank">Qinglin Meng</a>, 
+                        South China University of Technology, September 5, 2022.</p>
+                </li>
+                <li>
+                    <p>BHE-Lab Academic Seminar: "Intelligent Auscultation", 
+                        Prof. <a href="https://www.x-mol.com/university/faculty/174534/" target="_blank">Yonghong Yan</a>, 
+                        Institute of Acoustics, Chinese Academy of Sciences, May 9, 2022.</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- 2021 Academic -->
+<div class="year-section">
+    <div class="year-header" onclick="toggleYear('academic-2021')">
+        <span>2021</span>
+        <i>▼</i>
+    </div>
+    <div class="year-content" id="academic-2021">
+        <div class="sub-section">
+            <h4>Academic Activities</h4>
+            <ol>
+                <li>
+                    <p>Participated in the Federated Learning Workshop: 
+                        <a href="https://www.bilibili.com/video/BV1P44y167rg/" target="_blank">
+                            An Introduction to Federated Learning
+                        </a>, 
+                        Prof. Qiang Yang, June 2021.</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+	
 	
 <div id="footer">
 <div id="footer-text">Copyright (c) 2021 Wanyong Qiu. All rights reserved.</div>
@@ -236,12 +753,12 @@ Cardiovascular diseases (CVDs) have been ranked as the leading cause for deaths.
 
 /* 图片部分样式 */
 .gif-block {
-    margin-left: 20px; /* 给文字和图片之间留点间距 */
+    margin-left: 20px; 
 }
 
 .quote-gif {
-    width: 120px; /* 设置GIF的宽度 */
-    height: auto; /* 保持图片比例 */
+    width: 120px; 
+    height: auto; 
 }
 </style>
 
@@ -268,4 +785,128 @@ function show(obj){
   document.getElementById(obj).style.display="block";
  }
 }
+
+// 可折叠年份脚本
+function toggleYear(yearId) {
+    const content = document.getElementById(yearId);
+    const header = content.previousElementSibling;
+    
+    if (content.classList.contains('expanded')) {
+        content.classList.remove('expanded');
+        header.classList.remove('expanded');
+    } else {
+        content.classList.add('expanded');
+        header.classList.add('expanded');
+    }
+}
+
+// 检查Awards部分是否全部展开
+function checkAwardsExpanded() {
+    const awardIds = ['awards-2025', 'awards-2024', 'awards-2023'];
+    let allExpanded = true;
+    
+    for (let id of awardIds) {
+        const content = document.getElementById(id);
+        if (!content.classList.contains('expanded')) {
+            allExpanded = false;
+            break;
+        }
+    }
+    
+    return allExpanded;
+}
+
+// 检查Academic部分是否全部展开
+function checkAcademicExpanded() {
+    const academicIds = ['academic-2025', 'academic-2024', 'academic-2023', 'academic-2022', 'academic-2021'];
+    let allExpanded = true;
+    
+    for (let id of academicIds) {
+        const content = document.getElementById(id);
+        if (!content.classList.contains('expanded')) {
+            allExpanded = false;
+            break;
+        }
+    }
+    
+    return allExpanded;
+}
+
+// 切换所有Awards的展开/折叠状态
+function toggleAllAwards() {
+    const awardIds = ['awards-2025', 'awards-2024', 'awards-2023'];
+    const btn = document.getElementById('awardsToggle');
+    const allExpanded = checkAwardsExpanded();
+    
+    // 切换展开状态
+    for (let id of awardIds) {
+        const content = document.getElementById(id);
+        const header = content.previousElementSibling;
+        
+        if (allExpanded) {
+            // 当前全部展开，切换为全部折叠
+            content.classList.remove('expanded');
+            header.classList.remove('expanded');
+        } else {
+            // 当前有折叠的，切换为全部展开
+            content.classList.add('expanded');
+            header.classList.add('expanded');
+        }
+    }
+    
+    // 更新按钮文本和样式
+    if (allExpanded) {
+        btn.textContent = 'Expand All Awards';
+        btn.classList.remove('expanded');
+    } else {
+        btn.textContent = 'Collapse All Awards';
+        btn.classList.add('expanded');
+    }
+}
+
+// 切换所有Academic的展开/折叠状态
+function toggleAllAcademic() {
+    const academicIds = ['academic-2025', 'academic-2024', 'academic-2023', 'academic-2022', 'academic-2021'];
+    const btn = document.getElementById('academicToggle');
+    const allExpanded = checkAcademicExpanded();
+    
+    // 切换展开状态
+    for (let id of academicIds) {
+        const content = document.getElementById(id);
+        const header = content.previousElementSibling;
+        
+        if (allExpanded) {
+            // 当前全部展开，切换为全部折叠
+            content.classList.remove('expanded');
+            header.classList.remove('expanded');
+        } else {
+            // 当前有折叠的，切换为全部展开
+            content.classList.add('expanded');
+            header.classList.add('expanded');
+        }
+    }
+    
+    // 更新按钮文本和样式
+    if (allExpanded) {
+        btn.textContent = 'Expand All Academic';
+        btn.classList.remove('expanded');
+    } else {
+        btn.textContent = 'Collapse All Academic';
+        btn.classList.add('expanded');
+    }
+}
+
+// 默认展开最新年份
+document.addEventListener('DOMContentLoaded', function() {
+    // 默认展开最新年的内容
+    const defaultYears = ['awards-2025', 'academic-2025'];
+    defaultYears.forEach(yearId => {
+        const content = document.getElementById(yearId);
+        const header = content.previousElementSibling;
+        if (content && header) {
+            content.classList.add('expanded');
+            header.classList.add('expanded');
+        }
+    });
+});
 </script>

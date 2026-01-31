@@ -1,0 +1,204 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141256821-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-141256821-1');
+</script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Wanyong Qiu's Homepage</title>
+
+<link rel="stylesheet" href="./WanyongQiu_home/jemdoc.css" type="text/css">
+
+<style>
+/* ===== Photo Wall Styles ===== */
+:root{
+  --gap: 16px;
+  --radius: 8px;
+}
+
+.photo-wall{
+  column-count: 3;
+  column-gap: var(--gap);
+  margin-top: 16px;
+}
+
+.photo-card{
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 6px;
+  border: 2px solid #ec6b6b;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.photo-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+.photo-card img{
+  width: 100%;
+  border-radius: 6px;
+  cursor: zoom-in;
+}
+
+figcaption{
+  margin-top: 6px;
+  font-size: 13px;
+  color: #444;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .photo-wall{ column-count: 2; }
+}
+@media (max-width: 560px){
+  .photo-wall{ column-count: 1; }
+}
+
+/* ===== Lightbox ===== */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.lightbox.open{ display: flex; }
+
+.lightbox img{
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.lightbox .caption{
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.lightbox .close{
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+
+
+<div class="menu-category">BHE-AIM-TMMI</div>
+  
+<div class="menu-item"><a class="current" href="index.html">Home</a></div>
+<div class="menu-item"><a href="https://bhe-lab.org/">BHE</a></div>
+<div class="menu-item"><a href="People.html">Team</a></div>
+<div class="menu-item"><a href="Join.html">Join us</a></div>
+<div class="menu-item"><a href="Publications.html">Publications</a></div>
+<div class="menu-item"><a href="Projects.html">Projects</a></div>
+<div class="menu-item"><a href="Group.html">Our group</a></div>
+<div class="menu-item"><a href="Library.html">Resources</a></div>
+<div class="menu-item"><a href="Teaching.html">Teaching (Chinese)</a></div>
+<div class="menu-item"><a href="Blog.html">Blog (Chinese)</a></div>
+</td>
+
+<td id="layout-content">
+<p><br></p>
+
+
+<h2><b>Our Group</b></h2>
+
+<!-- 滚动标语 -->
+<div style="width:500px;margin:0 auto;overflow:hidden;height:30px;">
+  <div id="scrollText">
+    <div>Action is the only path to results.</div>
+    <div>Deadlines are the primary driver of productivity.</div>
+  </div>
+</div>
+
+<script>
+let idx = 0;
+setInterval(()=>{
+  const box = document.getElementById('scrollText');
+  idx = (idx+1)%2;
+  box.style.transform = `translateY(${-idx*30}px)`;
+  box.style.transition = '0.5s';
+},3000);
+</script>
+
+<!-- ====== 替换原 2025 模块：照片墙 ====== -->
+<h2><b>Photo Wall · 2025</b></h2>
+
+<section class="photo-wall">
+  <figure class="photo-card">
+    <img src="./photos/2025_1.jpg" alt="Group Meeting">
+    <figcaption>Group Meeting (2025)</figcaption>
+  </figure>
+
+  <figure class="photo-card">
+    <img src="./photos/2025_2.jpg" alt="Paper Discussion">
+    <figcaption>Paper Discussion</figcaption>
+  </figure>
+
+  <figure class="photo-card">
+    <img src="./photos/2025_3.jpg" alt="Conference">
+    <figcaption>Conference Participation</figcaption>
+  </figure>
+</section>
+
+<!-- Footer -->
+<div id="footer">
+  <div id="footer-text">
+    Copyright (c) 2021 Wanyong Qiu. All rights reserved.
+  </div>
+</div>
+
+</td>
+</tr>
+</table>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="close" onclick="closeLB()">✕</div>
+  <div>
+    <img id="lbImg">
+    <div class="caption" id="lbCap"></div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.photo-card img').forEach(img=>{
+  img.onclick=()=>{
+    document.getElementById('lbImg').src=img.src;
+    document.getElementById('lbCap').innerText=
+      img.parentElement.querySelector('figcaption').innerText;
+    document.getElementById('lightbox').classList.add('open');
+  }
+});
+function closeLB(){
+  document.getElementById('lightbox').classList.remove('open');
+}
+</script>
+
+</body>
+</html>

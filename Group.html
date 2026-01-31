@@ -31,7 +31,7 @@
 
 /* 使用CSS列创建瀑布流布局 */
 .photo-wall{
-  column-count: 4;             /* 默认4列 */
+  column-count: 4;            
   column-gap: var(--gap);
   margin: 0;
   padding: 0;
@@ -40,7 +40,7 @@
 
 /* 防止卡片在列之间被分割 */
 .photo-card{
-  display: inline-block;      /* 列布局必需 */
+  display: inline-block;     
   width: 100%;
   margin: 0 0 var(--gap);
   break-inside: avoid;
@@ -67,7 +67,7 @@
 .photo-card img{
   display: block;
   width: 100%;
-  height: auto;      /* 保持宽高比（产生瀑布流高度） */
+  height: auto;      
   border-radius: calc(var(--card-radius) - var(--card-padding));
   object-fit: cover;
   user-select: none;
@@ -191,7 +191,7 @@ figcaption{
 <p><br></p>
 
 
-<h2><b>Our group</b></h2>
+<h2><b>Photo Wall</b></h2>
 
 <div class="scroll-container">
   <div class="scroll-content">
@@ -225,12 +225,12 @@ figcaption{
   setInterval(scrollToNext, 3000);
 </script>
 
-<h2><b>Photo Wall</b></h2>
+
 
 <!-- 照片墙部分 -->
 <section class="photo-wall" id="photoWall">
   <!-- 每个figure是一个卡片。通过--border设置边框颜色。图片下面是标题。 -->
-  <!-- 你可以替换下面的图片路径和标题为你自己的内容 -->
+
   <figure class="photo-card" style="--border:#4a6fa5">
     <img src="./WanyongQiu_home/photos/CGemini_2021T1.jpg" alt="Group Gathering" loading="lazy">
     <figcaption><span class="caption-badge">Group Gathering (2024)</span></figcaption>
@@ -271,7 +271,7 @@ figcaption{
     <figcaption><span class="caption-badge">Team Building (2024)</span></figcaption>
   </figure>
 
-  <!-- 根据需要添加更多figure，替换src为你自己的图片路径，编辑标题 -->
+
 </section>
 
 <!-- 简单灯箱标记（默认隐藏） -->

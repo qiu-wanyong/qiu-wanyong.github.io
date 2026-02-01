@@ -70,89 +70,141 @@
         line-height: 1.4;
     }
 
-    /* ← 新的可自定义图片大小 */
+    /* 双图轮播样式 */
+    .dual-carousel-container {
+        width: 100%;
+        max-width: 900px; /* 增加宽度以容纳两张图片 */
+        margin: 20px auto;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        background: transparent;
+    }
 
-/* 普通图片样式 */
-img.lab-photo { 
-    max-width: 100%;
-    height: 300px;
-    border-radius: 10px;
-    margin: 10px auto;
-    display: block;
-}
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        height: 320px; /* 固定高度 */
+    }
 
-/* 轮播容器 */ 
-.slider-container {
-  position: relative;
-  width: 60%;
-  max-width: 500px;
-  height: 270px; 
-  margin: 20px auto;
-  background: transparent; 
-  overflow: hidden;
-  border-radius: 10px;
-}
+    .carousel-slide {
+        flex: 0 0 100%; /* 每张slide占据100%宽度 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
 
-/* 每张图都"完整显示在同一个容器里" */
-.slide-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* 确保图片完整显示 */
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
+    .image-pair {
+        display: flex;
+        gap: 20px; /* 两张图片之间的间距 */
+        width: 100%;
+        max-width: 850px;
+        justify-content: center;
+        align-items: center;
+    }
 
-/* 当前显示 */
-.slide-img.active {
-  opacity: 1;
-}
+    .carousel-img {
+        width: 48%; /* 每张图片占据大约一半宽度 */
+        height: 300px;
+        object-fit: cover; /* 或使用 contain 根据需求调整 */
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-/* 移除slider-wrapper的flex布局，使用相对定位 */
-.slider-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
+    /* 导航按钮 */
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255,255,255,0.7);
+        border: none;
+        padding: 12px 18px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 20px;
+        z-index: 10;
+        transition: background 0.3s;
+    }
 
+    .carousel-btn:hover {
+        background: rgba(255,255,255,0.9);
+    }
 
-/* 左右按钮 */
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
-  border: none;
-  padding: 10px 16px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  z-index: 10;
-}
+    .carousel-prev { left: 15px; }
+    .carousel-next { right: 15px; }
 
-.slider-btn:hover {
-  background: rgba(255,255,255,0.9);
-}
+    /* 指示器 */
+    .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        gap: 8px;
+    }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+    .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
 
-/* 响应式适配 */
-@media (max-width: 768px) {
-  .slider-container {
-    width: 95%;
-    height: 250px; /* 移动端适当调整高度 */
-  }
-}
+    .indicator.active {
+        background: #333;
+    }
 
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .dual-carousel-container {
+            max-width: 95%;
+        }
+        
+        .carousel-slide {
+            padding: 0 5px;
+        }
+        
+        .image-pair {
+            flex-direction: column; /* 在小屏幕上垂直排列 */
+            gap: 10px;
+        }
+        
+        .carousel-img {
+            width: 100%; /* 小屏幕上每张图片占满宽度 */
+            height: 250px;
+        }
+        
+        .carousel-track {
+            height: 520px; /* 增加高度以容纳垂直排列的两张图片 */
+        }
+    }
 
+    /* 普通图片样式 */
+    img.lab-photo { 
+        max-width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .infoblock {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+    }
+
+    .centered-marquee {
+        margin: 20px auto;
+        width: 100%;
+    }
 
 </style>
 
 </head>
-
 
 <body>
 
@@ -163,7 +215,6 @@ img.lab-photo {
 <td id="layout-menu">
 
 <div class="menu-category">BHE-AIM-TMMI</div>
-
 
 <div class="menu-item"><a class="current" href="index.html">Home</a></div>
 <div class="menu-item"><a href="https://bhe-lab.org/" target="_blank" rel="noopener noreferrer">BHE</a></div>
@@ -178,7 +229,6 @@ img.lab-photo {
 
 </td>
 
-
 <!-- MAIN CONTENT -->
 <td id="layout-content">
 <div class="content-wrapper">
@@ -188,25 +238,45 @@ img.lab-photo {
 
 <h2>Welcome</h2>
 
-
-<!-- IMAGE SLIDER START -->
-<div class="slider-container" id="slider-container">
-  <div class="slider-wrapper" id="slider-wrapper">
-    <!-- 修改：添加active类到第一张图片 -->
-    <img src="./WanyongQiu_home/Assets/BIT.jpg" class="slide-img active" alt="BIT">
-    <img src="./WanyongQiu_home/Assets/waseda.jpg" class="slide-img" alt="Waseda">
-  </div>
-
-  <!-- Navigation buttons -->
-  <button class="slider-btn prev" onclick="prevSlide()">❮</button>
-  <button class="slider-btn next" onclick="nextSlide()">❯</button>
+<!-- 双图轮播开始 -->
+<div class="dual-carousel-container" id="dualCarousel">
+    <div class="carousel-track" id="carouselTrack">
+        <!-- 第一组两张图片 -->
+        <div class="carousel-slide active">
+            <div class="image-pair">
+                <img src="./WanyongQiu_home/Assets/BIT.jpg" class="carousel-img" alt="BIT Campus">
+                <img src="./WanyongQiu_home/Assets/waseda.jpg" class="carousel-img" alt="Waseda University">
+            </div>
+        </div>
+        
+        <!-- 第二组两张图片 (示例，你可以添加更多图片) -->
+        <div class="carousel-slide">
+            <div class="image-pair">
+                <img src="./WanyongQiu_home/Assets/BIT.png" class="carousel-img" alt="Lab Research">
+                <img src="./WanyongQiu_home/Assets/waseda_campus.png" class="carousel-img" alt="Team Discussion">
+            </div>
+        </div>
+        
+        <!-- 第三组两张图片 (示例) -->
+        <div class="carousel-slide">
+            <div class="image-pair">
+                <img src="./WanyongQiu_home/Assets/BIT_lab.png" class="carousel-img" alt="Conference">
+                <img src="./WanyongQiu_home/Assets/waseda_lab.png" class="carousel-img" alt="Group Photo">
+            </div>
+        </div>
+    </div>
+    
+    <!-- 导航按钮 -->
+    <button class="carousel-btn carousel-prev" onclick="prevDualSlide()">❮</button>
+    <button class="carousel-btn carousel-next" onclick="nextDualSlide()">❯</button>
+    
+    <!-- 指示器 -->
+    <div class="carousel-indicators" id="carouselIndicators">
+        <!-- 指示器由JavaScript动态生成 -->
+    </div>
 </div>
-<!-- IMAGE SLIDER END -->
+<!-- 双图轮播结束 -->
 
-
-
-
-  
 <h2 style="text-align: center;">Trustworthy & Multimodal Medical Intelligence (TMMI)</h2>
 
 <p>
@@ -221,15 +291,13 @@ The current research focuses on the early screening and diagnosis of brain-cardi
   
 <ol>
 <li style="margin-bottom: 20px;"><b>Trustworthy Medical AI Modeling</b>
-<p style="margin-bottom: 20px;"> We develop trustworthy AI models to address challenges in security, privacy, reliability, interpretability, fairness, and auditability in real-world deployment. For example, we study trustworthy federated learning to enable safe and reliable decision-making using distributed and heterogeneous healthcare data.
+<p style="margin-bottom: 20px;"> We develop trustworthy AI models to address challenges in security, privacy, reliability, interpretability, fairness, and auditability in real-world deployment. For example, we study trustworthy federated learning to enable safe and reliable decision-making using distributed and heterogeneous healthcare data.</p></li>
 
 <li style="margin-bottom: 20px;"><b>Privacy-Preserving LLMs/LMMs in Healthcare</b>
-<p style="margin-bottom: 20px;"> We explore privacy-preserving LLMs/LMMs technologies that support secure development and deployment in physiological sensing, medical imaging and clinical text. This research enables advanced understanding and reasoning over both structured and unstructured clinical multimodal data.
-</p></li>
+<p style="margin-bottom: 20px;"> We explore privacy-preserving LLMs/LMMs technologies that support secure development and deployment in physiological sensing, medical imaging and clinical text. This research enables advanced understanding and reasoning over both structured and unstructured clinical multimodal data.</p></li>
 
 <li style="margin-bottom: 20px;"><b>Privacy-Preserving Psychophysiological Computing</b>
-<p style="margin-bottom: 20px;"> We investigate AI methods that integrate psychophysiological computing with privacy-preserving technologies. Leveraging federated learning, differential privacy and security multi-party computation, we enable secure acquisition, analysis, and modeling of highly sensitive physiological data.
-</p></li>
+<p style="margin-bottom: 20px;"> We investigate AI methods that integrate psychophysiological computing with privacy-preserving technologies. Leveraging federated learning, differential privacy and security multi-party computation, we enable secure acquisition, analysis, and modeling of highly sensitive physiological data.</p></li>
 </ol>
 
 <div class="infoblock">
@@ -240,15 +308,6 @@ The current research focuses on the early screening and diagnosis of brain-cardi
 </div>
 
 <div>
- <title>文字滚动的设置</title>
- <style>
-   .centered-marquee {
-     margin-left: 0 auto; 
-   }
- </style>
-</head>
-<body>
-
 <font size="3" color="#000000">
   <div class="centered-marquee">
     <marquee behavior="scroll" direction="left" scrollamount="6">
@@ -260,10 +319,6 @@ The current research focuses on the early screening and diagnosis of brain-cardi
 </div>
   
 </div>
-
-
-
-  
 
 <!-- RIGHT SIDEBAR (NEWS LIST) -->
 <div class="sidebar">
@@ -284,7 +339,6 @@ Awarded the China Scholarship Council (CSC) Postdoctoral Fellowship to pursue re
 
 </div> <!-- end wrapper -->
 
-
 <!-- FOOTER AREA -->
 <div class="footer-box">
 <div class="footer-columns">
@@ -294,8 +348,6 @@ Awarded the China Scholarship Council (CSC) Postdoctoral Fellowship to pursue re
   <a href="https://www.waseda.jp/top/en/" target="blank">Waseda University</a><br>
   <a href="https://www.waseda.jp/fsci/en/" target="blank">Faculty of Science and Engineering</a><br>
   <a href="https://www.cs.waseda.ac.jp/" target="blank">Department of Computer Science and Engineering</a><br>
-
-
 </div>
 
 <div class="footer-col">
@@ -308,8 +360,6 @@ Shinjuku, Tokyo, 169-8555 Japan<br>
 <div class="footer-col" style="text-align:right;">
 <img src="./WanyongQiu_home/Assets/BIT_logo.png" style="height: 100px; width: auto;">
 <img src="./WanyongQiu_home/Assets/Waseda_logo.png" style="height: 100px; width: auto;">
-
-
 </div>
 
 </div>
@@ -320,92 +370,125 @@ Shinjuku, Tokyo, 169-8555 Japan<br>
 </table>
 
 <script>
-// 轮播功能脚本 - 修正版本
-let currentIndex = 0;
-const slides = document.querySelectorAll('.slide-img');
-const totalSlides = slides.length;
+// 双图轮播功能
+let dualCurrentIndex = 0;
+const dualSlides = document.querySelectorAll('.carousel-slide');
+const dualTrack = document.getElementById('carouselTrack');
+const dualIndicators = document.getElementById('carouselIndicators');
+const totalDualSlides = dualSlides.length;
+
+// 初始化指示器
+function initIndicators() {
+    dualIndicators.innerHTML = '';
+    for (let i = 0; i < totalDualSlides; i++) {
+        const indicator = document.createElement('div');
+        indicator.classList.add('indicator');
+        if (i === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToDualSlide(i));
+        dualIndicators.appendChild(indicator);
+    }
+}
 
 // 显示指定幻灯片
-function showSlide(index) {
-    // 确保索引在有效范围内
+function showDualSlide(index) {
     if (index < 0) {
-        index = totalSlides - 1;
-    } else if (index >= totalSlides) {
+        index = totalDualSlides - 1;
+    } else if (index >= totalDualSlides) {
         index = 0;
     }
     
-    // 隐藏所有幻灯片
-    for (let i = 0; i < totalSlides; i++) {
-        slides[i].classList.remove('active');
-    }
+    // 更新轮播位置
+    dualTrack.style.transform = `translateX(-${index * 100}%)`;
     
-    // 显示当前幻灯片
-    slides[index].classList.add('active');
-    currentIndex = index;
+    // 更新活动状态
+    dualSlides.forEach(slide => slide.classList.remove('active'));
+    dualSlides[index].classList.add('active');
+    
+    // 更新指示器
+    document.querySelectorAll('.indicator').forEach((indicator, i) => {
+        indicator.classList.toggle('active', i === index);
+    });
+    
+    dualCurrentIndex = index;
 }
 
-// 下一张幻灯片
-function nextSlide() {
-    showSlide(currentIndex + 1);
+// 跳转到指定幻灯片
+function goToDualSlide(index) {
+    showDualSlide(index);
 }
 
-// 上一张幻灯片
-function prevSlide() {
-    showSlide(currentIndex - 1);
+// 下一组幻灯片
+function nextDualSlide() {
+    showDualSlide(dualCurrentIndex + 1);
+}
+
+// 上一组幻灯片
+function prevDualSlide() {
+    showDualSlide(dualCurrentIndex - 1);
 }
 
 // 自动播放
-let slideInterval = setInterval(nextSlide, 3000);
+let dualInterval = setInterval(nextDualSlide, 4000);
 
-// 当鼠标悬停在轮播图上时暂停自动播放
-const sliderContainer = document.getElementById('slider-container');
-if (sliderContainer) {
-    sliderContainer.addEventListener('mouseenter', () => {
-        clearInterval(slideInterval);
+// 鼠标悬停时暂停自动播放
+const dualCarousel = document.getElementById('dualCarousel');
+if (dualCarousel) {
+    dualCarousel.addEventListener('mouseenter', () => {
+        clearInterval(dualInterval);
     });
 
-    sliderContainer.addEventListener('mouseleave', () => {
-        slideInterval = setInterval(nextSlide, 3000);
+    dualCarousel.addEventListener('mouseleave', () => {
+        clearInterval(dualInterval);
+        dualInterval = setInterval(nextDualSlide, 4000);
     });
 
     // 触摸滑动支持
-    let startX = 0;
-    let isDragging = false;
+    let touchStartX = 0;
+    let isTouchDragging = false;
 
-    sliderContainer.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-        clearInterval(slideInterval); // 触摸时暂停自动播放
+    dualCarousel.addEventListener('touchstart', e => {
+        touchStartX = e.touches[0].clientX;
+        isTouchDragging = true;
+        clearInterval(dualInterval);
     });
 
-    sliderContainer.addEventListener('touchmove', e => {
-        if (!isDragging) return;
-        const currentX = e.touches[0].clientX;
-        const diff = startX - currentX;
+    dualCarousel.addEventListener('touchmove', e => {
+        if (!isTouchDragging) return;
+        e.preventDefault();
+    });
+
+    dualCarousel.addEventListener('touchend', e => {
+        if (!isTouchDragging) return;
         
-        // 滑动阈值 50px
-        if (diff > 50) { 
-            nextSlide(); 
-            isDragging = false;
+        const touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX - touchEndX;
+        
+        if (diff > 50) { // 向左滑动
+            nextDualSlide();
+        } else if (diff < -50) { // 向右滑动
+            prevDualSlide();
         }
-        if (diff < -50) { 
-            prevSlide(); 
-            isDragging = false;
-        }
-    });
-
-    sliderContainer.addEventListener('touchend', () => { 
-        isDragging = false;
-        // 重新开始自动播放
-        slideInterval = setInterval(nextSlide, 3000);
+        
+        isTouchDragging = false;
+        clearInterval(dualInterval);
+        dualInterval = setInterval(nextDualSlide, 4000);
     });
 }
 
-// 初始化：确保第一张图片显示
+// 页面加载时初始化
 document.addEventListener('DOMContentLoaded', function() {
-    if (slides.length > 0) {
-        showSlide(0);
+    initIndicators();
+    showDualSlide(0);
+    
+    // 确保轮播容器正确初始化
+    if (dualTrack) {
+        dualTrack.style.transform = 'translateX(0%)';
     }
+});
+
+// 窗口大小变化时重新调整
+window.addEventListener('resize', function() {
+    showDualSlide(dualCurrentIndex);
 });
 </script>
 

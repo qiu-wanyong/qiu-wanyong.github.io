@@ -73,7 +73,7 @@
     /* 双图轮播样式 */
     .dual-carousel-container {
         width: 100%;
-        max-width: 900px; /* 增加宽度以容纳两张图片 */
+        max-width: 900px; 
         margin: 20px auto;
         position: relative;
         overflow: hidden;
@@ -84,11 +84,11 @@
     .carousel-track {
         display: flex;
         transition: transform 0.5s ease-in-out;
-        height: 320px; /* 固定高度 */
+        height: 320px; 
     }
 
     .carousel-slide {
-        flex: 0 0 100%; /* 每张slide占据100%宽度 */
+        flex: 0 0 100%; 
         display: flex;
         justify-content: center;
         align-items: center;
@@ -98,7 +98,7 @@
 
     .image-pair {
         display: flex;
-        gap: 20px; /* 两张图片之间的间距 */
+        gap: 10px; /* 两张图片之间的间距 */
         width: 100%;
         max-width: 850px;
         justify-content: center;
@@ -106,9 +106,9 @@
     }
 
     .carousel-img {
-        width: 48%; /* 每张图片占据大约一半宽度 */
+        width: 48%; 
         height: 300px;
-        object-fit: cover; /* 或使用 contain 根据需求调整 */
+        object-fit: cover; 
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
@@ -167,17 +167,17 @@
         }
         
         .image-pair {
-            flex-direction: column; /* 在小屏幕上垂直排列 */
+            flex-direction: column; 
             gap: 10px;
         }
         
         .carousel-img {
-            width: 100%; /* 小屏幕上每张图片占满宽度 */
+            width: 100%; 
             height: 250px;
         }
         
         .carousel-track {
-            height: 520px; /* 增加高度以容纳垂直排列的两张图片 */
+            height: 520px; 
         }
     }
 
@@ -238,10 +238,10 @@
 
 <h2>Welcome</h2>
 
-<!-- 双图轮播开始 -->
+<!-- 双图轮播-->
 <div class="dual-carousel-container" id="dualCarousel">
     <div class="carousel-track" id="carouselTrack">
-        <!-- 第一组两张图片 -->
+
         <div class="carousel-slide active">
             <div class="image-pair">
                 <img src="./WanyongQiu_home/Assets/BIT.jpg" class="carousel-img" alt="BIT Campus">
@@ -249,7 +249,6 @@
             </div>
         </div>
         
-        <!-- 第二组两张图片 (示例，你可以添加更多图片) -->
         <div class="carousel-slide">
             <div class="image-pair">
                 <img src="./WanyongQiu_home/Assets/BIT.png" class="carousel-img" alt="Lab Research">
@@ -257,7 +256,6 @@
             </div>
         </div>
         
-        <!-- 第三组两张图片 (示例) -->
         <div class="carousel-slide">
             <div class="image-pair">
                 <img src="./WanyongQiu_home/Assets/BIT_lab.png" class="carousel-img" alt="Conference">
@@ -272,7 +270,7 @@
     
     <!-- 指示器 -->
     <div class="carousel-indicators" id="carouselIndicators">
-        <!-- 指示器由JavaScript动态生成 -->
+
     </div>
 </div>
 <!-- 双图轮播结束 -->

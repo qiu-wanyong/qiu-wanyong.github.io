@@ -70,6 +70,43 @@
         line-height: 1.4;
     }
 
+    /* 友情链接样式 - 简洁版 */
+    .footer-links {
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .footer-links-title {
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #2c3e50;
+    }
+
+    .footer-links-list {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-links-list a {
+        color: #3498db;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+
+    .footer-links-list a:hover {
+        background: #f0f0f0;
+        text-decoration: underline;
+    }
+
     /* 双图轮播样式 */
     .dual-carousel-container {
         width: 100%;
@@ -156,56 +193,6 @@
         background: #333;
     }
 
-    .link-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .link-item {
-        flex: 1;
-        min-width: 200px;
-    }
-
-    .link-item a {
-        display: block;
-        padding: 12px 15px;
-        background: white;
-        border-radius: 6px;
-        text-decoration: none;
-        color: #2c3e50;
-        border: 1px solid #e0e0e0;
-        transition: all 0.2s ease;
-    }
-
-    .link-item a:hover {
-        background: #3498db;
-        color: white;
-        border-color: #3498db;
-        text-decoration: none;
-        transform: translateY(-2px);
-        box-shadow: 0 3px 8px rgba(52, 152, 219, 0.3);
-    }
-
-    .link-item .link-title {
-        font-weight: 600;
-        margin-bottom: 3px;
-    }
-
-    .link-item .link-url {
-        font-size: 13px;
-        color: #666;
-        font-family: monospace;
-        word-break: break-all;
-    }
-
-    .link-item a:hover .link-url {
-        color: rgba(255, 255, 255, 0.9);
-    }
-
     /* 响应式设计 */
     @media (max-width: 768px) {
         .dual-carousel-container {
@@ -230,12 +217,9 @@
             height: 520px; 
         }
         
-        .link-list {
+        .footer-links-list {
             flex-direction: column;
-        }
-        
-        .link-item {
-            min-width: 100%;
+            gap: 10px;
         }
     }
 
@@ -257,13 +241,6 @@
         text-align: center;        
         line-height: 1.6;
         color: #333;
-    }
-
-    .infoblock {
-        background: #F3F7FF;
-        padding: 15px;
-        border-radius: 8px;
-        margin: 20px 0;
     }
 
     .centered-marquee {
@@ -382,22 +359,6 @@ The current research focuses on the early screening and diagnosis of brain-cardi
   </div>
 </font>
 </div>
-
-<!-- 友情链接 -->
-<div>
-    <ul class="link-list">
-        <li class="link-item">
-            <a href="https://bhe-aim-imt.github.io/" target="_blank" rel="noopener noreferrer">
-                <div class="link-title">BHE-AIM-IMT</div>
-            </a>
-        </li>
-        <li class="link-item">
-            <a href="https://bhe-aim-imt.github.io/" target="_blank" rel="noopener noreferrer">
-                <div class="link-title">BHE-AIM-IMT </div>
-            </a>
-        </li>
-    </ul>
-</div>
   
 </div>
 
@@ -444,6 +405,16 @@ Shinjuku, Tokyo, 169-8555 Japan<br>
 </div>
 
 </div>
+
+<!-- 简洁的友情链接部分 -->
+<div class="footer-links">
+    <div class="footer-links-title">Related Labs</div>
+    <ul class="footer-links-list">
+        <li><a href="https://bhe-aim-imt.github.io/" target="_blank" rel="noopener noreferrer">BHE-AIM-IMT Lab</a></li>
+        <li><a href="https://cao-lab.org/" target="_blank" rel="noopener noreferrer">Cao Laboratory</a></li>
+    </ul>
+</div>
+
 </div>
 
 </td>

@@ -44,6 +44,16 @@
 }
 .team-subtitle a:hover{ text-decoration: underline; }
 
+
+.team-grid-academic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  column-gap: 30px;
+  row-gap: 40px;
+  margin-top: 10px;
+}
+
+/* 保持其他部分的原样 */
 .team-grid{
   display: grid;
   grid-template-columns: repeat(2, minmax(420px, 1fr));
@@ -117,13 +127,46 @@
 }
 
 
+@media (max-width: 1200px){
+  /* 在中等屏幕下，Academic Advisor改为两列 */
+  .team-grid-academic {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+  }
+}
+
 @media (max-width: 980px){
+  .team-grid-academic {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  
   .team-grid{
     grid-template-columns: 1fr;
     column-gap: 0;
   }
   .team-title{ font-size: 18px; }
   .team-name{ font-size: 18px; }
+}
+
+@media (max-width: 768px){
+  /* 在小屏幕下，卡片内部布局优化 */
+  .team-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .team-photo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .team-list {
+    padding-left: 15px;
+    text-align: left;
+  }
 }
 </style>
 
@@ -165,7 +208,7 @@
 <div class="team-section">
   <div class="team-title">Academic Advisor</div>
 
-  <div class="team-grid">
+  <div class="team-grid-academic">
 
 	      <!-- professor 1 -->
     <div class="team-card">

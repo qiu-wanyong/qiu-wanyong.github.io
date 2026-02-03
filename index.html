@@ -156,118 +156,70 @@
         background: #333;
     }
 
-    /* 友情链接模块样式 */
-    .collaboration-section {
-        margin-top: 50px;
-        padding-top: 30px;
-        border-top: 2px solid #eaeaea;
-        width: 100%;
-    }
-
-    .collaboration-title {
-        text-align: center;
-        font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 40px;
-        color: #2c3e50;
-        position: relative;
-    }
-
-    .collaboration-title:after {
-        content: '';
-        display: block;
-        width: 80px;
-        height: 3px;
-        background: #3498db;
-        margin: 10px auto 0;
-        border-radius: 2px;
-    }
-
-    .collaboration-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    .collaboration-card {
-        background: white;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        border: 1px solid #eaeaea;
-    }
-
-    .collaboration-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-        border-color: #3498db;
-    }
-
-    .collaboration-card-header {
-        background: linear-gradient(135deg, #3498db, #2c3e50);
-        color: white;
+    /* 简洁的友情链接模块 */
+    .simple-links {
+        margin: 40px 0 30px;
         padding: 20px;
-        text-align: center;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #3498db;
     }
 
-    .collaboration-card-title {
-        font-size: 22px;
-        font-weight: 600;
+    .simple-links h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #2c3e50;
+        font-size: 18px;
+    }
+
+    .link-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
         margin: 0;
+        padding: 0;
+        list-style: none;
     }
 
-    .collaboration-card-subtitle {
-        font-size: 14px;
-        opacity: 0.9;
-        margin-top: 5px;
+    .link-item {
+        flex: 1;
+        min-width: 200px;
     }
 
-    .collaboration-card-body {
-        padding: 25px;
-    }
-
-    .collaboration-logo {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto 20px;
+    .link-item a {
         display: block;
-        object-fit: contain;
+        padding: 12px 15px;
+        background: white;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #2c3e50;
+        border: 1px solid #e0e0e0;
+        transition: all 0.2s ease;
     }
 
-    .collaboration-description {
-        color: #555;
-        line-height: 1.6;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .collaboration-link {
-        display: inline-block;
+    .link-item a:hover {
         background: #3498db;
         color: white;
-        padding: 10px 24px;
-        border-radius: 25px;
+        border-color: #3498db;
         text-decoration: none;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        text-align: center;
-        width: 100%;
-        box-sizing: border-box;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 8px rgba(52, 152, 219, 0.3);
     }
 
-    .collaboration-link:hover {
-        background: #2980b9;
-        color: white;
-        text-decoration: none;
-        transform: scale(1.05);
+    .link-item .link-title {
+        font-weight: 600;
+        margin-bottom: 3px;
     }
 
-    .collaboration-link i {
-        margin-left: 8px;
-        font-size: 14px;
+    .link-item .link-url {
+        font-size: 13px;
+        color: #666;
+        font-family: monospace;
+        word-break: break-all;
+    }
+
+    .link-item a:hover .link-url {
+        color: rgba(255, 255, 255, 0.9);
     }
 
     /* 响应式设计 */
@@ -294,34 +246,12 @@
             height: 520px; 
         }
         
-        .collaboration-grid {
-            grid-template-columns: 1fr;
-            gap: 30px;
-            padding: 0 15px;
+        .link-list {
+            flex-direction: column;
         }
         
-        .collaboration-card {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .collaboration-card-header {
-            padding: 15px;
-        }
-        
-        .collaboration-card-title {
-            font-size: 20px;
-        }
-        
-        .collaboration-card-body {
-            padding: 20px;
-        }
-        
-        .collaboration-logo {
-            width: 80px;
-            height: 80px;
+        .link-item {
+            min-width: 100%;
         }
     }
 
@@ -458,6 +388,25 @@ The current research focuses on the early screening and diagnosis of brain-cardi
 <p>📫 Please see <a href="https://bhe-lab.org/" target="blank">BHE-Lab</a> and <a href="https://w-rdb.waseda.jp/html/100001045_ja.html" target="blank">Liu's Lab</a> for more details.</p>
 </div>
 
+<!-- 简洁友情链接模块 -->
+<div class="simple-links">
+    <h3>Related Labs</h3>
+    <ul class="link-list">
+        <li class="link-item">
+            <a href="https://bhe-aim-imt.github.io/" target="_blank" rel="noopener noreferrer">
+                <div class="link-title">BHE-AIM-IMT Lab</div>
+                <div class="link-url">https://bhe-aim-imt.github.io/</div>
+            </a>
+        </li>
+        <li class="link-item">
+            <a href="https://cao-lab.org/" target="_blank" rel="noopener noreferrer">
+                <div class="link-title">Cao Laboratory</div>
+                <div class="link-url">https://cao-lab.org/</div>
+            </a>
+        </li>
+    </ul>
+</div>
+
 <div>
 <font size="3" color="#000000">
   <div class="centered-marquee">
@@ -468,52 +417,6 @@ The current research focuses on the early screening and diagnosis of brain-cardi
   </div>
 </font>
 </div>
-
-<!-- 友情链接模块 - 添加在这里 -->
-<div class="collaboration-section">
-    <h3 class="collaboration-title">Collaboration & Partner Labs</h3>
-    
-    <div class="collaboration-grid">
-        <!-- BHE实验室卡片 -->
-        <div class="collaboration-card">
-            <div class="collaboration-card-header">
-                <h4 class="collaboration-card-title">BHE Laboratory</h4>
-                <div class="collaboration-card-subtitle">Brain Health Intelligent Evaluation</div>
-            </div>
-            <div class="collaboration-card-body">
-                <img src="./WanyongQiu_home/Assets/BIT_logo.png" alt="BHE Lab Logo" class="collaboration-logo">
-                <p class="collaboration-description">
-                    Focuses on brain health intelligent evaluation and intervention technologies. 
-                    The lab develops AI methods for early screening, diagnosis, and treatment 
-                    of neurological and mental health disorders.
-                </p>
-                <a href="https://bhe-lab.org/" target="_blank" rel="noopener noreferrer" class="collaboration-link">
-                    Visit BHE Laboratory →
-                </a>
-            </div>
-        </div>
-
-        <!-- Liu's实验室卡片 -->
-        <div class="collaboration-card">
-            <div class="collaboration-card-header">
-                <h4 class="collaboration-card-title">Liu's Laboratory</h4>
-                <div class="collaboration-card-subtitle">Waseda University</div>
-            </div>
-            <div class="collaboration-card-body">
-                <img src="./WanyongQiu_home/Assets/Waseda_logo.png" alt="Liu's Lab Logo" class="collaboration-logo">
-                <p class="collaboration-description">
-                    Specializes in computer science and engineering research at Waseda University. 
-                    Focus areas include distributed systems, privacy-preserving computing, 
-                    and advanced AI algorithms for healthcare applications.
-                </p>
-                <a href="https://w-rdb.waseda.jp/html/100001045_ja.html" target="_blank" rel="noopener noreferrer" class="collaboration-link">
-                    Visit Liu's Laboratory →
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- 友情链接模块结束 -->
   
 </div>
 

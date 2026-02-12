@@ -224,7 +224,7 @@ figcaption{
 
 
 
-<!-- 照片墙部分 (完全保留外观，仅顺序改为按年份横向: 最新年份在最顶部) -->
+<!-- 照片墙部分 - 完全按年份横向排列：最新年份显示在页面最顶部（2026最先，然后2025，2024，2023） -->
 <section class="photo-wall" id="photoWall"></section>
 
 <!-- 简单灯箱标记（默认隐藏） -->
@@ -274,49 +274,46 @@ figcaption{
     // 提取年份函数：从 caption 中提取括号内的四位数字
     function extractYear(caption) {
       const match = caption.match(/\((\d{4})\)/);
-      return match ? parseInt(match[1], 10) : 0;  // 若没有年份，默认0（排在最后）
+      return match ? parseInt(match[1], 10) : 0;
     }
 
-    // 按年份降序排序 (2026最先, 2023最后) —— 完全满足“最新年份的照片显示在最顶部”
+    // 按年份降序排序 (2026最先, 2023最后) —— 最新年份显示在最顶部（HTML结构中靠前）
     const sortedData = [...photoData].sort((a, b) => {
       const yearA = extractYear(a.caption);
       const yearB = extractYear(b.caption);
-      return yearB - yearA;   // 降序：大的年份（最新）排在数组前面
+      return yearB - yearA;   // 降序
     });
 
     // 获取照片墙容器
     const wall = document.getElementById('photoWall');
     if (!wall) return;
 
-    // 清空容器（无重复生成）
+    // 清空容器，完全替换为排序后的卡片
     wall.innerHTML = '';
 
-    // 循环生成排序后的卡片 —— 完全保持原卡片样式，仅顺序变为年份降序（最新年份横向展示在顶部）
+    // 循环生成排序后的卡片 —— 按年份降序横向排列（瀑布流列会自动分布）
     sortedData.forEach(item => {
       const figure = document.createElement('figure');
       figure.className = 'photo-card';
-      figure.style.setProperty('--border', item.border);  // 边框颜色变量
+      figure.style.setProperty('--border', item.border);
 
-      // img 元素
       const img = document.createElement('img');
       img.src = item.src;
       img.alt = item.alt;
-      img.loading = 'lazy';   // 保留懒加载
+      img.loading = 'lazy';
 
-      // figcaption 元素
       const figcaption = document.createElement('figcaption');
       const span = document.createElement('span');
       span.className = 'caption-badge';
       span.textContent = item.caption;
       figcaption.appendChild(span);
 
-      // 组合卡片
       figure.appendChild(img);
       figure.appendChild(figcaption);
       wall.appendChild(figure);
     });
 
-    // ---------- 灯箱功能 (保持不变, 重新绑定新生成的图片) ----------
+    // ---------- 灯箱功能 (重新绑定到新生成的图片) ----------
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lbImg');
     const lbCaption = document.getElementById('lbCaption');
@@ -336,7 +333,6 @@ figcaption{
       });
     }
 
-    // 关闭灯箱功能
     function closeLB() {
       lightbox.classList.remove('open');
       lightbox.setAttribute('aria-hidden', 'true');
@@ -344,7 +340,6 @@ figcaption{
       lbCaption.textContent = '';
     }
 
-    // 绑定关闭事件
     if (lbClose) lbClose.addEventListener('click', closeLB);
     if (lightbox) {
       lightbox.addEventListener('click', (e) => {
@@ -355,11 +350,8 @@ figcaption{
       if (e.key === 'Escape') closeLB();
     });
 
-    // 初次绑定灯箱
+    // 绑定灯箱到新图片
     attachLightbox();
-
-    // 由于是动态生成，保留再次绑定能力（如果以后有其他动态添加，可调用）
-    window.attachLightbox = attachLightbox;
   })();
 </script>
 

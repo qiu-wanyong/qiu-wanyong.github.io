@@ -17,7 +17,7 @@
 
 <style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}
 
-/* 照片墙样式 */
+/* 照片墙样式 - 修改为弹性行布局，按行横向排列 */
 :root{
   --gap: 16px;
   --card-radius: 8px;
@@ -25,24 +25,20 @@
   --border-width: 2px;
 }
 
-/* 使用CSS列创建瀑布流布局 */
+/* 使用Flexbox行布局替代瀑布流列布局 */
 .photo-wall{
-  column-count: 4;            
-  column-gap: var(--gap);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* 防止卡片在列之间被分割 */
+/* 卡片宽度 - 每行显示4列，响应式调整 */
 .photo-card{
-  display: inline-block;     
-  width: 100%;
-  margin: 0 0 var(--gap);
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  -moz-column-break-inside: avoid;
-
+  width: calc((100% - 3 * var(--gap)) / 4);
+  margin: 0;
   background: #fff;
   border-radius: var(--card-radius);
   padding: var(--card-padding);
@@ -86,12 +82,12 @@ figcaption{
   font-size: 13px;
 }
 
-/* 响应式列数 */
+/* 响应式行数 - 调整每行显示数量 */
 @media (max-width: 900px){
-  .photo-wall { column-count: 2; }
+  .photo-card { width: calc((100% - var(--gap)) / 2); }
 }
 @media (max-width: 560px){
-  .photo-wall { column-count: 1; }
+  .photo-card { width: 100%; }
 }
 
 /* 灯箱样式 */
@@ -224,7 +220,7 @@ figcaption{
 
 
 
-<!-- 照片墙部分 - 完全按年份横向排列：最新年份显示在页面最顶部（2026最先，然后2025，2024，2023） -->
+<!-- 照片墙部分 - 按行横向排列，最新年份显示在第一行 -->
 <section class="photo-wall" id="photoWall"></section>
 
 <!-- 简单灯箱标记（默认隐藏） -->
@@ -277,7 +273,7 @@ figcaption{
       return match ? parseInt(match[1], 10) : 0;
     }
 
-    // 按年份降序排序 (2026最先, 2023最后) —— 最新年份显示在最顶部（HTML结构中靠前）
+    // 按年份降序排序 (2026最先, 2023最后) —— 最新年份显示在第一行最左侧
     const sortedData = [...photoData].sort((a, b) => {
       const yearA = extractYear(a.caption);
       const yearB = extractYear(b.caption);
@@ -291,7 +287,7 @@ figcaption{
     // 清空容器，完全替换为排序后的卡片
     wall.innerHTML = '';
 
-    // 循环生成排序后的卡片 —— 按年份降序横向排列（瀑布流列会自动分布）
+    // 循环生成排序后的卡片 —— 按行横向排列（Flexbox自动换行）
     sortedData.forEach(item => {
       const figure = document.createElement('figure');
       figure.className = 'photo-card';

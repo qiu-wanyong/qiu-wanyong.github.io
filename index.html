@@ -190,19 +190,21 @@
         display: block;
     }
 
-    .infoblock {
-        max-width: 900px;          
-        margin-left: auto;
-        margin-right: auto;         
-        padding: 18px 22px;
-        background-color: #EEF4FF; 
-        border-radius: 12px;
-        text-align: center;        
-        line-height: 1.6;
-        color: #333;
-        display: table;      
-        width: fit-content;
-    }
+.infoblock {
+    max-width: 900px;          
+    margin-left: auto;
+    margin-right: auto;         
+    padding: 18px 22px;
+    background-color: #EEF4FF; 
+    border-radius: 12px;
+    text-align: center;        
+    line-height: 1.6;
+    color: #333;
+    display: flex;             /* 改为 flex */
+    flex-direction: column;    /* 保持内容纵向排列 */
+    align-items: center;       /* 内容水平居中 */
+    width: fit-content;
+}
 
     .centered-marquee {
         margin: 20px auto;

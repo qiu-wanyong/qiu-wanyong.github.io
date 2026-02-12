@@ -17,77 +17,85 @@
 
 <style type="text/css" style="display: none !important;">object:not([type]),object[classid$=":D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid$=":d27cdb6e-ae6d-11cf-96b8-444553540000"],object[codebase*="swflash.cab"],object[data*=".swf"],embed[type="application/x-shockwave-flash"],embed[src*=".swf"],object[type="application/x-shockwave-flash"],object[src*=".swf"],object[codetype="application/x-shockwave-flash"],iframe[type="application/x-shockwave-flash"],object[classid$=":166B1BCA-3F9C-11CF-8075-444553540000"],object[codebase*="sw.cab"],object[data*=".dcr"],embed[type="application/x-director"],embed[src*=".dcr"],object[type="application/x-director"],object[src*=".dcr"],object[classid$=":15B782AF-55D8-11D1-B477-006097098764"],object[codebase*="awswaxf.cab"],object[data*=".aam"],embed[type="application/x-authorware-map"],embed[src*=".aam"],object[type="application/x-authorware-map"],object[src*=".aam"],object[classid*="32C73088-76AE-40F7-AC40-81F62CB2C1DA"],object[type="application/ag-plugin"],object[type="application/x-silverlight"],object[type="application/x-silverlight-2"],object[source*=".xaml"],object[sourceelement*="xaml"],embed[type="application/ag-plugin"],embed[source*=".xaml"]{display: none !important;}
 
-/* 照片墙样式 - 修改为弹性行布局，按行横向排列 */
+/* 照片墙样式 - 使用CSS多列布局，自适应照片尺寸，自动向上补位 */
 :root{
   --gap: 16px;
   --card-radius: 8px;
-  --card-padding: 6px;
+  --card-padding: 0px;  /* 移除内边距，边框紧贴照片 */
   --border-width: 2px;
 }
 
-/* 使用Flexbox行布局替代瀑布流列布局 */
+/* 使用CSS列创建完美瀑布流 - 自动向上补位，边框贴合照片 */
 .photo-wall{
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gap);
+  column-count: 4;            
+  column-gap: var(--gap);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* 卡片宽度 - 每行显示4列，响应式调整 */
+/* 卡片完全贴合照片尺寸，无多余空白 */
 .photo-card{
-  width: calc((100% - 3 * var(--gap)) / 4);
-  margin: 0;
+  display: inline-block;     
+  width: 100%;
+  margin: 0 0 var(--gap);
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid-column;
+
   background: #fff;
   border-radius: var(--card-radius);
-  padding: var(--card-padding);
+  padding: 0;  /* 内边距设为0，边框直接包裹图片 */
   box-sizing: border-box;
 
   /* 卡片边框颜色，通过 --border 变量设置 */
   border: var(--border-width) solid var(--border, #ddd);
   box-shadow: 0 4px 12px rgba(18,20,24,0.04);
   transition: transform .18s ease, box-shadow .18s ease;
+  line-height: 0;  /* 防止行高产生额外空白 */
 }
 
-/* 悬停效果 */
-.photo-card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(18,20,24,0.08);
-}
-
+/* 图片完全填充卡片，无间隙 */
 .photo-card img{
   display: block;
   width: 100%;
   height: auto;      
-  border-radius: calc(var(--card-radius) - var(--card-padding));
+  border-radius: calc(var(--card-radius) - var(--border-width)); /* 微调圆角使其与边框融合 */
   object-fit: cover;
   user-select: none;
   vertical-align: middle;
   cursor: zoom-in;
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
+/* 标题区域，与图片分离，不加内边距 */
 figcaption{
-  margin-top: 8px;
+  margin-top: 0;      /* 移除上边距 */
+  padding: 8px 8px 6px; /* 只在文字区域添加舒适内边距，不影响边框贴合 */
   font-size: 14px;
   line-height: 1.3;
   color: #333;
+  background: #fff;
+  border-top: none;
 }
 
 .caption-badge{
   display: inline-block;
-  padding: 6px 8px;
+  padding: 4px 8px;
   border-radius: 999px;
   background: rgba(0,0,0,0.04);
   font-size: 13px;
 }
 
-/* 响应式行数 - 调整每行显示数量 */
+/* 响应式列数 */
 @media (max-width: 900px){
-  .photo-card { width: calc((100% - var(--gap)) / 2); }
+  .photo-wall { column-count: 2; }
 }
 @media (max-width: 560px){
-  .photo-card { width: 100%; }
+  .photo-wall { column-count: 1; }
 }
 
 /* 灯箱样式 */
@@ -220,7 +228,7 @@ figcaption{
 
 
 
-<!-- 照片墙部分 - 按行横向排列，最新年份显示在第一行 -->
+<!-- 照片墙部分 - 瀑布流布局，边框贴合照片，下一行自动向上补位，年份降序排列（最新在顶部） -->
 <section class="photo-wall" id="photoWall"></section>
 
 <!-- 简单灯箱标记（默认隐藏） -->
@@ -273,7 +281,7 @@ figcaption{
       return match ? parseInt(match[1], 10) : 0;
     }
 
-    // 按年份降序排序 (2026最先, 2023最后) —— 最新年份显示在第一行最左侧
+    // 按年份降序排序 (2026最先, 2023最后) —— 最新年份显示在顶部（瀑布流从左到右，从上到下）
     const sortedData = [...photoData].sort((a, b) => {
       const yearA = extractYear(a.caption);
       const yearB = extractYear(b.caption);
@@ -287,7 +295,7 @@ figcaption{
     // 清空容器，完全替换为排序后的卡片
     wall.innerHTML = '';
 
-    // 循环生成排序后的卡片 —— 按行横向排列（Flexbox自动换行）
+    // 循环生成排序后的卡片 —— 瀑布流布局，边框完全贴合图片，自动向上补位
     sortedData.forEach(item => {
       const figure = document.createElement('figure');
       figure.className = 'photo-card';

@@ -224,7 +224,7 @@ figcaption{
 
 
 
-<!-- 照片墙部分 (动态生成，按年份降序排列) -->
+<!-- 照片墙部分 (完全保留外观，仅顺序改为按年份横向: 最新年份在最顶部) -->
 <section class="photo-wall" id="photoWall"></section>
 
 <!-- 简单灯箱标记（默认隐藏） -->
@@ -238,7 +238,7 @@ figcaption{
 
 <script>
   (function(){
-    // ---------- 原始照片数据--------
+    // ---------- 原始照片数据（完全保留原卡片内容）--------
     const photoData = [
       { src: "./WanyongQiu_home/photos/waseda_qiu.png", alt: "Waseda Campus", caption: "Waseda Campus (2025)", border: "#4a6fa5" },
       { src: "./WanyongQiu_home/photos/National_flag.png", alt: "National Flag", caption: "National Flag (2026)", border: "#4a6fa5" },
@@ -277,25 +277,25 @@ figcaption{
       return match ? parseInt(match[1], 10) : 0;  // 若没有年份，默认0（排在最后）
     }
 
-    // 根据年份降序排序（2026排在最前）
+    // 按年份降序排序 (2026最先, 2023最后) —— 完全满足“最新年份的照片显示在最顶部”
     const sortedData = [...photoData].sort((a, b) => {
       const yearA = extractYear(a.caption);
       const yearB = extractYear(b.caption);
-      return yearB - yearA;   // 降序，大的年份在前
+      return yearB - yearA;   // 降序：大的年份（最新）排在数组前面
     });
 
     // 获取照片墙容器
     const wall = document.getElementById('photoWall');
     if (!wall) return;
 
-    // 清空容器（保留无重复生成）
+    // 清空容器（无重复生成）
     wall.innerHTML = '';
 
-    // 循环生成排序后的卡片
+    // 循环生成排序后的卡片 —— 完全保持原卡片样式，仅顺序变为年份降序（最新年份横向展示在顶部）
     sortedData.forEach(item => {
       const figure = document.createElement('figure');
       figure.className = 'photo-card';
-      figure.style.setProperty('--border', item.border);  // 设置边框颜色变量
+      figure.style.setProperty('--border', item.border);  // 边框颜色变量
 
       // img 元素
       const img = document.createElement('img');
@@ -316,7 +316,7 @@ figcaption{
       wall.appendChild(figure);
     });
 
-    // ---------- 灯箱功能 (保持不变, 但是重新绑定新生成的图片) ----------
+    // ---------- 灯箱功能 (保持不变, 重新绑定新生成的图片) ----------
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lbImg');
     const lbCaption = document.getElementById('lbCaption');
